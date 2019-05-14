@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:visibility="visible" >
+
+    <FrameLayout
+        android:id="@+id/card"
+        android:layout_width="135dip"
+        android:layout_height="195dip"
+        android:layout_centerInParent="true"
+        android:background="@drawable/icon_card_bg"
+        android:gravity="center" >
+
+        <TextView
+            android:id="@+id/forecastDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/light_yellow"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/msg_1"
+            style="@style/wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:text="点击任意位置关闭"
+            android:textColor="#873E20"
+            android:textSize="12sp" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/requestDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dip"
+        android:background="@drawable/cover_layer_small"
+        android:gravity="center"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"
+        android:textColor="@color/white"
+        android:textSize="13sp" />
+
+</LinearLayout>

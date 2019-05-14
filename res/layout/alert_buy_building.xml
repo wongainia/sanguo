@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <FrameLayout style="@style/wrap_content" >
+
+        <ImageView
+            style="@style/wrap_content"
+            android:background="@drawable/alert_content_bg" />
+
+        <ImageView
+            android:id="@+id/buildingIcon"
+            style="@style/wrap_content"
+            android:layout_gravity="center" />
+
+        <ImageView
+            android:id="@+id/upIcon"
+            style="@style/wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/arrow"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/nowlevel"
+            style="@style/color7_16"
+            android:layout_gravity="center_vertical|left"
+            android:layout_marginLeft="18dip"
+            android:background="@drawable/txt_bg5"
+            android:text="LV3" />
+
+        <TextView
+            android:id="@+id/nextlevel"
+            style="@style/color7_16"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="14dip"
+            android:background="@drawable/txt_bg5"
+            android:text="LV4" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/desc"
+        style="@style/color5_12"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dip"
+        android:gravity="left"
+        android:lineSpacingExtra="3dp"
+        android:maxWidth="230dip"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/upgradeEffect"
+        style="@style/color8_12"
+        android:layout_width="240dip"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dip"
+        android:gravity="left"
+        android:lineSpacingExtra="3dip" />
+
+    <TextView
+        android:id="@+id/preBuildingRequired"
+        style="@style/color9_12"
+        android:layout_width="240dip"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="3dip"
+        android:gravity="left"
+        android:lineSpacingExtra="3dip" />
+
+    <TextView
+        android:id="@+id/cost"
+        style="@style/k7_color7_12"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dip"
+        android:maxWidth="230dip" />
+
+    <!-- 金币升级 -->
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/upgradeBtn"
+        style="@style/btn_common"
+        android:layout_marginTop="5dip" />
+
+    <!-- 元宝升级 -->
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/rmbBtn"
+        style="@style/btn_common"
+        android:layout_marginTop="5dip" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/closeBt"
+        style="@style/btn_common"
+        android:layout_marginTop="5dip"
+        android:text="关    闭" />
+
+</LinearLayout>

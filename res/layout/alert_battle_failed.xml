@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent"
+    android:orientation="vertical"
+    android:padding="10dip" >
+
+    <ImageView
+        style="@style/wrap_content"
+        android:layout_gravity="center_horizontal" />
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_marginTop="10dip"
+        android:background="@drawable/user_icon_black_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="2dip"
+        android:paddingLeft="5dip"
+        android:paddingRight="2dip"
+        android:paddingTop="2dip" >
+
+        <ImageView style="@style/wrap_content" />
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:orientation="vertical"
+            android:paddingLeft="5dip" >
+
+            <TextView
+                style="@style/k7_color4_13"
+                android:layout_marginLeft="3dip"
+                android:text="马上去招募士兵" />
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/trainingBtn"
+                style="@style/k7_color1_13"
+                android:layout_width="fill_parent"
+                android:layout_height="35dip"
+                android:layout_marginTop="3dip"
+                android:text="去募兵所招募" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_marginTop="5dip"
+        android:background="@drawable/user_icon_black_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="2dip"
+        android:paddingLeft="5dip"
+        android:paddingRight="2dip"
+        android:paddingTop="2dip" >
+
+        <ImageView style="@style/wrap_content" />
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:orientation="vertical"
+            android:paddingLeft="5dip" >
+
+            <TextView
+                style="@style/k7_color4_13"
+                android:layout_marginLeft="3dip"
+                android:text="提升将领属性" />
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/strengthenBtn"
+                style="@style/k7_color1_13"
+                android:layout_width="fill_parent"
+                android:layout_height="35dip"
+                android:layout_marginTop="3dip"
+                android:text="去酒馆强化属性" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_marginTop="5dip"
+        android:background="@drawable/user_icon_black_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="2dip"
+        android:paddingLeft="5dip"
+        android:paddingRight="2dip"
+        android:paddingTop="2dip" >
+
+        <ImageView style="@style/wrap_content" />
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:orientation="vertical"
+            android:paddingLeft="5dip" >
+
+            <TextView
+                style="@style/k7_color4_13"
+                android:layout_marginLeft="3dip"
+                android:text="更换强力的将领" />
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/refreshHeroBtn"
+                style="@style/k7_color1_13"
+                android:layout_width="fill_parent"
+                android:layout_height="35dip"
+                android:layout_marginTop="3dip"
+                android:text="去酒馆十连抽" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/guildDetailTopLayout"
+    style="@style/wrap_content"
+    android:background="@drawable/common_bg"
+    android:gravity="center_vertical"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="60dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="4dip"
+        android:background="@drawable/fiefdetailbottom"
+        android:orientation="vertical"
+        android:paddingBottom="3dip"
+        android:paddingLeft="20dip"
+        android:paddingTop="3dip" >
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/name"
+                style="@style/color4_15"
+                android:text="家族" />
+        </LinearLayout>
+
+        <FrameLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_marginTop="2dip" >
+
+            <!-- 族长 -->
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:layout_gravity="left|center_vertical"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/color4_11"
+                    android:text="族长:" />
+
+                <TextView
+                    android:id="@+id/leaderName"
+                    style="@style/color4_11" />
+            </LinearLayout>
+
+            <!-- 族员 -->
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/color4_11"
+                    android:text="族员:" />
+
+                <TextView
+                    android:id="@+id/count"
+                    style="@style/color4_11"
+                    android:layout_width="60dip"
+                    android:gravity="left|center_vertical"
+                    android:singleLine="true" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_marginTop="2dip" >
+
+            <!-- 等级 -->
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:layout_gravity="left|center_vertical"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/color4_11"
+                    android:text="等级:" />
+
+                <TextView
+                    android:id="@+id/level"
+                    style="@style/color4_11" />
+            </LinearLayout>
+
+            <!-- ID -->
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/color4_11"
+                    android:text="ID:" />
+
+                <TextView
+                    android:id="@+id/guildId"
+                    style="@style/color4_11"
+                    android:layout_width="60dip"
+                    android:gravity="left|center_vertical"
+                    android:singleLine="true" />
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        style="@style/wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="13dip" >
+
+        <include layout="@layout/guild_icon" />
+    </FrameLayout>
+
+</RelativeLayout>

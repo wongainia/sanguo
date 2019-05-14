@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/revive_grid"
+    style="@style/wrap_content"
+    android:layout_margin="1dip"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/revivedGroup"
+        style="@style/wrap_content"
+        android:layout_gravity="top|center_horizontal" 
+        >
+
+        <ImageView
+            style="@style/wrap_content"
+            android:background="@drawable/revived_grid_bg" />
+
+        <ImageView
+            android:id="@+id/itemIcon"
+            style="@style/wrap_content"
+            android:layout_gravity="center"
+             />
+
+        <TextView
+            android:id="@+id/itemCount"
+            style="@style/k7_color3_11"
+            android:layout_gravity="top|right"
+            android:layout_marginRight="10dip"
+            android:layout_marginTop="5dip"
+            android:text="X20" />
+
+        <ImageView
+            android:id="@+id/itemGet"
+            style="@style/wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/get_bg"
+            android:visibility="gone"
+             />
+        
+        <FrameLayout
+            style="@style/wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="2.5dip" >
+
+            <ImageView
+                android:id="@+id/itemName_bg"
+                style="@style/wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:background="@drawable/revived_grid_down" />
+
+            <TextView
+                android:id="@+id/itemName"
+                style="@style/color16_11"
+                android:layout_gravity="center"
+                android:layout_marginTop="2dip"
+                android:textStyle="bold"
+                android:text="名字" />
+        </FrameLayout>
+       
+    </FrameLayout>
+
+
+</LinearLayout>

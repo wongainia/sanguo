@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <string name="app_name">后宫三国</string>
+    <string name="app_versionName">1.0.1</string>
+    <string name="website">官网:3.vk51.com</string>
+
+    <!--  -->
+    <string name="invite_bind_tip">您的游戏账号尚未绑定,将不能获得邀请奖励!请输入本机号码以绑定账号:</string>
+    <string name="BLACK_MESSAGE_DESC1">        <![CDATA[TA在你的仇人录里,不能执行此项操作~]]>
+    </string>
+    <string name="account_bind_success_tip">绑定成功</string>
+    <string name="account_bind_success_msg">请牢记绑定信息,今后将使用以上信息找回帐号.</string> <!-- 更新异常 -->
+    <string name="update_error_msg">        <![CDATA[更新失败,请检查您的网络<br/><br/>建议您去官方网下载客户端<br/>]]>
+    </string>
+    <string name="sdcard_error_msg">        <![CDATA[未找到sdcard,请进入官网手动下载更新<br/>"[website]"]]>
+    </string>
+
+    <!-- 自动找回 -->
+    <string name="verifi_msg">        <![CDATA[正在接收验证码,请稍后...]]>
+    </string>
+    <string name="verifi_error_msg">验证码未收到,稍后请在收到验证码短信时,手动进入第二步,填写验证码.</string>
+    <string name="str_msg">三国撸啊撸</string> <!-- 支付宝相关字符串 -->
+    <string name="confirm_install_hint">"安装提示"</string>
+    <string name="confirm_install">"为保证您的交易安全,需要您安装支付宝安全支付服务,才能进行付款.\n\n点击确定,立即安装."</string>
+    <string name="Ensure">"确定"</string>
+    <string name="Cancel">"取消"</string>
+    <string name="check_sign_failed">您的订单信息已被非法篡改.</string>
+
+    <!-- 。java -->
+    <string name="FileCache_ERROR_MSG">配置信息遗失，请重启游戏更新</string>
+    <string name="FileCache_ERROR_MSG_EXT">如重启后问题仍然存在，请依次点击【修复游戏】 - 【修复数据文件】</string>
+    <string name="FileCache_init">配置表mapping设置错误</string>
+    <string name="FileCache_doInit_1">        <![CDATA["载入<param0>错误"]]>
+    </string>
+    <string name="FileCache_doInit_2">        <![CDATA["您的网络不稳定，下载配置文件<param0>过程中断,<br/>请<font color='red'>检查网络</font>后，重新点击【进入游戏】按钮进入游戏"]]>
+    </string>
+    <string name="ProvinceHeroCache_getProvinceListName">任意领地</string>
+    <string name="AddFavorateFief_failMsg">添加收藏失败</string>
+    <string name="AddFriend_failMsg">        <![CDATA["添加好友<param0>失败"]]>
+    </string>
+    <string name="AddFriend_loadingMsg">        <![CDATA["添加好友<param0>"]]>
+    </string>
+    <string name="AddFriend_onOK">        <![CDATA["<param0>已成为你的好友"]]>
+    </string>
+    <string name="BattleDivineInvoker_failMsg">出现异常,请稍后再试</string>
+    <string name="BattleDivineInvoker_loadingMsg">正在进行中</string>
+    <string name="BattleLogInfoInvoker_failMsg">获取战斗日志信息失败</string>
+    <string name="BuildingConvertInvoker_failMsg">改造建筑失败</string>
+    <string name="BuildingConvertInvoker_loadingMsg">改造建筑</string>
+    <string name="CheckVersion_failMsg">检查版本失败</string>
+    <string name="CheckVersion_loadingMsg">检查版本中</string>
+    <string name="CheckVersion_onOK">停机维护公告</string>
+    <string name="CheckVersion_fire">连接资源服务器失败，请确认开启网络后重试</string>
+    <string name="DeleteBlackListInvoker_failMsg">        <![CDATA["<font color='red'><param0></font>从仇人录中解除失败"]]>
+    </string>
+    <string name="DeleteBlackListInvoker_loadingMsg">        <![CDATA["删除<font color='red'><param0></font>"]]>
+    </string>
+    <string name="DeleteBlackListInvoker_onOK">        <![CDATA["您已经将<param0>从仇人录中解除"]]>
+    </string>
+    <string name="DeleteCfgInvoker_failMsg">校验失败</string>
+    <string name="DeleteCfgInvoker_loadingMsg">校验中</string>
+    <string name="DeleteCfgInvoker_onOK_1">数据文件已删除</string>
+    <string name="DeleteCfgInvoker_onOK_2">请重新启动游戏以便修复数据</string>
+    <string name="DeleteFriendInvoker_failMsg">        <![CDATA["好友<param0>删除失败"]]>
+    </string>
+    <string name="DeleteFriendInvoker_loadingMsg">        <![CDATA["删除好友<font color='red'><param0></font>"]]>
+    </string>
+    <string name="DeleteFriendInvoker_onOK">        <![CDATA["<param0><br/>已不再是你的好友"]]>
+    </string>
+    <string name="DeleteSDCardImgInvoker_failMsg">清理失败</string>
+    <string name="DeleteSDCardImgInvoker_loadingMsg">清理中</string>
+    <string name="DeleteSDCardImgInvoker_onOK">清除缓存成功</string>
+    <string name="DelFavorateFief_failMsg">移除收藏失败</string>
+    <string name="DelFavorateFief_onOK">移除收藏领地成功</string>
+    <string name="EndGuider_loadingMsg">进入游戏</string>
+    <string name="FillWishUserInvoker_failMsg">查询玩家失败</string>
+    <string name="FinishQuestInvoker_loadingMsg">领取奖励中</string>
+    <string name="FinishQuestInvoker_failMsg">领取奖励失败</string>
+    <string name="GetFavoriteFief_failMsg">获取领地收藏夹数据失败</string>
+    <string name="GuildInviteApproveInvoker_onOK">        <![CDATA["成功拒绝加入<font color='#DC540A'><param0></font>家族"]]>
+    </string>
+    <string name="ItemInvoker_failMsg">        <![CDATA["使用道具(<param0>)失败"]]>
+    </string>
+    <string name="ItemInvoker_loadingMsg">        <![CDATA["使用道具(<param0>)"]]>
+    </string>
+    <string name="LoadConfig_loadingMsg">初始化配置信息</string>
+    <string name="RecommendInvoker_failMsg">定位异常<br>请再次点击【定位】按钮尝试定位，或退出游戏检查系统中的【位置】功能是否正常开启</br></string>
+    <string name="RecommendInvoker_loadingMsg">获取位置</string>
+    <string name="RecoverStaminaInvoker_failMsg">恢复体力失败</string>
+    <string name="RecoverStaminaInvoker_loadingMsg">恢复体力</string>
+    <string name="RecoverStaminaInvoker_onOK">        <![CDATA["恢复成功!<br/><br/>恭喜您，将领体力恢复成功<br/><br/><param0>"]]>
+    </string>
+    <string name="RegisterInvoker_failMsg">保存信息失败</string>
+    <string name="RegisterInvoker_loadingMsg">保存用户信息中</string>
+    <string name="SellInvoker_confirm">该物品是重要物品，确定要卖出吗?</string>
+    <string name="SellInvoker_failMsg">        <![CDATA["出售物品<param0>失败"]]>
+    </string>
+    <string name="SellInvoker_loadingMsg">        <![CDATA["出售物品<param0>"]]>
+    </string>
+    <string name="SellInvoker_onOK">        <![CDATA["出售成功！<br/>卖出物品：<param0>获得金钱：<param1>"]]>
+    </string>
+    <string name="SkillInvoker_start_1">        <![CDATA["缺少道具<param0>"]]>
+    </string>
+    <string name="SkillInvoker_start_2">        <![CDATA["需要使用道具<param0>请确认"]]>
+    </string>
+    <string name="SkillInvoker_failMsg">        <![CDATA["使用技能(<param0>) 失败<param1>"]]>
+    </string>
+    <string name="SkillInvoker_loadingMsg">        <![CDATA["使用技能(<param0>)"]]>
+    </string>
+    <string name="UpgradeInvoker_failMsg">升级建筑失败</string>
+    <string name="UpgradeInvoker_loadingMsg">升级建筑</string>
+    <string name="UpgradeManorInvoker_failMsg">升级庄园失败</string>
+    <string name="UpgradeManorInvoker_loadingMsg">升级庄园</string>
+    <string name="VerifiInvoker_failMsg">验证无效</string>
+    <string name="VerifiInvoker_loadingMsg">验证中，请稍等</string>
+    <string name="WarInvoker_failMsg">操作失败</string>
+    <string name="WarInvoker_loadingMsg">准备进入战场</string>
+    <string name="BaseBriefFiefInfoClient_getStateString_1">领地安全,可调兵</string>
+    <string name="BaseBriefFiefInfoClient_getStateString_2">清理战场中,不可调兵</string>
+    <string name="BaseBriefFiefInfoClient_getStateString_3">敌方行军中,可调兵</string>
+    <string name="BaseBriefFiefInfoClient_getStateString_4">敌方围城中,可调兵</string>
+    <string name="BaseBriefFiefInfoClient_getStateString_5">已被围城,可调兵</string>
+    <string name="MachinePlayStatInfoClient_getMachineName_1">初级幸运轮盘</string>
+    <string name="MachinePlayStatInfoClient_getMachineName_2">中级幸运轮盘</string>
+    <string name="MachinePlayStatInfoClient_getMachineName_3">高级幸运轮盘</string>
+    <string name="MachinePlayStatInfoClient_getMachineName_4">未知幸运轮盘</string>
+    <string name="MachinePlayStatInfoClient_getMachineReward">        <![CDATA["价值<param0>金币的水果"]]>
+    </string>
+    <string name="Quest_getTypeName_1">主线</string>
+    <string name="Quest_getTypeName_2">日常</string>
+    <string name="Quest_getTypeName_3">其他</string>
+    <string name="Quest_getTagName_1">引导</string>
+    <string name="Quest_getTagName_2">推荐</string>
+    <string name="Quest_getTagName_3">剧情</string>
+    <string name="Quest_getTagName_4">挑战</string>
+    <string name="Quest_getTagName_5">循环</string>
+    <string name="Quest_getTagName_6">其他</string>
+    <string name="Quest_getTagName_7">重复</string>
+    <string name="Quest_getTagName_8">日常</string>
+    <string name="Quest_getTagName_9">充值</string>
+    <string name="Quest_getTagName_10">兑换</string>
+    <string name="Quest_getTagName_11">奖励</string>
+    <string name="Quest_getTagName_12">消费</string>
+    <string name="Quest_getTagName_13">主线</string>
+    <string name="Quest_getTagName_14">分支</string>
+    <string name="RechargeLog_getRechargeInfo_1">未知账户</string>
+    <string name="RechargeLog_getRechargeInfo_2">        <![CDATA["为<param0>充值"]]>
+    </string>
+    <!-- 如80、90后 -->
+    <string name="User_getYear">        <![CDATA["<param0>后"]]>
+    </string>
+    <string name="NetStat_getFlowConsume">        <![CDATA["本次游戏流量消耗：<font color='red'><param0></font><p/><font color='#FF551A'>本统计不包含第三方地图流量消耗</font>"]]>
+    </string>
+    <string name="NetStat_toString_1">收</string>
+    <string name="NetStat_toString_2">发</string>
+    <string name="SystemNotification_checkLogin_1">登录提醒</string>
+    <string name="SystemNotification_checkLogin_2">        <![CDATA["你已经<param0>天没来了，你的士兵们都在等你带领他们征战沙场！"]]>
+    </string>
+    <string name="SystemNotification_checkMsg_1">后宫三国消息提示</string>
+    <string name="SystemNotification_checkMsg_2">有人想和你做朋友，去看看吧！</string>
+    <string name="SystemNotification_checkBattleInfo_1">你有可以进攻的战斗</string>
+    <string name="SystemNotification_checkBattleInfo_2">你的军队可以发起进攻了，请尽快去处理!</string>
+    <string name="SystemNotification_checkBattleInfo_3">有敌人向你进军</string>
+    <string name="SystemNotification_checkBattleInfo_4">敌人正向你的领地进军，请尽快去处理!</string>
+    <string name="SystemNotification_checkBattleInfo_5">你有领地被攻打</string>
+    <string name="SystemNotification_checkBattleInfo_6">你的领地遭到敌人的攻打，去看看战况吧!</string>
+    <string name="SystemNotification_checkVersion_1">后宫三国更新提示</string>
+    <string name="SystemNotification_checkVersion_2">后宫三国有新版本了, 请及时更新</string>
+    <string name="AddrLoader_set">无名荒野</string>
+    <string name="AddrLoader_toDesc">        <![CDATA["<param0>附近"]]>
+    </string>
+    <string name="BattleStatus_getStatusName_1">没有战争</string>
+    <string name="BattleStatus_getStatusName_2">行军中</string>
+    <string name="BattleStatus_getStatusName_3">围城中</string>
+    <string name="BattleStatus_getStatusName_4">围城结束</string>
+    <string name="BattleStatus_getStatusName_5">清理战场</string>
+    <string name="PhotoTaker_camera">未找到sdcard</string>
+    <string name="PhotoTaker_pickFromGallery">创建图片错误</string>
+    <string name="PhotoTaker_onReturn">选择图片失败，请重试</string>
+    <string name="Home_tip_1">载入账户信息</string>
+    <string name="Home_tip_2">载入游戏框架</string>
+    <string name="Home_tip_3">载入地图</string>
+    <string name="Home_tip_4">载入用户信息</string>
+    <string name="Home_init_1">内测版本</string>
+    <string name="Home_init_2">预发布版本</string>
+    <string name="Home_init_3">201版本</string>
+    <string name="Home_gameComb">加载中...</string>
+    <string name="Home_checkServer">更新服务器列表...</string>
+    <string name="Home_checkVer">检查版本...</string>
+    <string name="Home_login">登录中...</string>
+    <string name="Home_loadConfig">载入配置...</string>
+    <string name="Home_showMemTip_1">        <![CDATA["您的<param0>空间现已小于10M,为了保证您的正常游戏,建议清理<param0>内缓存的数据"]]>
+    </string>
+    <string name="Home_showMemTip_2">您的手机容量快满了!</string>
+    <string name="Home_onClick_1">是否下载官网版本覆盖当前版本</string>
+    <string name="Home_onClick_2">拨打</string>
+    <string name="Home_onClick_3">是否要拨打客服电话反馈问题</string>
+    <string name="Home_onClick_4">暂无法获取客服电话，请更新配置!</string>
+    <string name="Home_TipsWorker_run_1">聊天时，长按消息内容不放，可以复制、删除该条消息</string>
+    <string name="MotoPhotoTaker_compress">创建临时图片失败</string>
+    <string name="MotoPhotoTaker_onReturn">选择图片失败，请重试</string>
+    <string name="QuestUI_show_1">        <![CDATA["接到了<param0>任务：《<param1>》"]]>
+    </string>
+    <string name="QuestUI_show_2">        <![CDATA["完成了了<param0>任务：《<param1>》"]]>
+    </string>
+    <string name="BattelLogAdapter_LogTip">无将领</string>
+    <string name="BattelLogAdapter_GetHeroInfo_failMsg">获取信息失败</string>
+    <string name="BattelLogAdapter_GetHeroInfo_onOK_1">此将领已被分解,无法查看!</string>
+    <string name="BattelLogAdapter_GetHeroInfo_onOK_2">查询玩家信息失败!</string>
+    <string name="BuildingAdapter_getView_1">        <![CDATA["<param0>级解锁"]]>
+    </string>
+    <string name="BuildingAdapter_getView_2">该建筑还没有解锁</string>
+    <string name="BuildingAdapter_getView_3">        <![CDATA["请先升到<param0>级"]]>
+    </string>
+    <string name="BuildingAdapter_getView_4">        <![CDATA["<param0>级城堡解锁"]]>
+    </string>
+    <string name="BuildingAdapter_getView_5">请先提升城堡的等级</string>
+    <string name="BuildingAdapter_getView_6">        <![CDATA["需要军衔<param0>"]]>
+    </string>
+    <string name="BuildingAdapter_getView_7">请先提升军衔的等级</string>
+    <string name="BuildingAdapter_getView_8">去升级</string>
+    <string name="BuildingAdapter_getView_9">已达建造上限</string>
+    <string name="BuildingAdapter_getView_10">该建筑已达建造上限</string>
+    <string name="BuildingAdapter_getView_11">不能再次购买</string>
+    <string name="RechargeBuyGiftTip_desc">        <![CDATA["<font color='red'>抱歉，你的资源不足</font>"]]>
+    </string>
+    <!-- common 通用的文字 -->
+    <string name="login">登录中</string>
+    <string name="login_failed">登录失败</string>
+    <string name="loading">加载中</string>
+    <string name="load_failed">加载失败</string>
+    <string name="unkown">未知</string>
+    <string name="unkown_error">未知错误</string>
+    <string name="and_so_on">等</string>
+    <string name="please_wait">请稍候</string>
+    <string name="network_anomalies">网络异常</string>
+    <string name="network_anomalies_1">网络异常，请检查数据连接重试</string>
+    <string name="network_anomalies_2">网络异常，请重试</string>
+    <string name="query_">查询中</string>
+    <string name="the_main_force">主力军</string>
+    <string name="reinforcements">援军</string>
+    <string name="failed">失败</string>
+    <string name="succeed">成功</string>
+    <string name="myself">自己</string>
+    <string name="gain">获得物品</string>
+    <string name="expend">消耗物品</string>
+    <string name="money">金钱</string>
+    <string name="exp">经验</string>
+    <string name="regard">关注</string>
+    <string name="funds">元宝</string>
+    <string name="farmland">农田</string>
+    <string name="version">版本</string>
+    <string name="sdCard">SD卡</string>
+    <string name="memory">内存</string>
+    <string name="buy_loadingMsg">        <![CDATA["购买<param0>"]]>
+    </string>
+    <string name="buy_failMsg">        <![CDATA["购买<param0>失败"]]>
+    </string>
+    <string name="buy_onOK">        <![CDATA["购买<param0>成功"]]>
+    </string>
+    <string name="query_loadingMsg">        <![CDATA["查询<param0>"]]>
+    </string>
+    <string name="query_failMsg">        <![CDATA["查询<param0>失败"]]>
+    </string>
+    <string name="query_onOK">        <![CDATA["查询<param0>成功"]]>
+    </string>
+    <string name="current_price">售价</string>
+    <string name="original_price">原价</string>
+
+    <!-- 性别 -->
+    <string name="male">男</string>
+    <string name="female">女</string>
+
+    <!-- 地址 -->
+    <string name="beijin">北京</string>
+    <string name="tianjin">天津</string>
+    <string name="shanghai">上海</string>
+    <string name="chongqing">重庆</string>
+
+    <!-- 时间 -->
+    <string name="year">年</string>
+    <string name="month">月</string>
+    <string name="day">天</string>
+    <string name="hour">时</string>
+    <string name="minute">分</string>
+    <string name="second">秒</string>
+
+    <!-- 星座 -->
+    <string name="Aquarius">水瓶座</string>
+    <string name="Pisces">双鱼座</string>
+    <string name="Aries">白羊座</string>
+    <string name="Taurus">金牛座</string>
+    <string name="Gemini">双子座</string>
+    <string name="Cancer">巨蟹座</string>
+    <string name="Leo">狮子座</string>
+    <string name="Virgo">处女座</string>
+    <string name="Libra">天秤座</string>
+    <string name="Scorpio">天蝎座</string>
+    <string name="Sagittarius">射手座</string>
+    <string name="Capricorn">摩羯座</string>
+
+    <!-- 生肖 -->
+    <string name="mouse">鼠</string>
+    <string name="cow">牛</string>
+    <string name="tiger">虎</string>
+    <string name="rabbit">兔</string>
+    <string name="dragon">龙</string>
+    <string name="snake">蛇</string>
+    <string name="horse">马</string>
+    <string name="sheep">羊</string>
+    <string name="monkey">猴</string>
+    <string name="chicken">鸡</string>
+    <string name="dog">狗</string>
+    <string name="pig">猪</string>
+
+    <!-- xml中通用文本 -->
+    <string name="click_colse">点击任意位置关闭</string>
+    <string name="get_code">获取验证码</string>
+
+    <!-- TroopDetailTip -->
+    <string name="troop_type">类型</string>
+    <string name="troop">兵</string>
+    <string name="troop_hp">生命值</string>
+    <string name="troop_range">射程</string>
+    <string name="troop_food">出征消耗</string>
+    <string name="troop_food_consume">驻防消耗</string>
+    <string name="troop_speed">速度</string>
+    <string name="troop_hit">命中</string>
+    <string name="troop_atk">攻击</string>
+    <string name="troop_def">防御</string>
+    <string name="troop_block">格挡</string>
+    <string name="troop_dex">灵巧</string>
+    <string name="troop_crit">暴击</string>
+    <string name="troop_capacity">负重</string>
+    <string name="colon">:</string>
+    <string name="fight">战</string>
+    <string name="clear">扫荡</string>
+
+    <!-- 以下是斯凯支付依赖的资源 -->
+    <string name="app_name_skypay">指易付</string>
+    <string name="day_skypay">当天</string>
+    <string name="week_skypay">最近7天</string>
+    <string name="month_skypay">最近30天</string>
+
+    <!-- 运营商付费 -->
+    <string name="STRING_HINT_CONFIRM">确 定</string>
+    <string name="STRING_HINT_CANCEL">取 消</string>
+    <string name="STRING_HINT_EXIT">退 出</string>
+    <string name="STRING_PAY_FAILED">支付失败！</string>
+
+    <!-- SkyPayRemoteService提示 -->
+    <!-- <string name="STRING_HINT_ORDER_INFO_ERROR_CODE">(ErrorCode = %1$d)</string> -->
+    <string name="STRING_HINT_ORDER_INFO_ERROR_CODE">(%1$d)</string>
+    <string name="STRING_HINT_ORDER_INFO_LEGAL_ERROR">启动支付服务失败，应用版本有误，请您安装最新版本后重试！</string>
+    <string name="STRING_HINT_NO_NETWORK_ERROR">启动支付服务失败，当前无网络连接，请您设置网络后重试！</string>
+    <string name="STRING_HINT_NO_SIM_ERROR">启动支付服务失败，请您检查SIM卡状态后重试！</string>
+    <string name="STRING_HINT_NO_MEM_ERROR">启动支付服务失败，请您检查可用存储空间后重试！</string>
+    <string name="STRING_HINT_IS_PAYING_ERROR">启动支付服务失败，支付系统繁忙，请您稍后重试！</string>
+
+    <!--
+    PayCtrlService提示
+	<string name="STRING_HINT_ORDER_PAY_METHOD_SMS_ERROR">pay_method为非短信付费请求</string>
+	<string name="STRING_HINT_ORDER_INFO_ERROR">订单缺少%1$s参数</string>
+	<string name="STRING_HINT_ORDER_PRICE_ERROR">价格有误</string>
+    -->
+
+    <string name="STRING_HINT_GET_CHANNEL">正在进行安全检查......</string>
+    <string name="STRING_HINT_NETWORK_ERROR">支付失败，联网超时，请您检查网络设置后重试！</string>
+    <string name="STRING_HINT_SERVER_RET_ERROR">支付失败，支付系统繁忙，请您稍后重试！</string>
+    <string name="STRING_HINT_CHANNEL_INFO_ERROR">支付失败，支付系统繁忙，请您稍后重试！</string>
+    <string name="STRING_HINT_FORCE_DOWNLOAD_ERROR">安全支付服务需要更新，请您稍后重试！</string>
+    <string name="STRING_HINT_FIRST_CONFIRM">支付金额 ：%1$d.00元\n指易付提示：需发送%2$d条扣费短信（不含通信费，由运营商代收）,请点击确定发送。客服电话：0571-87966766</string>
+    <string name="STRING_HINT_SENDING_SMS">正在支付，请您耐心等候</string>
+    <string name="STRING_HINT_SYN_DATA">支付即将完成，请耐心等候…</string>
+    <string name="STRING_HINT_SET_MOBILE_DATA_FAILED">支付失败，请您开启移动网络（GPRS/3G）后重试！</string>
+    <string name="STRING_HINT_SIMULATE_PAY_TIP">模拟支付\n点击成功，返回成功付费结果\n点击失败，返回失败付费结果</string>
+    <string name="STRING_HINT_SUCCESS">成功</string>
+    <string name="STRING_HINT_FAILED">失败</string>
+
+    <!-- 第三方 -->
+    <string name="ERROR_DIALOG_TITLE">提示</string>
+    <string name="QUERY_POPUP_TITLE">充值记录</string>
+    <string name="APP_INFO_ERROR_HINT">支付请求数据有误，请退出重试</string>
+    <string name="ENTER_CHARGE_CENTER_WAITING_HINT">正在进行安全检查…</string>
+    <string name="GRID_UNABLE_HINT">对不起！此功能暂不能使用，请选用其他支付方式！</string>
+    <string name="GET_DATA_WAITING_HINT">正在获取数据，请稍候…</string>
+    <string name="GET_DATA_TIMROUT_HINT">获取数据超时，请您稍后重试！！</string>
+    <string name="INPUT_NULL_ERROR_HINT">卡号或者密码为空，请您输入后重试！！</string>
+    <string name="INPUT_WRONG_LENTH_ERROR_HINT">请您检查卡号密码长度是否正确！</string>
+    <string name="INPUT_NULL_AMOUNT_HINT">面额不能为空，请您选择金额后重试！！</string>
+    <string name="INPUT_NULL_CARD_ERROR_HINT">输入的卡号不能为空，请您输入卡号后重试！！</string>
+    <string name="INPUT_WRONG_CARD_LENTH_ERROR_HINT">输入的卡号长度不正确，请您检查！！</string>
+    <string name="INPUT_WRONG_PASSWORD_LENTH_ERROR_HINT">输入的密码长度不正确，请您检查！！</string>
+    <string name="SUBMIT_FAILED">支付请求失败</string>
+    <string name="SUBMIT_SUCCESS">支付请求成功</string>
+    <string name="HELP_ACTIVITY_TITLE">帮助</string>
+    <string name="QUERY_HISTORY_NULL">暂无充值记录！</string>
+    <string name="TEXT_INFO_NULL_ERROR">系统异常</string>
+
+    <!-- 银行卡支付 -->
+    <string name="INPUT_WRONG_BANKCARD_LENTH_ERROR_HINT">输入的银行卡号长度有误，请您检查！当前卡号长度：</string>
+    <string name="INPUT_WRONG_NAME_LENTH_ERROR_HINT">输入的姓名有误，请您检查！</string>
+    <string name="INPUT_WRONG_ID_LENTH_ERROR_HINT">输入的身份证号有误，请您检查！</string>
+    <string name="INPUT_WRONG_AREA_LENTH_ERROR_HINT">输入的开户地区有误，请您检查！</string>
+    <string name="INPUT_WRONG_PHONE_LENTH_ERROR_HINT">输入的手机号码有误，请您检查！</string>
+    <string name="INPUT_NULL_CONFIRM_INFO_ERROR_HINT">输入的短信验证码为空，请您输入验证码后重试！</string>
+
+</resources>

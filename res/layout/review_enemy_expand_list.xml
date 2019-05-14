@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ExpandableListView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/listView"
+    style="@style/list_expand"
+    android:layout_height="wrap_content"
+    android:layout_weight="1" >
+
+</ExpandableListView>

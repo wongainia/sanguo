@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/wrap_content" >
+
+    <LinearLayout
+        android:layout_width="250dip"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dip" >
+
+        <TextView
+            android:id="@+id/error_msg"
+            style="@style/color13_13"
+            android:layout_gravity="center_horizontal" />
+
+        <com.vikings.sanguo.ui.PressedZoomButton
+            android:id="@+id/download"
+            style="@style/btn_common"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dip"
+            android:text="官方下载" />
+
+        <com.vikings.sanguo.ui.PressedZoomButton
+            android:id="@+id/closeBt"
+            style="@style/btn_common"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dip"
+            android:text="取消" />
+    </LinearLayout>
+
+</FrameLayout>

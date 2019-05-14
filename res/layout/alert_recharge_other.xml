@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/wrap_content"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/number"
+        style="@style/custom_dialog_edit"
+        android:layout_width="200dip"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dip"
+        android:imeOptions="actionDone"
+        android:maxLength="9"
+        android:numeric="integer" />
+
+    <TextView
+        style="@style/color7_13"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dip"
+        android:text="输入您想要充值的对象ID" />
+
+</LinearLayout>

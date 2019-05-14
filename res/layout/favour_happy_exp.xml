@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/happyNum"
+    style="@style/wrap_content"
+    android:orientation="horizontal" >
+
+    <ImageView
+        style="@style/wrap_content"
+        android:background="@drawable/favour_add" />
+
+    <ImageView
+        android:id="@+id/hundred"
+        style="@style/wrap_content"
+        android:background="@drawable/favour_1"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/tenNum"
+        style="@style/wrap_content"
+        android:background="@drawable/favour_1" />
+
+    <ImageView
+        android:id="@+id/oneNum"
+        style="@style/wrap_content"
+        android:background="@drawable/favour_1" />
+
+</LinearLayout>

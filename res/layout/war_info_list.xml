@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/wrap_content"
+    android:background="@drawable/common_bg_tm2"
+    android:orientation="horizontal" >
+
+    <FrameLayout
+        android:id="@+id/iconLayout"
+        style="@style/wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="3dip"
+        android:layout_marginTop="3dip"
+        android:layout_marginBottom="3dip"
+         >
+
+        <include layout="@layout/arm_icon" />
+    </FrameLayout>
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="2dip"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/troopName"
+            style="@style/color7_11" />
+
+        <TextView
+            android:id="@+id/troopSum"
+            style="@style/color9_11"
+            android:layout_marginTop="2dip" />
+    </LinearLayout>
+
+</LinearLayout>

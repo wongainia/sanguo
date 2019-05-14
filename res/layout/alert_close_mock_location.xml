@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="250dip"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="20dip"
+    android:paddingTop="5dip" >
+
+    <TextView
+        style="@style/k7_color1_13"
+        android:layout_width="220dip"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dip"
+        android:gravity="left"
+        android:text="《七圣》是基于真实地理位置的社交游戏，不支持模拟地点。" />
+
+    <TextView
+        style="@style/k7_color1_13"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dip"
+        android:text="请关闭模拟位置功能后再继续游戏。" />
+
+    <TextView
+        style="@style/k7_color1_13"
+        android:layout_marginTop="5dip"
+        android:text="敬请谅解。" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/go2set"
+        style="@style/k7_color1_12"
+        android:layout_gravity="center|top"
+        android:layout_marginTop="10dip"
+        android:text="现在设置" />
+
+</LinearLayout>

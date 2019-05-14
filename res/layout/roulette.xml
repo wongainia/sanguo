@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dip"
+        android:gravity="center_vertical" >
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_height="57.3dip"
+            android:background="@drawable/bg_good"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:id="@+id/percent"
+                style="@style/color13_19"
+                android:layout_width="74dip"
+                android:height="40dip"
+                android:text="0000"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/color7_10"
+                android:text="赚满女神好感,必得777重磅奖励呦~!!"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/goodBtnLayout"
+            style="@style/wrap_content"
+            android:layout_marginLeft="-2dip" >
+
+            <ImageView
+                style="@style/wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_sacrifice" />
+
+            <ImageView
+                style="@style/wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/txt_kzmr" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <TextView
+        style="@style/wrap_content"
+        android:layout_weight="1" />
+
+    <FrameLayout
+        style="@style/wrap_content"
+        android:layout_gravity="center" >
+
+        <ImageView
+            style="@style/wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/roulette_layer_bg" />
+
+        <com.vikings.sanguo.ui.RouletteView
+            android:id="@+id/layer1"
+            android:layout_width="237.3dip"
+            android:layout_height="237.3dip"
+            android:layout_gravity="center" />
+
+        <com.vikings.sanguo.ui.RouletteView
+            android:id="@+id/layer2"
+            android:layout_width="187.3dip"
+            android:layout_height="187.3dip"
+            android:layout_gravity="center" />
+
+        <com.vikings.sanguo.ui.RouletteView
+            android:id="@+id/layer3"
+            android:layout_width="129.3dip"
+            android:layout_height="129.3dip"
+            android:layout_gravity="center" />
+
+        <ImageView
+            style="@style/wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/roulette_arrow" />
+    </FrameLayout>
+
+    <TextView
+        style="@style/wrap_content"
+        android:layout_weight="3" />
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:orientation="horizontal" >
+
+        <TextView
+            style="@style/wrap_content"
+            android:layout_weight="1" />
+
+        <com.vikings.sanguo.ui.PressedZoomButton
+            android:id="@+id/btn1"
+            style="@style/btn_5"
+            android:layout_width="80dip"
+            android:textColor="@color/color13"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            style="@style/wrap_content"
+            android:layout_weight="1" />
+
+        <com.vikings.sanguo.ui.PressedZoomButton
+            android:id="@+id/btn2"
+            style="@style/btn_5"
+            android:layout_width="80dip"
+            android:textColor="@color/color13"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            style="@style/wrap_content"
+            android:layout_weight="1" />
+
+        <com.vikings.sanguo.ui.PressedZoomButton
+            android:id="@+id/btn3"
+            style="@style/btn_5"
+            android:layout_width="80dip"
+            android:textColor="@color/color13"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            style="@style/wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <TextView
+        style="@style/wrap_content"
+        android:layout_weight="1" />
+
+</LinearLayout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:orientation="vertical"
+    android:paddingLeft="2dip"
+    android:paddingRight="2dip"
+    android:paddingTop="2dip" >
+
+    <ImageView
+        android:id="@+id/img"
+        style="@style/wrap_content" />
+
+    <FrameLayout
+        android:id="@+id/rewardLayout"
+        style="@style/wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dip" >
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="5dip" >
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/rewardBtn"
+                style="@style/color13_14"
+                android:layout_width="180dip"
+                android:layout_height="35dip"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/btn_red" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/recommendLayout"
+            style="@style/wrap_content"
+            android:layout_gravity="right|top" >
+
+            <ImageView
+                style="@style/wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/recommend_angle_bg" />
+
+            <ImageView
+                style="@style/wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/recommend_txt" />
+        </FrameLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/smLayout"
+        style="@style/wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dip"
+        android:orientation="vertical" >
+
+        <com.vikings.sanguo.ui.PressedZoomButton
+            android:id="@+id/smBtn"
+            style="@style/color13_14"
+            android:layout_width="180dip"
+            android:layout_height="35dip"
+            android:background="@drawable/btn_blue" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/smDesc"
+        style="@style/color13_8"
+        android:layout_gravity="center_horizontal" />
+
+</LinearLayout>

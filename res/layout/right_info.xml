@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rightInfo"
+    style="@style/wrap_content"
+    android:layout_gravity="top|right"
+    android:layout_marginTop="140dip"
+    android:clickable="true"
+    android:orientation="horizontal"
+    android:visibility="visible" >
+
+    <LinearLayout
+        android:id="@+id/extendLayout"
+        android:layout_width="146dip"
+        android:layout_height="wrap_content"
+        android:background="@drawable/castle_prop_bg"
+        android:orientation="vertical"
+        android:padding="5dip"
+        android:visibility="gone" >
+
+        <GridView
+            android:id="@+id/gridView"
+            style="@style/w_fill_h_wrap"
+            android:layout_gravity="center"
+            android:cacheColorHint="#00000000"
+            android:fadingEdge="none"
+            android:horizontalSpacing="5dip"
+            android:listSelector="#00000000"
+            android:numColumns="3"
+            android:scrollbars="none"
+            android:verticalSpacing="2dip" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="2dip"
+        android:paddingTop="10dip" >
+
+        <ImageView
+            android:id="@+id/extendArrow"
+            style="@style/wrap_content"
+            android:layout_gravity="top|left"
+            android:layout_marginTop="11dip"
+            android:background="@drawable/extend_arrow" />
+    </FrameLayout>
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="10dip" >
+
+        <FrameLayout
+            style="@style/wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="5dip"
+            android:minHeight="51dip"
+            android:minWidth="51dip" >
+
+            <ImageView
+                android:id="@+id/event_tip"
+                style="@style/wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/rward_tip"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/eventBtn"
+                style="@style/wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/event_entry" />
+        </FrameLayout>
+
+        <FrameLayout
+            style="@style/wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="5dip"
+            android:minHeight="51dip"
+            android:minWidth="51dip" >
+
+            <ImageView
+                android:id="@+id/rward_tip"
+                style="@style/wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/rward_tip"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/rewardsBtn"
+                style="@style/wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/reward_entry" />
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/protectedIcon"
+            style="@style/wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="5dip"
+            android:background="@drawable/protected_icon" />
+
+        <LinearLayout
+            android:id="@+id/downloadFrame"
+            style="@style/wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <ImageView
+                style="@style/wrap_content"
+                android:background="@drawable/download_icon" />
+
+            <TextView
+                android:id="@+id/percent"
+                style="@style/color13_12"
+                android:background="@drawable/txt_bg5"
+                android:text="0%" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

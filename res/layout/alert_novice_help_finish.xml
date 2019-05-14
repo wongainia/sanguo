@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="10dip"
+    android:paddingLeft="10dip"
+    android:paddingRight="10dip"
+    android:paddingTop="15dip" >
+
+    <TextView
+        android:id="@+id/desc"
+        style="@style/k7_color6_13"
+        android:layout_marginLeft="15dip"
+        android:layout_marginRight="15dip"
+        android:gravity="left" />
+
+    <TextView
+        style="@style/wrap_content"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/rewards"
+        style="@style/k7_color6_13" />
+
+    <TextView
+        style="@style/wrap_content"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/extendsDesc"
+        style="@style/k7_color6_11"
+        android:layout_marginLeft="15dip"
+        android:layout_marginRight="15dip"
+        android:gravity="left" />
+
+    <TextView
+        android:id="@+id/extendsDescWeight"
+        style="@style/wrap_content"
+        android:layout_weight="1" />
+
+</LinearLayout>

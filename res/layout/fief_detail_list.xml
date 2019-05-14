@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:layout_marginLeft="15dip"
+    android:layout_marginRight="15dip"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/evil"
+                style="@style/item_bg"
+                android:layout_marginTop="5dip"
+                android:orientation="horizontal"
+                android:paddingBottom="2dip"
+                android:paddingLeft="5dip"
+                android:paddingTop="2dip" >
+
+                <ImageView
+                    android:id="@+id/icon"
+                    style="@style/wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="10dip"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginTop="10dip" />
+
+                <LinearLayout
+                    style="@style/wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/evilTitle"
+                        style="@style/color22_17" />
+
+                    <TextView
+                        android:id="@+id/evilDesc"
+                        style="@style/color9_13"
+                        android:gravity="left"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/building"
+                style="@style/item_bg"
+                android:layout_marginTop="5dip"
+                android:orientation="horizontal"
+                android:paddingBottom="2dip"
+                android:paddingLeft="5dip"
+                android:paddingTop="2dip" >
+
+                <ImageView
+                    android:id="@+id/icon"
+                    style="@style/wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="10dip"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginTop="10dip" />
+
+                <LinearLayout
+                    style="@style/wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/color22_17"
+                        android:text="升级建筑" />
+
+                    <TextView
+                        style="@style/color9_13"
+                        android:gravity="left"
+                        android:text="升级资源建筑，使其能够产出更多的资源"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/troopInfo"
+                style="@style/item_bg"
+                android:layout_marginTop="5dip"
+                android:orientation="horizontal"
+                android:paddingBottom="2dip"
+                android:paddingLeft="5dip"
+                android:paddingTop="2dip" >
+
+                <ImageView
+                    android:id="@+id/icon"
+                    style="@style/wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="10dip"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginTop="10dip" />
+
+                <LinearLayout
+                    style="@style/wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/color22_17"
+                        android:text="驻兵信息" />
+
+                    <TextView
+                        android:id="@+id/troop"
+                        style="@style/color9_13"
+                        android:gravity="left"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/history"
+                style="@style/item_bg"
+                android:layout_marginTop="5dip"
+                android:orientation="horizontal"
+                android:paddingBottom="2dip"
+                android:paddingLeft="5dip"
+                android:paddingTop="2dip" >
+
+                <ImageView
+                    android:id="@+id/icon"
+                    style="@style/wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="10dip"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginTop="10dip" />
+
+                <LinearLayout
+                    style="@style/wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/color22_17"
+                        android:text="历史战况" />
+
+                    <TextView
+                        style="@style/color9_13"
+                        android:gravity="left"
+                        android:text="回顾在此领地上发生的战役事件"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/abandon"
+                style="@style/item_bg"
+                android:layout_marginTop="5dip"
+                android:orientation="horizontal"
+                android:paddingBottom="2dip"
+                android:paddingLeft="5dip"
+                android:paddingTop="2dip" >
+
+                <ImageView
+                    android:id="@+id/icon"
+                    style="@style/wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="10dip"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginTop="10dip" />
+
+                <LinearLayout
+                    style="@style/wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/color22_17"
+                        android:text="放弃领地" />
+
+                    <TextView
+                        style="@style/color9_13"
+                        android:gravity="left"
+                        android:text="放弃该领地的所有权"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

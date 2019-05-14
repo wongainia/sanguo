@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent"
+    android:layout_height="300dip"
+    android:orientation="vertical"
+    android:paddingBottom="3dip">
+
+    <ScrollView
+        style="@style/fill_parent"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:orientation="vertical"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip">
+
+            <LinearLayout
+                android:id="@+id/rewardsLayout"
+                style="@style/w_fill_h_wrap"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/k7_color1_13"
+                    android:layout_width="fill_parent"
+                    android:background="@drawable/common_info"
+                    android:text="获得以下奖励" />
+
+                <LinearLayout
+                    android:id="@+id/rewards"
+                    style="@style/w_fill_h_wrap"
+                    android:orientation="vertical" 
+                    android:layout_marginTop="2dip">
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/funcLayout"
+                style="@style/w_fill_h_wrap"
+                android:orientation="vertical" 
+                android:layout_marginTop="2dip">
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

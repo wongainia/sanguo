@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingLeft="2dip" >
+
+    <FrameLayout
+        style="@style/wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="4dip" >
+
+        <FrameLayout
+            style="@style/wrap_content"
+            android:layout_gravity="top|right"
+            android:layout_marginRight="20dip"
+            android:layout_marginTop="10.5dip" >
+
+            <com.vikings.sanguo.ui.ProgressBar
+                android:id="@+id/progressBar"
+                style="@style/wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/info_bg_top"
+                android:src="@drawable/progress_1" />
+        </FrameLayout>
+
+        <ImageView
+            style="@style/wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/info_bg" />
+
+        <TextView
+            android:id="@+id/progressDesc"
+            style="@style/center_txt"
+            android:layout_width="201dip"
+            android:layout_gravity="top|right"
+            android:layout_marginRight="20dip"
+            android:layout_marginTop="9dip"
+            android:text="950/1200"
+            android:textColor="@color/color13"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/name"
+            style="@style/color16_14"
+            android:layout_gravity="top|left"
+            android:layout_marginLeft="8dip"
+            android:layout_marginTop="8dip"
+            android:text="强化Lv99" />
+
+        <LinearLayout
+            android:layout_width="285dip"
+            android:layout_height="56dip"
+            android:layout_gravity="bottom|left"
+            android:layout_marginBottom="6dip"
+            android:layout_marginLeft="5dip"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="1dip" >
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:layout_marginLeft="15dip"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/cost1"
+                    style="@style/color8_12"
+                    android:text="X:5000" />
+
+                <TextView
+                    android:id="@+id/enhanceBtn1"
+                    style="@style/color14_14"
+                    android:layout_width="104dip"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="3dip"
+                    android:background="@drawable/small_btn"
+                    android:text="资源强化"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/wrap_content"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:layout_marginRight="15dip"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/cost2"
+                    style="@style/color8_12"
+                    android:text="X:5000" />
+
+                <TextView
+                    android:id="@+id/enhanceBtn2"
+                    style="@style/color14_14"
+                    android:layout_width="104dip"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="3dip"
+                    android:background="@drawable/small_btn"
+                    android:text="元宝至尊强化"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

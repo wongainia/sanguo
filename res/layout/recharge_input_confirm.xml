@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent"
+    android:layout_marginTop="5dip" >
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <!-- 充值卡种类： -->
+
+        <include
+            android:id="@+id/msg1Layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            layout="@layout/gradient_msg" />
+
+        <TextView
+            android:id="@+id/cardType"
+            style="@style/color7_16"
+            android:layout_marginLeft="30dip"
+            android:layout_marginTop="10dip" />
+
+        <!-- 充值卡面额： -->
+
+        <include
+            android:id="@+id/msg2Layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            layout="@layout/gradient_msg" />
+
+        <TextView
+            android:id="@+id/cardAmount"
+            style="@style/color7_16"
+            android:layout_marginLeft="30dip"
+            android:layout_marginTop="10dip" />
+
+        <!-- 充值卡序列号： -->
+
+        <include
+            android:id="@+id/msg3Layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            layout="@layout/gradient_msg" />
+
+        <TextView
+            android:id="@+id/serial"
+            style="@style/color7_16"
+            android:layout_marginLeft="30dip"
+            android:layout_marginTop="10dip" />
+
+        <!-- 充值卡密码： -->
+
+        <include
+            android:id="@+id/msg4Layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            layout="@layout/gradient_msg" />
+
+        <TextView
+            android:id="@+id/pswd"
+            style="@style/color7_16"
+            android:layout_marginLeft="30dip"
+            android:layout_marginTop="10dip" />
+
+        <TextView
+            android:id="@+id/desc"
+            style="@style/color11_13"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:layout_marginTop="40dip" />
+
+        <TextView
+            android:id="@+id/confirm"
+            style="@style/btn_common"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="2dip"
+            android:text="确        定" />
+
+        <TextView
+            android:id="@+id/cancel"
+            style="@style/btn_common"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dip"
+            android:text="取        消" />
+    </LinearLayout>
+
+</ScrollView>

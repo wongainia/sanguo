@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <FrameLayout
+        style="@style/wrap_content"
+        android:layout_margin="5dip" >
+
+        <include layout="@layout/arm_icon" />
+    </FrameLayout>
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="5dip"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <FrameLayout style="@style/w_fill_h_wrap" >
+
+            <TextView
+                android:id="@+id/name"
+                style="@style/k7_color1_13"
+                android:layout_gravity="left|center_vertical" />
+
+            <TextView
+                android:id="@+id/cnt"
+                style="@style/k7_color1_13"
+                android:layout_gravity="right|center_vertical" 
+                android:layout_marginRight="10dip"/>
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/cost"
+            style="@style/k7_color2_13"
+            android:layout_marginTop="5dip" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:background="@drawable/alert_common_bg"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_marginBottom="50dip"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/rewardTitle"
+            style="@style/color4_12"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dip" />
+
+        <View
+            android:id="@+id/separateLine1"
+            style="@style/wrap_content"
+            android:layout_height="2dip"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="5dip"
+            android:layout_marginTop="5dip"
+            android:background="@drawable/duplicate_content_line" />
+
+        <ScrollView
+            android:id="@+id/rewards_scroll"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_horizontal"
+            android:paddingLeft="20dip"
+            android:paddingRight="20dip" >
+
+            <LinearLayout
+                android:id="@+id/items"
+                style="@style/fill_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="5dip" >
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="15dip"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/msgdesc"
+            style="@style/color4_10"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dip"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/touchDesc"
+            style="@style/color15_10"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginTop="8dip"
+            android:text="点击任意位置关闭" />
+    </LinearLayout>
+
+</FrameLayout>

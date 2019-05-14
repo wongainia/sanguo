@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="3dip" >
+
+    <FrameLayout style="@style/wrap_content" >
+
+        <ImageView
+            style="@style/wrap_content"
+            android:background="@drawable/hero_icon_frame" />
+
+        <ImageView
+            android:id="@+id/icon"
+            style="@style/wrap_content"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/count"
+            style="@style/color13_10"
+            android:layout_gravity="right|bottom"
+            android:layout_marginBottom="3dip"
+            android:layout_marginRight="3dip" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/name"
+        style="@style/color8_12"
+        android:layout_marginTop="1dip"
+        android:text="经验丸子" />
+
+    <TextView
+        android:id="@+id/expAdd"
+        style="@style/color6_12"
+        android:text="200EXP" />
+
+</LinearLayout>

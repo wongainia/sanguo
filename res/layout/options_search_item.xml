@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/item_bg"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingLeft="10dip"
+    android:paddingRight="10dip" >
+
+    <ImageView
+        android:id="@+id/img"
+        style="@style/wrap_content"
+        android:layout_gravity="center_vertical" />
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:orientation="vertical"
+        android:paddingLeft="12dip" >
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/k7_color1_15"
+            android:text="同国玩家" />
+
+        <TextView
+            android:id="@+id/desc"
+            style="@style/k7_color6_13"
+            android:layout_marginTop="5dip" />
+    </LinearLayout>
+
+</LinearLayout>

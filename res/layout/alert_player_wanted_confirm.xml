@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="10dip" >
+
+    <TextView
+        style="@style/k7_color6_13"
+        android:text="请确认追杀对象信息" />
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <include layout="@layout/user_icon" />
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_marginLeft="3dip"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/nickName"
+                    style="@style/k7_color8_13" />
+
+                <TextView
+                    android:id="@+id/userID"
+                    style="@style/k7_color6_11"
+                    android:layout_marginLeft="2dip" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/countryName"
+                style="@style/k7_color6_13" />
+
+            <TextView
+                android:id="@+id/guildName"
+                style="@style/k7_color6_13" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

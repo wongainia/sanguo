@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/castleInfoLayout"
+    style="@style/wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginLeft="6dip"
+    android:visibility="gone" >
+
+    <FrameLayout
+        style="@style/wrap_content"
+        android:paddingRight="12dip" >
+
+        <LinearLayout
+            android:layout_width="290dip"
+            android:layout_height="wrap_content"
+            android:background="@drawable/castle_prop_bg"
+            android:orientation="vertical"
+            android:paddingBottom="10dip"
+            android:paddingLeft="25dip"
+            android:paddingRight="25dip" >
+
+            <!-- 主城信息 -->
+
+            <LinearLayout
+                android:id="@+id/castleInfo"
+                style="@style/w_fill_h_wrap"
+                android:layout_marginTop="3dip"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    style="@style/wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="3dip"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        style="@style/wrap_content"
+                        android:background="@drawable/pattern_line" />
+
+                    <TextView
+                        style="@style/color16_14"
+                        android:layout_marginLeft="5dip"
+                        android:text="主城信息"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/pattenMirror"
+                        style="@style/wrap_content"
+                        android:layout_marginLeft="5dip"
+                        android:background="@drawable/pattern_line" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/wrap_content"
+                    android:layout_marginTop="3dip"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/position"
+                        style="@style/color13_12"
+                        android:layout_width="120dip"
+                        android:gravity="left|center_vertical"
+                        android:text="坐标" />
+
+                    <TextView
+                        android:id="@+id/scaleName"
+                        style="@style/color13_12"
+                        android:layout_width="120dip"
+                        android:gravity="left|center_vertical"
+                        android:text="规模" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/wrap_content"
+                    android:layout_marginTop="1dip"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/curArmCount"
+                        style="@style/color13_12"
+                        android:layout_width="120dip"
+                        android:gravity="left|center_vertical"
+                        android:text="坐标" />
+
+                    <TextView
+                        android:id="@+id/costFood"
+                        style="@style/color13_12"
+                        android:layout_width="120dip"
+                        android:gravity="left|center_vertical"
+                        android:text="规模" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/wrap_content"
+                    android:layout_marginTop="1dip"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/curPop"
+                        style="@style/color13_12"
+                        android:layout_width="120dip"
+                        android:gravity="left|center_vertical"
+                        android:text="坐标" />
+
+                    <TextView
+                        android:id="@+id/popSpeed"
+                        style="@style/color13_12"
+                        android:layout_width="120dip"
+                        android:gravity="left|center_vertical"
+                        android:text="规模" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/wrap_content"
+                    android:layout_marginTop="1dip"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/scale"
+                        style="@style/color13_12"
+                        android:layout_width="120dip"
+                        android:gravity="left|center_vertical"
+                        android:text="坐标" />
+
+                    <TextView
+                        android:id="@+id/fiefCount"
+                        style="@style/color13_12"
+                        android:layout_width="120dip"
+                        android:gravity="left|center_vertical"
+                        android:text="规模" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 世界等级 -->
+
+            <LinearLayout
+                android:id="@+id/worldLevelInfo"
+                style="@style/w_fill_h_wrap"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    style="@style/wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="3dip"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        style="@style/wrap_content"
+                        android:background="@drawable/pattern_line" />
+
+                    <TextView
+                        style="@style/color6_14"
+                        android:layout_marginLeft="5dip"
+                        android:text="世界等级"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/pattenMirror"
+                        style="@style/wrap_content"
+                        android:layout_marginLeft="5dip"
+                        android:background="@drawable/pattern_line" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/wrap_content"
+                    android:layout_marginTop="3dip"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/worldLevel"
+                        style="@style/color13_12" />
+
+                    <FrameLayout
+                        style="@style/wrap_content"
+                        android:layout_marginLeft="5dip" >
+
+                        <com.vikings.sanguo.ui.ProgressBar
+                            android:id="@+id/progressBar"
+                            style="@style/wrap_content"
+                            android:layout_gravity="center_horizontal|bottom"
+                            android:background="@drawable/progress_bg_200"
+                            android:src="@drawable/progress_blue_200" />
+
+                        <TextView
+                            android:id="@+id/progressDesc"
+                            style="@style/color14_12"
+                            android:layout_gravity="center" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/desc"
+                    style="@style/color13_11"
+                    android:gravity="left" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/hideBtn"
+        style="@style/wrap_content"
+        android:layout_gravity="center_vertical|right"
+        android:background="@drawable/hide_btn" />
+
+</FrameLayout>

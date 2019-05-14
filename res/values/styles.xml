@@ -1,0 +1,2144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 三国begin -->
+    <!-- 布局样式begin -->
+    <style name="wrap_content">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="fill_parent">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+
+    <style name="w_fill_h_wrap">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="stronger_item_style">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">5dip</item>
+        <item name="android:layout_marginTop">5dip</item>
+        <item name="android:background">@drawable/stronger_shadow_btm</item>
+    </style>
+
+    <style name="gamble_style">
+        <item name="android:layout_width">45dip</item>
+        <item name="android:layout_height">50dip</item>
+    </style>
+
+    <style name="center_txt" parent="wrap_content">
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="content_fill" parent="fill_parent">
+        <item name="android:layout_marginTop">28dip</item>
+    </style>
+    <!-- 布局样式end -->
+
+
+    <!-- 组件样式begin -->
+
+
+    <!-- 通用背景 -->
+    <style name="window_bg">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:background">@android:color/black</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <!-- 通用背景 -->
+    <style name="god_wealth_wheel_bg">
+        <item name="android:layout_width">30dip</item>
+        <item name="android:layout_height">30dip</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+
+    <!-- 通用按钮 -->
+    <style name="btn_common" parent="color6_19">
+        <item name="android:background">@drawable/button_common</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_width">226dip</item>
+        <item name="android:layout_height">51dip</item>
+    </style>
+
+    <style name="btn_common_short" parent="color6_19">
+        <item name="android:background">@drawable/button_common_short</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="btn_1" parent="color3_19">
+        <item name="android:background">@drawable/button1</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="btn_2" parent="color3_19">
+        <item name="android:background">@drawable/button2</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="btn_3" parent="color3_19">
+        <item name="android:background">@drawable/button3</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="btn_4" parent="color3_19">
+        <item name="android:background">@drawable/button4</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="btn_5" parent="color7_19">
+        <item name="android:background">@drawable/button5</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="btn_6" parent="color6_14">
+        <item name="android:background">@drawable/button6</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="popup_btn" parent="wrap_content">
+        <item name="android:background">@drawable/popup_btn_selector</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+
+    <!-- 通用item背景 -->
+    <style name="item_bg" parent="w_fill_h_wrap">
+        <item name="android:background">@drawable/common_item_bg</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="item_bg1" parent="wrap_content">
+        <item name="android:background">@drawable/common_item_bg1</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <!-- 任务背景 -->
+    <style name="task_bg" parent="w_fill_h_wrap">
+        <item name="android:background">@drawable/hero_add_bg</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <!-- tab样式 -->
+    <style name="tab_2item">
+        <item name="android:layout_width">100dip</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="tab_3item">
+        <item name="android:layout_width">82dip</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="tab_4item">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!-- 输入框样式 -->
+    <!-- customDialog中的editView -->
+    <style name="custom_dialog_edit" parent="color4_13">
+        <item name="android:background">@drawable/common_input1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- 书卷背景样式 -->
+    <style name="scroll_book_bg" parent="wrap_content">
+        <item name="android:paddingBottom">18dip</item>
+        <item name="android:paddingLeft">25dip</item>
+        <item name="android:paddingRight">22dip</item>
+        <item name="android:paddingTop">18dip</item>
+        <item name="android:background">@drawable/user_info_banner</item>
+    </style>
+
+    <!-- 战役详情背景 -->
+    <style name="campaign_detail_bg">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/campaign_item_expend</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!-- 战役详情描述 -->
+    <style name="campaign_detail_desc" parent="color14_12">
+        <item name="android:layout_marginLeft">5dip</item>
+        <item name="android:layout_marginRight">5dip</item>
+        <item name="android:layout_marginTop">20dip</item>
+        <item name="android:gravity">left</item>
+    </style>
+
+    <!-- 兵力对比界面上部信息 -->
+
+    <style name="war_info_top_left" parent="color9_11">
+        <item name="android:layout_gravity">center_vertical|left</item>
+        <item name="android:layout_marginLeft">10dip</item>
+    </style>
+
+    <style name="war_info_top_right" parent="color9_11">
+        <item name="android:layout_gravity">center_vertical|right</item>
+        <item name="android:layout_marginRight">10dip</item>
+    </style>
+
+    <style name="arena_info_top_left" parent="color9_10">
+        <item name="android:layout_gravity">center_vertical|left</item>
+        <item name="android:layout_marginLeft">5dip</item>
+    </style>
+
+    <style name="arena_info_top_right" parent="color9_10">
+        <item name="android:layout_gravity">center_vertical|right</item>
+        <item name="android:layout_marginRight">5dip</item>
+    </style>
+
+    <!-- 分割线样式 -->
+
+    <style name="separate_line1" parent="wrap_content">
+        <item name="android:layout_marginTop">2dip</item>
+        <item name="android:background">@drawable/separate_line1</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+
+    <style name="separate_line2" parent="wrap_content">
+        <item name="android:layout_marginTop">2dip</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:background">@drawable/separate_line2</item>
+    </style>
+
+    <style name="separate_line3" parent="wrap_content">
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:background">@drawable/arena_line</item>
+    </style>
+
+    <style name="separate_line4" parent="wrap_content">
+        <item name="android:layout_marginTop">2dip</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:background">@drawable/separate_line4</item>
+    </style>
+
+    <style name="separate_line5" parent="wrap_content">
+        <item name="android:layout_marginTop">2dip</item>
+        <item name="android:background">@drawable/separate_line4</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+    <!-- 组件样式end -->
+
+
+    <!-- 字体 样式begin color_size -->
+    <!-- color1 -->
+    <style name="color1_10" parent="center_txt">
+        <item name="android:textColor">@color/color1</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="color1_11" parent="center_txt">
+        <item name="android:textColor">@color/color1</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="color1_12" parent="color1_10">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="color1_13" parent="color1_10">
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="color1_14" parent="color1_12">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="color1_16" parent="color1_12">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="color1_19" parent="color1_12">
+        <item name="android:textSize">19sp</item>
+    </style>
+
+    <style name="color1_22" parent="color1_12">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="color1_24" parent="color1_12">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <!-- color2 -->
+    <style name="color2_10" parent="center_txt">
+        <item name="android:textColor">@color/color2</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="color2_11" parent="color2_10">
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="color2_12" parent="color2_10">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="color2_14" parent="color2_12">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="color2_16" parent="color2_12">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="color2_17" parent="color2_12">
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="color2_19" parent="color2_12">
+        <item name="android:textSize">19sp</item>
+    </style>
+
+    <style name="color2_22" parent="color2_12">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="color2_24" parent="color2_12">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <!-- color3 -->
+
+    <style name="color3_10" parent="center_txt">
+        <item name="android:textColor">@color/color3</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="color3_12" parent="color2_10">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="color3_11" parent="color3_12">
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="color3_13" parent="color3_12">
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="color3_14" parent="color3_12">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="color3_15" parent="color3_12">
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="color3_16" parent="color3_12">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="color3_19" parent="color3_12">
+        <item name="android:textSize">19sp</item>
+    </style>
+
+    <style name="color3_22" parent="color3_12">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="color3_24" parent="color3_12">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <!-- color4 -->
+
+    <style name="color4_8" parent="center_txt">
+        <item name="android:textColor">@color/color4</item>
+        <item name="android:textSize">8sp</item>
+    </style>
+
+    <style name="color4_10" parent="center_txt">
+        <item name="android:textColor">@color/color4</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="color4_11" parent="center_txt">
+        <item name="android:textColor">@color/color4</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="color4_12" parent="center_txt">
+        <item name="android:textColor">@color/color4</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="color4_13" parent="center_txt">
+        <item name="android:textColor">@color/color4</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="color4_14" parent="color4_12">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="color4_15" parent="color4_12">
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="color4_16" parent="color4_12">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="color4_17" parent="color4_12">
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="color4_19" parent="color4_12">
+        <item name="android:textSize">19sp</item>
+    </style>
+
+    <style name="color4_22" parent="color4_12">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="color4_24" parent="color4_12">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <!-- color5 -->
+
+    <style name="color5_10" parent="center_txt">
+        <item name="android:textColor">@color/color5</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="color5_11" parent="center_txt">
+        <item name="android:textColor">@color/color5</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="color5_12" parent="center_txt">
+        <item name="android:textColor">@color/color5</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="color5_13" parent="color5_12">
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="color5_14" parent="color5_12">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="color5_16" parent="color5_12">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="color5_19" parent="color5_12">
+        <item name="android:textSize">19sp</item>
+    </style>
+
+    <style name="color5_22" parent="color5_12">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="color5_24" parent="color5_12">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <!-- color6 -->
+    <style name="color6_9" parent="center_txt">
+        <item name="android:textColor">@color/color6</item>
+        <item name="android:textSize">9sp</item>
+    </style>
+
+    <style name="color6_10" parent="center_txt">
+        <item name="android:textColor">@color/color6</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="color6_11" parent="center_txt">
+        <item name="android:textColor">@color/color6</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="color6_12" parent="center_txt">
+        <item name="android:textColor">@color/color6</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="color6_13" parent="center_txt">
+        <item name="android:textColor">@color/color6</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="color6_14" parent="color6_12">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="color6_16" parent="color6_12">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="color6_17" parent="color6_12">
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="color6_19" parent="color6_12">
+        <item name="android:textSize">19sp</item>
+    </style>
+
+    <style name="color6_22" parent="color6_12">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="color6_24" parent="color6_12">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <!-- color7 -->
+    <style name="color7_9" parent="center_txt">
+        <item name="android:textColor">@color/color7</item>
+        <item name="android:textSize">9sp</item>
+    </style>
+
+    <style name="color7_10" parent="center_txt">
+        <item name="android:textColor">@color/color7</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="color7_11" parent="center_txt">
+        <item name="android:textColor">@color/color7</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="color7_12" parent="center_txt">
+        <item name="android:textColor">@color/color7</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="color7_13" parent="center_txt">
+        <item name="android:textColor">@color/color7</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="color7_14" parent="color7_12">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="color7_15" parent="color7_12">
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="color7_16" parent="color7_12">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="color7_19" parent="color7_12">
+        <item name="android:textSize">19sp</item>
+    </style>
+
+    <style name="color7_22" parent="color7_12">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="color7_24" parent="color7_12">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <!-- color8 -->
+
+    <style name="color8_8" parent="center_txt">
+        <item name="android:textColor">@color/color8</item>
+        <item name="android:textSize">8sp</item>
+    </style>
+
+    <style name="color8_9" parent="center_txt">
+        <item name="android:textColor">@color/color8</item>
+        <item name="android:textSize">9sp</item>
+    </style>
+
+    <style name="color8_10" parent="center_txt">
+        <item name="android:textColor">@color/color8</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="color8_11" parent="center_txt">
+        <item name="android:textColor">@color/color8</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="color8_12" parent="center_txt">
+        <item name="android:textColor">@color/color8</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="color8_13" parent="center_txt">
+        <item name="android:textColor">@color/color8</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="color8_14" parent="color8_12">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="color8_15" parent="color8_12">
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="color8_16" parent="color8_12">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="color8_17" parent="color8_12">
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="color8_19" parent="color8_12">
+        <item name="android:textSize">19sp</item>
+    </style>
+
+    <style name="color8_22" parent="color8_12">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="color8_24" parent="color8_12">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <!-- color9 -->
+
+    <style name="color9_8" parent="center_txt">
+        <item name="android:textColor">@color/color9</item>
+        <item name="android:textSize">8sp</item>
+    </style>
+
+    <style name="color9_10" parent="center_txt">
+        <item name="android:textColor">@color/color9</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="color9_11" parent="center_txt">
+        <item name="android:textColor">@color/color9</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="color9_12" parent="center_txt">
+        <item name="android:textColor">@color/color9</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="color9_13" parent="color9_12">
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="color9_14" parent="color9_12">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="color9_16" parent="color9_12">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="color9_19" parent="color9_12">
+        <item name="android:textSize">19sp</item>
+    </style>
+
+    <style name="color9_22" parent="color9_12">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="color9_24" parent="color9_12">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <!-- color10 -->
+
+    <style name="color10_11" parent="center_txt">
+        <item name="android:textColor">@color/color10</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="color10_10" parent="center_txt">
+        <item name="android:textColor">@color/color10</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="color10_12" parent="color10_10">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="color10_14" parent="color10_12">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="color10_16" parent="color10_12">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="color10_19" parent="color10_12">
+        <item name="android:textSize">19sp</item>
+    </style>
+
+    <style name="color10_22" parent="color10_12">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="color10_24" parent="color10_12">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <!-- color11 -->
+
+    <style name="color11_10" parent="center_txt">
+        <item name="android:textColor">@color/color11</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="color11_11" parent="color11_10">
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="color11_12" parent="color11_10">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="color11_13" parent="color11_10">
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="color11_14" parent="color11_12">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="color11_16" parent="color11_12">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="color11_18" parent="color11_12">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="color11_19" parent="color11_12">
+        <item name="android:textSize">19sp</item>
+    </style>
+
+    <style name="color11_22" parent="color11_12">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="color11_24" parent="color11_12">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <!-- color12 -->
+
+    <style name="color12_12" parent="center_txt">
+        <item name="android:textColor">@color/color12</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="color12_14" parent="color12_12">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="color12_16" parent="color12_12">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="color12_19" parent="color12_12">
+        <item name="android:textSize">19sp</item>
+    </style>
+
+    <style name="color12_22" parent="color12_12">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="color12_24" parent="color12_12">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <!-- color13 -->
+    <style name="color13_8" parent="color13_9">
+        <item name="android:textSize">8sp</item>
+    </style>
+
+    <style name="color13_9" parent="center_txt">
+        <item name="android:textColor">@color/color13</item>
+        <item name="android:textSize">9sp</item>
+    </style>
+
+    <style name="color13_10" parent="color13_9">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="color13_11" parent="color13_9">
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="color13_12" parent="color13_9">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="color13_13" parent="color13_9">
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="color13_14" parent="color13_12">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="color13_16" parent="color13_12">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="color13_18" parent="color13_9">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="color13_19" parent="color13_12">
+        <item name="android:textSize">19sp</item>
+    </style>
+
+    <style name="color13_22" parent="color13_12">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="color13_24" parent="color13_12">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <!-- color14 -->
+
+    <style name="color14_9" parent="center_txt">
+        <item name="android:textColor">@color/color14</item>
+        <item name="android:textSize">9sp</item>
+    </style>
+
+    <style name="color14_10" parent="color14_9">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="color14_11" parent="color14_9">
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="color14_12" parent="color14_9">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="color14_14" parent="color14_12">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="color14_16" parent="color14_12">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="color14_19" parent="color14_12">
+        <item name="android:textSize">19sp</item>
+    </style>
+
+    <style name="color14_22" parent="color14_12">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="color14_24" parent="color14_12">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <!-- color15 -->
+    <style name="color15_10" parent="center_txt">
+        <item name="android:textColor">@color/color15</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="color15_11" parent="color15_10">
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="color15_12" parent="color15_10">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="color15_14" parent="color15_12">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="color15_16" parent="color15_12">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="color15_19" parent="color15_12">
+        <item name="android:textSize">19sp</item>
+    </style>
+
+    <style name="color15_22" parent="color15_12">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="color15_24" parent="color15_12">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <!-- color16 -->
+
+    <style name="color16_9" parent="color16_12">
+        <item name="android:textSize">9sp</item>
+    </style>
+
+    <style name="color16_10" parent="color16_12">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="color16_11" parent="color16_12">
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="color16_12" parent="center_txt">
+        <item name="android:textColor">@color/color16</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="color16_13" parent="color16_12">
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="color16_14" parent="color16_12">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="color16_15" parent="color16_12">
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="color16_16" parent="color16_12">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="color16_19" parent="color16_12">
+        <item name="android:textSize">19sp</item>
+    </style>
+
+    <style name="color16_22" parent="color16_12">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="color16_24" parent="color16_12">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <!-- color17 -->
+
+    <style name="color17_9" parent="center_txt">
+        <item name="android:textColor">@color/color17</item>
+        <item name="android:textSize">9sp</item>
+    </style>
+
+    <style name="color17_10" parent="color17_9">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="color17_11" parent="color17_9">
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="color17_12" parent="color17_9">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="color17_13" parent="color17_12">
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="color17_14" parent="color17_12">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="color17_16" parent="color17_12">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="color17_19" parent="color17_12">
+        <item name="android:textSize">19sp</item>
+    </style>
+
+    <style name="color17_22" parent="color17_12">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="color17_24" parent="color17_12">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <!-- color18 -->
+
+    <style name="color18_10" parent="center_txt">
+        <item name="android:textColor">@color/color18</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="color18_12" parent="color18_10">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="color18_13" parent="color18_10">
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="color18_14" parent="color18_10">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="color18_15" parent="color18_12">
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="color18_16" parent="color18_12">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="color18_19" parent="color18_12">
+        <item name="android:textSize">19sp</item>
+    </style>
+
+    <style name="color18_22" parent="color18_12">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="color18_24" parent="color18_12">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <!-- color19 -->
+    <style name="color19_9" parent="center_txt">
+        <item name="android:textColor">@color/color19</item>
+        <item name="android:textSize">9sp</item>
+    </style>
+
+    <style name="color19_10" parent="color19_9">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="color19_11" parent="center_txt">
+        <item name="android:textColor">@color/color19</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="color19_12" parent="center_txt">
+        <item name="android:textColor">@color/color19</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="color19_13" parent="color19_12">
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="color19_14" parent="color19_12">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="color19_16" parent="color19_12">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="color19_19" parent="color19_12">
+        <item name="android:textSize">19sp</item>
+    </style>
+
+    <style name="color19_22" parent="color19_12">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="color19_24" parent="color19_12">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <!-- color20 -->
+
+    <style name="color20_9" parent="center_txt">
+        <item name="android:textColor">@color/color20</item>
+        <item name="android:textSize">9sp</item>
+    </style>
+
+    <style name="color20_10" parent="color20_9">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="color20_12" parent="color20_10">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="color20_14" parent="color20_12">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="color20_16" parent="color20_12">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="color20_19" parent="color20_12">
+        <item name="android:textSize">19sp</item>
+    </style>
+
+    <style name="color20_22" parent="color20_12">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="color20_24" parent="color20_12">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <!-- color21 -->
+
+    <style name="color21_10" parent="center_txt">
+        <item name="android:textColor">@color/color21</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="color21_11" parent="color21_10">
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="color21_12" parent="color21_11">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="color21_13" parent="color21_10">
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="color21_14" parent="color21_10">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="color21_15" parent="color21_10">
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="color21_16" parent="color21_10">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- color22 -->
+
+    <style name="color22_10" parent="center_txt">
+        <item name="android:textColor">@color/color22</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="color22_11" parent="color22_10">
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="color22_12" parent="color22_10">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="color22_13" parent="color22_10">
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="color22_14" parent="color22_10">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="color22_15" parent="color22_10">
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="color22_16" parent="color22_10">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="color22_17" parent="color22_10">
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <!-- color23 -->
+    <style name="color23_10" parent="center_txt">
+        <item name="android:textColor">@color/color23</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="color23_13" parent="color23_10">
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="color23_15" parent="color23_10">
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <!-- color24 -->
+    <style name="color24_10" parent="center_txt">
+        <item name="android:textColor">@color/color24</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="color24_11" parent="color24_10">
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="color24_12" parent="color24_10">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="color24_13" parent="color24_10">
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="color24_14" parent="color24_10">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="color24_16" parent="color24_10">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="color26_13" parent="center_txt">
+        <item name="android:textColor">@color/color26</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="color26_14" parent="center_txt">
+        <item name="android:textColor">@color/color26</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="color27_11" parent="center_txt">
+        <item name="android:textColor">@color/color27</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="color27_14" parent="center_txt">
+        <item name="android:textColor">@color/color27</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!-- color25 -->
+    <style name="color25_10" parent="center_txt">
+        <item name="android:textColor">@color/color25</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="color25_11" parent="color25_10">
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="color25_12" parent="color25_10">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="color25_13" parent="color25_10">
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="color25_14" parent="color25_10">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="color25_16" parent="color25_10">
+        <item name="android:textSize">16sp</item>
+    </style>
+    <!-- 字体样式 end -->
+    <!-- 三国end -->
+
+
+    <!-- 全新样式 -->
+    <!-- 正文字体 深棕色  15号 -->
+    <style name="text_15_darkbrown" parent="wrap_content">
+        <item name="android:textColor">#5D2B16</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!-- 红色 错误信息提示文字 -->
+    <style name="error_msg">
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <!-- 红色13号字体 -->
+    <style name="text_13_red" parent="wrap_content">
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <!-- 红色13号字体 -->
+    <style name="text_13_red_bold" parent="wrap_content">
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- 正文字体 粉红色 小号 -->
+    <style name="text_15_red" parent="wrap_content">
+        <item name="android:textColor">#FF0000</item>
+        <item name="android:textSize">15dip</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!-- 正文字体 深棕色 中号  加粗 -->
+    <style name="dark_brown" parent="wrap_content">
+        <item name="android:textColor">#5D2B16</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- 正文字体 浅棕色 中号 -->
+    <style name="text_brown">
+        <item name="android:textColor">#83691E</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <!-- 桔色 -->
+    <style name="text_orange_small" parent="wrap_content">
+        <item name="android:textColor">#FD6E1D</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="text_red">
+        <item name="android:textColor">#FFFF0000</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="listloadingStyle" parent="@android:style/Widget.ProgressBar.Small">
+        <item name="android:indeterminateDrawable">@drawable/loading_draw</item>
+        <item name="android:minWidth">20dip</item>
+        <item name="android:maxWidth">20dip</item>
+        <item name="android:minHeight">20dip</item>
+        <item name="android:maxHeight">20dip</item>
+    </style>
+
+    <style name="Theme.NoBackground" parent="android:Theme">
+        <item name="android:windowBackground">@null</item>
+    </style>
+
+    <style name="list_2">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">100dip</item>
+        <item name="android:divider">#00000000</item>
+        <item name="android:cacheColorHint">#00000000</item>
+        <item name="android:scrollbarThumbVertical">@drawable/scroll_bar</item>
+        <item name="android:dividerHeight">0dip</item>
+        <item name="android:enabled">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="black_small">
+        <item name="android:textColor">#347727</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <!-- 窗口标题距上边距 -->
+    <style name="title">
+        <item name="android:layout_marginTop">32dip</item>
+    </style>
+
+    <!-- 内容区域 -->
+    <style name="glass">
+        <item name="android:layout_width">320dip</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <!-- 统一定义弹出框样式 -->
+    <style name="dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.3</item>
+    </style>
+
+    <style name="common_window">
+        <item name="android:layout_marginTop">21dip</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+
+    <style name="white_13_text" parent="wrap_content">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="gamble_13_bold_text" parent="wrap_content">
+        <item name="android:textColor">#957B2B</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="gamble_13_pink" parent="wrap_content">
+        <item name="android:textColor">#F5CBBF</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="gamble_count" parent="wrap_content">
+        <item name="android:textColor">#BE5134</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:shadowRadius">1.0</item>
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="white_15_bold" parent="wrap_content">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="battle_l" parent="wrap_content">
+        <item name="android:layout_gravity">left|top</item>
+        <item name="android:visibility">invisible</item>
+    </style>
+
+    <style name="battle_r" parent="wrap_content">
+        <item name="android:layout_gravity">right|top</item>
+        <item name="android:visibility">invisible</item>
+    </style>
+
+    <style name="invisible_style" parent="wrap_content">
+        <item name="android:visibility">invisible</item>
+    </style>
+
+    <style name="red_13" parent="wrap_content">
+        <item name="android:textColor">#FF0000</item>
+        <item name="android:textSize">13dip</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="battle_field_skill_bg" parent="wrap_content">
+        <item name="android:gravity">center</item>
+        <item name="android:visibility">invisible</item>
+        <item name="android:layout_marginLeft">0dip</item>
+    </style>
+
+    <style name="skill_buf" parent="wrap_content">
+        <item name="android:layout_width">26dip</item>
+        <item name="android:layout_height">26dip</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~下列为战役相关style ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+    <style name="custom_dialog_item_bg" parent="w_fill_h_wrap">
+        <item name="android:background">@drawable/common_item_bg</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <!-- 通用listView背景 -->
+    <style name="common_list_bg" parent="fill_parent">
+        <item name="android:background">@drawable/fief_bg</item>
+    </style>
+
+    <!-- 通用listView -->
+    <style name="common_list">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:divider">#00000000</item>
+        <item name="android:cacheColorHint">#00000000</item>
+        <item name="android:scrollbarThumbVertical">@drawable/scroll_bar</item>
+        <item name="android:dividerHeight">6dip</item>
+        <item name="android:enabled">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_marginTop">0dip</item>
+        <item name="android:layout_marginBottom">5dip</item>
+        <item name="android:layout_marginLeft">5dip</item>
+        <item name="android:layout_marginRight">5dip</item>
+        <item name="android:layoutAnimation">@layout/list_anim_layout</item>
+    </style>
+
+    <style name="list_expand">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:divider">#00000000</item>
+        <item name="android:cacheColorHint">#00000000</item>
+        <item name="android:scrollbarThumbVertical">@drawable/scroll_bar</item>
+        <item name="android:dividerHeight">4dip</item>
+        <item name="android:enabled">true</item>
+        <item name="android:clickable">false</item>
+        <item name="android:focusable">false</item>
+        <item name="android:groupIndicator">@null</item>
+    </style>
+
+    <!-- 通用listView -->
+    <style name="common_list_no_anim">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:divider">#00000000</item>
+        <item name="android:cacheColorHint">#00000000</item>
+        <item name="android:scrollbarThumbVertical">@drawable/scroll_bar</item>
+        <item name="android:dividerHeight">6dip</item>
+        <item name="android:enabled">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_marginTop">0dip</item>
+        <item name="android:layout_marginBottom">5dip</item>
+        <item name="android:layout_marginLeft">5dip</item>
+        <item name="android:layout_marginRight">5dip</item>
+    </style>
+
+    <!-- 垂直居中布局 -->
+    <style name="center_v" parent="wrap_content">
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+
+    <!-- 章节描述 -->
+    <style name="act_desc_11" parent="wrap_content">
+        <item name="android:textColor">#B18A52</item>
+        <item name="android:textSize">11dip</item>
+    </style>
+
+    <style name="act_desc_13" parent="wrap_content">
+        <item name="android:textColor">#B18A52</item>
+        <item name="android:textSize">13dip</item>
+    </style>
+
+    <!-- 垂直全屏布局 -->
+    <style name="fill_v" parent="fill_parent">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!-- 战役界面 战 按钮 -->
+    <style name="medium_campaign_fight" parent="color8_19">
+        <item name="android:background">@drawable/button1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- 战役界面 箭头 -->
+    <style name="campaign_arrow" parent="wrap_content">
+        <item name="android:background">@drawable/small_arrow</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+
+    <!-- 战役详情最佳战绩 -->
+    <style name="campaign_best_score" parent="wrap_content">
+        <item name="android:background">@drawable/campaign_best_score_gray</item>
+        <item name="android:visibility">invisible</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_marginLeft">2dip</item>
+    </style>
+
+    <!-- 战役奖励图标 -->
+    <style name="campaign_spoil_icon" parent="wrap_content">
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!-- 出征部队 -->
+
+    <style name="setoff_troop_9" parent="wrap_content">
+        <item name="android:textColor">#EB900F</item>
+        <item name="android:textSize">9dip</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="setoff_troop_11" parent="wrap_content">
+        <item name="android:textColor">#EB900F</item>
+        <item name="android:textSize">11dip</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="setoff_troop_13" parent="wrap_content">
+        <item name="android:textColor">#EB900F</item>
+        <item name="android:textSize">13dip</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="setoff_troop_15" parent="wrap_content">
+        <item name="android:textColor">#EB900F</item>
+        <item name="android:textSize">15dip</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!-- 出征部队top描述 -->
+    <style name="setoff_troop_top" parent="k7_color3_13">
+        <item name="android:background">@drawable/common_bg_tm1</item>
+    </style>
+
+    <!-- 出征部队item背景 -->
+    <style name="setoff_item_bg" parent="w_fill_h_wrap">
+        <item name="android:background">@drawable/common_item_bg</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <!-- 弹出框标题颜色 -->
+    <style name="custom_dialog_title_15" parent="wrap_content">
+        <item name="android:textColor">#F8D192</item>
+        <item name="android:textSize">15dip</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!-- 弹出框内容描述文字 -->
+    <style name="custom_dialog_desc_15" parent="wrap_content">
+        <item name="android:textColor">#794C08</item>
+        <item name="android:textSize">15dip</item>
+    </style>
+
+    <!-- 查找根按钮 -->
+    <style name="custom_search_btn" parent="color6_17">
+        <item name="android:background">@drawable/campagin_search_type_bg</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- 建筑条件 -->
+    <style name="building_requirement_13" parent="wrap_content">
+        <item name="android:textColor">#2E880D</item>
+        <item name="android:textSize">13dip</item>
+    </style>
+
+    <!-- fief规模/名称TextView <item name="android:background">@drawable/fief_name_bg</item> -->
+    <style name="fief_scale_txt" parent="k7_color3_9">
+        <item name="android:layout_gravity">center_horizontal|bottom</item>
+        <item name="android:layout_marginBottom">5dip</item>
+    </style>
+
+    <!-- 以下为颜色值 -->
+
+
+    <!-- ~~~~~~~~~~~~~color1~~~~~~~~~~~~~~ -->
+    <style name="k7_color1_13" parent="center_txt">
+        <item name="android:textColor">@color/k7_color1</item>
+        <item name="android:textSize">13dip</item>
+    </style>
+
+    <style name="k7_color1_15" parent="center_txt">
+        <item name="android:textColor">@color/k7_color1</item>
+        <item name="android:textSize">15dip</item>
+    </style>
+
+    <style name="k7_color1_14" parent="center_txt">
+        <item name="android:textColor">@color/k7_color1</item>
+        <item name="android:textSize">14dip</item>
+    </style>
+
+    <style name="k7_color1_17" parent="center_txt">
+        <item name="android:textColor">@color/k7_color1</item>
+        <item name="android:textSize">17dip</item>
+    </style>
+
+    <style name="k7_color1_19" parent="center_txt">
+        <item name="android:textColor">@color/k7_color1</item>
+        <item name="android:textSize">19dip</item>
+    </style>
+
+    <style name="k7_color1_12" parent="center_txt">
+        <item name="android:textColor">@color/k7_color1</item>
+        <item name="android:textSize">12dip</item>
+    </style>
+
+    <style name="k7_color1_11" parent="center_txt">
+        <item name="android:textColor">@color/k7_color1</item>
+        <item name="android:textSize">11dip</item>
+    </style>
+
+    <style name="k7_color1_10" parent="center_txt">
+        <item name="android:textColor">@color/k7_color1</item>
+        <item name="android:textSize">10dip</item>
+    </style>
+
+    <!-- ~~~~~~~~~~~~~color2~~~~~~~~~~~~~~ -->
+    <style name="k7_color2_10" parent="center_txt">
+        <item name="android:textColor">@color/k7_color2</item>
+        <item name="android:textSize">10dip</item>
+    </style>
+
+    <style name="k7_color2_11" parent="center_txt">
+        <item name="android:textColor">@color/k7_color2</item>
+        <item name="android:textSize">11dip</item>
+    </style>
+
+    <style name="k7_color2_12" parent="center_txt">
+        <item name="android:textColor">@color/k7_color2</item>
+        <item name="android:textSize">12dip</item>
+    </style>
+
+    <style name="k7_color2_13" parent="center_txt">
+        <item name="android:textColor">@color/k7_color2</item>
+        <item name="android:textSize">13dip</item>
+    </style>
+
+    <style name="k7_color2_14" parent="center_txt">
+        <item name="android:textColor">@color/k7_color2</item>
+        <item name="android:textSize">14dip</item>
+    </style>
+
+    <style name="k7_color2_15" parent="center_txt">
+        <item name="android:textColor">@color/k7_color2</item>
+        <item name="android:textSize">15dip</item>
+    </style>
+
+    <style name="k7_color2_17" parent="center_txt">
+        <item name="android:textColor">@color/k7_color2</item>
+        <item name="android:textSize">17dip</item>
+    </style>
+
+    <style name="k7_color2_30" parent="center_txt">
+        <item name="android:textColor">@color/k7_color2</item>
+        <item name="android:textSize">30dip</item>
+    </style>
+
+    <!-- ~~~~~~~~~~~~~color3~~~~~~~~~~~~~~ -->
+
+    <style name="k7_color3_9" parent="center_txt">
+        <item name="android:textColor">@color/k7_color3</item>
+        <item name="android:textSize">9dip</item>
+    </style>
+
+    <style name="k7_color3_10" parent="center_txt">
+        <item name="android:textColor">@color/k7_color3</item>
+        <item name="android:textSize">10dip</item>
+    </style>
+
+    <style name="k7_color3_11" parent="center_txt">
+        <item name="android:textColor">@color/k7_color3</item>
+        <item name="android:textSize">11dip</item>
+    </style>
+
+    <style name="k7_color3_12" parent="center_txt">
+        <item name="android:textColor">@color/k7_color3</item>
+        <item name="android:textSize">12dip</item>
+    </style>
+
+    <style name="k7_color3_13" parent="center_txt">
+        <item name="android:textColor">@color/k7_color3</item>
+        <item name="android:textSize">13dip</item>
+    </style>
+
+    <style name="k7_color3_14" parent="center_txt">
+        <item name="android:textColor">@color/k7_color3</item>
+        <item name="android:textSize">14dip</item>
+    </style>
+
+    <style name="k7_color3_15" parent="center_txt">
+        <item name="android:textColor">@color/k7_color3</item>
+        <item name="android:textSize">15dip</item>
+    </style>
+
+    <style name="k7_color3_17" parent="center_txt">
+        <item name="android:textColor">@color/k7_color3</item>
+        <item name="android:textSize">17dip</item>
+    </style>
+
+    <style name="k7_color3_18" parent="center_txt">
+        <item name="android:textColor">@color/k7_color3</item>
+        <item name="android:textSize">18dip</item>
+    </style>
+
+    <!-- ~~~~~~~~~~~~~color4~~~~~~~~~~~~~~ -->
+    <style name="k7_color4_11" parent="center_txt">
+        <item name="android:textColor">@color/k7_color4</item>
+        <item name="android:textSize">11dip</item>
+    </style>
+
+    <style name="k7_color4_12" parent="center_txt">
+        <item name="android:textColor">@color/k7_color4</item>
+        <item name="android:textSize">12dip</item>
+    </style>
+
+    <style name="k7_color4_13" parent="center_txt">
+        <item name="android:textColor">@color/k7_color4</item>
+        <item name="android:textSize">13dip</item>
+    </style>
+
+    <style name="k7_color4_14" parent="center_txt">
+        <item name="android:textColor">@color/k7_color4</item>
+        <item name="android:textSize">14dip</item>
+    </style>
+
+    <style name="k7_color4_15" parent="center_txt">
+        <item name="android:textColor">@color/k7_color4</item>
+        <item name="android:textSize">15dip</item>
+    </style>
+
+    <style name="k7_color4_17" parent="center_txt">
+        <item name="android:textColor">@color/k7_color4</item>
+        <item name="android:textSize">17dip</item>
+    </style>
+
+    <style name="k7_color4_18" parent="center_txt">
+        <item name="android:textColor">@color/k7_color4</item>
+        <item name="android:textSize">18dip</item>
+    </style>
+
+    <style name="k7_color4_21" parent="center_txt">
+        <item name="android:textColor">@color/k7_color4</item>
+        <item name="android:textSize">21dip</item>
+    </style>
+
+    <!-- ~~~~~~~~~~~~~color5~~~~~~~~~~~~~~ -->
+    <style name="k7_color5_10" parent="center_txt">
+        <item name="android:textColor">@color/k7_color5</item>
+        <item name="android:textSize">10dip</item>
+    </style>
+
+    <style name="k7_color5_11" parent="center_txt">
+        <item name="android:textColor">@color/k7_color5</item>
+        <item name="android:textSize">11dip</item>
+    </style>
+
+    <style name="k7_color5_12" parent="center_txt">
+        <item name="android:textColor">@color/k7_color5</item>
+        <item name="android:textSize">12dip</item>
+    </style>
+
+    <style name="k7_color5_13" parent="center_txt">
+        <item name="android:textColor">@color/k7_color5</item>
+        <item name="android:textSize">13dip</item>
+    </style>
+
+    <style name="k7_color5_15" parent="center_txt">
+        <item name="android:textColor">@color/k7_color5</item>
+        <item name="android:textSize">15dip</item>
+    </style>
+
+    <!-- ~~~~~~~~~~~~~color6~~~~~~~~~~~~~~ -->
+
+    <style name="k7_color6_9" parent="center_txt">
+        <item name="android:textColor">@color/k7_color6</item>
+        <item name="android:textSize">9dip</item>
+    </style>
+
+    <style name="k7_color6_10" parent="center_txt">
+        <item name="android:textColor">@color/k7_color6</item>
+        <item name="android:textSize">10dip</item>
+    </style>
+
+    <style name="k7_color6_11" parent="center_txt">
+        <item name="android:textColor">@color/k7_color6</item>
+        <item name="android:textSize">11dip</item>
+    </style>
+
+    <style name="k7_color6_12" parent="center_txt">
+        <item name="android:textColor">@color/k7_color6</item>
+        <item name="android:textSize">12dip</item>
+    </style>
+
+    <style name="k7_color6_13" parent="center_txt">
+        <item name="android:textColor">@color/k7_color6</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="k7_color6_14" parent="center_txt">
+        <item name="android:textColor">@color/k7_color6</item>
+        <item name="android:textSize">14dip</item>
+    </style>
+
+    <style name="k7_color6_15" parent="center_txt">
+        <item name="android:textColor">@color/k7_color6</item>
+        <item name="android:textSize">15dip</item>
+    </style>
+
+    <style name="k7_color6_18" parent="center_txt">
+        <item name="android:textColor">@color/k7_color6</item>
+        <item name="android:textSize">18dip</item>
+    </style>
+
+    <style name="k7_color6_19" parent="center_txt">
+        <item name="android:textColor">@color/k7_color22</item>
+        <item name="android:textSize">9dip</item>
+    </style>
+
+    <!-- ~~~~~~~~~~~~~color7~~~~~~~~~~~~~~ -->
+    <style name="k7_color7_10" parent="center_txt">
+        <item name="android:textColor">@color/k7_color7</item>
+        <item name="android:textSize">10dip</item>
+    </style>
+
+    <style name="k7_color7_11" parent="center_txt">
+        <item name="android:textColor">@color/k7_color7</item>
+        <item name="android:textSize">11dip</item>
+    </style>
+
+    <style name="k7_color7_12" parent="center_txt">
+        <item name="android:textColor">@color/k7_color7</item>
+        <item name="android:textSize">12dip</item>
+    </style>
+
+    <style name="k7_color7_13" parent="center_txt">
+        <item name="android:textColor">@color/k7_color7</item>
+        <item name="android:textSize">13dip</item>
+    </style>
+
+    <style name="k7_color7_15" parent="center_txt">
+        <item name="android:textColor">@color/k7_color7</item>
+        <item name="android:textSize">15dip</item>
+    </style>
+
+    <style name="k7_color7_19" parent="center_txt">
+        <item name="android:textColor">@color/k7_color7</item>
+        <item name="android:textSize">19dip</item>
+    </style>
+
+    <!-- ~~~~~~~~~~~~~color8~~~~~~~~~~~~~~ -->
+
+    <style name="k7_color8_11" parent="center_txt">
+        <item name="android:textColor">@color/k7_color8</item>
+        <item name="android:textSize">11dip</item>
+    </style>
+
+    <style name="k7_color8_12" parent="center_txt">
+        <item name="android:textColor">@color/k7_color8</item>
+        <item name="android:textSize">12dip</item>
+    </style>
+
+    <style name="k7_color8_13" parent="center_txt">
+        <item name="android:textColor">@color/k7_color8</item>
+        <item name="android:textSize">13dip</item>
+    </style>
+
+    <style name="k7_color8_15" parent="center_txt">
+        <item name="android:textColor">@color/k7_color8</item>
+        <item name="android:textSize">15dip</item>
+    </style>
+
+    <style name="k7_color8_17" parent="center_txt">
+        <item name="android:textColor">@color/k7_color8</item>
+        <item name="android:textSize">17dip</item>
+    </style>
+
+    <style name="k7_color9_11" parent="center_txt">
+        <item name="android:textColor">@color/k7_color9</item>
+        <item name="android:textSize">11dip</item>
+    </style>
+
+    <style name="k7_color9_12" parent="center_txt">
+        <item name="android:textColor">@color/k7_color9</item>
+        <item name="android:textSize">12dip</item>
+    </style>
+
+    <style name="k7_color9_13" parent="center_txt">
+        <item name="android:textColor">@color/k7_color9</item>
+        <item name="android:textSize">13dip</item>
+    </style>
+
+    <style name="k7_color9_15" parent="center_txt">
+        <item name="android:textColor">@color/k7_color9</item>
+        <item name="android:textSize">15dip</item>
+    </style>
+
+    <style name="k7_color10_11" parent="center_txt">
+        <item name="android:textColor">@color/k7_color10</item>
+        <item name="android:textSize">11dip</item>
+    </style>
+
+    <style name="k7_color10_13" parent="center_txt">
+        <item name="android:textColor">@color/k7_color10</item>
+        <item name="android:textSize">13dip</item>
+    </style>
+
+    <style name="k7_color10_15" parent="center_txt">
+        <item name="android:textColor">@color/k7_color10</item>
+        <item name="android:textSize">15dip</item>
+    </style>
+
+    <style name="k7_color11_11" parent="center_txt">
+        <item name="android:textColor">@color/k7_color11</item>
+        <item name="android:textSize">11dip</item>
+    </style>
+
+    <style name="k7_color11_13" parent="center_txt">
+        <item name="android:textColor">@color/k7_color11</item>
+        <item name="android:textSize">13dip</item>
+    </style>
+
+    <style name="k7_color11_17" parent="center_txt">
+        <item name="android:textColor">@color/k7_color11</item>
+        <item name="android:textSize">17dip</item>
+    </style>
+
+    <style name="text_white_17" parent="center_txt">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">17dip</item>
+    </style>
+
+    <!-- color 12 -->
+
+    <style name="k7_color12_11" parent="center_txt">
+        <item name="android:textColor">@color/k7_color12</item>
+        <item name="android:textSize">11dip</item>
+    </style>
+
+    <style name="k7_color12_12" parent="center_txt">
+        <item name="android:textColor">@color/k7_color12</item>
+        <item name="android:textSize">12dip</item>
+    </style>
+
+    <style name="k7_color12_13" parent="center_txt">
+        <item name="android:textColor">@color/k7_color12</item>
+        <item name="android:textSize">13dip</item>
+    </style>
+
+    <style name="k7_color12_14" parent="center_txt">
+        <item name="android:textColor">@color/k7_color12</item>
+        <item name="android:textSize">14dip</item>
+    </style>
+
+    <style name="k7_color12_15" parent="center_txt">
+        <item name="android:textColor">@color/k7_color12</item>
+        <item name="android:textSize">15dip</item>
+    </style>
+
+    <!-- color 13 -->
+
+    <style name="k7_color13_13" parent="center_txt">
+        <item name="android:textColor">@color/k7_color13</item>
+        <item name="android:textSize">13dip</item>
+    </style>
+
+    <style name="k7_color13_11" parent="center_txt">
+        <item name="android:textColor">@color/k7_color13</item>
+        <item name="android:textSize">11dip</item>
+    </style>
+
+    <style name="k7_color14_13" parent="center_txt">
+        <item name="android:textColor">@color/k7_color14</item>
+        <item name="android:textSize">13dip</item>
+    </style>
+
+    <style name="fief_res_bg" parent="w_fill_h_wrap">
+        <item name="android:layout_width">240dip</item>
+        <item name="android:layout_marginTop">5dip</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@drawable/item_bottom_bg</item>
+    </style>
+
+    <style name="content_title" parent="k7_color1_13">
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:background">@drawable/gradient_bg</item>
+        <item name="android:layout_marginLeft">5dip</item>
+        <item name="android:layout_marginRight">5dip</item>
+    </style>
+
+    <style name="fief_msg_line" parent="w_fill_h_wrap">
+        <item name="android:layout_marginTop">2dip</item>
+        <item name="android:layout_marginLeft">30dip</item>
+        <item name="android:layout_marginRight">30dip</item>
+    </style>
+
+    <style name="recharge_title" parent="k7_color3_15">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:background">@drawable/trans_bg</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:layout_marginLeft">10dip</item>
+        <item name="android:layout_marginRight">10dip</item>
+        <item name="android:paddingLeft">10dip</item>
+    </style>
+
+    <style name="recharge_edit_text" parent="color6_14">
+        <item name="android:layout_width">280dip</item>
+        <item name="android:background">@drawable/common_input1</item>
+        <item name="android:gravity">center_vertical|left</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:paddingLeft">10dip</item>
+        <item name="android:imeOptions">actionDone</item>
+        <item name="android:inputType">phone</item>
+        <item name="android:numeric">integer</item>
+    </style>
+
+    <style name="recharge_text" parent="k7_color1_17">
+        <item name="android:layout_marginTop">10dip</item>
+        <item name="android:layout_marginLeft">30dip</item>
+    </style>
+
+    <style name="k7_color15_10" parent="center_txt">
+        <item name="android:textColor">@color/k7_color15</item>
+        <item name="android:textSize">10dip</item>
+    </style>
+
+    <style name="k7_color15_11" parent="center_txt">
+        <item name="android:textColor">@color/k7_color15</item>
+        <item name="android:textSize">11dip</item>
+    </style>
+
+    <style name="k7_color15_12" parent="center_txt">
+        <item name="android:textColor">@color/k7_color15</item>
+        <item name="android:textSize">12dip</item>
+    </style>
+
+    <style name="k7_color15_13" parent="center_txt">
+        <item name="android:textColor">@color/k7_color15</item>
+        <item name="android:textSize">13dip</item>
+    </style>
+
+    <style name="k7_color16_11" parent="center_txt">
+        <item name="android:textColor">@color/k7_color16</item>
+        <item name="android:textSize">11dip</item>
+    </style>
+
+    <style name="k7_color16_13" parent="center_txt">
+        <item name="android:textColor">@color/k7_color16</item>
+        <item name="android:textSize">13dip</item>
+    </style>
+
+    <style name="k7_color17_11" parent="center_txt">
+        <item name="android:textColor">@color/k7_color17</item>
+        <item name="android:textSize">11dip</item>
+    </style>
+
+    <style name="k7_color17_13" parent="center_txt">
+        <item name="android:textColor">@color/k7_color17</item>
+        <item name="android:textSize">13dip</item>
+    </style>
+
+    <style name="k7_color18_10" parent="center_txt">
+        <item name="android:textColor">@color/k7_color18</item>
+        <item name="android:textSize">10dip</item>
+    </style>
+
+    <style name="k7_color19_11" parent="center_txt">
+        <item name="android:textColor">@color/k7_color19</item>
+        <item name="android:textSize">11dip</item>
+    </style>
+
+    <style name="k7_color19_13" parent="center_txt">
+        <item name="android:textColor">@color/k7_color19</item>
+        <item name="android:textSize">13dip</item>
+    </style>
+
+    <style name="k7_color20_13" parent="center_txt">
+        <item name="android:textColor">@color/k7_color20</item>
+        <item name="android:textSize">13dip</item>
+    </style>
+
+    <style name="k7_color20_15" parent="center_txt">
+        <item name="android:textColor">@color/k7_color20</item>
+        <item name="android:textSize">15dip</item>
+    </style>
+
+    <style name="k7_color21_11" parent="center_txt">
+        <item name="android:textColor">@color/k7_color21</item>
+        <item name="android:textSize">11dip</item>
+    </style>
+
+    <style name="k7_color21_13" parent="center_txt">
+        <item name="android:textColor">@color/k7_color21</item>
+        <item name="android:textSize">13dip</item>
+    </style>
+
+</resources>

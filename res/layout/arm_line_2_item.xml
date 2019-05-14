@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/itemLine"
+    style="@style/w_fill_h_wrap"
+    android:gravity="center"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:id="@+id/item1"
+        android:layout_width="140dip"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <include
+            android:layout_gravity="center_vertical"
+            layout="@layout/arm_icon" />
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="2dip"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/itemName"
+                style="@style/k7_color1_13" />
+
+            <TextView
+                android:id="@+id/itemCount"
+                style="@style/k7_color1_13" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/item2"
+        android:layout_width="140dip"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dip"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <include
+            android:layout_gravity="center_vertical"
+            layout="@layout/arm_icon" />
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="2dip"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/itemName"
+                style="@style/k7_color1_13" />
+
+            <TextView
+                android:id="@+id/itemCount"
+                style="@style/k7_color1_13" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/item_bg"
+    android:background="@drawable/common_item_bg"
+    android:gravity="center_vertical"
+    android:minHeight="85dip"
+    android:orientation="horizontal"
+    android:paddingLeft="10dip"
+    android:paddingRight="10dip" >
+
+    <include layout="@layout/user_icon" />
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingLeft="5dip" >
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:orientation="horizontal"
+            android:paddingRight="5dip" >
+
+            <TextView
+                android:id="@+id/name"
+                style="@style/color22_15" />
+
+            <TextView
+                style="@style/wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/state"
+                style="@style/color22_13" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/msg"
+            style="@style/color9_13"
+            android:layout_marginTop="2dip"
+            android:ellipsize="end"
+            android:singleLine="true" />
+    </LinearLayout>
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/deleteBtn"
+        style="@style/color6_16"
+        android:background="@drawable/button1"
+        android:text="删除" />
+
+    <TextView
+        android:id="@+id/cantDelete"
+        style="@style/k7_color8_13"
+        android:text="不可删除"
+        android:visibility="gone" />
+
+</LinearLayout>

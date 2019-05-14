@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/iconLayout"
+    style="@style/wrap_content"
+    android:layout_gravity="center_vertical" >
+
+    <!-- 头像 -->
+
+    <ImageView
+        android:id="@+id/icon"
+        style="@style/wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/second_officer" />
+
+    <!-- 品质框 -->
+
+    <ImageView
+        android:id="@+id/talent"
+        style="@style/wrap_content"    
+        android:background="@drawable/frame_vice_white"    
+         />
+
+    <!-- 
+    
+     -->
+    <!-- 星星 -->
+
+    <LinearLayout
+        android:id="@+id/starLayout"
+        style="@style/wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="3dip"
+        android:background="@drawable/second_officers_bg"
+        android:orientation="horizontal" 
+        android:visibility="gone"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/star1"
+            style="@style/wrap_content"
+            android:background="@drawable/small_star" 
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/star2"
+            style="@style/wrap_content"
+            android:background="@drawable/small_star"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/star3"
+            style="@style/wrap_content"
+            android:background="@drawable/small_star"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/star4"
+            style="@style/wrap_content"
+            android:background="@drawable/small_star"
+            android:visibility="gone" />
+
+         
+        <ImageView
+            android:id="@+id/star5"
+            style="@style/wrap_content"
+            android:background="@drawable/small_star" 
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/star6"
+            style="@style/wrap_content"
+            android:background="@drawable/small_star"
+            android:visibility="gone" />
+         
+    </LinearLayout>
+
+</FrameLayout>

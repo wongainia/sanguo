@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent"
+    android:orientation="horizontal"
+    android:layout_margin="5dip"
+     >
+
+    <LinearLayout
+        android:layout_width="250dip"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="2dip"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <include
+            android:id="@+id/atkTop"
+            layout="@layout/war_info_list_top" />
+
+        <FrameLayout style="@style/fill_parent" >
+
+            <ExpandableListView
+                android:id="@+id/atkList"
+                style="@style/list_expand" >
+            </ExpandableListView>
+
+            <FrameLayout
+                style="@style/wrap_content"
+                android:layout_gravity="bottom|center_horizontal" 
+                android:id="@+id/atkLoading">
+
+                <include layout="@layout/loading" />
+            </FrameLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/atkHeroFrame"
+            style="@style/w_fill_h_wrap"
+            android:layout_height="wrap_content"
+            android:visibility="gone" >
+
+            <include layout="@layout/war_troop_info" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/seperator"
+        android:layout_width="5dip"
+        android:layout_height="fill_parent"
+         />
+
+    <LinearLayout
+        android:layout_width="250dip"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="0dip"
+        android:layout_marginRight="0dip"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <include
+            android:id="@+id/defTop"
+            layout="@layout/war_info_list_top" />
+
+        <FrameLayout style="@style/fill_parent" >
+
+            <ExpandableListView
+                android:id="@+id/defList"
+                style="@style/list_expand" >
+            </ExpandableListView>
+
+            <FrameLayout
+                style="@style/wrap_content"
+                android:layout_gravity="bottom|center_horizontal" 
+                android:id="@+id/defLoading">
+
+                <include layout="@layout/loading" />
+            </FrameLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/defHeroFrame"
+            style="@style/w_fill_h_wrap"
+            android:visibility="gone" >
+
+            <include layout="@layout/war_troop_info" />
+        </FrameLayout>
+    </LinearLayout>
+
+</LinearLayout>

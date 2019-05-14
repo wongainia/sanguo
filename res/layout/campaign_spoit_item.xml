@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:orientation="horizontal" >
+
+    <FrameLayout
+        style="@style/center_v"
+        android:background="@drawable/result_item_bg" >
+
+        <ImageView
+            android:id="@+id/icon"
+            style="@style/campaign_spoil_icon"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingLeft="2dip" >
+
+        <TextView
+            android:id="@+id/name"
+            style="@style/color14_10"
+            android:layout_width="fill_parent"
+            android:gravity="left" />
+
+        <TextView
+            android:id="@+id/amount"
+            style="@style/color14_10" />
+    </LinearLayout>
+
+</LinearLayout>

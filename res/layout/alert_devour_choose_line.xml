@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginBottom="2dip"
+    android:layout_marginTop="2dip"
+    android:background="@drawable/common_bg_tm5"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="5dip" >
+
+    <include
+        android:id="@+id/itemLayout1"
+        layout="@layout/alert_devour_choose_item" />
+
+    <TextView
+        style="@style/wrap_content"
+        android:layout_width="20dip" />
+
+    <include
+        android:id="@+id/itemLayout2"
+        layout="@layout/alert_devour_choose_item" />
+
+    <TextView
+        style="@style/wrap_content"
+        android:layout_width="20dip" />
+
+    <include
+        android:id="@+id/itemLayout3"
+        android:layout_marginLeft="20dip"
+        layout="@layout/alert_devour_choose_item" />
+
+</LinearLayout>

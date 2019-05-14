@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dailyReward"
+    style="@style/fill_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="300dip"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <ImageView style="@style/wrap_content" />
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_marginTop="15dip"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="20dip"
+            android:paddingRight="20dip" >
+
+            <LinearLayout
+                android:layout_width="60dip"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    style="@style/wrap_content"
+                    android:background="@drawable/player_vip" />
+
+                <ImageView
+                    style="@style/wrap_content"
+                    android:background="@drawable/vip_1" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/k7_color7_13"
+                android:text="赠送美娇娘西施，尊享会员特权！" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_marginTop="5dip"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="20dip"
+            android:paddingRight="20dip" >
+
+            <LinearLayout
+                android:layout_width="60dip"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    style="@style/wrap_content"
+                    android:background="@drawable/rmb" />
+
+                <ImageView
+                    style="@style/wrap_content"
+                    android:background="@drawable/rmb" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/k7_color7_13"
+                android:text="每日签到送元宝，每天有福利！" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_marginTop="5dip"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="20dip"
+            android:paddingRight="20dip" >
+
+            <LinearLayout
+                android:layout_width="60dip"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    style="@style/wrap_content"
+                    android:background="@drawable/hero_exp" />
+
+                <ImageView
+                    style="@style/wrap_content"
+                    android:background="@drawable/exp" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/k7_color7_13"
+                android:text="副本经验翻一倍，升级快狠准！" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_marginTop="5dip"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="20dip"
+            android:paddingRight="20dip" >
+
+            <FrameLayout
+                android:layout_width="60dip"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    style="@style/wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/skip" />
+            </FrameLayout>
+
+            <TextView
+                style="@style/k7_color7_13"
+                android:text="战斗动画全跳过，轻松扫副本！" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/charge"
+        style="@style/k7_color4_17"
+        android:layout_width="220dip"
+        android:layout_height="40dip"
+        android:layout_marginTop="15dip"
+        android:shadowColor="@color/black"
+        android:shadowRadius="2.0"
+        android:text="立即开通" />
+
+    <TextView
+        android:id="@+id/smNotice"
+        style="@style/k7_color15_11"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="15dip"
+        android:layout_marginRight="15dip"
+        android:layout_marginTop="10dip"
+        android:gravity="left"
+        android:text="" />
+
+</LinearLayout>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/item_bg1"
+    android:layout_gravity="center_horizontal" >
+
+    <LinearLayout style="@style/fill_parent"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="15dip"
+        android:paddingRight="15dip"
+         >
+
+        <FrameLayout
+            style="@style/wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dip" >
+
+            <ImageView
+                android:id="@+id/img"
+                style="@style/wrap_content"
+                android:layout_gravity="center" />
+
+            <FrameLayout
+                android:id="@+id/bonus"
+                style="@style/wrap_content"
+                android:layout_gravity="right|top"
+                android:visibility="gone" >
+
+                <ImageView
+                    style="@style/wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bonus_bg" />
+
+                <ImageView
+                    style="@style/wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bonus_txt" />
+            </FrameLayout>
+        </FrameLayout>
+
+        <LinearLayout
+            style="@style/center_v"
+            android:layout_width="fill_parent"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:orientation="vertical" >
+
+            <FrameLayout
+                style="@style/wrap_content"
+                android:background="@drawable/txt_bg3" >
+
+                <ImageView
+                    android:id="@+id/name"
+                    style="@style/wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/wealth_mast_word" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/desc"
+                style="@style/color14_11"
+                
+                android:layout_gravity="left"
+                android:layout_marginTop="2dip"
+                android:gravity="left" />
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

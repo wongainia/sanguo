@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 招募士兵 -->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content"
+    style="@style/w_fill_h_wrap"
+    android:scrollbars="none" >
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:orientation="vertical" >
+
+        <!-- 士兵信息 -->
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:layout_marginTop="8dip"
+            android:background="@drawable/common_bg_tm2"
+            android:orientation="horizontal"
+            android:padding="10dip" >
+
+            <!-- 士兵头像 -->
+
+            <include layout="@layout/arm_icon" />
+
+            <!-- 士兵信息 -->
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:layout_width="198dip"
+                android:layout_height="50dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginTop="8dip"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    style="@style/w_fill_h_wrap"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/armName"
+                        style="@style/color11_18"
+                        android:gravity="left"
+                        android:text="精灵盾卫"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/weight"
+                        style="@style/wrap_content"
+                        android:layout_weight="1" />
+
+                    <!-- 士兵小图标 -->
+
+                    <ImageView
+                        android:id="@+id/armicon"
+                        style="@style/wrap_content"
+                        android:layout_gravity="center_vertical" />
+
+                    <TextView
+                        android:id="@+id/armCount"
+                        style="@style/color11_18"
+                        android:gravity="right"
+                        android:text="x123456" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/w_fill_h_wrap"
+                    android:layout_marginTop="8dip" >
+
+                    <!-- 士兵金币价格 12 -->
+
+                    <TextView
+                        android:id="@+id/price1"
+                        style="@style/color7_12"
+                        android:layout_width="100dip"
+                        android:gravity="left" />
+
+                    <!-- 士兵元宝价格 -->
+
+                    <TextView
+                        android:id="@+id/price2"
+                        style="@style/color7_12"
+                        android:layout_width="100dip"
+                        android:gravity="left" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 金币招募 -->
+
+        <FrameLayout
+            android:id="@+id/goldLayout"
+            style="@style/wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dip" >
+
+            <FrameLayout
+                style="@style/wrap_content"
+                android:layout_gravity="top|right"
+                android:layout_marginRight="20dip"
+                android:layout_marginTop="10.5dip" >
+
+                <ImageView
+                    style="@style/wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/info_bg_top" />
+            </FrameLayout>
+
+            <ImageView
+                style="@style/wrap_content"
+                android:background="@drawable/info_bg" />
+
+            <TextView
+                android:id="@+id/titleDesc"
+                style="@style/color8_10"
+                android:layout_width="201dip"
+                android:layout_gravity="top|right"
+                android:layout_marginRight="20dip"
+                android:layout_marginTop="9dip"
+                android:text="招募当前人口的30%，15分钟招募一次" />
+
+            <TextView
+                style="@style/color16_14"
+                android:layout_gravity="top|left"
+                android:layout_marginLeft="8dip"
+                android:layout_marginTop="8dip"
+                android:text="资源招募" />
+
+            <LinearLayout
+                android:layout_width="280dip"
+                android:layout_height="56dip"
+                android:layout_gravity="bottom|left"
+                android:layout_marginBottom="6dip"
+                android:layout_marginLeft="7dip"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="1dip" >
+
+                <LinearLayout
+                    style="@style/wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="4dip" >
+
+                    <TextView
+                        android:id="@+id/count"
+                        style="@style/color8_12"
+                        android:gravity="left" />
+
+                    <TextView
+                        android:id="@+id/cost"
+                        style="@style/color8_12"
+                        android:layout_marginTop="2dip"
+                        android:gravity="left" />
+                </LinearLayout>
+
+                <FrameLayout
+                    android:id="@+id/goldFrameBtn"
+                    android:layout_width="66dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="6dip"
+                    android:background="@drawable/small_btn" >
+
+                    <TextView
+                        style="@style/color14_14"
+                        android:layout_gravity="center"
+                        android:text="招  募"
+                        android:textStyle="bold" />
+                </FrameLayout>
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- 元宝急征 -->
+
+        <FrameLayout
+            android:id="@+id/moneyLayout"
+            style="@style/wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dip" >
+
+            <FrameLayout
+                style="@style/wrap_content"
+                android:layout_gravity="top|right"
+                android:layout_marginRight="20dip"
+                android:layout_marginTop="10.5dip" >
+
+                <ImageView
+                    style="@style/wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/info_bg_top" />
+            </FrameLayout>
+
+            <ImageView
+                style="@style/wrap_content"
+                android:background="@drawable/info_bg" />
+
+            <TextView
+                android:id="@+id/titleDesc"
+                style="@style/color8_10"
+                android:layout_width="201dip"
+                android:layout_gravity="top|right"
+                android:layout_marginRight="20dip"
+                android:layout_marginTop="9dip"
+                android:text="招募当前人口的100%，没有间隔时间" />
+
+            <TextView
+                style="@style/color16_14"
+                android:layout_gravity="top|left"
+                android:layout_marginLeft="8dip"
+                android:layout_marginTop="8dip"
+                android:text="元宝急征" />
+
+            <LinearLayout
+                android:layout_width="280dip"
+                android:layout_height="56dip"
+                android:layout_gravity="bottom|left"
+                android:layout_marginBottom="6dip"
+                android:layout_marginLeft="7dip"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    style="@style/wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="4dip" >
+
+                    <TextView
+                        android:id="@+id/count"
+                        style="@style/color8_12"
+                        android:gravity="left" />
+
+                    <TextView
+                        android:id="@+id/cost"
+                        style="@style/color8_12"
+                        android:layout_marginTop="2dip"
+                        android:gravity="left" />
+                </LinearLayout>
+
+                <FrameLayout
+                    android:id="@+id/moneyFrameBtn"
+                    android:layout_width="66dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="6dip"
+                    android:background="@drawable/small_btn" >
+
+                    <TextView
+                        style="@style/color14_14"
+                        android:layout_gravity="center"
+                        android:text="急  征"
+                        android:textStyle="bold" />
+                </FrameLayout>
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- 恢复人口 -->
+
+        <FrameLayout
+            android:id="@+id/recoverLayout"
+            style="@style/wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dip" >
+
+            <FrameLayout
+                style="@style/wrap_content"
+                android:layout_gravity="top|right"
+                android:layout_marginRight="20dip"
+                android:layout_marginTop="10.5dip" >
+
+                <ImageView
+                    style="@style/wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/info_bg_top" />
+            </FrameLayout>
+
+            <ImageView
+                style="@style/wrap_content"
+                android:background="@drawable/info_bg" />
+
+            <TextView
+                android:id="@+id/titleDesc"
+                style="@style/color8_10"
+                android:layout_width="201dip"
+                android:layout_gravity="top|right"
+                android:layout_marginRight="20dip"
+                android:layout_marginTop="9dip"
+                android:text="立刻恢复当前人口至上限，提升招兵数量" />
+
+            <TextView
+                style="@style/color16_14"
+                android:layout_gravity="top|left"
+                android:layout_marginLeft="8dip"
+                android:layout_marginTop="8dip"
+                android:text="恢复人口" />
+
+            <LinearLayout
+                android:layout_width="280dip"
+                android:layout_height="56dip"
+                android:layout_gravity="bottom|left"
+                android:layout_marginBottom="6dip"
+                android:layout_marginLeft="7dip"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    style="@style/wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="4dip" >
+
+                    <TextView
+                        android:id="@+id/count"
+                        style="@style/color8_12"
+                        android:gravity="left" />
+
+                    <TextView
+                        android:id="@+id/cost"
+                        style="@style/color8_12"
+                        android:layout_marginTop="2dip"
+                        android:gravity="left" />
+                </LinearLayout>
+
+                <FrameLayout
+                    android:id="@+id/recoverFrameBtn"
+                    android:layout_width="66dip"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/recoverFrame"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="6dip"
+                    android:background="@drawable/small_btn" >
+
+                    <TextView
+                        style="@style/color14_14"
+                        android:layout_gravity="center"
+                        android:text="恢  复"
+                        android:textStyle="bold" />
+                </FrameLayout>
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- 升级 -->
+
+        <FrameLayout
+            android:id="@+id/upgradeLayout"
+            style="@style/wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dip"
+            android:visibility="gone" >
+
+            <FrameLayout
+                style="@style/wrap_content"
+                android:layout_gravity="top|right"
+                android:layout_marginRight="20dip"
+                android:layout_marginTop="10.5dip" >
+
+                <ImageView
+                    style="@style/wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/info_bg_top" />
+            </FrameLayout>
+
+            <ImageView
+                style="@style/wrap_content"
+                android:background="@drawable/info_bg" />
+
+            <TextView
+                android:id="@+id/titleDesc"
+                style="@style/color8_10"
+                android:layout_width="201dip"
+                android:layout_gravity="top|right"
+                android:layout_marginRight="20dip"
+                android:layout_marginTop="9dip"
+                android:text="提升金币招兵的数量，减少招募间隔时间" />
+
+            <TextView
+                style="@style/color16_14"
+                android:layout_gravity="top|left"
+                android:layout_marginLeft="8dip"
+                android:layout_marginTop="8dip"
+                android:text="招募升级" />
+
+            <LinearLayout
+                android:layout_width="280dip"
+                android:layout_height="58dip"
+                android:layout_gravity="bottom|left"
+                android:layout_marginBottom="6dip"
+                android:layout_marginLeft="7dip"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    style="@style/wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:paddingBottom="2dip"
+                    android:paddingLeft="4dip"
+                    android:paddingRight="4dip"
+                    android:paddingTop="2dip" >
+
+                    <TextView
+                        android:id="@+id/count"
+                        style="@style/color8_12"
+                        android:gravity="left" />
+
+                    <TextView
+                        android:id="@+id/cost"
+                        style="@style/color8_12"
+                        android:layout_marginTop="1dip"
+                        android:gravity="left" />
+
+                    <TextView
+                        android:id="@+id/limit"
+                        style="@style/color8_12"
+                        android:layout_marginTop="1dip"
+                        android:gravity="left" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/wrap_content"
+                    android:layout_weight="1" />
+
+                <FrameLayout
+                    android:id="@+id/upgradeFrameBtn"
+                    android:layout_width="66dip"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/recoverFrame"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="6dip"
+                    android:background="@drawable/small_btn" >
+
+                    <TextView
+                        style="@style/color14_14"
+                        android:layout_gravity="center"
+                        android:text="升  级"
+                        android:textStyle="bold" />
+                </FrameLayout>
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+</ScrollView>

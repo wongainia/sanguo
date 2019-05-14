@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:orientation="vertical" 
+    android:gravity="center_horizontal">
+
+    <TextView
+        style="@style/k7_color1_13"
+        android:background="@drawable/setoff_top_bar"
+        android:text="经验奖励" />
+
+    <FrameLayout style="@style/w_fill_h_wrap" >
+
+        <TextView
+            android:id="@+id/name"
+            style="@style/k7_color2_13"
+            android:layout_gravity="left|center_vertical" />
+
+        <TextView
+            android:id="@+id/exp"
+            style="@style/k7_color2_13"
+            android:layout_gravity="right|center_vertical" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/pve"
+        style="@style/k7_color2_13"
+        android:layout_gravity="left|center_vertical"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:id="@+id/upgradeFrame"
+        style="@style/w_fill_h_wrap"
+        android:visibility="gone" >
+
+        <TextView
+            style="@style/k7_color2_13"
+            android:layout_gravity="left|center_vertical"
+            android:text="武将升级:" />
+
+        <TextView
+            android:id="@+id/upgrade"
+            style="@style/k7_color2_13"
+            android:layout_gravity="right|center_vertical" />
+    </FrameLayout>
+
+</LinearLayout>

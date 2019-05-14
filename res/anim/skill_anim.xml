@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillAfter="false"
+    android:duration="1000"
+   ><!--
+    <translate
+        android:duration="100"
+        android:fromXDelta="0%"
+        android:fromYDelta="0%"
+        android:startOffset="500"
+        android:toXDelta="100%"
+        android:toYDelta="80%" />
+    <translate
+        android:duration="100"
+        android:fromXDelta="0%"
+        android:fromYDelta="0%"
+        android:startOffset="1100"
+        android:toXDelta="-100%"
+        android:toYDelta="80%" />
+    <translate
+        android:duration="100"
+        android:fromXDelta="0%"
+        android:fromYDelta="0%"
+        android:startOffset="1700"
+        android:toXDelta="-100%"
+        android:toYDelta="-80%" />
+    <translate
+        android:duration="100"
+        android:fromXDelta="0%"
+        android:fromYDelta="0%"
+        android:startOffset="2300"
+        android:toXDelta="100%"
+        android:toYDelta="-80%" />
+
+    --><!--
+    <translate
+        android:duration="100"
+        android:fromXDelta="0%"
+        android:fromYDelta="0%"
+        android:startOffset="500"
+        android:toXDelta="50%"
+        android:toYDelta="-40%" />
+    <translate
+        android:duration="100"
+        android:fromXDelta="0%"
+        android:fromYDelta="0%"
+        android:startOffset="1100"
+        android:toXDelta="50%"
+        android:toYDelta="40%" />
+    <translate
+        android:duration="100"
+        android:fromXDelta="0%"
+        android:fromYDelta="0%"
+        android:startOffset="1700"
+        android:toXDelta="-50%"
+        android:toYDelta="40%" />
+    <translate
+        android:duration="100"
+        android:fromXDelta="0%"
+        android:fromYDelta="0%"
+        android:startOffset="2300"
+        android:toXDelta="-50%"
+        android:toYDelta="-40%" />
+    -->
+
+</set>

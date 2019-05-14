@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingLeft="10dip" >
+
+    <TextView
+        android:id="@+id/name" android:layout_gravity="top"
+        android:layout_marginTop="2dip"
+        style="@style/k7_color1_15" />
+
+    <TextView
+        android:id="@+id/desc"
+        style="@style/k7_color4_13"
+        android:layout_marginTop="2dip"
+        android:gravity="left" />
+
+</LinearLayout>

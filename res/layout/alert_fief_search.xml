@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/wrap_content"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/mode"
+        style="@style/content_title" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/famousBtn"
+        style="@style/custom_search_btn"
+        android:text="争夺圣地"
+        android:visibility="gone" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/holyBtn"
+        style="@style/custom_search_btn"
+        android:text="外敌入侵"
+        android:visibility="gone" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/recommendRivalBtn"
+        style="@style/custom_search_btn"
+        android:text="推荐对手"
+        android:visibility="gone" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/reinforceBtn"
+        style="@style/custom_search_btn"
+        android:text="增援盟友"
+        android:visibility="gone" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/exactBtn"
+        style="@style/custom_search_btn"
+        android:text="按玩家查找"
+        android:visibility="gone" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/resourceBtn"
+        style="@style/custom_search_btn"
+        android:text="按资源查找"
+        android:visibility="gone" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/idxBtn"
+        style="@style/custom_search_btn"
+        android:text="按位置查找"
+        android:visibility="gone" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/favorBtn"
+        style="@style/custom_search_btn"
+        android:text="领地收藏夹"
+        android:visibility="gone" />
+
+</LinearLayout>

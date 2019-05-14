@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/wrap_content"
+    android:orientation="vertical" >
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/type1Btn"
+        style="@style/custom_search_btn"
+        android:layout_marginTop="20dip" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/type2Btn"
+        style="@style/custom_search_btn"
+        android:layout_marginTop="10dip" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/type3Btn"
+        style="@style/custom_search_btn"
+        android:layout_marginTop="10dip" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/type4Btn"
+       style="@style/custom_search_btn"
+        android:layout_marginTop="10dip" 
+        android:visibility="gone"/>
+    
+</LinearLayout>

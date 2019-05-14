@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent" >
+
+    <ImageView
+        android:id="@+id/monthRechargeBg"
+        style="@style/fill_parent" />
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_gravity="center_horizontal|bottom"
+        android:orientation="vertical"
+        android:padding="10dip" >
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_gravity="top|left"
+            
+            android:layout_marginLeft="10dip"
+            android:gravity="center"
+            android:orientation="vertical" 
+            android:background="@drawable/vip_favourable_bg">
+
+            <TextView
+                android:id="@+id/rewardDesc"
+                style="@style/color6_16"
+                android:shadowColor="@color/black"
+                android:shadowRadius="3"
+                android:textStyle="bold" 
+                android:layout_marginTop="2dip"/>
+
+            <TextView
+                android:id="@+id/rewardDays"
+                style="@style/color19_11"
+                android:textStyle="bold"      
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginBottom="1dip"         
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_gravity="top|left"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+             android:layout_marginLeft="35dip" >
+        <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/rechargeBtn"
+                style="@style/color13_14"
+                android:layout_width="150dip"
+                android:layout_height="30dip"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="4dip"
+                android:background="@drawable/btn_blue"
+                android:text="充  值"
+                android:textStyle="bold" />
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/rewardBtn"
+                style="@style/color13_14"
+                android:layout_width="150dip"
+                android:layout_height="30dip"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="2dip"
+                android:background="@drawable/btn_blue"
+                android:text="领  奖"
+                android:textStyle="bold"
+                android:visibility="gone" />
+			</LinearLayout>
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_marginTop="10dip"
+            android:background="@drawable/common_bg_tm5"
+            android:orientation="horizontal"
+            android:padding="5dip" >
+
+            <TextView
+                android:id="@+id/desc"
+                style="@style/color13_10"
+                android:layout_width="fill_parent"
+                android:gravity="left"
+                android:minHeight="110dip" />
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

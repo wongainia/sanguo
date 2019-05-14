@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/armListAdapter"
+    style="@style/item_bg"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center_vertical"
+    android:paddingLeft="10dip" >
+
+    <FrameLayout
+        style="@style/wrap_content"
+        android:layout_gravity="center_vertical" >
+
+        <FrameLayout style="@style/wrap_content" >
+
+            <include layout="@layout/arm_icon" />
+
+            <TextView
+                android:id="@+id/draftCd"
+                style="@style/color25_10"
+                android:layout_width="55dip"
+                android:layout_gravity="bottom|center_horizontal"
+                android:background="@drawable/black_shade_bg"
+                android:text="已招募"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/blackIcon"
+            android:layout_width="60dip"
+            android:layout_height="60dip"
+            android:layout_gravity="center"
+            android:background="@drawable/black_bg"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/stateIcon"
+            style="@style/wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="6dip"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/openKey"
+        style="@style/wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:paddingLeft="8dip" >
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:orientation="vertical"
+            android:paddingRight="10dip" >
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:orientation="horizontal"
+                android:paddingRight="10dip" >
+
+                <TextView
+                    android:id="@+id/name"
+                    style="@style/color11_16"
+                    android:textStyle="bold" />
+
+                <!-- 士兵小图标 -->
+
+                <ImageView
+                    android:id="@+id/armicon"
+                    style="@style/wrap_content"
+                    android:layout_gravity="center_vertical" />
+
+                <TextView
+                    android:id="@+id/weight"
+                    style="@style/wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/count"
+                    style="@style/color9_14" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/desc"
+                style="@style/color9_11"
+                android:ellipsize="end"
+                android:gravity="left"
+                android:lines="2" />
+
+            <TextView
+                android:id="@+id/draftCdDesc"
+                style="@style/color11_10"
+                android:layout_gravity="right" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buyBtn"
+        style="@style/btn_1"
+        android:layout_gravity="center_vertical|right"
+        android:layout_marginRight="5dip"
+        android:background="@drawable/button1"
+        android:text="解锁"
+        android:textColor="@color/color7"
+        android:visibility="gone" />
+
+</LinearLayout>

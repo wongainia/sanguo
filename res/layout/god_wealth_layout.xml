@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/god_wealth_spc_bg"
+    style="@style/fill_parent"
+    android:gravity="center_horizontal" >
+
+    <!-- 元宝转轮 -->
+
+    <FrameLayout
+        style="@style/wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="50dip"
+        android:background="@drawable/god_wealth_spc_bg1"
+        android:gravity="center_horizontal"
+        android:paddingBottom="10dip" >
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="122dip"
+            android:orientation="horizontal" >
+
+            <FrameLayout style="@style/wrap_content" >
+
+                <com.vikings.sanguo.ui.wheel.WheelView
+                    android:id="@+id/line1"
+                    style="@style/god_wealth_wheel_bg" />
+            </FrameLayout>
+
+            <FrameLayout
+                style="@style/wrap_content"
+                android:layout_marginLeft="11dip" >
+
+                <com.vikings.sanguo.ui.wheel.WheelView
+                    android:id="@+id/line2"
+                    style="@style/god_wealth_wheel_bg" />
+            </FrameLayout>
+
+            <FrameLayout
+                style="@style/wrap_content"
+                android:layout_marginLeft="8dip" >
+
+                <com.vikings.sanguo.ui.wheel.WheelView
+                    android:id="@+id/line3"
+                    style="@style/god_wealth_wheel_bg" />
+            </FrameLayout>
+
+            <FrameLayout
+                style="@style/wrap_content"
+                android:layout_marginLeft="8dip" >
+
+                <com.vikings.sanguo.ui.wheel.WheelView
+                    android:id="@+id/line4"
+                    style="@style/god_wealth_wheel_bg" />
+            </FrameLayout>
+
+            <FrameLayout
+                style="@style/wrap_content"
+                android:layout_marginLeft="8dip" >
+
+                <com.vikings.sanguo.ui.wheel.WheelView
+                    android:id="@+id/line5"
+                    style="@style/god_wealth_wheel_bg" />
+            </FrameLayout>
+
+            <FrameLayout
+                style="@style/wrap_content"
+                android:layout_marginLeft="8dip" >
+
+                <com.vikings.sanguo.ui.wheel.WheelView
+                    android:id="@+id/line6"
+                    style="@style/god_wealth_wheel_bg" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <!-- 价格 -->
+
+        <TextView
+            android:id="@+id/price"
+            style="@style/color8_12"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="85dip"
+            android:text="123" />
+
+        <!-- 拜财神 -->
+
+        <FrameLayout
+            android:id="@+id/go_layout"
+            style="@style/wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="17dip"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/go"
+                android:layout_width="150dip"
+                android:layout_height="48dip"
+                android:background="@drawable/god_wealth_go" />
+
+            <TextView
+                style="@style/color8_8"
+                android:layout_gravity="center"
+                android:background="@drawable/god_wealth_go_txt" />
+        </FrameLayout>
+
+        <!-- 剩余次数 -->
+
+        <TextView
+            android:id="@+id/times"
+            style="@style/color8_12"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="1dip"
+            android:text="123" />
+    </FrameLayout>
+
+</FrameLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/itemLine"
+    style="@style/wrap_content"
+    android:layout_marginBottom="5dip"
+    android:gravity="center_vertical"
+    android:orientation="horizontal" >
+
+    <FrameLayout
+        android:id="@+id/shopitem_layout"
+        style="@style/center_v"
+        android:background="@drawable/shopitem_bg" >
+
+        <ImageView
+            android:id="@+id/itemIcon"
+            style="@style/wrap_content"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="5dip"
+        android:layout_weight="1"
+        android:orientation="vertical"
+         >
+
+        <TextView
+            android:id="@+id/itemName"
+            style="@style/color7_10"
+             />
+
+        <TextView
+            android:id="@+id/itemCount"
+            style="@style/color7_10"
+            />
+    </LinearLayout>
+
+</LinearLayout>

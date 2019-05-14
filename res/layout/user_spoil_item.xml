@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/titleFrame"
+        style="@style/w_fill_h_wrap" >
+
+        <ImageView
+            android:id="@+id/type"
+            style="@style/wrap_content"
+            android:layout_gravity="center_vertical|left"
+            android:layout_marginLeft="10dip" />
+
+        <FrameLayout
+            style="@style/wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="10dip" >
+
+            <include layout="@layout/best_record" />
+        </FrameLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_marginTop="2dip"
+        android:orientation="horizontal" >
+
+        <TextView
+            style="@style/wrap_content"
+            android:layout_weight="1.2" />
+
+        <LinearLayout
+            android:id="@+id/line1"
+            style="@style/wrap_content"
+            android:layout_width="160dip"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+        <TextView
+            style="@style/wrap_content"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:id="@+id/line2"
+            style="@style/wrap_content"
+            android:layout_width="160dip"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+        <TextView
+            style="@style/wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+</LinearLayout>

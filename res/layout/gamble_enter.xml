@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="165dip"
+        android:layout_marginTop="5dip"
+        android:orientation="horizontal" >
+
+        <FrameLayout
+            android:id="@+id/daqiao_layout"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="-40dip"
+            android:layout_weight="1" >
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical" >
+
+            <FrameLayout style="@style/wrap_content" >
+
+                <ImageView
+                    android:layout_width="110dip"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/txt_bg7" />
+
+                <ImageView
+                    style="@style/wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/daqiao_name" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/daqiao_spec"
+                style="@style/wrap_content"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/daqiao_propmt"
+                style="@style/wrap_content"
+                android:textSize="9sp" />
+
+            <FrameLayout
+                style="@style/wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dip" >
+
+                <com.vikings.sanguo.ui.PressedZoomButton
+                    android:id="@+id/daqiao_btn"
+                    android:layout_width="100dip"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/checkin_rewards" />
+
+                <ImageView
+                    style="@style/wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/and_her_player" />
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="165dip"
+        android:layout_marginTop="10dip"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical" >
+
+            <FrameLayout
+                style="@style/wrap_content"
+                android:layout_gravity="center" >
+
+                <ImageView
+                    android:layout_width="110dip"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/txt_bg7" />
+
+                <ImageView
+                    style="@style/wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/xiaoqiao_name" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/xiaoqiao_spec"
+                style="@style/wrap_content"
+                android:layout_marginLeft="15dip"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/xiaoqiao_propmt"
+                style="@style/wrap_content"
+                android:layout_marginLeft="15dip"
+                android:textSize="9sp" />
+
+            <FrameLayout
+                style="@style/wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dip" >
+
+                <com.vikings.sanguo.ui.PressedZoomButton
+                    android:id="@+id/xiaoqiao_btn"
+                    android:layout_width="100dip"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/checkin_rewards" />
+
+                <ImageView
+                    style="@style/wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/and_her_player" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/xiaoqiao_layout"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dip"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="10dip"
+        android:background="@drawable/translucent_title_bg"
+        android:gravity="center"
+        android:text="幸运儿"
+        android:textColor="@color/color16" />
+
+</LinearLayout>

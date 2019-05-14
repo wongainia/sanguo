@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        style="@style/wrap_content"
+        android:layout_weight="1" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/guard"
+        style="@style/btn_common"
+        android:layout_marginTop="4dip"
+        android:text="调兵驻防" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/withdraw"
+        style="@style/btn_common"
+        android:layout_marginTop="4dip"
+        android:text="撤回主城" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/detail"
+        style="@style/btn_common"
+        android:layout_marginTop="4dip"
+        android:text="驻兵信息" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/history"
+        style="@style/btn_common"
+        android:layout_marginTop="4dip"
+        android:text="历史战况" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/close"
+        style="@style/btn_common"
+        android:layout_marginTop="4dip"
+        android:text="关闭" />
+
+    <TextView
+        style="@style/wrap_content"
+        android:layout_weight="1" />
+
+</LinearLayout>

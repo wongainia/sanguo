@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/systemAnnonce"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/top_bg" >
+
+                <com.vikings.sanguo.ui.ScrollText
+                    android:id="@+id/scrollText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="18dip"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="47dip"
+                    android:layout_marginRight="47dip"
+                    android:layout_marginTop="-3dip"
+                    android:text="" />
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="7.6dip" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/annBt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:background="@drawable/top_bg_bt" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/annDetail"
+        android:layout_width="294dip"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="-10dip"
+        android:background="@drawable/a_boder_bttom"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <ListView
+                android:id="@+id/detailList"
+                style="@style/list_expand" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/annMirrorBt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_width="256dip"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/setoff_cnt_sg"
+        android:orientation="horizontal"
+        android:padding="10dip" >
+
+        <include layout="@layout/user_icon" />
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dip"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/name"
+                    style="@style/color7_14"
+                    android:gravity="left" />
+
+                <TextView
+                    style="@style/wrap_content"
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:id="@+id/vipLayout"
+                    style="@style/wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@+id/vipIcon"
+                        style="@style/wrap_content"
+                        android:background="@drawable/player_vip" />
+
+                    <TextView
+                        android:id="@+id/vipLevel"
+                        style="@style/wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/level"
+                    style="@style/color5_10"
+                    android:layout_marginTop="2dip"
+                    android:layout_weight="1"
+                    android:gravity="left" />
+
+                <TextView
+                    android:id="@+id/userid"
+                    style="@style/color5_10"
+                    android:layout_marginTop="2dip"
+                    android:layout_weight="1"
+                    android:gravity="right" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/guild"
+                    style="@style/color5_10"
+                    android:layout_marginTop="2dip"
+                    android:layout_weight="1"
+                    android:gravity="left" />
+
+                <TextView
+                    android:id="@+id/country"
+                    style="@style/color5_10"
+                    android:layout_marginTop="2dip"
+                    android:layout_weight="1"
+                    android:gravity="right" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/sendMsgBtn"
+        style="@style/btn_common"
+        android:layout_marginTop="4dip"
+        android:text="发送信件" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/castleBtn"
+        style="@style/btn_common"
+        android:layout_marginTop="4dip"
+        android:text="查看主城" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/deleteBtn"
+        style="@style/btn_common"
+        android:layout_marginTop="4dip"
+        android:text="删除好友" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/blackBtn"
+        style="@style/btn_common"
+        android:layout_marginTop="4dip"
+        android:text="加入仇人录" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/closeBtn"
+        style="@style/btn_common"
+        android:layout_marginTop="4dip"
+        android:text="关闭" />
+
+</LinearLayout>

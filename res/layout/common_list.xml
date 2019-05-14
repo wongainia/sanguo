@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/window_bg"
+    android:visibility="gone" >
+
+    <ImageView
+        style="@style/w_fill_h_wrap"
+        android:layout_gravity="top"
+        android:background="@drawable/window_top_bg" />
+
+    <LinearLayout
+        android:id="@+id/mainContent"
+        style="@style/content_fill"
+        android:layout_gravity="top"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/upInfo"
+            style="@style/w_fill_h_wrap"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal" >
+        </LinearLayout>
+
+        <!-- 列表上端内容 -->
+
+        <FrameLayout style="@style/fill_parent" >
+
+            <ImageView
+                android:id="@+id/specificBg"
+                style="@style/fill_parent"
+                android:layout_gravity="top"
+                android:layout_marginTop="25dip" />
+
+            <FrameLayout
+                android:id="@+id/leftBtn"
+                style="@style/wrap_content"
+                android:layout_gravity="top|left"
+                android:layout_marginLeft="1dip"
+                android:layout_marginTop="13dip" >
+
+                <TextView
+                    android:id="@+id/leftText"
+                    style="@style/color13_11"
+                    android:layout_gravity="center" />
+            </FrameLayout>
+
+            <!-- 右侧按钮 ,居右 -->
+
+            <FrameLayout
+                android:id="@+id/rightBtn"
+                style="@style/wrap_content"
+                android:layout_gravity="top|right"
+                android:layout_marginRight="1dip"
+                android:layout_marginTop="13dip" >
+
+                <TextView
+                    android:id="@+id/rightText"
+                    style="@style/color13_11"
+                    android:layout_gravity="center" />
+            </FrameLayout>
+
+            <LinearLayout
+                style="@style/fill_parent"
+                android:layout_gravity="top"
+                android:layout_marginTop="38dip"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    style="@style/fill_parent"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:id="@+id/upContent"
+                        style="@style/w_fill_h_wrap"
+                        android:layout_marginLeft="5dip"
+                        android:layout_marginRight="5dip"
+                        android:layout_marginTop="5dip"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal"
+                        android:visibility="gone" >
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/content"
+                        style="@style/fill_parent"
+                        android:layout_marginBottom="10dip"
+                        android:layout_marginLeft="5dip"
+                        android:layout_marginRight="5dip"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical" >
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <ImageView
+                style="@style/fill_parent"
+                android:background="@drawable/window_bg" />
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/k7_color1_15"
+                android:layout_gravity="top|center_horizontal"
+                android:layout_marginTop="10dip"
+                android:shadowColor="@color/black"
+                android:shadowRadius="3.0" />
+
+            <FrameLayout
+                android:id="@+id/belowBtnFrame"
+                style="@style/w_fill_h_wrap"
+                android:layout_gravity="bottom|center_horizontal"
+                android:visibility="gone" >
+
+                <ImageView
+                    style="@style/w_fill_h_wrap"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:background="@drawable/custom_dialog_btm" />
+
+                <com.vikings.sanguo.ui.PressedZoomButton
+                    android:id="@+id/belowBtn"
+                    style="@style/btn_common"
+                    android:layout_gravity="center_horizontal|bottom" />
+            </FrameLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginBottom="3dip"
+    android:background="@drawable/hero_add_bg"
+    android:gravity="center"
+    android:layout_marginTop="10dip"
+    android:orientation="vertical" >
+
+    <TextView
+        style="@style/color16_15"
+        android:text="还没有加入家族" />
+
+    <TextView
+        style="@style/color17_13"
+        android:layout_marginTop="10dip"
+        android:text="其他族长邀请你，同意后即可加入他的家族。" />
+
+    <TextView
+        style="@style/color17_13"
+        android:layout_marginTop="3dip"
+        android:text="你自己也可以创建一个新家族" />
+
+</LinearLayout>

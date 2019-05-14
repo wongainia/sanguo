@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/wrap_content"
+    android:layout_gravity="left|center_vertical"
+    android:orientation="horizontal"
+    android:paddingBottom="1dip"
+    android:paddingLeft="5dip"
+    android:paddingTop="1dip" >
+
+    <TextView
+        android:id="@+id/heros_name"
+        android:layout_gravity="left|top"
+        style="@style/color19_12" />
+
+    <TextView
+        android:id="@+id/heros_desc"
+        style="@style/color17_10"
+        android:layout_marginLeft="2dip"
+        android:gravity="left" />
+
+</LinearLayout>

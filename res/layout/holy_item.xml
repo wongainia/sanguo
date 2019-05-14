@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:background="@drawable/alert_pregress"
+    android:gravity="center_vertical"
+    android:orientation="horizontal" >
+
+    <FrameLayout
+        style="@style/center_v"
+        android:layout_marginBottom="5dip"
+        android:layout_marginLeft="5dip"
+        android:layout_marginTop="5dip" >
+
+        <include layout="@layout/fief_icon" />
+    </FrameLayout>
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="10dip"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <FrameLayout
+            style="@style/w_fill_h_wrap"
+            android:background="@drawable/red_transluence" >
+
+            <TextView
+                android:id="@+id/country"
+                style="@style/color6_12"
+                android:layout_gravity="left|center_vertical"
+                android:padding="1dip" />
+
+            <TextView
+                android:id="@+id/count"
+                style="@style/color4_8"
+                android:layout_gravity="right|center_vertical"
+                android:gravity="center_vertical"
+                android:padding="1dip" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/desc"
+            style="@style/color9_10"
+            android:layout_marginTop="3dip"
+            android:gravity="left"
+            android:maxLines="2" />
+
+        <TextView
+            android:id="@+id/state"
+            style="@style/color4_11" />
+    </LinearLayout>
+
+</LinearLayout>

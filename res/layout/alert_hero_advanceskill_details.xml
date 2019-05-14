@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:layout_gravity="center"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="2dip" >
+    
+    <!-- 升级技能效果、消耗详情 -->
+    <LinearLayout
+        android:id="@+id/resultLayout" 
+        style="@style/w_fill_h_wrap"
+        android:orientation="vertical"
+        android:padding="10dip"
+        android:layout_margin="5dip"
+        android:background="@drawable/common_bg_tm5"
+        >
+        
+        <!-- 技能图片 -->
+            
+           <FrameLayout 
+               style="@style/wrap_content" 
+               android:layout_gravity="center_horizontal">
+    
+                <ImageView
+                    style="@style/wrap_content"
+                    android:background="@drawable/hero_icon_frame" />
+        
+                <ImageView
+                    android:id="@+id/skill_icon"
+                    style="@style/wrap_content"
+                    android:layout_gravity="center" />
+        
+            </FrameLayout>
+            
+        
+        <!-- 技能效果 -->
+        <LinearLayout 
+            android:id="@+id/result_layout"
+            style="@style/wrap_content" 
+            android:orientation="horizontal"
+            android:layout_marginTop="8dip"
+            
+            >
+            <TextView 
+                style="@style/color7_12"
+                android:textStyle="bold"
+                android:text="技能效果："
+                />
+            
+            
+             <TextView
+                android:id="@+id/result_text" 
+                style="@style/color9_10"
+                android:gravity="left"
+                android:lineSpacingExtra="4dip"
+                />   
+        </LinearLayout>
+        
+        
+        
+        <!-- 下级效果 -->
+        <LinearLayout 
+            android:id="@+id/next_layout"
+            android:layout_marginTop="4dip"
+            style="@style/wrap_content" 
+            android:orientation="horizontal"
+            >
+            <TextView 
+                style="@style/color7_12"
+                android:textStyle="bold"
+                android:text="下级效果："
+                />
+                
+            <TextView 
+                android:id="@+id/next_text"
+                style="@style/color9_10"
+                android:gravity="left"
+                android:lineSpacingExtra="4dip"
+                />
+            
+        </LinearLayout>
+        
+        
+        
+        <!-- 所需材料 -->
+        <LinearLayout 
+            android:id="@+id/need_layout"
+            android:layout_marginTop="4dip"
+            style="@style/wrap_content" 
+            android:orientation="horizontal"
+            >
+            <TextView 
+                style="@style/color7_12"
+                android:textStyle="bold"
+                android:text="所需材料："
+                />
+                
+            <TextView 
+                android:id="@+id/need_text"
+                style="@style/color9_10"
+                android:gravity="left"
+                android:lineSpacingExtra="4dip"
+                />
+            
+        </LinearLayout>
+
+        
+        
+        <!-- 升级成功 -->
+        <LinearLayout 
+            android:id="@+id/success_layout"
+            android:layout_marginTop="4dip"
+            style="@style/wrap_content" 
+            android:orientation="horizontal"
+            >
+            <TextView 
+                style="@style/color7_12"
+                android:textStyle="bold"
+                android:text="升级成功："
+                />
+                
+            <TextView 
+                android:id="@+id/success_text"
+                style="@style/color9_10"
+                android:gravity="left"
+                android:lineSpacingExtra="4dip"
+                />
+            
+        </LinearLayout>
+        
+        
+        
+        <!-- 其他条件 -->
+        <LinearLayout 
+            android:id="@+id/other_layout"
+            android:layout_marginTop="4dip"
+            style="@style/wrap_content" 
+            android:orientation="horizontal"
+            >
+            <TextView 
+                style="@style/color7_12"
+                android:textStyle="bold"
+                android:text="其他条件："
+                />
+                
+            <TextView 
+                style="@style/color9_10"
+                android:gravity="left"
+                android:lineSpacingExtra="4dip"
+                />
+                
+        </LinearLayout>
+        
+        
+        
+    </LinearLayout>    
+
+     <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/updateBtn"
+        style="@style/btn_common"
+        android:layout_marginTop="10dip"
+        android:text="升级技能"
+         />
+
+     <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/forgetBtn"
+        style="@style/btn_common"
+        android:layout_marginTop="5dip"
+        android:text="遗忘技能" />
+     
+     <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/closeBtn"
+        style="@style/btn_common"
+        android:layout_marginTop="5dip"
+        android:text="关    闭" />
+    
+</LinearLayout>

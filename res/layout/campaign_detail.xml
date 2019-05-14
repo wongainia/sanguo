@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/campaign_detail_bg" >
+
+    <!-- 战役描述 -->
+
+    <TextView
+        android:id="@+id/desc"
+        style="@style/campaign_detail_desc" />
+
+    <ImageView style="@style/separate_line1" />
+
+    <!-- 通关奖励 -->
+
+    <LinearLayout
+        android:id="@+id/passSpoilLayout"
+        style="@style/w_fill_h_wrap"
+        android:layout_marginLeft="5dip"
+        android:layout_marginTop="2dip"
+        android:gravity="center_vertical"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/passSpoilName"
+            style="@style/color6_13"
+            android:layout_gravity="left|top"
+            android:text="通关奖励:"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="5dip"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:id="@+id/line1"
+                style="@style/w_fill_h_wrap"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/line2"
+                style="@style/w_fill_h_wrap"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <!-- 意外奖励 -->
+
+    <LinearLayout
+        android:id="@+id/extraSpoilLayout"
+        style="@style/w_fill_h_wrap"
+        android:layout_marginLeft="5dip"
+        android:layout_marginTop="2dip"
+        android:gravity="center_vertical"
+        android:orientation="vertical" >
+
+        <TextView
+            style="@style/color6_13"
+            android:layout_gravity="left|top"
+            android:text="意外奖励:"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="5dip"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:id="@+id/line1"
+                style="@style/w_fill_h_wrap"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/line2"
+                style="@style/w_fill_h_wrap"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/costLayout"
+        style="@style/w_fill_h_wrap"
+        android:layout_marginLeft="5dip"
+        android:layout_marginTop="3dip"
+        android:orientation="horizontal" >
+
+        <TextView
+            style="@style/color6_13"
+            android:text="消耗:" />
+
+        <TextView
+            android:id="@+id/cost"
+            style="@style/color14_10"
+            android:layout_marginLeft="2dip"
+            android:singleLine="true" />
+    </LinearLayout>
+
+</LinearLayout>

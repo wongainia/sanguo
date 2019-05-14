@@ -1,0 +1,2324 @@
+package pb_common;
+option cc_generic_services = false;
+
+/********************************************************/
+/* 游戏用户数据掩码																			*/
+/********************************************************/
+enum GameDataType{
+	DATA_TYPE_ACCOUNT_INFO		= 0x00000004;
+	DATA_TYPE_ROLE_INFO				= 0x00000008;
+	DATA_TYPE_FRIEND					= 0x00000010;
+	DATA_TYPE_BAG							= 0x00000020;
+//	DATA_TYPE_MEDAL						= 0x00000040;
+	DATA_TYPE_QUEST						= 0x00000080;
+	DATA_TYPE_MANOR						= 0x00000100;
+	DATA_TYPE_BLACKLIST				= 0x00000200;
+	DATA_TYPE_LORD						= 0x00000400;
+	DATA_TYPE_LORD_FIEF				= 0x00000800;
+	DATA_TYPE_BATTLE_ID 			= 0x00001000;
+	DATA_TYPE_GUILD 					= 0x00002000;
+	DATA_TYPE_HERO 						= 0x00004000;
+	DATA_TYPE_ACT							= 0x00008000;
+	DATA_TYPE_DYNAMIC_ACT     = 0x00010000;
+	DATA_TYPE_ARM_PROP     = 0x00020000;
+	DATA_TYPE_EQUIPMENT     = 0x00040000;
+	DATA_TYPE_ALL			 				= 0x7fffffff;
+};
+
+/********************************************************/
+/* 通用数据结构(和本游戏无关)							*/
+/********************************************************/
+//地图管理
+message Region {
+	optional uint32 left = 10;
+	optional uint32 right = 20;
+	optional uint32 bottom = 30;
+	optional uint32 top = 40;
+}
+
+//// 坐标点
+//message Point {
+//	optional int32 x = 10;
+//	optional int32 y = 20;
+//}
+
+// 圆形区域
+message RoundRegion {
+	optional uint64 center = 10;					// 位置tileid
+	optional uint32 radius = 20;
+}
+
+/********************************************************/
+/* 游戏基本数据结构(和本游戏相关)						*/
+/********************************************************/
+//数据控制
+message DataCtrl {
+	optional uint32 ver			= 10;	// 数据版本
+	optional uint32 op			= 20;	// 数据操作标志
+}
+
+
+// 账号绑定类型
+enum BindingType {
+    BINDING_MOBILE = 10; // 手机号码
+    BINDING_EMAIL = 20;  // 邮箱
+    BINDING_IDCARD = 30; // 身份证号码
+}
+
+// 静态数据类型
+enum StaticUserDataType {
+    STATIC_USER_DATA_TYPE_LOG = 20;          // 个人动态
+    STATIC_USER_DATA_TYPE_REAL_LOG = 30;     // 实时通知日志（个人动态的一部分 ）
+    STATIC_USER_DATA_TYPE_MESSAGE = 60;
+    STATIC_USER_DATA_TYPE_TRAY = 80;
+    STATIC_USER_DATA_TYPE_NOTIFY = 90; // 系统公告
+    STATIC_USER_DATA_TYPE_BFIEF_BATTLE_LOG = 110; // 战争摘要信息
+    STATIC_USER_DATA_TYPE_BFIEF_BATTLE_LOG_ATTACK = 111; // 战争摘要信息（出战）
+    STATIC_USER_DATA_TYPE_BFIEF_BATTLE_LOG_DEFEND = 112; // 战争摘要信息（遇袭）
+    STATIC_USER_DATA_TYPE_TROOP_LOG = 120;	//部队日志
+    STATIC_USER_DATA_TYPE_GUILD = 140;   // 家族日志
+    STATIC_USER_DATA_TYPE_ARENA_LOG = 150; // 巅峰战场日志
+}
+
+
+// 托盘通知信息
+message TrayNotifyInfo {
+	optional uint32 flag = 10;
+	optional string message = 20;
+	optional uint32 userid = 40;
+	optional uint32 time = 50;
+	optional BriefBattleInfo battle_info = 60;
+}
+
+enum TrayNotifyFlag {
+	TRAY_NOTIFY_FARM  = 1;
+	TRAY_NOTIFY_FRIEND_ADD = 2;
+	TRAY_NOTIFY_POKE = 3;
+	TRAY_NOTIFY_MEET = 4;
+	TRAY_NOTIFY_MESSAGE = 5;
+	TRAY_NOTIFY_GM_MESSAGE = 6;
+	TRAY_NOTIFY_BATTLE_INFO = 7;
+	TRAY_NOTIFY_ROBOT_MONEY_ABSENCE = 8; // 您的金币不足，种植小助手已停止工作，请及时补充金币。
+	TRAY_NOTIFY_ROBOT_BAG_FULL = 9;      // 您的仓库已满，种植小助手已停止工作，请及时清理仓库。
+	TRAY_NOTIFY_ROBOT_FARM_ABSENCE = 10; // 您没有足够可种植的农田，种植小助手已停止工作，请及时检查农田状态。
+	TRAY_NOTIFY_GM_MESSAGE_1 = 11;		//新活动火爆开启
+	TRAY_NOTIFY_GM_MESSAGE_2 = 12;		//小伙伴喊你来领奖！
+}
+
+// 系统公告
+message UserNotifyInfo {
+  optional uint32 start = 10;		// 开始时间
+	optional uint32 duration = 20;	// 持续时间
+	optional uint32	type = 30;	// 公告类型（）
+	optional string	message = 40;	// 文字内容
+}
+
+// 水果机幸运大榜信息
+message MachinePlayStatInfo {
+  optional uint32 userid = 10;		                      // 用户id
+  optional MachinePlayType machine_type = 20; // 水果机类型
+  optional pb_common.ReturnInfo ri = 30;	//奖品
+}
+
+
+// 查询其他用户信息(返回到客户端)
+message OtherUserInfo{
+	optional int32 id = 10;					 // 用户id
+	optional int32 image = 20;				 // 个人头像
+	optional int32 sex = 30;					 // 性别(1 : 女 2 : 男)
+	optional int32 birthday = 40;				 // 生日
+	optional int32 province = 50;			 // 省/直辖市
+	optional int32 city = 60;				 // 城市
+	optional int32 home_province = 70;		 	// 家乡：省/直辖市
+	optional int32 home_city = 80;			// 家乡：城市
+	optional string nick = 90;	 			// 昵称
+	optional int32 marital = 100;				// 婚姻(0 : 保密 1 : 单身 2 : 非单身)
+	optional int32 style = 110;				// 风格
+	optional int32 blood = 120;				// 血型
+	optional string desc = 130;				// 个人描述
+	repeated RoleAttrInfo	infos = 140;			// 用户属性信息
+	repeated RoleStatusInfo	status_infos = 150;		// 用户状态信息	
+	optional uint32 guildid = 280;				// 家族id
+	optional uint32 country	= 290;			// 国家
+	optional uint32	last_login_time = 300;		//上次登录时间
+	optional uint32	charge = 310;			//累计充值元宝
+}
+
+// 水果机类型
+enum MachinePlayType {
+    MACHINE_PLAY_TYPE_JUNIOR = 10; // 初级
+    MACHINE_PLAY_TYPE_MIDDLE = 20; // 中级
+    MACHINE_PLAY_TYPE_SENIOR = 30; // 高级
+}
+
+message UserStatData {
+    optional uint32 userid = 10;
+    optional uint32 level = 20;        // 等级
+    optional uint32 money = 30;        // 财富
+    optional uint32 score = 40;        // 成就
+    optional uint32 regard = 50;       // 魅力
+    optional uint32 exp = 60;          // 经验
+    optional uint32 credit = 70;       // 崇拜值
+    optional uint32 population = 80;   // 庄园居民
+    optional uint32 album_praise = 90; // 相册被赞值
+}
+
+/********************************************************/
+/* 静态对象数据结构										*/
+/********************************************************/
+// 日志信息
+message LogInfo {
+	optional uint64 id = 10;				//记录id
+	optional uint32 type = 20;
+	optional uint32 time = 30;
+	optional uint64 pos = 40;
+	optional uint32 active = 50;
+	optional uint32 passive = 60;
+	optional uint32 stid = 70;     // 如果是房屋日志，表示操作类型，1:修理 2:工厂帮忙 3:打扫 4:商店帮忙
+	optional uint32 scheme = 71;	//技能对应的方案号
+	optional string context = 80;
+	optional uint32 count = 90;
+	repeated ReturnEffectInfo reis = 100;		// 对应的改变值
+	repeated uint64 params = 110; // 如果是房屋日志，stid为1、3的时候，param0表示次数；stid为2、4的时候，param0:建筑itemid，param1:物品itemid
+	optional uint32 guildid = 120; // 家族邀请日志的家族id
+}
+
+// 回报明细
+message ReturnEffectInfo {
+	optional uint32 field = 10 [default = 0];
+	optional uint64 value = 20 [default = 0];
+}
+
+
+// 消息信息
+message MessageInfo {
+	optional uint64 id = 10;			// 记录id
+	optional uint32 type = 20;			// 类型
+	optional uint32 time = 30;			// 时间
+	optional uint32 from = 40;			// 来自
+	optional uint32 duration = 50;		// 持续时间
+	optional string context = 60;		// 内容
+}
+
+//部队日志信息
+message TroopLogInfo {
+	optional uint64 id = 10;        //id
+	optional uint32 time = 20;      //时间
+	optional uint32 event = 30;     //事件
+	optional uint64 src = 40;       //源
+	optional uint64 dst = 50;       //目标
+	optional uint32 heroid = 55;	//将领id
+	optional uint32 hero_type = 58;	//将领星级
+	optional pb_common.TroopInfo	info = 60;     //部队详情
+  	repeated uint32 params = 80 [packed=true]; //事件为战斗结束时，param0 表示role， param1 表示战斗结果
+}
+
+enum TroopLogEvent{
+	EVENT_TROOP_ATTACK_RISE = 1;      //出征
+	EVENT_TROOP_ASSIST = 2;           //援助
+	EVENT_TROOP_MOVE= 3;              //调遣
+  	EVENT_TROOP_BACK_FIEF = 4;        //回领地
+  	EVENT_TROOP_BACK_MANOR = 5;       //回庄园
+  	EVENT_TROOP_BATTLE_OVER = 6;      //战斗结束返回
+	EVENT_TROOP_STARVATION = 7;       //部队饿死
+}
+
+/********************************************************/
+/* 动态对象数据结构										*/
+/********************************************************/
+////////////////////////////////////////////////////////////////
+// 帐号信息 AccountInfo
+////////////////////////////////////////////////////////////////
+// (客户端不可见，服务器不可见)
+message AccountInfoPart0 {
+}
+// (客户端不可见，服务器可见)
+message AccountInfoPart1 {
+	optional string sim			= 10;	// sim卡号
+	optional string psw			= 20;	// 密码
+}
+// (客户端可见，服务器不可见)
+message AccountInfoPart2 {
+}
+// (客户端可见，服务器可见)
+message AccountInfoPart3 {
+	optional uint32 image		= 10;	// 个人头像
+	optional string nick		= 20;	// 昵称
+	optional uint32 sex			= 30;	// 性别(1 : 女 2 : 男)
+	optional uint32 birthday	= 40;	// 生日
+	optional uint32 province	= 50;	// 省/直辖市
+	optional uint32 city		= 60;	// 城市
+	//optional uint32 home_province= 70;	// 省/直辖市
+	//optional uint32 home_city	= 80;	// 城市
+	optional string mobile		= 90;	// 手机号码
+	optional string email		= 100;	// 邮箱
+//	optional uint32 marital		= 110;	// 婚姻(0 : 保密 1 : 单身 2 : 非单身)
+	//optional uint32 style		= 120;	// 风格
+	//optional uint32 blood		= 130;	// 血型
+	optional string desc		= 140;	// 个人描述
+	optional string partner_id	= 150;	// 合作方id
+	optional uint32 partner_channel	= 160;	// 合作方channel
+	optional string renren_school	= 170;	// renren学校
+	optional string id_card_number  = 180;	// 身份证号码
+	optional uint32 channel 	= 190;	// 注册渠道
+}
+
+// 帐号信息
+message AccountInfo {
+	required uint32 id = 10;
+//	optional AccountInfoPart0 part0 = 20;	// (客户端不可见，服务器不可见)
+	optional AccountInfoPart1 part1 = 30;	// (客户端不可见，服务器可见)
+//	optional AccountInfoPart2 part2 = 40;	// (客户端可见，服务器不可见)
+	optional AccountInfoPart3 part3 = 50;	// (客户端可见，服务器可见)
+}
+
+// 带版本控制的帐号信息
+message ExAccountInfo {
+	optional DataCtrl ctrl = 10;			// 控制
+	optional AccountInfo info = 20;
+}
+
+////////////////////////////////////////////////////////////////
+// 角色信息 RoleInfo
+////////////////////////////////////////////////////////////////
+// (客户端不可见，服务器不可见)
+message RoleInfoPart0 {
+}
+// (客户端不可见，服务器可见)
+message RoleInfoPart1 {
+  //optional uint32 score_time = 10;	// 成就完成时间
+  optional uint32 last_login_time = 20;		// 上次登录时间
+  //optional uint32 item_count = 30;		// 包裹数量总数
+  optional uint32 military_level = 40;		// 军营等级
+  optional string extend = 100;				// 用户扩展(放置最后在一个位置上)
+}
+// (客户端可见，服务器不可见)
+message RoleInfoPart2 {
+}
+
+message RoleChargeInfo {
+	optional uint32 double_charge_value = 10;	//当前积分双倍充值进度
+	optional uint32 double_charge_times = 20;	//积分双倍使用累计次数
+	optional uint32 month_charge_start = 100;	//包月充值开启时间
+	optional uint32 month_charge_last_time = 110;	//包月将领上次领奖时间
+}
+
+// (客户端可见，服务器可见)
+message RoleInfoPart3 {
+	optional uint32 country		= 30;			// 国家
+	repeated RoleAttrInfo	infos = 100;			// 用户属性信息	
+	repeated RoleStatusInfo	status_infos = 110;		// 用户状态信息			
+	optional RoleDayInfo day_info = 120;	// 每天更新的数据
+	optional RoleChargeInfo charge_info = 130;		//充值信息
+	optional uint64 training	= 150;			// 新手教学
+	optional uint32 reg_time	= 160;			// 注册时间
+	optional uint32 last_checkin_time = 200;		//上次签到时间
+	optional uint32 checkin_count = 210;			//连续签到次数
+//	optional uint32 charge = 220;				//累计充值元宝数
+	//optional uint32 vip_charge_count = 230;			//vip2累计充值次数
+	optional uint32 last_receive_time = 240;		//上次城堡资源全收时间
+}
+
+message RoleAttrInfo {
+	optional uint32 id = 10;	//1:金币 2：元宝 3：粮草。。。
+	optional uint32 value = 20;
+	optional uint64 large_value = 30;
+}
+
+message RoleStatusInfo {
+	optional uint32	id = 10;		// 状态id
+	optional int32	value = 20;		// 状态值
+	optional uint32 time = 30;		// 时间
+	//optional uint32 param0 = 40;	// 扩展字段
+}
+
+message RoleDayInfo {
+	optional uint32 day = 10;
+	optional int32 dungeon_help = 20;	// 副本援助次数
+	optional int32 stamina_reset = 30;// 体力恢复次数
+	optional uint32 charge = 40;	// 当日充值元宝数
+}
+
+// 用户状态
+enum ROLE_STATUS {
+	ROLE_STATUS_WANTED = 10;    		//被通缉 value表示发起者 time表示结束时间
+	ROLE_STATUS_WEAK	= 21;	  	//主城虚弱	（time字段对应结束时间 value对应屠城者id）
+	ROLE_STATUS_1VS1_PROTECT = 22;	  	//主城保护 （屠城、单挑等）（time字段对应结束时间）
+}
+
+// 角色信息
+message RoleInfo {
+	required uint32 id = 10;
+//	optional RoleInfoPart0 part0 = 20;	// (客户端不可见，服务器不可见)
+	optional RoleInfoPart1 part1 = 30;	// (客户端不可见，服务器可见)
+//	optional RoleInfoPart2 part2 = 40;	// (客户端可见，服务器不可见)
+	optional RoleInfoPart3 part3 = 50;	// (客户端可见，服务器可见)
+}
+
+// 带版本控制的角色信息
+message ExRoleInfo {
+	optional DataCtrl ctrl = 10;			// 控制
+	optional RoleInfo info = 20;
+}
+
+////////////////////////////////////////////////////////////////
+// 富用户信息 RichUserInfo
+////////////////////////////////////////////////////////////////
+// 带版本控制的用户信息
+message ExUserInfo {
+	optional DataCtrl ctrl = 10;			// 控制
+	optional ExAccountInfo account_info = 20;
+	optional ExRoleInfo role_info = 30;
+}
+
+//富用户信息
+message RichUserInfo{
+	optional DataCtrl ctrl = 10;					// 控制
+	required uint32 userid = 20;					// 用户id
+	optional ExAccountInfo account_info = 30;
+	optional ExRoleInfo role_info = 40;
+	optional FriendInfos friend_infos = 50;			// 好友列表信息
+	optional BlacklistInfos blacklist_infos = 60;	// 黑名单信息
+	optional BagItemInfos bag_item_infos = 70;		// 包裹物品信息
+	optional EquipmentInfos equipment_infos = 80;		// 装备信息
+	optional ExManorInfo manor_info = 90;			// 城堡信息
+	//optional MedalInfos medal_infos = 120;			// 成就信息
+	optional QuestInfos quest_infos = 130;			// 任务信息
+	optional ArmPropInfos arm_prop_infos = 140;			// 士兵科技
+	optional ExLordInfo lord_info = 160;          // 领主信息
+	optional LordFiefInfos lord_fief_infos = 170; // 领主的领地信息
+	optional BattleIdInfos battleid_infos = 180;  // 战斗id信息
+	optional ExUserGuildInfo guild_info = 190;
+	optional HeroInfos	hero_infos = 200;	//将领信息
+	optional ActInfos act_infos = 210; // 静态副本信息
+	optional ActInfos dynamic_act_infos = 220; // 活动副本信息 
+}
+
+////////////////////////////////////////////////////////////////
+// 好友信息
+////////////////////////////////////////////////////////////////
+message BaseFriendInfo {
+	optional uint32 userid = 10;
+}
+
+message FriendInfo {
+	optional BaseFriendInfo bi = 10;
+}
+
+message ExFriendInfo {
+	optional DataCtrl ctrl = 10;
+	optional FriendInfo info = 20;
+}
+
+message FriendInfos {
+	optional DataCtrl ctrl = 10;
+	repeated ExFriendInfo infos = 20;
+	optional uint32 total_count = 30;
+}
+
+/////////////////////////////////////////////
+// 建筑									
+/////////////////////////////////////////////
+message BuildingInfo {
+	optional uint32 itemid = 10;		//
+	repeated BuildingStatusInfo sis = 70;// 建筑状态信息
+}
+
+/////////////////////////////////////////////
+// 庄园
+/////////////////////////////////////////////
+message BaseManorInfo {
+	optional uint64	pos = 20;		// 位置
+	optional uint32 scale = 30;		// 规模id
+	optional int32	cur_pop = 80;		// 当前人口值
+	optional int32	tot_pop = 90;		// 总人口值
+	optional uint64	flag = 100;		// 状态buff
+	optional uint32	update = 110;		// 状态上次更新时间
+	optional string name = 120;		// 庄园名字(最多9个汉字啊）
+	optional TroopInfo troop_info = 140;    // 驻兵信息
+	//optional HeroIdInfo first_hero_info = 150;	//守城将领
+	//repeated HeroIdInfo second_hero_infos = 160; 	//待命将领
+	repeated BuildingInfo building_infos = 200;	//建筑信息
+	repeated BuildingEffectInfo	effect_infos = 210;	// 建筑效果
+	repeated BuildingStatusInfo	status_infos = 220;	// 建筑状态
+}
+
+//message ServerManorInfo {
+//	//optional uint64	zoneid = 10;				//
+//	//optional string extend = 20;				//	
+//}
+
+// 建筑效果
+enum BUILDING_EFFECT {
+  	BUILDING_EFFECT_POP_TOTAL = 51;    //增加人口上限
+  	BUILDING_EFFECT_ARM_TOTAL = 53;    //驻兵数上限增加
+  	BUILDING_EFFECT_STORE_TOTAL = 54;    //仓库-单种资源储物总数量
+  	BUILDING_EFFECT_CELLAR_TOTAL = 55;    //地窖-单种资保护总数量
+  	BUILDING_EFFECT_FIEF_TOTAL = 56;    //拥有领地数量总数
+	BUILDING_EFFECT_SCALE_VALUE = 57;	//城堡规模
+	BUILDING_EFFECT_SITE_TOTAL = 58;	//拥有资源点总数
+	BUILDING_EFFECT_REVIVE_COUNT = 59;	//墓地容量
+	BUILDING_EFFECT_ARM_HP_ADD = 60;	//士兵加血
+	BUILDING_EFFECT_REVIVE_BOSS_COUNT = 61;	//BOSS墓地容量
+	
+  	BUILDING_EFFECT_MONEY_SPEED = 71;    //提升金币产出效率
+  	BUILDING_EFFECT_FOOD_SPEED = 72;    //提升粮草产出效率
+  	BUILDING_EFFECT_WOOD_SPEED = 73;    //提升木材产出效率
+	BUILDING_EFFECT_MATERIAL0_SPEED = 74;    //提升..产出效率
+  	BUILDING_EFFECT_MATERIAL1_SPEED = 75;    //提升..产出效率
+
+//100以上value非叠加
+  	BUILDING_EFFECT_BATTLE_SKILLID = 101;    //城防技能id
+  	BUILDING_EFFECT_ARMID = 102;    //可招募士兵
+}
+
+// 建筑状态
+enum BUILDING_STATUS {
+	BUILDING_STATUS_MONEY_ADD_SPEED = 20;    //金币产出速度
+  	BUILDING_STATUS_FOOD_ADD_SPEED = 21;    //粮草产出速度
+  	BUILDING_STATUS_WOOD_ADD_SPEED = 22;    //木材产出速度
+  	BUILDING_STATUS_MATERIAL0_ADD_SPEED = 23;    //铁产出速度
+  	BUILDING_STATUS_MATERIAL1_ADD_SPEED = 24;    //铜产出速度
+
+	BUILDING_STATUS_DRAFT_CD = 100;			//征兵cd
+	BUILDING_STATUS_RESET_CD = 101;			//重置资源产出cd
+	BUILDING_STATUS_REVIVE_CD = 102;		//墓地复活cd
+	BUILDING_STATUS_BOSS_REVIVE_CD = 103;		//墓地boss复活cd
+
+	BUILDING_STATUS_MONEY_SPEED_CARD = 220;    //金币加速卡（start字段对应结束时间）
+  	BUILDING_STATUS_FOOD_SPEED_CARD = 221;    //粮草加速卡
+  	BUILDING_STATUS_WOOD_SPEED_CARD = 222;    //木材加速卡
+  	BUILDING_STATUS_MATERIAL0_SPEED_CARD = 223;    //加速卡
+  	BUILDING_STATUS_MATERIAL1_SPEED_CARD = 224;    //加速卡
+
+
+//500以上的状态为主城状态
+	BUILDING_STATUS_POP_ADD = 501;    //人口增长速度	
+}
+
+message BuildingEffectInfo {
+	optional uint32	id = 10;		// 效果id
+	optional int32	value = 20;		// 效果值
+}
+
+message BuildingStatusInfo {
+	optional uint32	id = 10;		// 状态id
+	optional int32	value = 20;		// 状态值
+	optional uint32 start = 30;		// 状态开始时间
+	optional uint32 start_value = 40;	// 起始值
+}
+
+message ManorInfo {
+	optional BaseManorInfo		bi = 10;		
+	//optional ServerManorInfo	si = 20;	
+	//optional ClientManorInfo	ci = 30;
+	//optional BuildingUpdateInfos	info = 100;	
+}
+
+message ExManorInfo {
+	optional DataCtrl ctrl = 10;			// 控制
+	optional ManorInfo info = 20;
+}
+
+/////////////////////////////////////////////
+// 黑名单信息
+/////////////////////////////////////////////
+message BaseBlacklistInfo {
+	optional uint32 userid = 10;		// 用户id
+	optional uint32 time = 20;			// 被列入黑名单的时间
+}
+
+message ServerBlacklistInfo {
+	optional uint64	id = 10;		//
+}
+
+message BlacklistInfo {
+	optional BaseBlacklistInfo bi = 10;
+	optional ServerBlacklistInfo  si = 20;
+}
+
+message ExBlacklistInfo {
+	optional DataCtrl ctrl = 10;			// 控制
+	optional BlacklistInfo info = 20;		
+}
+
+message BlacklistInfos {
+	optional DataCtrl ctrl = 10;			// 控制
+	optional uint32 total_count = 30;
+	repeated ExBlacklistInfo infos = 20;		
+}
+
+/////////////////////////////////////////////
+// 包裹信息
+/////////////////////////////////////////////
+message BaseBagItemInfo {
+	optional uint64 id = 10;
+	optional uint32 itemid = 20;
+	optional uint32 amount = 30;
+	optional uint32 start = 50;			// 得到时间
+}
+
+message ServerBagItemInfo {
+  optional string extend = 100;
+}
+
+message BagItemInfo {
+  	optional BaseBagItemInfo bi = 10;
+  	optional ServerBagItemInfo si = 20;
+}
+
+message ExBagItemInfo {
+  	optional DataCtrl ctrl = 10;
+	optional BagItemInfo info = 20;
+}
+
+message BagItemInfos {
+  	optional DataCtrl ctrl = 10;
+	repeated ExBagItemInfo infos = 20;
+	optional uint32 total_count = 30;
+	//optional uint32 item_count = 40;
+}
+
+/////////////////////////////////////////////
+// 装备信息
+/////////////////////////////////////////////
+
+message EquipEffect {
+	optional uint32 type = 10;
+	optional uint32 min_quality = 20;	//最低有效品质
+//	optional uint32 level = 20;
+	optional uint32 exp = 30;	// 锻造值
+	optional uint32 reward_time = 40; // 趁热打铁状态结束时间
+}
+
+message BaseEquipmentInfo {
+	optional uint64 id = 10;
+	optional uint32 itemid = 20;
+	optional uint32 level = 30;
+	optional uint32 quality = 50;			// 品质
+	//optional bool slot = 60[default = false];	// 宝石槽开关
+	//optional uint32 slot_level = 70;		// 宝石槽等级
+
+	optional uint32 slot_itemid = 100;		// 镶嵌宝石id
+	optional EquipEffect effect = 110;		// 附加效果
+}
+
+
+message EquipmentInfo {
+  	optional BaseEquipmentInfo bi = 10;
+  	//optional ServerBagItemInfo si = 20;
+}
+
+message ExEquipmentInfo {
+  	optional DataCtrl ctrl = 10;
+	optional EquipmentInfo info = 20;
+}
+
+message EquipmentInfos {
+  	optional DataCtrl ctrl = 10;
+	repeated ExEquipmentInfo infos = 20;
+	optional uint32 total_count = 30;
+	//optional uint32 item_count = 40;
+}
+
+/////////////////////////////////////////////
+// 任务信息
+/////////////////////////////////////////////
+message ConditionInfo{
+	optional uint32 type = 10;	//目标类型
+	optional uint32 target = 20;	//目标值
+	optional uint32 value = 30;	//当前值
+}
+
+message BaseQuestInfo {
+	optional uint64 id = 10;		// id
+	optional uint32 userid = 20;		// userid
+	optional uint32 questid = 30;		// 任务id
+	optional uint32 start = 40;		// 任务开始时间
+	optional uint32 state = 50;		// 任务状态
+	//optional uint32 value = 60;		// 任务进度（兼容老客户端使用）
+	repeated ConditionInfo infos = 70;	// 任务进度
+}
+
+message QuestInfo {
+	optional BaseQuestInfo bi = 10;
+}
+
+message ExQuestInfo {
+	optional DataCtrl ctrl = 10;
+	optional QuestInfo info = 20;
+}
+
+message QuestInfos {
+	optional DataCtrl ctrl = 10;
+	repeated ExQuestInfo infos = 20;
+}
+
+
+/////////////////////////////////////////////
+//士兵科技相关
+/////////////////////////////////////////////
+//
+message ArmEffectInfo {
+	optional uint32 id = 10;
+	optional uint32 level = 20;
+	optional uint32 exp = 30;
+}
+
+message ArmPropInfo {
+	optional uint32 armid = 10;
+	repeated ArmEffectInfo infos = 20;
+}
+
+message ExArmPropInfo {
+	optional DataCtrl ctrl = 10;
+	optional ArmPropInfo info = 20;
+}
+
+message ArmPropInfos {
+	optional DataCtrl ctrl = 10;
+	repeated ExArmPropInfo infos = 20;
+}
+
+/////////////////////////////////////////////
+//
+/////////////////////////////////////////////
+// 兵种信息
+message ArmInfo{
+	optional uint32 id = 10;     // 兵种id
+	optional uint32 count = 20;   // 兵种数量
+}
+
+// 军队信息
+message TroopInfo {  
+	repeated ArmInfo infos = 10;
+}
+
+enum TROOP_ROLE
+{
+	TROOP_ROLE_ATTACK_MAIN_FORCE = 1;       // 进攻方主力
+	TROOP_ROLE_ATTACE_REINFORCE = 2;	// 进攻方援兵  
+	TROOP_ROLE_DEFEND_MAIN_FORCE = 3;       // 防守方主战  
+	TROOP_ROLE_DEFEND_REINFORCE = 4;	// 防守方援兵  
+}
+
+// 调动军队信息
+message BaseMoveTroopInfo {
+	optional uint64 id = 10;			// 调动批次id
+//	optional uint64 src = 20;   	// 源领地id
+//	optional uint64 dst= 30;    	// 目的领地id
+//	optional uint32 time = 40;  	// 出发时间
+	optional uint32 role = 50;		// 类型 1：主战部队，2：援军
+//	optional uint64 capital = 60;	// 首都zoneid 
+	optional uint32 userid = 70;	// 所属领主
+	//optional HeroIdInfo hero_info = 80;	// 将领信息
+	optional TroopInfo troop_info = 100;
+}
+
+//* 未使用，考虑删除
+message ServerMoveTroopInfo {
+	optional uint32 move_type = 10;		//行军类型type 1:正常行军 2:元宝行军 
+}
+
+message MoveTroopInfo {
+	optional BaseMoveTroopInfo bi = 10;
+	optional ServerMoveTroopInfo si = 20;
+}
+
+message ExMoveTroopInfo {
+	optional DataCtrl ctrl = 10;  //***没有数据变化，似乎可以不用版本日志
+	optional MoveTroopInfo info = 20;
+}
+
+message MoveTroopInfos {
+	optional DataCtrl ctrl = 10;
+	repeated ExMoveTroopInfo infos = 20;		
+}
+
+//翻牌结构
+message PokerInfo {
+	optional uint32 index = 10;		//客户端传的index
+	optional uint32 result = 20;		//服务器给的结果
+	optional uint32 count = 30;		//获得兵力数量
+}
+
+message KeyValue {
+	optional uint32 key   = 10;
+	optional uint32 value = 20;
+}
+
+//战场信息
+message BaseBattleInfo{
+	optional uint32 type = 10; // 1 占领 2 掠夺 3 副本
+	optional uint64 defend_fiefid = 20;	// 被攻击方领地id
+	optional uint32 attacker = 40;		// 进攻方用户id
+	optional uint32 defender = 50;   	// 防御方用户id
+	optional uint32 state = 60;		// 状态（0：没有战争 1：战斗准备,行军 2:围城中，防守方可以突围 3：围城结束，攻击方可以发生战斗 4：战斗结束）
+	optional uint32 time = 70;		// 进入下一个状态阶段的时间
+	optional uint32 scale = 80;		// 战场领地规模
+	//optional uint32 flag = 90;      // 标志位，具体含义见common.h
+	repeated PokerInfo attack_poker_result = 100;	// 进攻方翻牌结果(每次翻牌对应结果)
+	repeated PokerInfo defend_poker_result = 110;	// 防御方翻牌信息(每次翻牌对应结果)
+	optional uint32 attack_poker_unit = 120;   // 进攻方翻牌时计算兵力
+	optional uint32 defend_poker_unit = 130;	// 防御方翻牌时计算兵力
+	repeated BattleHeroInfo attack_hero_infos = 140;		//进攻方主将
+	repeated BattleHeroInfo defend_hero_infos = 150;		//防守方主将
+	repeated KeyValue users_buy_unit = 160;	// 用户购买神兵次数
+}
+
+message ClientBattleInfo{
+	optional uint64 attack_fiefid = 10;	// 攻击方领地id
+}
+
+message ServerBattleInfo{
+	optional uint32 battle_result = 10;	// 1:攻方胜利 2：守方胜利
+	optional uint32 attack_battle_unit = 20;	// 参战进攻方总兵力
+	optional uint32 defend_battle_unit = 30;	// 参战防守方总兵力
+	optional uint64 transaction = 80; // 运营日志中的transaction
+	optional uint64 logid = 90;   // 战场日志id
+	optional uint64 jobid = 100;	// job处理id
+	repeated BattleLogReturnInfo ris = 110;  // 需要处理的掉落信息
+	repeated ReturnHeroInfo rhis = 120; // 将领回报信息
+	optional string extend = 200;	//json扩展用
+}
+
+message BattleInfo {
+	optional BaseBattleInfo bi = 10;
+	optional ServerBattleInfo si = 20;
+	optional ClientBattleInfo ci = 30;
+}
+
+message ExBattleInfo {
+	optional DataCtrl ctrl = 10;
+	optional BattleInfo info = 20;
+}
+
+// 用户军队信息
+message UserTroopInfo{
+  optional uint32 id = 10;  // 用户id  
+  optional TroopInfo info = 20; // 军队信息
+}
+
+message ExUserTroopInfo{
+  optional DataCtrl ctrl = 10;
+  optional UserTroopInfo info = 20;
+}
+
+message UserTroopInfos{
+  optional DataCtrl ctrl = 10;
+  repeated ExUserTroopInfo infos = 20;
+}
+
+enum HERO_ROLE
+{
+	HERO_ROLE_ATTACK_MAIN = 1;		// 进攻方主将  
+	HERO_ROLE_ATTACK_ASSIST = 2;	// 进攻方副将  
+	HERO_ROLE_DEFEND_MAIN = 3;		// 防守方主将  
+	HERO_ROLE_DEFEND_ASSIST = 4;	// 防守方副将  
+}
+
+// 战斗-将领信息
+message BattleHeroInfo {
+	optional uint64 hero = 10;		// 将领唯一id
+	optional uint32 heroid = 20;
+	optional uint32 type = 40;		// 星级
+	optional uint32 userid = 30;	// 目前这个字段可能有些冗余
+	optional uint32 role = 50;
+	optional uint32 talent = 60;	// 品质
+}
+
+// 用户军队强化效果
+// 属性（0兵种ID、1生命、2法术防御、3射程、4法术攻击、5挥砍攻击、6挥砍防御、7穿刺攻击、8穿刺防御、
+// 				9出征粮草、10暴击、11兵种类型、12攻击类型、13神兵、14数量、15韧性、16灵巧、17速度、18负重、19粮草常规消耗）  
+message TroopEffectInfo {
+	optional uint32 armid = 10;
+	optional uint32 attr = 20;
+	optional uint32 value = 30;
+
+}
+
+message UserTroopEffectInfo {
+	optional uint32 userid = 10;
+	repeated TroopEffectInfo infos = 20;
+}
+
+message ExUserTroopEffectInfo {
+  optional DataCtrl ctrl = 10;
+  optional UserTroopEffectInfo info = 20;
+}
+
+message UserTroopEffectInfos {
+  optional DataCtrl ctrl = 10;
+	repeated ExUserTroopEffectInfo infos = 20;
+}
+
+message RichBattleInfo{
+	optional DataCtrl ctrl = 10;          // 控制
+	optional uint64 id = 20;              // 战斗battleid
+	optional ExBattleInfo battle_info = 30;	
+	optional MoveTroopInfos attack_troop_infos = 100;  // 进攻方军队    
+	optional MoveTroopInfos defend_troop_infos = 110;  // 防御方军队  	
+	optional UserTroopInfos diff_troop_infos = 120;	   // 本次战斗军队变化的信息  
+	optional UserTroopEffectInfos user_troop_effect_infos = 130; // 用户军队强化效果
+}
+
+//brief战场信息
+message BriefBattleInfo{
+	optional uint64 id = 10;		// battleid
+	optional uint32 type = 15; 		// 1 占领 2 掠夺 3 副本
+	optional uint64 defend_fiefid = 20;	// 被攻击方领地id
+	optional uint64 attack_fiefid = 30;	// 攻击方领地id
+	optional uint32 attacker = 40;		// 进攻方用户id
+	optional uint32 defender = 50;   	// 防御方用户id
+	optional uint32 state = 60;		// 状态（0：没有战争 1：战斗准备,行军 2:围城中，防守方可以突围 3：围城结束，攻击方可以发生战斗 4：战斗结束）
+	optional uint32 time = 70;		// 进入下一个状态阶段的时间
+	optional uint32 scale = 80;		// 战场领地规模
+	optional uint32	attack_unit = 100;	// 进攻方总兵力
+	optional uint32 defend_unit = 110;	// 防守方总兵力
+	//optional uint32 flag = 120; 	// 含义同BaseBattleInfo中的flag  
+}
+
+// 战斗id信息
+message BaseBattleIdInfo{
+	optional uint64 battleid = 10; 
+	optional uint32 flag = 20;	//具体定义参加common.h EBattleFlag
+}
+
+message BattleIdInfo{
+	optional BaseBattleIdInfo bi = 10;
+}
+
+message ExBattleIdInfo{
+	optional DataCtrl ctrl = 10;
+	optional BattleIdInfo info = 20;
+}
+
+message BattleIdInfos{
+	optional DataCtrl ctrl = 10;
+	repeated ExBattleIdInfo infos = 20;
+	optional uint32 total_count = 30;
+}
+
+message OtherUserBattleIdInfo
+{
+	optional uint32 userid = 10;
+	repeated BattleIdInfo infos = 20;	
+}
+
+/////////////////////////////////////////////
+//战斗信息
+/////////////////////////////////////////////
+enum BattleEvent
+{
+	BATTLE_EVENT_ACT = 1;       // 行动者  
+	BATTLE_EVENT_TARGET = 2;    // 选择目标  
+	BATTLE_EVENT_FIGHT_BACK = 3;// 还击  
+	BATTLE_EVENT_DEMAGE = 4;    // 伤害  
+	BATTLE_EVENT_SKILL = 5;     // 触发技能  
+	BATTLE_EVENT_DEATH = 6;     // 死亡  
+	BATTLE_EVENT_WIN  = 7;      // 胜利  
+	BATTLE_EVENT_RUN_AWAY = 8;  // 逃跑  
+	BATTLE_EVENT_ARRAY = 9;     // 出手序列  
+	BATTLE_EVENT_BYPASS = 10;   // 绕过  
+	BATTLE_EVENT_ROUND = 11;    // 轮次  
+	BATTLE_EVENT_NUM = 12;      // 数量  
+	BATTLE_EVENT_RAND = 13;   	// 随机数  
+	BATTLE_EVENT_FALL_HP = 14;  // 掉血  
+	BATTLE_EVENT_BOUT = 15;     // 回合结束  
+	BATTLE_EVENT_BUFF_SET = 16;		// 获得buff
+	BATTLE_EVENT_BUFF_CLEAR = 17;	// 清除buff
+	BATTLE_EVENT_MODIFY_HP = 18;	// 修改血量
+}
+
+message BattleEventArmInfo
+{
+	optional uint32 armid = 10;
+	optional int64 value = 20;
+	optional int32 ex = 30;
+}
+
+message BattleEventInfo {
+	optional uint32	sn = 10;		// 战斗回合序列号
+	optional bool attack = 20;	// true:active是攻击方 false:passive为攻击方
+	repeated BattleEventArmInfo actives = 30;		// 行动方 
+	repeated BattleEventArmInfo passives = 40;	// 目标方
+	optional uint32 event = 50;	// 事件id，对应解析
+	optional int32 value = 60;
+}
+
+message BattleArrayInfo{
+	optional uint32 propid = 10;    // 兵种ID  
+	optional uint32 morale = 20;    // 士气  
+	optional uint32 num = 30;       // 数量  
+	optional uint32 row = 40;       // 位置  
+}
+
+
+// 将领回报信息
+message ReturnHeroInfo {
+	optional uint64 hero = 10;
+	optional uint32 userid = 20;
+	optional uint32 heroid = 30;
+	optional int32 level_diff = 40;	//等级变化
+	optional uint32 talent = 50;	// 品质
+  optional int32 exp_diff = 60;	//经验变化
+  optional uint32 type = 80;
+	//optional int32 exp_cur = 70;	//变化后经验
+
+	repeated HeroArmProp diff_arm_props = 200;	//统兵效果变化
+}
+
+message ReturnThingInfo {
+	optional uint32 type = 10;		// 掉落的类型
+	optional uint64 guid = 20;		// 唯一id    (根据type确定含义: THING_TYPE_ITEM - bagid; THING_TYPE_BUILDING - buildingid;  THING_TYPE_ARM - troopid)
+	optional uint32 thingid = 30; // thing id    (根据type确定含义:THING_TYPE_ITEM - itemid; THING_TYPE_BUILDING - itemid;  THING_TYPE_ARM - armid)
+	optional int32 count = 40;		// 数量  
+	optional uint32 param0 = 50;		// (根据type确定含义: THING_TYPE_HERO : hero_type THING_TYPE_ITEM :0操作回报 1升级奖励)
+	optional uint32 param1 = 60;
+}
+
+message ReturnAttrInfo {
+	optional uint32 type = 10;  // 掉落的类型 
+	optional int32 value = 20; // 数值
+}
+
+// 用户回报信息  
+message ReturnInfo {
+  	optional uint32 userid = 10;
+	//optional uint32 guildid = 15;
+  	repeated ReturnThingInfo rtis = 20;
+  	repeated ReturnAttrInfo  rais = 30;
+}
+
+//家族回报信息
+message GuildReturnInfo {
+	optional uint32 guildid = 10;
+  	//repeated ReturnThingInfo rtis = 20;
+  	repeated ReturnAttrInfo  rais = 30;
+}
+
+enum BattleLogReturnInfoType {
+		E_BATTLE_LOG_RETURN_DUNGEON_PASS = 1; // 副本通关奖励
+		E_BATTLE_LOG_RETURN_DUNGEON_RECORD = 2; // 副本战绩奖励
+		E_BATTLE_LOG_RETURN_DUNGEON_ACCIDENT = 3; // 副本意外奖励
+		E_BATTLE_LOG_RETURN_DROP = 4;	// 掉落  
+		E_BATTLE_LOG_RETURN_PLUNDER = 5; // 掠夺
+}
+
+// 战斗类型  
+enum BattleAttackType
+{
+    E_BATTLE_COMMON_ATTACK = 1;	// 占领
+    E_BATTLE_PLUNDER_ATTACK = 2;	// 掠夺
+    E_BATTLE_DUNGEON_ATTACK = 3;	// 副本
+    E_BATTLE_DUEL_ATTACK = 4;			// 单挑
+    E_BATTLE_MASSACRE_ATTACK = 5;	// 屠城
+    E_BATTLE_ARENA_ATTACK = 6;		// 巅峰战场
+    E_BATTLE_BLOOD_ATTACK = 7;		// 血战
+};
+
+message BattleLogReturnInfo {
+		optional uint32 type = 10;	
+		optional ReturnInfo info = 20;
+}
+
+//战场将领信息
+message BattleLogHeroInfo {
+	optional uint64 hero = 10;
+	optional uint32 type = 60;
+	optional uint32 userid = 20;
+	optional uint32 heroid = 30;
+	optional uint32 exp = 40;
+	optional uint32 level = 50;
+	optional uint32 role = 70;
+	optional uint32 talent = 80;
+	optional uint32 attack = 90;	//基础武力
+	optional uint32 defend = 100;	//基础防御
+
+	repeated OtherHeroArmPropInfo arm_prop_infos = 200;	//统兵效果
+	repeated HeroSkillSlotInfo skill_slot_infos = 210;		//技能信息
+}
+
+//战斗日志信息
+message BattleLogInfo{
+	optional uint64 id = 10;		//
+	optional uint32 attacker = 20; 	// 进攻方userid  
+	optional uint32 defender = 30; 	// 防守方userid  
+	optional uint32 type = 40;	// 1 占领 2 掠夺 3 副本
+	optional uint32 battle_result = 50;	// 1:攻方胜利 2：守方胜利
+	optional uint32 time = 60;	// 开战时间
+	optional uint64 attack_fiefid = 70;	
+	optional uint64 defend_fiefid = 80;	
+	optional uint32 fief_scale = 90; // 战场规模
+	optional uint32	attacker_type = 100;	//进攻者类型： 1：领主 2：庄园主 3：黑暗精灵
+	optional uint32 version = 110;  // 日志版本号
+	optional uint32 record = 120;	// 战绩
+	optional uint32 defend_fief_propid = 130; // 防御领地的propid
+	
+	repeated BattleLogReturnInfo ris = 170; // 用户战利品
+	repeated ReturnHeroInfo rhis = 180; // 将领回报信息
+	
+ 	repeated BattleEventInfo event_infos = 200;
+	repeated MoveTroopInfo  attack_begin_troop_infos = 210; // 战斗开始进攻方军队    
+	repeated MoveTroopInfo  defend_begin_troop_infos = 220; // 战斗开始防御方军队  	
+	repeated MoveTroopInfo  attack_end_troop_infos = 230;	// 战斗结束进攻方军队    
+	repeated MoveTroopInfo  defend_end_troop_infos = 240;	// 战斗结束防御方军队   
+	repeated BattleLogHeroInfo attack_hero_infos = 250;	// 战斗时进攻方将领信息
+	repeated BattleLogHeroInfo defend_hero_infos = 260;	// 战斗时防守方将领信息
+	repeated TroopEffectInfo attack_troop_effects = 270;	// 战斗时进攻方的部队强化信息(基础+强化+技能)  
+	repeated TroopEffectInfo defend_troop_effects = 280;	// 战斗时防守方的部队强化信息
+}
+
+message BriefBattleLogInfo {
+	optional uint64 id = 10;		//
+	optional uint32 attacker = 20; 	// 进攻方userid  
+	optional uint32 defender = 30; 	// 防守方userid  
+	optional uint32 type = 40;
+	optional uint32 battle_result = 50;	// 1:攻方胜利 2：守方胜利
+	optional uint32 time = 60;	// 开战时间
+	optional uint64 attack_fiefid = 70;	
+	optional uint64 defend_fiefid = 80;
+	optional uint32 fief_scale = 90;
+	optional uint32	attack_unit = 200;	// 进攻方总兵力
+	optional uint32 defend_unit = 210;	// 防守方总兵力
+	optional HeroIdInfo attack_hero_info = 220;	// 进攻方英雄
+	optional HeroIdInfo defend_hero_info = 230;	// 防守方英雄
+}
+
+// 最新战报信息
+message BattleHotInfo {
+  	optional uint32 attacker = 10;		   // 发起进攻的领主id
+		optional uint32 defender = 15;		   // 防守领主id
+  	optional uint32 attack_total_troop = 20;  // 发起进攻的总兵力
+		optional uint32 defend_total_troop = 25;  // 防守方总兵力
+  	optional uint64 fiefid = 30;         // 被进攻的领地id
+  	optional uint64 battle_log_id = 40;  // 战斗日志id
+  	optional uint32 time = 50;           // 开战时间
+  	optional uint32 scale = 60;          // 领地规模，3：Lv4、4：Lv5
+  	optional uint32 result = 70;         // 结果，1:攻方胜利 2：守方胜利
+  	optional uint32 type = 80;					 // 战斗类型
+  	optional HeroIdInfo attack_hero_info = 90;	// 进攻方英雄
+		optional HeroIdInfo defend_hero_info = 100;	// 防守方英雄
+}
+
+// 将领标识信息
+message HeroIdInfo {
+	optional uint64 hero = 10;		// 唯一id
+	optional uint32 heroid = 20;	// thingid
+	optional uint32 type = 30;		// 星级
+	optional uint32 talent = 40;	// 品质
+	optional uint32 role = 50;		// 将领角色
+}
+
+message ArenaUserRankInfo {
+	optional uint32  userid = 10;			//userid
+	optional uint32  rank = 20;			//排名
+	repeated HeroIdInfo hero_info = 30;	//将领信息
+}
+
+// 领地-将领信息
+message FiefHeroInfo {
+	repeated HeroIdInfo first_hero_infos = 10;		//守城将领
+	repeated HeroIdInfo second_hero_infos = 20; 	//待命将领
+}
+
+// 领地信息
+message BaseFiefInfo {
+	optional uint64 id = 10;             	// 领地id
+	optional uint32 propid = 20;		// 领地属性id
+	optional uint32 userid = 30;         	// 所属领主
+	optional BuildingInfo building = 40;	// 建筑信息	
+	optional uint32 unit_count = 100;		//驻防总兵力
+	optional uint32 battle_state = 110;	// 战场状态（0：没有战争 1：战斗准备,行军 2:围城中，防守方可以突围 3：围城结束，攻击方可以发生战斗 4：战斗结束）
+	optional uint32 battle_time = 120;	// 战场进入下阶段时间
+	optional uint32 attacker = 130;		// 进攻者
+	optional uint32 next_extra_battle_time = 150;	// 下次圣城副本可进时间
+	optional FiefHeroInfo hero_info = 160;  // 领地-将领信息	
+	optional uint32 battle_type = 170;	// 战场类型
+}
+
+message ServerFiefInfo {
+	optional string extend = 10;		//json扩展用	
+}
+
+message FiefInfo {
+	optional BaseFiefInfo bi = 10;
+	optional ServerFiefInfo si = 20;
+}
+
+message ExFiefInfo {
+	optional DataCtrl ctrl = 10;
+	optional FiefInfo info = 20;
+}
+
+message OtherFiefInfo {
+	optional uint64 id = 10;             	// 领地id
+	optional uint32 propid = 20;		// 领地属性id
+	optional uint32 userid = 30;         	// 所属领主
+	optional BuildingInfo building = 40;	// 建筑信息
+	optional uint32 battle_state = 80;	// 战场状态（0：没有战争 1：战斗准备,行军 2:围城中，防守方可以突围 3：围城结束，攻击方可以发生战斗 4：战斗结束）
+	optional uint32 battle_time = 90;	// 战场进入下阶段时间
+	optional uint32 attacker = 100;		// 进攻者
+	optional TroopInfo info = 200;		// 兵力情况
+	repeated HeroIdInfo first_hero_infos = 210;	// 将领信息
+	repeated HeroIdInfo second_hero_infos = 220;	//待命将领信息
+	optional UserTroopEffectInfo troop_effect_info = 240; //兵种科技信息
+}
+
+message BriefFiefInfo {
+	optional uint64 id = 10;             	// 领地id
+	optional uint32 propid = 20;		// 领地属性id
+	optional uint32 userid = 30;         	// 所属领主
+	optional BuildingInfo building = 40;	// 建筑信息
+	optional uint32 unit_count = 70;	// 总兵力
+	optional uint32 battle_state = 80;	// 战场状态（0：没有战争 1：战斗准备,行军 2:围城中，防守方可以突围 3：围城结束，攻击方可以发生战斗 4：战斗结束）
+	optional uint32 battle_time = 90;	// 战场进入下阶段时间
+	optional uint32 attacker = 100;		// 进攻者
+	repeated HeroIdInfo first_hero_infos = 130;	// 将领信息
+	optional uint32 second_hero_count = 140;	//待命将领总数
+	optional uint32 battle_type = 150;	// 战场类型
+}
+
+message HotUserScoreInfo {
+	//optional uint64 id = 10;             	// 领地id
+	optional uint32 userid = 10;         	// 
+	optional uint32 scale = 20;		// 主城规模
+	repeated RoleAttrInfo	infos = 100;	// 用户属性信息
+}
+
+
+//富领地信息
+message RichFiefInfo {
+	optional DataCtrl ctrl = 10;
+	required uint64 fiefid = 20;
+	optional ExFiefInfo fief_info = 30;
+	//optional MoveTroopInfos leaved_troop_infos = 40;
+	//optional MoveTroopInfos reaching_troop_infos = 50;
+	//optional BattleIdInfos attack_battleids = 100; //*** 进攻
+	//optional BattleIdInfos assist_battleids = 110; //*** 援助
+	//optional BattleIdInfos defend_battleids = 120; //*** 被功
+}
+
+message HeroShopItemInfo {
+	optional uint32 id = 30;
+	optional uint32 boxid = 10;	//
+	//optional uint32 type = 40;	//将领星级
+	optional bool bought = 20[default = false];		//是否已经购买
+}
+message HeroShopInfo {
+	//optional uint32 next_update_time = 10;	//名单下次更新时间
+	repeated HeroShopItemInfo infos = 20; //英雄名单
+}
+
+message LordReviveInfo {
+	optional TroopInfo revive_info = 10;	//墓地部队信息
+	optional TroopInfo revive_boss_info = 20;	//boss墓地信息
+	optional uint32 last_time = 30;		//上次复活普通士兵时间
+	optional uint32 count = 40;		//上次复活普通士兵时累计次数
+}
+
+message LordBloodInfo {
+	optional TroopInfo blood_troop_info = 10; // 血战兵信息
+	repeated HeroIdInfo blood_hero_infos = 20; // 血战将信息
+	optional uint32	blood_count = 30; // 血战累计次数
+	optional uint32 blood_record = 40; // 血战关卡
+	optional uint32 blood_record_max = 41; // 血战最大关卡
+	optional uint32 blood_record_last = 42;	// 血战上次关卡
+	optional uint32 blood_reward = 50;	// 血战奖励标记 1 全量奖励 2 减半奖励
+	repeated KeyValue blood_pokers = 51;	// 血战奖励
+	optional uint32 blood_reset_time = 53;// 血战重置时间  
+}
+
+message LordArenaInfo {
+	optional TroopInfo arena_troop_info = 200;	//巅峰战场派兵信息
+	repeated HeroIdInfo arena_hero_infos = 210;//巅峰战场将领信息
+	optional uint32	arena_rank = 220;		//巅峰战场名次
+	optional uint32 arena_reward_start = 230;	// 巅峰战场奖励计算开始时间
+	optional uint32 arena_reward_start_value = 240;	// 巅峰战场奖励计算积累值
+	optional uint32 arena_count = 250;		// 巅峰战场累计次数
+	optional uint32 arena_count_reset_time = 260;	// 巅峰战场累计次数重置时间
+}
+
+// 领主信息
+message BaseLordInfo {	
+	optional uint64 capital = 70;		// 首都 (庄园所在地)
+	optional TroopInfo troop_info = 100;	//部队信息
+	optional LordBloodInfo blood_info = 110;	//血战信息
+	optional LordReviveInfo revive_info = 120;	//医馆信息
+	optional LordArenaInfo arena_info = 130;	//巅峰信息
+	optional HeroShopInfo shop_info = 150;	//将领商店信息
+	optional uint32 shop_cost = 160;	//酒馆累计元宝消耗
+}
+
+message LordInfo {
+	optional BaseLordInfo bi = 10;
+}
+
+message ExLordInfo {
+ 	optional DataCtrl ctrl = 10;
+	optional LordInfo info = 20;
+}
+
+// 领主信息
+message OtherLordInfo {
+	optional uint32 id = 10;              // 领主id
+	optional uint32 unit_count = 20;      // 总兵力
+	optional uint32 fief_count = 30;      // 领地数量
+	optional uint32 site_count = 40;	// 资源点数量
+	//optional uint32 military_rank = 40;   // 军衔：军衔与该领主向系统或家族贡献的功勋相关。军衔控制该领主可以建造的兵种科技建筑物和可招募的兵种
+	optional uint32 exploit = 50;         // 功勋：领主可以通过战争杀死单位来获得功勋。功勋可以用于捐献给工会或者国家(系统)用于积军衔位等级
+	//optional string title = 60;	      // 官衔名前缀(最长7个汉字？)
+	optional TroopInfo arena_troop_info = 70;	//巅峰战场派兵信息
+	repeated HeroIdInfo arena_hero_infos = 80;//巅峰战场将领信息
+}
+
+// 领主的领地信息
+message BaseLordFiefInfo {
+	optional uint64 fiefid = 10; // 领地id
+	optional uint32 propid = 20; // 
+	optional TroopInfo troop_info = 100;  		// 驻防兵力
+	optional BuildingInfo building_infos = 200;	//建筑信息
+	repeated BuildingEffectInfo	effect_infos = 210;	// 建筑效果
+	//repeated BuildingStatusInfo	status_infos = 220;	// 建筑状态
+}
+
+message ServerLordFiefInfo {
+  	optional bool changed = 10;  // 是否变化
+}
+
+message LordFiefInfo {
+	optional BaseLordFiefInfo bi = 10;
+	optional ServerLordFiefInfo si = 20;
+}
+
+message ExLordFiefInfo {
+	optional DataCtrl ctrl = 10;
+	optional LordFiefInfo info = 20;
+}
+
+message LordFiefInfos {
+	optional DataCtrl ctrl = 10;
+	repeated ExLordFiefInfo infos = 20;
+	optional uint32 total_count = 30;		
+}
+
+/////////////////////////////////////////////
+// 将领信息
+/////////////////////////////////////////////
+//将领统兵属性信息
+message HeroArmPropInfo {
+	optional uint32 type = 10;	// 兵种类型
+	optional uint32 cur_value = 20;	// 数值
+	optional uint32 max_value = 30;	// 数值上限
+	optional uint32 cur_value_hide = 60;	// 隐藏数值
+	optional uint32 max_value_hide = 70;	// 隐藏数值上限
+//	optional int32 ext_value = 40;	// 强化效果extra
+//	optional uint32 progress = 50;	// 成长值
+}
+
+message OtherHeroArmPropInfo {
+	optional uint32 type = 10;	//兵种类型
+	optional uint32 value = 20;	//数值
+	optional uint32 max_value = 30;	// 数值上限
+	//optional uint32 progress = 40;	// 成长值
+}
+
+//将领属性
+message HeroArmProp {
+	optional uint32 type = 10;		//兵种类型
+	optional int32 value = 20;		// 数值
+	optional int32 max_value = 30;	// 数值上限
+}
+
+//将领技能槽
+message HeroSkillSlotInfo {
+	optional uint32 id = 10;
+	//optional uint32 type = 20;	//可装备技能类型
+	optional uint32 skillid = 30;	//已装备技能id
+	optional bool	static_skill = 40;//是否固化技能
+}
+
+message HeroRuneInfo {
+	optional uint32 id = 10;
+	optional uint32 weight = 20;	//为0表示未开槽
+	optional uint32 skillid = 30;	//已装备技能id
+}
+
+//将领装备槽
+message EquipmentSlotInfo {
+	optional uint32 type = 10;
+	optional EquipmentInfo info = 20;
+}
+
+message OtherHeroInfo {
+	optional uint64 hero = 10;
+	optional uint32 userid = 20;
+	optional uint32 heroid = 30;
+	optional uint32 level = 40;
+	optional uint32 exp = 50;
+	optional uint32 type = 60;
+	optional uint32 talent = 70;
+	optional uint64 fiefid = 90;	//当前所在地（0表示在庄园）
+	optional uint32 stamina = 100;	//当前体力值
+	
+	optional uint32 attack = 150;	//基础武力
+	optional uint32 defend = 160;	//基础防御
+
+	repeated OtherHeroArmPropInfo arm_prop_infos = 200;	//统兵效果
+	repeated HeroSkillSlotInfo skill_slot_infos = 210;		//技能信息
+	repeated EquipmentSlotInfo equipment_infos = 220;	//装备信息
+}
+
+message HeroFavourInfo {
+	optional uint32 skillid = 10;
+	optional uint32 time = 20;	//技能消失时间
+	optional uint32 exp = 30;	//进度
+	optional uint32 exp_update_time = 40;//进度更新时间
+	repeated uint32 used_slots = 100;	//已选择过的宠幸方式
+	repeated uint32 used_exps = 120;	//已出现过的进度值
+}
+
+message BaseHeroInfo {
+	optional uint64 id = 10;
+	optional uint32 heroid = 20;
+	optional uint32 level = 30;
+	optional uint32 exp = 40;
+	optional uint32 state = 50;	//将领状态 参加common.h EHeroState定义
+	optional uint32 type = 60;	// 星级
+	optional uint32 talent = 70;	// 品质
+	optional uint64 fiefid = 90;	//当前所在地（0表示在庄园）
+	optional uint32 stamina = 100;	//体力值
+	optional uint32 stamina_reset_time = 110;	//下次体力重置时间
+	optional uint32 stamina_recovery_count = 120;	//恢复体力次数
+	optional bool arena_hero = 130;		//巅峰战场中
+
+	optional uint32 attack = 150;	//基础武力
+	optional uint32 defend = 160;	//基础防御
+	
+	optional HeroFavourInfo favour_info = 180;	//宠幸信息
+
+	repeated HeroArmPropInfo arm_prop_infos = 200;	//统兵效果
+	repeated HeroSkillSlotInfo skill_slot_infos = 210;	//技能信息
+	repeated EquipmentSlotInfo equipment_infos = 220;	//装备信息
+}
+
+message ServerHeroInfo {
+  
+}
+
+message HeroInfo {
+  	optional BaseHeroInfo bi = 10;
+//  	optional ServerHeroInfo si = 20;
+}
+
+message ExHeroInfo {
+  	optional DataCtrl ctrl = 10;
+	optional HeroInfo info = 20;
+}
+
+message HeroInfos {
+  	optional DataCtrl ctrl = 10;
+	repeated ExHeroInfo infos = 20;
+	optional uint32 total_count = 30;
+}
+
+
+////////////家族相关结构
+message BaseGuildInfo {
+  	optional uint32 id = 10;        // 家族id
+  	optional string name = 20;      // 家族名称
+  	optional uint32 image = 30;     // 徽章
+  	optional uint32 leader = 40; // 族长
+	optional uint32 level = 50;	// 等级
+//	optional uint32 exp = 60;	// 当前经验
+	optional uint32 fief_count = 70;	// 总领地数
+//	optional uint32 money = 80;	//家族资金
+	optional string desc = 90;	//家族宗旨	同聊天长度一样
+	optional string announcement = 100;	//公告
+	optional uint32 country = 110;	//国家
+	//optional uint64 fiefid = 120;	//总坛所在地
+	optional bool auto_join = 130[default = true];	//是否默认自动申请加入
+	//optional BattleIdInfo attack_battleid = 130;	//家族发起中的总坛战争
+	//optional BattleIdInfo defend_battleid = 140;	//家族防御中的总坛战争
+	repeated GuildPositionInfo position_infos = 200;	//职位信息
+	//repeated GuildAttrInfo attr_infos = 210;		//家族属性信息
+	//repeated BuildingInfo building_infos = 220;	//建筑信息
+}
+
+message GuildPositionInfo {
+	optional uint32 userid = 10;
+	optional uint32 position = 20;//职位
+}
+
+message GuildAttrInfo {
+	optional uint32 id = 10;
+	optional uint64 value = 20;
+}
+
+
+message ServerGuildInfo {
+}
+
+message GuildInfo {
+  	optional BaseGuildInfo bi = 10;
+//	optional ServerGuildInfo si = 20;
+}
+
+message ExGuildInfo {
+	optional DataCtrl ctrl = 10;
+	optional GuildInfo info = 20;
+}
+
+// 族员信息
+message BaseGuildMemberInfo {
+	optional uint32 userid = 10;
+}
+
+message GuildMemberInfo {
+	optional BaseGuildMemberInfo bi = 10;
+}
+
+message ExGuildMemberInfo {
+	optional DataCtrl ctrl = 10;
+	optional GuildMemberInfo info = 20;
+}
+
+message GuildMemberInfos {
+	optional DataCtrl ctrl = 10;
+	repeated ExGuildMemberInfo infos = 20;
+	optional uint32 total_count = 30;
+}
+
+// 申请族员信息
+message BaseGuildJoinInfo {
+	optional uint32 userid = 10;
+	optional uint32 time = 20;	//申请时间
+	optional string message = 30;	//留言
+}
+
+message GuildJoinInfo {
+	optional BaseGuildJoinInfo bi = 10;
+}
+
+message ExGuildJoinInfo {
+	optional DataCtrl ctrl = 10;
+	optional GuildJoinInfo info = 20;
+}
+
+message GuildJoinInfos {
+	optional DataCtrl ctrl = 10;
+	repeated ExGuildJoinInfo infos = 20;
+	optional uint32 total_count = 30;
+}
+
+// 邀请中族员信息
+message BaseGuildInviteInfo {
+	optional uint32 userid = 10;
+	optional uint32 time = 20;	//邀请时间
+}
+
+message GuildInviteInfo {
+	optional BaseGuildInviteInfo bi = 10;
+}
+
+message ExGuildInviteInfo {
+	optional DataCtrl ctrl = 10;
+	optional GuildInviteInfo info = 20;
+}
+
+message GuildInviteInfos {
+	optional DataCtrl ctrl = 10;
+	repeated ExGuildInviteInfo infos = 20;
+	optional uint32 total_count = 30;
+}
+
+message RichGuildInfo {
+  	optional DataCtrl ctrl = 10;
+	required uint32 guildid = 20;
+	optional ExGuildInfo guild_info = 30;
+	optional GuildMemberInfos member_infos = 40;
+	optional GuildJoinInfos  join_infos = 50;	//申请人列表
+	optional GuildInviteInfos  invite_infos = 60;	//邀请人列表
+}
+
+message BriefGuildInfo {
+	optional uint32 id = 10;        // 家族id
+  	optional string name = 20;      // 家族名称
+  	optional uint32 image = 30;     // 徽章
+  	optional uint32 leader = 40; 	// 族长
+	optional uint32 level = 50;	// 等级
+	optional uint32 country = 110;	// 国家
+}
+
+message OtherGuildInfo {
+	optional uint32 id = 10;        // 家族id
+	optional string name = 20;      // 家族名称
+	optional uint32 image = 30;     // 徽章
+	optional uint32 leader = 40; // 族长
+	optional uint32 level = 50;	// 等级
+	//optional uint64 fiefId = 60;	// 总坛
+	optional uint32 fief_count = 70;	// 总领地数
+	optional string desc = 90;	//家族宗旨	同聊天长度一样
+	optional uint32 country = 110;	// 国家
+	optional bool auto_join = 120;
+}
+
+message OtherRichGuildInfo {
+	optional OtherGuildInfo info = 10;
+	optional GuildMemberInfos member_infos = 20;
+}
+
+// 用户的家族信息
+message BaseUserGuildInfo {
+  	optional uint32 guildid = 10; // 家族id
+}
+
+message UserGuildInfo {
+  	optional BaseUserGuildInfo bi = 10;
+}
+
+message ExUserGuildInfo {
+  	optional DataCtrl ctrl = 10;
+	optional UserGuildInfo info = 20;
+}
+
+// 家族日志事件
+enum GuildLogEvent {
+  GUILD_LOG_EVENT_JOIN = 1;    // 加入了家族
+  GUILD_LOG_EVENT_QUIT = 2;    // 退出了家族
+  //GUILD_LOG_EVENT_REFUSE = 3;  // 被拒绝加入家族
+  GUILD_LOG_EVENT_REMOVE = 4;  // 被踢出入了家族
+  GUILD_LOG_EVENT_INVITE_REFUSE = 5;  // 拒绝加入家族
+  GUILD_LOG_EVENT_ASSIGN = 6;  // 转让家族
+  GUILD_LOG_EVENT_JOIN_ASK = 7;  // 申请加入家族
+}
+
+// 家族日志
+message GuildLogInfo {
+  optional uint64 id      = 10;      // 唯一id
+  optional uint32 time = 15;
+  optional uint32 guildid = 20;      // 家族id
+  optional uint32 userid = 30;       // 玩家id
+  optional uint32 targetid = 35;	 // 目标id
+  optional GuildLogEvent event = 40; // 事件
+}
+
+enum StaticGuildDataType {
+  STATIC_GUILD_DATA_TYPE_GUILD_LOG = 1;
+}
+//
+//message RobotReturnItemInfo {
+//  optional uint32 itemid = 10;
+//  optional int32 count = 20;
+//}
+//
+//message RobotReturnInfo {
+//    repeated RobotReturnItemInfo infos = 10;
+//}
+//
+//message RobotLogInfo {
+//  optional uint64 id = 10;
+//  optional uint32 time = 20;
+//  optional uint32 event = 30; // 1:收获 2:购买 3:种植 4:金币不足 5:仓库不足 6:农田不足 7:助手过期 8:不登陆过期 9:开启 10:玩家手动暂停
+//  
+//  // 对于收获行为:为收获获得的item，包括果实和材料等
+//  // 对于购买行为:为购买的种子
+//  // 对于种植行为:为种植的种子
+//  optional RobotReturnInfo ri = 40;
+//  
+//  // 对于收获行为:params[0]为收获的农田数目，params[1]为获得的经验
+//  // 对于购买行为:params[0]为购买种子话费的金币
+//  // 对于种植行为:params[0]为剩余的农夫数量
+//  repeated int32 params = 100;
+//}
+
+/////////////////////////////////////////////
+// 玩家搜索
+/////////////////////////////////////////////
+message ConditionNum {
+  optional uint32 field = 10;
+  optional uint32 value = 20;
+}
+
+message ConditionStr {
+  optional uint32 field = 10;
+  optional string value = 20;
+}
+
+enum ConditionFieldType
+{
+	CONDITION_FIELD_NONE = 0;	         // (无)
+	CONDITION_FIELD_MOBILE = 1;		     // 手机号
+	CONDITION_FIELD_NICK = 2;		       // 昵称
+	CONDITION_FIELD_SEX = 3;		       // 性别 1 ： 女 2 ： 男
+	CONDITION_FIELD_AGE = 4;		       // 年龄 0：所有年龄 1：16岁-22岁 2：22岁-30岁 3：30岁-40岁 4:40岁+
+	CONDITION_FIELD_PROVINCE = 5;	     // 居住省份
+	CONDITION_FIELD_CITY = 6;		       // 居住城市
+	CONDITION_FIELD_MOBILE_LIKE = 7;   // 手机号后4位近似查找
+	CONDITION_FIELD_USERID = 8;        // 用户id精确匹配
+	CONDITION_FIELD_IMAGE = 9;	       // 用户自定义头像 1：系统头像（image < 10000） 2：自定义头像(image > 10000)
+	CONDITION_FIELD_NEW_PLAYER = 10;   // 新注册用户
+	CONDITION_FIELD_COUNTRY = 11;      // 国家
+}
+
+message BriefUserInfo {
+  	optional uint32 id = 10;          // 用户id
+	optional uint32 image = 20;	      // 个人头像
+	optional string nick = 30;        // 昵称
+	optional uint32 sex = 40;			    // 性别(1 : 女 2 : 男)
+	optional uint32 birthday = 50;		// 生日
+	optional uint32 province = 60;		// 省/直辖市
+	optional uint32 city = 70;			  // 城市
+	optional uint32 level = 80;			  // 等级
+	//optional uint64 pos = 90;			   // 玩家上次种植位置
+	optional uint32 guildid = 100;			//家族id
+	optional uint32 country	= 110;			// 国家
+	optional uint32 charge = 120;			// 累计充值元宝
+	optional uint32 last_login_time = 130;		// 上次登录时间
+}
+
+message UserAttrScoreInfo {
+	optional uint32 userid = 10;	//
+	optional uint32 score = 20;	//肥羊指数
+	optional bool hot = 30;		//是否是肥羊
+}
+/////////////////////////////////////////////
+// 地理位置信息
+/////////////////////////////////////////////
+message GeographyInfo {
+	optional uint64 tileid = 10;
+	optional uint32 province = 20;	//0:没有查到指定位置地理信息
+	optional uint32 city = 30;			//0:没有查到指定位置地理信息
+}
+
+message FiefDataSynInfo {
+  optional uint32 syn_flag = 10;	// 0 - 同步完整数据  1 - 同步变化数据
+  optional uint64 fiefid = 20;
+}
+
+/////////////////////////////////
+// 家族搜索条件
+/////////////////////////////////
+message GuildSearchCond {
+  optional uint32 field = 10;
+  optional string str_value = 20; // 字符串参数
+  optional uint32 int_value = 30; // 整型参数
+}
+
+enum GuildSearchFieldType {
+  GUILD_SEARCH_GUILD = 1;    // 国家，整型参数
+}
+
+/////////////////////////////////
+// 副本
+/////////////////////////////////
+message CampaignTimeCondition {
+	optional uint32 bt = 10;
+	optional uint32 et = 20;
+	optional uint32 times = 30;
+	optional uint32 day = 40;
+}
+
+message CampaignInfo {
+	optional uint32 id = 10;	// 战役ID
+	optional uint32 times = 20;		// 通关次数
+	optional CampaignTimeCondition last_condition = 40; // 最近一次时间条件的记录  
+	optional uint32 optimes = 50;		// 操作次数
+}
+
+message ActInfo {
+	optional uint32 id = 10;	// 章节ID
+	optional uint32 flag = 20;
+	repeated CampaignInfo infos = 30;
+	optional uint32 clear_times = 40;	// 扫荡次数
+	optional uint32 last_reset_time = 50;	// 上次重置时间
+}
+
+message ExActInfo {
+	optional DataCtrl ctrl = 10;
+	optional ActInfo info = 20;
+}
+
+message ActInfos {
+	optional DataCtrl ctrl = 10;
+	repeated ExActInfo infos = 20;
+}
+
+message AccountPswInfo {
+	optional uint32 userid = 10; //用户id
+	optional string psw = 20; //密码
+	optional string nick = 30;
+	optional uint32 image = 40;
+	optional uint32 country = 50;
+}
+
+
+// 活动日志类型
+enum LT
+{
+	LT_GENERAL = 1;		//(保留)
+//	LT_FARM_SKILL = ,		//使用技能(目标农场)
+//	LT_FARM_ITEM,		//使用物品(目标农场)
+//	LT_POKE_SKILL,		//使用技能poke日志(可以回poke)(目标为人)
+//	LT_POKE_ITEM,		//使用道具poke日志(可以回poke)(目标为人)
+//	LT_CHAT,			//聊天消息(作废)
+//	LT_FOOT,			//足迹消息(作废)
+	LT_FRIEND_ADD = 8;		//好友添加
+	LT_FRIEND_DEL = 9;		//好友删除
+	LT_ITEM_EXPIRE = 10;		//物品到期消失
+	LT_TARGET_LEVELUP = 11;	//玩家升级日志
+	LT_INVITER_REWORD = 12;	//邀请奖励（包括邀请者和被邀请者）
+	LT_BIND_REWORD = 13;			//绑定奖励
+	LT_BLACKLIST_ADD = 14;	//黑名单添加
+//	LT_BUILDING_ACTION,	//建筑动作
+    //	LT_PRESENT_REQUEST, // 赠送请求日志
+    //	LT_PRESENT_RESPONSE,// 赠送响应日志
+	LT_GUILD = 18;		//家族日志 （stid 1:邀请 2：禅让 3：踢出家族 4:申请加入 5:被批准加入家族 6：被拒绝加入家族 7：任命为长老 8：贬为平民）
+};
+
+message ProvinceInfo {
+  optional uint32 province = 1;
+	optional uint32 count = 2;
+}
+
+// 聊天时间戳信息
+message ChatTimeInfo {
+  optional uint32 id = 10;
+  optional uint32 time = 20;
+}
+
+// 追杀令信息
+message PlayerWantedInfo {
+  optional uint64 id = 10;
+  optional uint32 country = 20;  // 发布的国家
+  optional uint32 userid = 30;   // 发布的玩家
+  optional uint32 target = 40;   // 被追杀的玩家
+  optional uint32 end_time = 50; // 结束时间
+}
+
+message GuildSearchInfo {
+	optional uint32 id = 10;        // 家族id
+  optional string name = 20;      // 家族名称
+	optional uint32 image = 30;     // 徽章
+	optional uint32 members = 40;   // 人数
+	optional uint32 level = 50;     // 等级
+}
+
+// 荣耀排行信息
+message HonorRankInfo {
+  optional uint32 userid = 10;       // 神将荣耀榜、铁血战胜榜有值
+  optional uint32 guildid = 20;      // 家族之光榜有值
+  optional uint64 hero_id = 30;      // 武将唯一id，神将荣耀榜有值
+  optional uint32 hero_prop_id = 40; // 武将propid，神将荣耀榜有值
+  optional uint64 rank_data = 50;    // 排行数据
+  optional bool receive_award = 60;  // 是否已经领取奖励
+}
+
+// 荣耀排行类型
+enum HonorRankType {
+  HONOR_RANK_MARS = 1;  // 铁血战神榜
+  HONOR_RANK_GUILD = 2; // 家族之光榜
+  HONOR_RANK_USER_COST = 3;  // 玩家消耗
+  HONOR_RANK_GUILD_COST = 4;  // 家族消耗
+}
+
+// 武将排行信息
+message HeroRankInfo {
+  optional uint64 id = 10;
+	optional uint32 heroid = 20;
+  optional uint32 max_arm_value = 30; // 最大统率
+  optional uint32 type = 40;
+  optional uint32 lord = 50;          // 领主
+  optional string lord_nick = 60;     // 领主昵称
+  optional uint32 country = 70;
+  optional uint32 guildid = 80;
+}
+
+// 玩家排行类型
+enum UserRankType {
+  USER_RANK_CHARGE = 1; // 充值
+  USER_RANK_KILL = 2;   // 杀敌
+  USER_RANK_LEVEL = 3;  // 等级
+}
+
+// 玩家排行信息
+message UserRankInfo {
+  optional uint32 userid = 10;
+  optional string nick = 20;
+  optional uint32 image = 30;
+  optional uint32 country = 40;
+  optional uint32 guildid = 50;
+  optional uint64 rank_data = 60;  // 排行数据
+}
+
+
+
+// 巅峰战场战斗日志
+message ArenaSubLogInfo {
+	optional uint32 index = 10;	 // 场次
+	optional uint32 result = 20; // 1:攻方胜利 2：守方胜利
+	optional HeroIdInfo attack_hero = 30;
+	optional uint32 attack_count = 31;
+	optional HeroIdInfo defend_hero = 40;
+	optional uint32 defend_count = 41;
+	optional uint64 battle_log = 50;
+}
+
+message ArenaLogInfo {
+	optional uint64 id = 10;
+	optional uint32 attacker = 20; 	// 进攻方userid
+	optional uint32 attacker_pos = 30;
+	optional uint32 defender = 40; 	// 防守方userid
+	optional uint32 defender_pos = 50;
+	optional uint32 battle_result = 60;	// 1:攻方胜利 2：守方胜利
+	optional uint32 time = 70;
+	repeated HeroIdInfo attack_heros = 71;
+	repeated HeroIdInfo defend_heros = 72;
+	optional uint64 battle_log = 80;
+}
+
+// 血战排行榜
+message BloodRankInfo {
+  optional uint32 userid = 10;
+  optional string nick = 20;
+  optional uint32 image = 30;
+  optional uint32 country = 40;
+  optional uint32 rank = 50;
+  optional uint32 rank_data = 70;  // 排行数据
+  optional uint32 reward = 80;
+}
+
+message BloodRankInfos {
+	optional uint32 day = 10;
+	repeated BloodRankInfo infos = 20;
+}
+
+enum ThingType
+{
+  THING_TYPE_ITEM = 2;     // 道具
+  THING_TYPE_BUILDING = 3; // 建筑
+  THING_TYPE_HERO = 4;	   // 将领
+  THING_TYPE_ARM = 5;      // 俘虏
+  THING_TYPE_EQUIPMENT = 7;      // 装备
+  THING_TYPE_WOUNDED = 40;  // 伤员
+  THING_TYPE_DEAD = 41;     // 死兵
+  THING_TYPE_HERO_EXP = 42; // 将领经验
+}
+
+enum AttrType
+{	
+	ATTR_TYPE_EXP = 2;		//玩家经验
+	ATTR_TYPE_EXPLOIT = 3;		//功勋	
+	ATTR_TYPE_SCORE = 4;		//成就值	
+	ATTR_TYPE_LEVEL = 6;		//玩家等级
+	ATTR_TYPE_CURRENCY = 7;		//元宝
+	ATTR_TYPE_GUILD_CREDIT = 8;	//家族当前贡献值
+	ATTR_TYPE_GUILD_CREDIT_TOTAL = 9;//累计家族贡献值
+	ATTR_TYPE_STAMINA = 10;	//用户体力
+	ATTR_TYPE_CHARGE = 11;	//vip积分
+
+	//20 - 50以上为资源属性
+	ATTR_TYPE_MONEY = 20;		//金币	
+	ATTR_TYPE_FOOD = 21;		//粮草
+	ATTR_TYPE_WOOD = 22;		//木材
+	ATTR_TYPE_MATERIAL_0 = 23;	//铁
+	ATTR_TYPE_MATERIAL_1 = 24;	//铜
+	
+	//100为非用户属性
+	ATTR_TYPE_HERO_EXP = 100;	//将领经验
+	ATTR_TYPE_HERO_STAMINA = 101;	//将领体力
+	ATTR_TYPE_HERO_TYPE = 102;	//将领品质
+	ATTR_TYPE_EAR	= 103;	//耳朵
+	ATTR_TYPE_GUILD_FIGHT_SCORE = 104;	//家族战威
+}
+
+/////////////////////////////////////
+//消息码(1 - 1999)(仅供与客户端的协议使用)
+/////////////////////////////////////
+enum CMD
+{
+	// 系统
+	MSG_RSP_REQUEST = 1;		// 通用应答消息
+	MSG_ROUTE = 2;
+	MSG_CLIENT_RESET = 3;
+	MSG_SERVER_RESET = 4;
+	MSG_SERVER_ROLE = 5;		// 服务器角色
+	MSG_COMPRESSED = 6;		// 压缩的数据
+	MSG_PING_REQ = 7;		// PING
+	MSG_PING_RSP = 8;
+	MSG_REQ_SERVER_WHERE = 9;		// 询问服务器地址
+	MSG_RSP_SERVER_WHERE = 10;
+
+	// 同步
+	MSG_REQ_HEARTBEAT = 100;		// 心跳
+	MSG_RSP_HEARTBEAT = 101;
+	MSG_REQ_USER_DATA_SYN = 102;		// 用户数据同步
+	MSG_RSP_USER_DATA_SYN = 103;
+	MSG_REQ_TRAY_DATA_SYN = 104;		// 托盘数据同步消息
+	MSG_RSP_TRAY_DATA_SYN = 105;
+
+
+	// 帐号
+	MSG_REQ_REGISTER = 150;		//注册
+	MSG_RSP_REGISTER = 151;
+	MSG_REQ_LOGIN = 152;		// 登录
+	MSG_RSP_LOGIN = 153;
+	MSG_REQ_LOGOUT = 154;		// 登出
+	MSG_RSP_LOGOUT = 155;
+	MSG_REQ_ACCOUNT_QUERY = 156;		// 请求帐号
+	MSG_RSP_ACCOUNT_QUERY = 157;
+	MSG_REQ_ACCOUNT_BIND = 158;		// 绑定帐号
+	MSG_RSP_ACCOUNT_BIND = 159;	
+	MSG_REQ_CHANNEL_ACTIVATE = 164;		// 渠道激活
+	MSG_RSP_CHANNEL_ACTIVATE = 165;
+	MSG_REQ_ACCOUNT_QUERY_PARTNER = 166;		// 通过合作方id请求帐号
+	MSG_RSP_ACCOUNT_QUERY_PARTNER = 167;
+	MSG_REQ_USER_QUERY_PARTNER = 168;		// 通过合作方id查询用户
+	MSG_RSP_USER_QUERY_PARTNER = 169;
+	MSG_REQ_PARTNER_INFO_QUERY_BY_USERID = 170;		// 通过userid查找合作方id
+	MSG_RSP_PARTNER_INFO_QUERY_BY_USERID = 171;
+	MSG_REQ_PARTNER_INFO_BIND = 172;		// 绑定合作方用户信息
+	MSG_RSP_PARTNER_INFO_BIND = 173;
+	MSG_REQ_ACCOUNT_BIND2 = 174;
+	MSG_RSP_ACCOUNT_BIND2 = 175;
+	MSG_REQ_GAME_ENTER = 176;		// 进入游戏
+	MSG_RSP_GAME_ENTER = 177;
+	MSG_REQ_USER_CHECKIN = 178;		//签到
+	MSG_RSP_USER_CHECKIN = 179;
+	MSG_REQ_ACCOUNT_RESTORE = 160;		// 找回帐号 -step1
+	MSG_RSP_ACCOUNT_RESTORE = 161;
+	MSG_REQ_ACCOUNT_RESTORE2 = 162;		// 找回帐号-step2
+	MSG_RSP_ACCOUNT_RESTORE2 = 163;
+	MSG_REQ_ACCOUNT_RESTORE3 = 180;		// 找回帐号-step3
+	MSG_RSP_ACCOUNT_RESTORE3 = 181;
+
+	MSG_REQ_PLAYER_UPDATE = 200;	 	// 修改玩家个人信息
+	MSG_RSP_PLAYER_UPDATE = 201;
+	MSG_REQ_TRAINING_COMPLETE2 = 214;		//新手完成
+	MSG_RSP_TRAINING_COMPLETE2 = 215;
+		
+
+	// 好友
+	MSG_REQ_FRIEND_ADD = 250;		// 增加好友
+	MSG_RSP_FRIEND_ADD = 251;
+	MSG_REQ_FRIEND_DEL = 252;		// 删除好友
+	MSG_RSP_FRIEND_DEL = 253;
+	MSG_REQ_MESSAGE_POST = 280;		// 投递消息
+	MSG_RSP_MESSAGE_POST = 281; 
+	MSG_REQ_PLAYER_WANTED = 282;		// 追杀令
+	MSG_RSP_PLAYER_WANTED = 283;
+
+	// 包裹
+	MSG_REQ_ITEM_BUY = 300;		// 购买物品
+	MSG_RSP_ITEM_BUY = 301;
+	MSG_REQ_ITEM_SELL = 302;		// 卖出物品
+	MSG_RSP_ITEM_SELL = 303;
+	MSG_REQ_ITEM_USE = 304;		// 物品使用(probuf版)
+	MSG_RSP_ITEM_USE = 305;
+
+	//建筑
+	MSG_REQ_MANOR_DRAFT = 350;		// 庄园招兵
+	MSG_RSP_MANOR_DRAFT = 351;
+	MSG_REQ_MANOR_POP_RECOVER = 352;		//庄园人口恢复
+	MSG_RSP_MANOR_POP_RECOVER = 353;
+	MSG_REQ_MANOR_BUILDING_BUY = 362;		// 主城购买建筑
+	MSG_RSP_MANOR_BUILDING_BUY = 363;
+	MSG_REQ_MANOR_RECEIVE = 364;		// 主城收获资源
+	MSG_RSP_MANOR_RECEIVE = 365;
+	MSG_REQ_MANOR_MOVE_TROOP = 366;		// 主城调兵
+	MSG_RSP_MANOR_MOVE_TROOP = 367;
+	MSG_REQ_MANOR_RECEIVE_ALL = 368;		// 主城收获全收
+	MSG_RSP_MANOR_RECEIVE_ALL = 369;
+	MSG_REQ_USER_TROOP_COST_UPDATE = 370;		//玩家兵力消耗更新
+	MSG_RSP_USER_TROOP_COST_UPDATE = 371;
+	MSG_REQ_QUERY_EMPTY_ZONE = 386;		// 查找一个空闲的zone  
+	MSG_RSP_QUERY_EMPTY_ZONE = 387;
+	MSG_REQ_MANOR_LAY_DOWN = 388;		// 城堡落地  
+	MSG_RSP_MANOR_LAY_DOWN = 389;
+	MSG_REQ_MANOR_RANDOM_MOVE = 390;
+	MSG_RSP_MANOR_RANDOM_MOVE = 391;
+	MSG_REQ_BUILDING_RESET = 392;	//建筑产出元宝重置
+	MSG_RSP_BUILDING_RESET = 393;
+	MSG_REQ_HOT_USER_SCORE_INFO_QUERY = 394;		//肥羊列表 
+	MSG_RSP_HOT_USER_SCORE_INFO_QUERY = 395;
+	MSG_REQ_MANOR_WEAK_REMOVE = 396;		// 主城虚弱状态解除
+	MSG_RSP_MANOR_WEAK_REMOVE = 397;
+	MSG_REQ_MANOR_REVIVE = 398;		// 主城-士兵复活
+	MSG_RSP_MANOR_REVIVE = 399;
+	MSG_REQ_MANOR_REVIVE_CLEAN = 400;		// 主城-士兵放弃复活
+	MSG_RSP_MANOR_REVIVE_CLEAN = 401;
+
+	//
+	MSG_REQ_USER_SEARCH = 520;		// 搜索玩家
+	MSG_RSP_USER_SEARCH = 521;
+	MSG_REQ_USER_STAMINA_RESET = 522;	// 玩家体力回复
+	MSG_RSP_USER_STAMINA_RESET = 523;
+	
+	//排行榜
+	MSG_REQ_USER_RANK_INFO = 700;   // 玩家排行
+	MSG_RSP_USER_RANK_INFO = 701;
+	MSG_REQ_USER_STAT_DATA2 = 704;		// 统计信息查询
+	MSG_RSP_USER_STAT_DATA2 = 705;
+	MSG_REQ_MACHINE_PLAY_STAT_DATA = 706;	//水果机排行榜
+	MSG_RSP_MACHINE_PLAY_STAT_DATA = 707;
+	MSG_REQ_BATTLE_HOT_INFO = 710;		// 最新战报信息
+	MSG_RSP_BATTLE_HOT_INFO = 711;
+	MSG_REQ_HONOR_RANK_INFO = 712;  // 荣耀排行
+	MSG_RSP_HONOR_RANK_INFO = 713;
+	MSG_REQ_HERO_RANK_INFO = 714;   // 武将排行
+	MSG_RSP_HERO_RANK_INFO = 715;
+	MSG_REQ_RANK_REWARD = 716;	//排行榜领奖
+	MSG_RSP_RANK_REWARD = 717;
+
+	//任务
+	MSG_REQ_QUEST_FINISH = 750;		//完成任务
+	MSG_RSP_QUEST_FINISH = 751;
+
+	//黑名单
+	MSG_REQ_BLACKLIST_ADD = 800;		// 黑名单
+	MSG_RSP_BLACKLIST_ADD = 801;
+	MSG_REQ_BLACKLIST_DEL = 802;		// 删除黑名单
+	MSG_RSP_BLACKLIST_DEL = 803;
+	MSG_REQ_BLACKLIST_CHECK = 804;		// 检查是否在对象黑名单
+	MSG_RSP_BLACKLIST_CHECK = 805;
+
+	//静态数据查询
+	MSG_REQ_STATIC_USER_DATA_QUERY = 850;		//查询静态数据
+	MSG_RSP_STATIC_USER_DATA_QUERY = 851;
+	MSG_REQ_PLAYER_STATIC_USER_DATA_QUERY = 852;	// 查询其他玩家的静态数据信息
+    	MSG_RSP_PLAYER_STATIC_USER_DATA_QUERY = 853;
+	MSG_REQ_STATIC_GUILD_DATA_QUERY = 856;		// 查询家族静态数据
+	MSG_RSP_STATIC_GUILD_DATA_QUERY = 857;
+	MSG_REQ_PLAYER_WANTED_INFO_QUERY = 858;
+	MSG_RSP_PLAYER_WANTED_INFO_QUERY = 859;
+	MSG_REQ_ADVANCED_SITE_QUERY = 860;
+	MSG_RSP_ADVANCED_SITE_QUERY = 861;
+
+	//水果机
+	MSG_REQ_MACHINE_PLAY = 870;		//幸运水果机
+	MSG_RSP_MACHINE_PLAY = 871;
+
+	MSG_REQ_RICH_OTHER_USER_INFO_QUERY = 880;	//他人富用户信息查询
+	MSG_RSP_RICH_OTHER_USER_INFO_QUERY = 881;
+	MSG_REQ_BRIEF_USER_INFO_QUERY = 882;		//摘要信息查询
+	MSG_RSP_BRIEF_USER_INFO_QUERY = 883;
+
+	// 领地
+	MSG_REQ_FIEF_RECEIVE = 1001;		//资源点收获
+	MSG_RSP_FIEF_RECEIVE = 1002;
+	MSG_REQ_FIEF_BUILDING_BUY = 1003;		//资源点购买升级建筑
+	MSG_RSP_FIEF_BUILDING_BUY = 1004;
+	MSG_REQ_FIEF_QUERY_BRIEF = 1005;		// 查询brief fief 
+	MSG_RSP_FIEF_QUERY_BRIEF = 1006;
+	MSG_REQ_FIEF_MOVE_TROOP = 1007;		// 资源点调兵
+	MSG_RSP_FIEF_MOVE_TROOP = 1008;
+	MSG_REQ_FIEF_ABANDON = 1009;		// 放弃领地
+	MSG_RSP_FIEF_ABANDON = 1010;		// 放弃领地
+	MSG_REQ_SELF_FIEF_INFO_QUERY = 1011;	//领地信息查询-by self
+	MSG_RSP_SELF_FIEF_INFO_QUERY = 1012;
+	MSG_REQ_OTHER_FIEF_INFO_QUERY = 1013;	//领地other信息查询
+	MSG_RSP_OTHER_FIEF_INFO_QUERY = 1014;
+	MSG_REQ_FIEF_DATA_SYN 	= 1017;		//领地数据同步
+	MSG_RSP_FIEF_DATA_SYN 	= 1018;	
+	MSG_REQ_FAVORITE_FIEF_ADD = 1027;	// 领地收藏夹-加入
+	MSG_RSP_FAVORITE_FIEF_ADD = 1028;
+	MSG_REQ_FAVORITE_FIEF_DEL = 1029;	// 领地收藏夹-删除
+	MSG_RSP_FAVORITE_FIEF_DEL = 1030;		
+	MSG_REQ_FAVORITE_FIEF_QUERY = 1031;	// 领地收藏夹-查询
+	MSG_RSP_FAVORITE_FIEF_QUERY = 1032;	
+	MSG_REQ_FIEF_HERO_SELECT = 1033;	//守城将领选择
+	MSG_RSP_FIEF_HERO_SELECT = 1034;
+	MSG_REQ_FIEF_FIGHT_NPC = 1049;		//恶魔之门
+	MSG_RSP_FIEF_FIGHT_NPC = 1050;
+
+	//领主相关
+	MSG_REQ_LORD_FIEFID_QUERY = 1053;			//领主领地id查询
+	MSG_RSP_LORD_FIEFID_QUERY = 1054;
+	//MSG_REQ_LORD_TITLE = 1055;					//领主前缀改名
+	//MSG_RSP_LORD_TITLE = 1056;
+	//MSG_REQ_MILITARY_RANK_BUY = 1057;			//购买军衔
+	//MSG_RSP_MILITARY_RANK_BUY = 1058;										
+	MSG_REQ_OTHER_LORD_TROOP_INFO_QUERY = 1059;		//领主兵力详情查询
+	MSG_RSP_OTHER_LORD_TROOP_INFO_QUERY = 1060;
+
+	
+
+	// 战斗  
+	MSG_REQ_BATTLE_BUY_UNIT = 1080;		//购买兵种
+	MSG_RSP_BATTLE_BUY_UNIT = 1081;
+	MSG_REQ_RICH_BATTLE_INFO_QUERY = 1082;		//查询战场信息
+	MSG_RSP_RICH_BATTLE_INFO_QUERY = 1083;
+	MSG_REQ_BATTLE_REINFOR = 1084;		//战争增援
+	MSG_RSP_BATTLE_REINFOR = 1085;
+	MSG_REQ_BATTLE_DIVINE = 1086;		//占卜
+	MSG_RSP_BATTLE_DIVINE = 1087;
+	MSG_REQ_BATTLE_ATTACK = 1088;		// 普通开战
+	MSG_RSP_BATTLE_ATTACK = 1089;
+	MSG_REQ_DUNGEON_ATTACK = 1090;	// 副本开战
+	MSG_RSP_DUNGEON_ATTACK = 1091;
+	MSG_REQ_BRIEF_BATTLE_INFO_QUERY = 1092;		//brief战场查询
+	MSG_RSP_BRIEF_BATTLE_INFO_QUERY = 1093;	
+	MSG_REQ_BATTLE_CONFIRM_BUY_UNIT = 1094;		//确定翻牌计算用部队人数
+	MSG_RSP_BATTLE_CONFIRM_BUY_UNIT = 1095;
+	MSG_REQ_BATTLE_LOG_INFO_QUERY = 1096;		//战役日志查询
+	MSG_RSP_BATTLE_LOG_INFO_QUERY = 1097;
+	MSG_REQ_BRIEF_BATTLE_INFO_QUERY_BY_FIEFID = 1098;	//brief战争信息查询- 通过fiefid
+	MSG_RSP_BRIEF_BATTLE_INFO_QUERY_BY_FIEFID = 1099;
+	MSG_REQ_USER_BATTLE_INFO_QUERY = 1100;		// 查询他人参与的战斗id信息
+	MSG_RSP_USER_BATTLE_INFO_QUERY = 1101;
+	MSG_REQ_BATTLE_RISE_TROOP = 1102;	//起兵
+	MSG_RSP_BATTLE_RISE_TROOP = 1103;
+	MSG_REQ_PLUNDER_ATTACK = 1104;		//掠夺开打
+	MSG_RSP_PLUNDER_ATTACK = 1105;
+	MSG_REQ_DUNGEON_RESET = 1106;			//副本重置
+	MSG_RSP_DUNGEON_RESET = 1107;
+	MSG_REQ_DUNGEON_DIVINE = 1108;		//副本占卜
+	MSG_RSP_DUNGEON_DIVINE = 1109;
+	MSG_REQ_DUNGEON_REWARD = 1110;		//副本奖励
+	MSG_RSP_DUNGEON_REWARD = 1111;
+	MSG_REQ_DUNGEON_CLEAR = 1112;			//副本扫荡
+	MSG_RSP_DUNGEON_CLEAR = 1113;
+	MSG_REQ_DUNGEON_ACT_RESET = 1114;	//副本重置
+	MSG_RSP_DUNGEON_ACT_RESET = 1115;
+	MSG_REQ_ARM_ENHANCE = 1130;		//士兵强化
+	MSG_RSP_ARM_ENHANCE = 1131;
+	MSG_REQ_DUEL_ATTACK = 1132;		//单挑开打
+	MSG_RSP_DUEL_ATTACK = 1133;
+	MSG_REQ_REINFORCE_BUY_UNIT = 1134;	//援军购买神兵
+	MSG_RSP_REINFORCE_BUY_UNIT = 1135;
+
+	//家族
+	MSG_REQ_GUILD_BUILD = 1201;		//创建家族
+	MSG_RSP_GUILD_BUILD = 1202;
+	MSG_REQ_GUILD_INFO_UPDATE = 1203;		//更新家族信息
+	MSG_RSP_GUILD_INFO_UPDATE = 1204;
+	MSG_REQ_GUILD_SEARCH = 1205;		//查找家族
+	MSG_RSP_GUILD_SEARCH = 1206;
+	MSG_REQ_RICH_GUILD_INFO_QUERY = 1207;		//查询rich家族信息
+	MSG_RSP_RICH_GUILD_INFO_QUERY = 1208;
+	MSG_REQ_OTHER_RICH_GUILD_INFO_QUERY = 1209;		//查询otherrich家族信息
+	MSG_RSP_OTHER_RICH_GUILD_INFO_QUERY = 1210;
+	MSG_REQ_GUILD_INVITE_ASK = 1211;		//家族-邀请
+	MSG_RSP_GUILD_INVITE_ASK = 1212;
+	MSG_REQ_GUILD_INVITE_APPROVE = 1213;		//家族-响应邀请
+	MSG_RSP_GUILD_INVITE_APPROVE = 1214;
+	MSG_REQ_GUILD_INVITE_REMOVE = 1215;		//家族-邀请删除
+	MSG_RSP_GUILD_INVITE_REMOVE = 1216;
+	MSG_REQ_GUILD_MEMBER_QUIT = 1217;		//家族成员退出
+	MSG_RSP_GUILD_MEMBER_QUIT = 1218;
+	MSG_REQ_GUILD_MEMBER_REMOVE = 1219;		//开除组员
+	MSG_RSP_GUILD_MEMBER_REMOVE = 1220;
+	MSG_REQ_GUILD_LEADER_ASSIGN = 1221;		//家族-禅让组长
+	MSG_RSP_GUILD_LEADER_ASSIGN = 1222;
+	MSG_REQ_BRIEF_GUILD_INFO_QUERY = 1223;		//查询BRIEF家族信息
+	MSG_RSP_BRIEF_GUILD_INFO_QUERY = 1224;
+    	MSG_REQ_RICH_GUILD_VERSION_QUERY = 1225;		// 获取RichGuildInfo的版本号
+	MSG_RSP_RICH_GUILD_VERSION_QUERY = 1226;
+	MSG_REQ_GUILD_JOIN_ASK = 1227;		//家族-申请加入
+	MSG_RSP_GUILD_JOIN_ASK = 1228;
+	MSG_REQ_GUILD_JOIN_APPROVE = 1229;		//家族-响应申请
+	MSG_RSP_GUILD_JOIN_APPROVE = 1230;
+	MSG_REQ_GUILD_POSITION_ASSIGN = 1231;		//家族-组员任命
+	MSG_RSP_GUILD_POSITION_ASSIGN = 1232;
+	MSG_REQ_GUILD_BUY_ALTAR = 1233;		// 购买家族祭坛
+	MSG_RSP_GUILD_BUY_ALTAR = 1234;
+	MSG_REQ_GUILD_LEVELUP = 1235;		// 购买家族祭坛
+	MSG_RSP_GUILD_LEVELUP = 1236;
+
+	//巅峰战场
+	MSG_REQ_ARENA_ATTACK = 	1271;		//// 巅峰战场 挑战
+	MSG_RSP_ARENA_ATTACK = 	1272;
+	MSG_REQ_ARENA_CONF = 	1273;		// 保存部队配置
+	MSG_RSP_ARENA_CONF = 	1274;
+	MSG_REQ_ARENA_REWARD = 	1275;		// 巅峰战场领取奖励
+	MSG_RSP_ARENA_REWARD = 	1276;
+	MSG_REQ_ARENA_QUERY = 	1277;		// 查询巅峰战场信息
+	MSG_RSP_ARENA_QUERY = 	1278;
+
+	//将领
+	MSG_REQ_HERO_REFRESH = 1301;		//刷新可招募将领
+	MSG_RSP_HERO_REFRESH = 1302;
+	MSG_REQ_HERO_BUY = 1303;		//购买将领
+	MSG_RSP_HERO_BUY = 1304;
+	MSG_REQ_OTHER_USER_HERO_INFO_QUERY = 1305;		//查询其他玩家的将领信息
+	MSG_RSP_OTHER_USER_HERO_INFO_QUERY = 1306;
+	MSG_REQ_HERO_ENHANCE = 1307;		//将领强化
+	MSG_RSP_HERO_ENHANCE = 1308;
+	//MSG_REQ_HERO_ENHANCE_FINISH = 1309;		//将领强化 - 完成
+	//MSG_RSP_HERO_ENHANCE_FINISH = 1310;
+	MSG_REQ_HERO_SKILL_STUDY = 1311;		//将领-技能学习
+	MSG_RSP_HERO_SKILL_STUDY = 1312;
+	MSG_REQ_HERO_SKILL_ABANDON = 1313;		//将领-技能放弃
+	MSG_RSP_HERO_SKILL_ABANDON = 1314;
+	MSG_REQ_HERO_STAMINA_RECOVERY = 1315;		//将领-恢复体力
+	MSG_RSP_HERO_STAMINA_RECOVERY = 1316;
+	MSG_REQ_HERO_ABANDON = 1317;		//解雇将领
+	MSG_RSP_HERO_ABANDON = 1318;
+	MSG_REQ_HERO_DEVOUR = 1319;		//将领吞噬
+	MSG_RSP_HERO_DEVOUR = 1320;
+	MSG_REQ_HERO_EVOLVE = 1321;		//将领 - 进化
+	MSG_RSP_HERO_EVOLVE = 1322;
+	MSG_REQ_HERO_FAVOUR = 1323;		//将领 - 宠幸
+	MSG_RSP_HERO_FAVOUR = 1324;
+	MSG_REQ_HERO_EXCHANGE = 1325;		//购买将领
+	MSG_RSP_HERO_EXCHANGE = 1326;
+
+//装备
+	MSG_REQ_EQUIPMENT_BUY = 1401;		//装备购买
+	MSG_RSP_EQUIPMENT_BUY = 1402;		
+	MSG_REQ_EQUIPMENT_REPLACE = 1403;		//装备使用
+	MSG_RSP_EQUIPMENT_REPLACE = 1404;		
+	MSG_REQ_EQUIPMENT_DISARM = 1405;		//装备卸下
+	MSG_RSP_EQUIPMENT_DISARM = 1406;		
+	MSG_REQ_EQUIPMENT_SELL = 1407;		//装备卖出
+	MSG_RSP_EQUIPMENT_SELL = 1408;		
+	MSG_REQ_EQUIPMENT_ITEM_INSERT = 1409;		//装备镶嵌宝石
+	MSG_RSP_EQUIPMENT_ITEM_INSERT = 1410;		
+	MSG_REQ_EQUIPMENT_ITEM_REMOVE = 1411;		//装备- 卸下宝石
+	MSG_RSP_EQUIPMENT_ITEM_REMOVE = 1412;		
+	MSG_REQ_EQUIPMENT_FORGE = 1413;		//装备- 锻造
+	MSG_RSP_EQUIPMENT_FORGE = 1414;		
+	MSG_REQ_EQUIPMENT_LEVELUP = 1415;		//装备- 升级
+	MSG_RSP_EQUIPMENT_LEVELUP = 1416;	
+	MSG_REQ_EQUIPMENT_INSERT_ITEM_LEVELUP = 1417;		//装备- 宝石升级
+	MSG_RSP_EQUIPMENT_INSERT_ITEM_LEVELUP = 1418;	
+	
+	// 血战
+	MSG_REQ_BLOOD_ATTACK = 1500; // 开打
+	MSG_RSP_BLOOD_ATTACK = 1501;
+	MSG_REQ_BLOOD_CONF = 1502; // 保存部队配置
+	MSG_RSP_BLOOD_CONF = 1503;
+	MSG_REQ_BLOOD_REWARD = 1504; // 领取奖励
+	MSG_RSP_BLOOD_REWARD = 1505;
+	MSG_REQ_BLOOD_POKER = 1506; // 翻牌
+	MSG_RSP_BLOOD_POKER = 1507;
+	MSG_REQ_BLOOD_RANK_QUERY = 1508; // 排行榜查询
+	MSG_RSP_BLOOD_RANK_QUERY = 1509;
+	MSG_REQ_BLOOD_RANK_REWARD = 1510; // 排行榜查询
+	MSG_RSP_BLOOD_RANK_REWARD = 1511;
+
+	//充值相关
+	MSG_REQ_CHARGE_MONTH_REWARD = 1550;	// 包月充值领奖
+	MSG_RSP_CHARGE_MONTH_REWARD = 1551;
+}
+
+//配置文件type定义类型
+enum RES_DATA_TYPE
+{
+	RES_DATA_TYPE_ATTR = 1;	//属性
+	RES_DATA_TYPE_ITEM = 2;	//物品
+	RES_DATA_TYPE_BUILDING = 3;	//建筑要求
+	RES_DATA_TYPE_HERO = 4; 	//将领
+	RES_DATA_TYPE_ARM = 5;	//士兵
+	//RES_DATA_TYPE_CHARGE = 6;//累计充值
+	RES_DATA_TYPE_EQUIPMENT = 7;//装备
+	RES_DATA_TYPE_DUNGEON = 8;//副本要求
+	RES_DATA_TYPE_VIP_LEVEL = 9;//vip等级
+	RES_DATA_TYPE_WORLD_LEVEL = 10;//
+	
+	RES_DATA_TYPE_BUILDING_SPEED_CARD = 101;	//建筑加速卡
+	RES_DATA_TYPE_GUILD_EAR = 102;	// 家族杀敌
+	RES_DATA_TYPE_CURRENCY_COST = 103;	// 元宝消耗
+
+}
+

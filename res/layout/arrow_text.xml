@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/k7_color1_13"
+    android:background="@drawable/arrow_text_bg"
+    android:maxEms="10"
+    android:paddingBottom="2dip"
+    android:paddingLeft="4dip"
+    android:paddingRight="4dip"
+    android:paddingTop="2dip"
+    android:singleLine="false"
+    android:textStyle="bold" />

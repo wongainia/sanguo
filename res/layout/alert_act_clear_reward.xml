@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="240dip"
+    android:layout_height="fill_parent"
+    android:layout_gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <ScrollView
+        style="@style/fill_parent"
+        android:background="@drawable/setoff_cnt" >
+
+        <LinearLayout
+            style="@style/fill_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/k7_color1_13"
+                android:layout_width="fill_parent"
+                android:background="@drawable/common_info"
+                android:text="本次扫荡可能获得如下奖励" />
+
+            <LinearLayout
+                android:id="@+id/reward"
+                style="@style/w_fill_h_wrap"
+                android:orientation="vertical" 
+                android:layout_marginTop="5dip">
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/item_bg"
+    android:orientation="horizontal"
+    android:paddingBottom="5dip"
+    android:paddingLeft="10dip"
+    android:paddingRight="10dip"
+    android:paddingTop="5dip" >
+
+    <include layout="@layout/hero_icon" />
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="5dip"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/talentName"
+                style="@style/color11_16"
+                android:shadowColor="@color/black"
+                android:shadowRadius="1.0" />
+
+            <TextView
+                android:id="@+id/name"
+                style="@style/color11_16"
+                android:layout_marginLeft="5dip"
+                android:shadowColor="@color/black"
+                android:shadowRadius="1.0" />
+
+            <TextView
+                style="@style/wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/level"
+                style="@style/color9_14"
+                android:layout_marginLeft="5dip" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/armProps"
+            style="@style/color1_14"
+            android:layout_marginTop="2dip" />
+
+        <TextView
+            android:id="@+id/evolveDesc"
+            style="@style/color1_12"
+            android:layout_marginTop="2dip" />
+    </LinearLayout>
+
+</LinearLayout>

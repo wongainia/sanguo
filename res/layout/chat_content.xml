@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:orientation="vertical"
+    android:paddingTop="5dip" >
+
+    <!-- 向他人发送聊天消息 -->
+
+    <RelativeLayout
+        android:id="@+id/chatTo"
+        style="@style/wrap_content"
+        android:layout_gravity="right"
+        android:gravity="right|top"
+        android:orientation="horizontal" >
+
+        <FrameLayout
+            android:id="@+id/user_layout"
+            style="@style/wrap_content"
+            android:layout_alignParentRight="true" >
+
+            <include layout="@layout/user_icon" />
+
+            <FrameLayout
+                android:id="@+id/vipLayout"
+                style="@style/wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginBottom="5dip"
+                android:background="@drawable/sys_arm_bg"
+                android:visibility="gone" >
+
+                <TextView
+                    android:id="@+id/vip"
+                    style="@style/k7_color5_11"
+                    android:layout_gravity="center" />
+            </FrameLayout>
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/chatToFrame"
+            style="@style/wrap_content"
+            android:layout_toLeftOf="@id/user_layout"
+            android:background="@drawable/chatto_bg"
+            android:orientation="vertical"
+            android:paddingBottom="3dip"
+            android:paddingLeft="5dip"
+            android:paddingRight="13dip"
+            android:paddingTop="2dip" >
+
+            <FrameLayout
+                style="@style/wrap_content"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="13dip"
+                android:layout_marginTop="2dip"
+                android:minWidth="200dip" >
+
+                <TextView
+                    android:id="@+id/name"
+                    style="@style/color21_11"
+                    android:layout_gravity="left" />
+
+                <TextView
+                    style="@style/wrap_content"
+                    android:layout_width="10dip" />
+
+                <TextView
+                    android:id="@+id/time"
+                    style="@style/color14_10"
+                    android:layout_gravity="right" />
+            </FrameLayout>
+
+            <ImageView
+                android:id="@+id/chat_seprator"
+                style="@style/wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="2dip"
+                android:layout_marginTop="2dip"
+                android:background="@drawable/separate_line3_to" />
+
+            <TextView
+                android:id="@+id/content"
+                style="@style/color14_12"
+                android:layout_marginBottom="2dip"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="13dip"
+                android:gravity="left"
+                android:maxWidth="200dip" />
+
+            <TextView
+                android:id="@+id/reSend"
+                style="@style/color7_11"
+                android:layout_marginBottom="2dip"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="13dip"
+                android:maxWidth="200dip"
+                android:visibility="gone" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- 收到他人的消息 -->
+
+    <LinearLayout
+        android:id="@+id/chatFrom"
+        style="@style/wrap_content"
+        android:layout_gravity="left"
+        android:gravity="left|top"
+        android:orientation="horizontal" >
+
+        <FrameLayout style="@style/wrap_content" >
+
+            <include layout="@layout/user_icon" />
+
+            <FrameLayout
+                android:id="@+id/vipLayout"
+                style="@style/wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginBottom="5dip"
+                android:background="@drawable/sys_arm_bg"
+                android:visibility="gone" >
+
+                <TextView
+                    android:id="@+id/vip"
+                    style="@style/k7_color5_11"
+                    android:layout_gravity="center" />
+            </FrameLayout>
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/chatFromFrame"
+            style="@style/wrap_content"
+            android:background="@drawable/chatfrom_bg"
+            android:orientation="vertical"
+            android:paddingBottom="3dip"
+            android:paddingLeft="13dip"
+            android:paddingRight="5dip"
+            android:paddingTop="2dip" >
+
+            <FrameLayout
+                style="@style/wrap_content"
+                android:layout_marginLeft="13dip"
+                android:layout_marginRight="5dip"
+                android:layout_marginTop="2dip"
+                android:minWidth="200dip"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/name"
+                    style="@style/color21_11"
+                    android:layout_gravity="left" />
+
+                <TextView
+                    android:id="@+id/time"
+                    style="@style/color14_10"
+                    android:layout_gravity="right" />
+            </FrameLayout>
+
+            <ImageView
+                android:id="@+id/chat_seprator"
+                style="@style/wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="2dip"
+                android:layout_marginTop="2dip"
+                android:background="@drawable/separate_line3_from" />
+
+            <TextView
+                android:id="@+id/content"
+                style="@style/color14_12"
+                android:layout_marginBottom="2dip"
+                android:layout_marginLeft="13dip"
+                android:layout_marginRight="5dip"
+                android:gravity="left"
+                android:maxLength="128"
+                android:maxWidth="200dip" />
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

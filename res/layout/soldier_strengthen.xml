@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content"
+    style="@style/w_fill_h_wrap" >
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_marginTop="10dip"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:background="@drawable/common_bg_tm2"
+            android:orientation="horizontal"
+            android:padding="8dip" >
+
+            <!-- 士兵头像 -->
+
+            <include layout="@layout/arm_icon" />
+
+            <!-- 士兵信息 -->
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:layout_marginLeft="5dip"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    style="@style/w_fill_h_wrap"
+                    android:layout_marginTop="2dip" >
+
+                    <!-- 士兵名字 -->
+
+                    <TextView
+                        android:id="@+id/soldier_name"
+                        style="@style/color11_16"
+                        android:text="精灵盾卫"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        style="@style/wrap_content"
+                        android:layout_weight="1" />
+
+                    <!-- 士兵数量 -->
+
+                    <TextView
+                        android:id="@+id/soldier_count"
+                        style="@style/color11_14"
+                        android:layout_marginRight="8dip"
+                        android:text="x123456" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/w_fill_h_wrap" >
+
+                    <!-- 士兵攻击值 -->
+
+                    <TextView
+                        android:id="@+id/soldier_attack"
+                        style="@style/center_txt"
+                        android:layout_below="@+id/soldier_name"
+                        android:text="攻击：9999"
+                        android:textColor="@color/color7"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        style="@style/wrap_content"
+                        android:layout_weight="1" />
+
+                    <!-- 士兵防御值 -->
+
+                    <TextView
+                        android:id="@+id/soldier_defense"
+                        style="@style/center_txt"
+                        android:layout_below="@+id/soldier_name"
+                        android:text="防御：9999"
+                        android:textColor="@color/color7"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        style="@style/wrap_content"
+                        android:layout_weight="1" />
+
+                    <!-- 士兵生命值 -->
+
+                    <TextView
+                        android:id="@+id/soldier_hp"
+                        style="@style/center_txt"
+                        android:layout_marginRight="8dip"
+                        android:text="生命：9999"
+                        android:textColor="@color/color7"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/w_fill_h_wrap" >
+
+                    <!-- 士兵暴率值 -->
+
+                    <TextView
+                        android:id="@+id/soldier_cruel"
+                        style="@style/center_txt"
+                        android:layout_below="@+id/soldier_name"
+                        android:text="暴率：9999"
+                        android:textColor="@color/color7"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        style="@style/wrap_content"
+                        android:layout_weight="1" />
+
+                    <!-- 士兵暴伤值 -->
+
+                    <TextView
+                        android:id="@+id/soldier_hurt"
+                        style="@style/center_txt"
+                        android:layout_below="@+id/soldier_name"
+                        android:text="暴伤：9999"
+                        android:textColor="@color/color7"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        style="@style/wrap_content"
+                        android:layout_weight="1" />
+
+                    <!-- 士兵韧性值 -->
+
+                    <TextView
+                        android:id="@+id/soldier_tenacity"
+                        style="@style/center_txt"
+                        android:layout_marginRight="8dip"
+                        android:text="韧性：9999"
+                        android:textColor="@color/color7"
+                        android:textSize="11sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        
+        
+
+        <!-- 强化 -->
+
+        <LinearLayout
+            android:id="@+id/propsLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical" >
+        </LinearLayout>
+        
+    </LinearLayout>
+
+</ScrollView>

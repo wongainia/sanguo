@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/otherBtnLayout"
+    style="@style/wrap_content"
+    android:layout_gravity="bottom|center_horizontal"
+    android:visibility="gone" >
+
+    <ImageView
+        style="@style/wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@drawable/main_menu_bg" />
+
+    <FrameLayout
+        android:layout_width="320dip"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom" >
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_gravity="bottom"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            android:paddingBottom="15dip" >
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/socialBt"
+                style="@style/wrap_content"
+                android:background="@drawable/menu_social" />
+
+            <TextView
+                style="@style/wrap_content"
+                android:layout_weight="1" />
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/plunderBt"
+                style="@style/wrap_content"
+                android:background="@drawable/menu_plunder" />
+
+            <TextView
+                style="@style/wrap_content"
+                android:layout_weight="1" />
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/historyBt"
+                style="@style/wrap_content"
+                android:background="@drawable/menu_history" />
+
+            <TextView
+                style="@style/wrap_content"
+                android:layout_weight="1" />
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/troopBt"
+                style="@style/wrap_content"
+                android:background="@drawable/menu_troop" />
+
+            <TextView
+                style="@style/wrap_content"
+                android:layout_weight="1" />
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/fiefBt"
+                style="@style/wrap_content"
+                android:background="@drawable/menu_fief" />
+
+            <TextView
+                style="@style/wrap_content"
+                android:layout_weight="1" />
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/leaveBt"
+                style="@style/wrap_content"
+                android:background="@drawable/menu_leave" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_gravity="bottom"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            android:paddingBottom="2dip"
+            android:paddingLeft="5dip"
+            android:paddingRight="5dip" >
+
+            <ImageView
+                style="@style/wrap_content"
+                android:background="@drawable/txt_menu_shj" />
+
+            <TextView
+                style="@style/wrap_content"
+                android:layout_weight="1" />
+
+            <ImageView
+                style="@style/wrap_content"
+                android:background="@drawable/txt_menu_lued" />
+
+            <TextView
+                style="@style/wrap_content"
+                android:layout_weight="1" />
+
+            <ImageView
+                style="@style/wrap_content"
+                android:background="@drawable/txt_menu_zk" />
+
+            <TextView
+                style="@style/wrap_content"
+                android:layout_weight="1" />
+
+            <ImageView
+                style="@style/wrap_content"
+                android:background="@drawable/txt_menu_jl" />
+
+            <TextView
+                style="@style/wrap_content"
+                android:layout_weight="1" />
+
+            <ImageView
+                style="@style/wrap_content"
+                android:background="@drawable/txt_menu_ld" />
+
+            <TextView
+                style="@style/wrap_content"
+                android:layout_weight="1" />
+
+            <ImageView
+                style="@style/wrap_content"
+                android:background="@drawable/txt_menu_lk" />
+        </LinearLayout>
+    </FrameLayout>
+
+</FrameLayout>

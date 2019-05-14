@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent" >
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/name"
+            style="@style/wrap_content"
+            android:background="@drawable/zhenji" />
+
+        <TextView
+            android:id="@+id/tipText"
+            style="@style/color13_14"
+            android:background="@drawable/guide_txt_bg"
+            android:gravity="left"
+            android:padding="5dip"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</FrameLayout>

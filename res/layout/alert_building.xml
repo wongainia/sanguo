@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <FrameLayout style="@style/wrap_content" >
+
+        <ImageView
+            style="@style/wrap_content"
+            android:background="@drawable/alert_content_bg" />
+
+        <ImageView
+            android:id="@+id/buildingIcon"
+            style="@style/wrap_content"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/level"
+            style="@style/color7_16"
+            android:layout_marginBottom="16dip"
+            android:layout_marginRight="14dip"
+            android:background="@drawable/txt_bg5"
+            android:gravity="center" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/desc"
+        style="@style/color5_12"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dip"
+        android:gravity="left"
+        android:lineSpacingExtra="3dip"
+        android:maxWidth="230dip"
+        android:text="描述预留三行，描述预留三行，描述预留三行，描述预留三行，描述预留三行，描述预留三行，描述预留三行，描述预留三行" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/upgradeBtn"
+        style="@style/btn_common"
+        android:layout_marginTop="16dip"
+        android:text="升  级" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/upgradeTwoBtn"
+        style="@style/btn_common"
+        android:layout_marginTop="5dip"
+        android:visibility="gone" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/closeBt"
+        style="@style/btn_common"
+        android:layout_marginTop="5dip"
+        android:text="关  闭" />
+
+</LinearLayout>

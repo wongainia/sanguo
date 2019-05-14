@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:gravity="center_horizontal"
+    android:minHeight="205dip"
+    android:padding="10dip" >
+
+    <LinearLayout
+        style="@style/fill_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/edit"
+            style="@style/custom_dialog_edit"
+            android:layout_width="200dip"
+            android:layout_marginTop="2dip"
+            android:textColor="@color/color6" />
+
+        <TextView
+            android:id="@+id/curtitle"
+            style="@style/color8_14"
+            android:layout_marginTop="5dip" />
+
+        <TextView
+            style="@style/wrap_content"
+            android:layout_weight="1" />
+
+        <com.vikings.sanguo.ui.PressedZoomButton
+            android:id="@+id/verifyBtn"
+            style="@style/btn_common"
+            android:text="确定" />
+
+        <com.vikings.sanguo.ui.PressedZoomButton
+            android:id="@+id/closeBtn"
+            style="@style/btn_common"
+            android:layout_marginTop="5dip"
+            android:text="取消" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/suffix_frame"
+        android:layout_width="200dip"
+        android:layout_height="160dip"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="25dip"
+        android:background="@drawable/common_bg_tm2"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/choose_mail"
+            style="@style/color5_14"
+            android:layout_gravity="center_horizontal"
+            android:text="请选择您的邮箱类型" />
+
+        <TextView
+            style="@style/wrap_content"
+            android:layout_height="4dip" />
+
+        <com.vikings.sanguo.ui.FixListView
+            android:id="@+id/listView"
+            style="@style/list_2"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            style="@style/wrap_content"
+            android:layout_height="3dip" />
+    </LinearLayout>
+
+</FrameLayout>

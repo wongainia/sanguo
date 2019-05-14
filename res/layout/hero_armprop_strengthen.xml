@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal" >
+
+    <include
+        android:layout_gravity="center_vertical"
+        layout="@layout/hero_armprop" />
+
+    <TextView
+        android:layout_width="2dip"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/extendValue"
+        style="@style/k7_color6_11"
+        android:layout_width="50dip"
+        android:layout_height="14dip"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/progress_bar1"/>
+
+    <LinearLayout
+        android:id="@+id/valueFrame"
+        style="@style/wrap_content"
+        android:orientation="horizontal" 
+        android:visibility="gone">
+
+        <TextView
+            style="@style/k7_color2_11"
+            android:layout_gravity="center_vertical"
+            android:text="成长潜质:" />
+
+        <TextView
+            android:id="@+id/val"
+            style="@style/k7_color6_11"
+            android:layout_gravity="center_vertical"/>
+    </LinearLayout>
+
+</LinearLayout>

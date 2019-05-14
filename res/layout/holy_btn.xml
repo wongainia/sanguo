@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.vikings.sanguo.ui.PressedZoomButton xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/custom_search_btn"    
+    android:layout_marginTop="5dip" />

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dailyReward"
+    style="@style/fill_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/k7_color4_17"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dip"
+        android:text="开启VIP会员,尊享特权人生" />
+
+    <LinearLayout
+        android:layout_width="260dip"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dip"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/icon"
+            style="@style/center_v"
+            android:background="@drawable/tax_center" />
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dip"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/desc"
+                style="@style/k7_color6_13"
+                android:layout_width="fill_parent"
+                android:gravity="left"
+                android:text="领主大人,成为VIP都能领取丰厚好礼和额外经验,千万别错过哦!" />
+
+            <TextView
+                android:id="@+id/vip"
+                style="@style/k7_color8_13"
+                android:layout_width="fill_parent"
+                android:layout_marginTop="2dip"
+                android:gravity="left" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="260dip"
+        android:layout_height="300dip"
+        android:layout_marginTop="10dip" >
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:background="@drawable/btl_num_bg"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/k7_color4_15"
+                android:layout_gravity="center_horizontal"
+                android:text="5元得名将,30元坐拥4神将!" />
+
+            <ImageView
+                style="@style/separate_line1"
+                android:layout_marginBottom="2dip" />
+
+            <LinearLayout
+                android:id="@+id/content"
+                style="@style/w_fill_h_wrap"
+                android:orientation="vertical" >
+            </LinearLayout>
+
+            <TextView
+                style="@style/k7_color4_15"
+                android:layout_gravity="center_horizontal"
+                android:text="元宝大翻倍,冲多少送多少" />
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/icon"
+                    style="@style/center_v"
+                    android:layout_marginLeft="10dip"
+                    android:background="@drawable/tax_center" />
+
+                <LinearLayout
+                    style="@style/w_fill_h_wrap"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dip"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/k7_color1_13"
+                        android:text="首充元宝大翻倍" />
+
+                    <TextView
+                        style="@style/k7_color2_13"
+                        android:gravity="left"
+                        android:text="力拔山兮气盖世,霸王别姬来相助,愿大人荡尽敌寇,扫平神舟" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/doubleRecharge"
+                style="@style/k7_color2_13"
+                android:layout_width="250dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/btl_num_bg"
+                android:gravity="left"
+                android:padding="5dip" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

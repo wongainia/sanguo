@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:orientation="vertical"
+    android:paddingTop="10dip" >
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/color7_15"
+                android:text="当前昵称:" />
+
+            <TextView
+                android:id="@+id/name"
+                style="@style/k7_color10_15"
+                android:layout_marginLeft="2dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_marginTop="4dip"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/color7_15"
+                android:text="新的昵称:" />
+
+            <EditText
+                android:id="@+id/newName"
+                style="@style/custom_dialog_edit"
+                android:layout_width="140dip"
+                android:layout_marginLeft="2dip"
+                android:gravity="left"
+                android:hint="最多输入六个字"
+                android:singleLine="true"
+                android:textColorHint="@color/k7_color2"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/cost"
+        style="@style/k7_color8_11"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dip" />
+
+</LinearLayout>

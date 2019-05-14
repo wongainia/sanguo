@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/wrap_content"
+    android:orientation="vertical" >
+
+    <FrameLayout style="@style/wrap_content" >
+
+        <ImageView
+            android:id="@+id/iconBg"
+            style="@style/wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/hero_main_bg" />
+
+        <ImageView
+            android:id="@+id/state"
+            style="@style/wrap_content"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/desc"
+            style="@style/color13_12"
+            android:layout_gravity="center"
+            android:text="解锁副将" />
+
+        <include
+            android:id="@+id/heroIcon"
+            layout="@layout/hero_icon" />
+    </FrameLayout>
+
+    <FrameLayout
+        style="@style/wrap_content"
+        android:layout_gravity="center_horizontal" >
+
+        <com.vikings.sanguo.ui.ProgressBar
+            android:id="@+id/progressBar"
+            style="@style/wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/progress_bg_stamina"
+            android:src="@drawable/progress_green_stamina_81" />
+
+        <TextView
+            android:id="@+id/progressDesc"
+            style="@style/color13_9"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+</LinearLayout>

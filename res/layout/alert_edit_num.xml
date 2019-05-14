@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/num"
+        style="@style/k7_color1_13"
+        android:layout_width="150dip"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dip"
+        android:background="@drawable/common_input1"
+        android:inputType="phone"
+        android:numeric="integer" />
+
+</LinearLayout>

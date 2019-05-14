@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="10dip" >
+
+    <!-- 属性 -->
+
+    <include layout="@layout/alert_fief_head" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="5dip" />
+
+    <!-- 资源 -->
+
+    <include layout="@layout/fief_resources" />
+
+    <TextView
+        style="@style/wrap_content"
+        android:layout_weight="1" />
+
+    <!-- 按钮 -->
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/battleBtn"
+        style="@style/btn_common"
+        android:layout_marginTop="4dip"
+        android:text="查看战场"
+        android:visibility="gone" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/assistAttackBtn"
+        style="@style/btn_common"
+        android:layout_marginTop="4dip"
+        android:text="协助进攻"
+        android:visibility="gone" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/assistDefendBtn"
+        style="@style/btn_common"
+        android:layout_marginTop="4dip"
+        android:text="协助防守"
+        android:visibility="gone" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/expeditionBtn"
+        style="@style/btn_common"
+        android:layout_marginTop="4dip"
+        android:text="出兵征战"
+        android:visibility="gone" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/castleBtn"
+        style="@style/btn_common"
+        android:layout_marginTop="4dip"
+        android:text="查看主城"
+        android:visibility="gone" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/heroBtn"
+        style="@style/btn_common"
+        android:layout_marginTop="4dip"
+        android:text="驻兵信息"
+        android:visibility="gone" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/favoriteBtn"
+        style="@style/btn_common"
+        android:layout_marginTop="4dip"
+        android:text="添加收藏"
+        android:visibility="gone" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/closeBtn"
+        style="@style/btn_common"
+        android:layout_marginTop="4dip"
+        android:text="关闭"
+        android:visibility="gone" />
+
+
+</LinearLayout>

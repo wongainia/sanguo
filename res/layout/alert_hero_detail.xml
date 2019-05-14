@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:orientation="vertical"
+    android:paddingBottom="10dip"
+    android:paddingLeft="10dip"
+    android:paddingRight="10dip"
+    android:paddingTop="4dip" >
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:orientation="horizontal" >
+
+        <include layout="@layout/hero_icon" />
+
+        <FrameLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_gravity="center_vertical" >
+
+            <TextView
+                android:id="@+id/hero_evaluate"
+                style="@style/wrap_content"
+                android:layout_gravity="top|right"
+                android:layout_marginRight="15dip" />
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="5dip"
+                android:layout_marginTop="5dip"
+                android:orientation="vertical"
+                android:paddingLeft="5dip" >
+
+                <TextView
+                    android:id="@+id/typeName"
+                    style="@style/color8_13"
+                    android:shadowColor="@color/k7_color6"
+                    android:shadowRadius="4"
+                    android:text="你是什么" />
+
+                <TextView
+                    android:id="@+id/staticSkill"
+                    style="@style/color8_13"
+                    android:layout_marginTop="2dip"
+                    android:gravity="left"
+                    android:shadowRadius="4"
+                    android:text="你是什么" />
+
+                <TextView
+                    android:id="@+id/ownSkill"
+                    style="@style/color8_13"
+                    android:layout_marginTop="2dip"
+                    android:shadowRadius="4"
+                    android:text="你是什么" />
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+    <View
+        style="@style/wrap_content"
+        android:layout_height="10dip" />
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:background="@drawable/setoff_cnt_sg"
+        android:orientation="vertical"
+        android:padding="5dip" >
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_marginTop="3dip"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/color8_11"
+                android:text="将领介绍：" />
+
+            <TextView
+                android:id="@+id/desc"
+                style="@style/color9_11"
+                android:layout_marginTop="2dip"
+                android:gravity="left"
+                android:text="jfkdjsl" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/heroDesc"
+            style="@style/w_fill_h_wrap"
+            android:layout_marginTop="5dip"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/color8_11"
+                android:text="将魂来源：" />
+
+            <TextView
+                android:id="@+id/soulDesc"
+                style="@style/color9_11"
+                android:layout_marginTop="2dip"
+                android:gravity="left"
+                android:text="jflkds" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        style="@style/wrap_content"
+        android:layout_height="30dip" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/closeBtn1"
+        style="@style/btn_common"
+        android:layout_marginTop="6dip"
+        android:text="关闭" />
+
+</LinearLayout>

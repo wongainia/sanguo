@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/wrap_content"
+    android:background="@drawable/hero_add_bg"
+    android:layout_gravity="center_horizontal"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:layout_gravity="left|center_vertical"
+        android:layout_marginLeft="15dip" >
+
+        <FrameLayout style="@style/wrap_content" >
+
+            <include layout="@layout/hero_icon" />
+        </FrameLayout>
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dip"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/name"
+                    style="@style/color8_12"
+                    android:layout_gravity="bottom" />
+
+                <TextView
+                    android:id="@+id/prof"
+                    style="@style/color8_11"
+                    android:layout_gravity="bottom"
+                    android:layout_marginLeft="10dip" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/lord"
+                style="@style/color17_11"
+                android:layout_marginTop="2dip" />
+
+            <TextView
+                android:id="@+id/guild"
+                style="@style/color17_11"
+                android:layout_marginTop="2dip" />
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

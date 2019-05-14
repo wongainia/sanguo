@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="10dip"
+    android:paddingLeft="5dip"
+    android:paddingRight="5dip" >
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:layout_marginTop="50dip"
+        android:orientation="vertical" >
+
+        <FrameLayout
+            android:id="@+id/levelLayout"
+            style="@style/wrap_content"
+            android:layout_marginTop="5dip" >
+
+            <ImageView
+                style="@style/wrap_content"
+                android:background="@drawable/bg_tzcg" />
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/levelIcon1"
+                    style="@style/wrap_content" />
+
+                <TextView
+                    android:id="@+id/level"
+                    style="@style/wrap_content" />
+
+                <ImageView
+                    android:id="@+id/levelIcon2"
+                    style="@style/wrap_content" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/color6_14"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dip" />
+
+        <LinearLayout
+            android:id="@+id/items"
+            android:layout_width="200dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical" >
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/closeDesc"
+        style="@style/color13_10"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dip"
+        android:text="点击任意位置关闭"
+        android:visibility="gone" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/goBtn"
+        android:layout_width="130dip"
+        android:layout_height="40dip"
+        android:layout_marginTop="5dip"
+        android:background="@drawable/checkin_rewards"
+        android:text="去看看"
+        android:textColor="@color/color6"
+        android:textStyle="bold" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/closeBtn"
+        android:layout_width="130dip"
+        android:layout_height="40dip"
+        android:layout_marginTop="5dip"
+        android:background="@drawable/checkin_rewards"
+        android:text="关 闭"
+        android:textColor="@color/color6"
+        android:textStyle="bold" />
+
+</LinearLayout>

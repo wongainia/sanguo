@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/hero_top" />
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dip"
+        android:padding="3dip"
+        android:scrollbarThumbVertical="@drawable/scroll_bar" >
+
+        <LinearLayout
+            android:id="@+id/troopList"
+            android:layout_width="274dip"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="40dip" >
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

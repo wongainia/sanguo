@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/wrap_content"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/bg"
+        style="@style/wrap_content"
+        android:layout_gravity="center" />
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/icon"
+            style="@style/wrap_content"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/desc"
+            style="@style/color10_10"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="3dip" />
+    </LinearLayout>
+
+</FrameLayout>

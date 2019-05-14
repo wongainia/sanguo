@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent"
+    android:orientation="vertical"
+     >
+
+    <TextView
+        android:id="@+id/desc"
+        style="@style/color7_11"
+        android:layout_gravity="center_horizontal"
+        android:text="当前家族徽章"
+        android:textStyle="bold" />
+
+    <FrameLayout
+        android:layout_width="160dip"
+        android:layout_height="160dip"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="3dip" >
+
+        <ImageView
+            android:id="@+id/icon"
+            style="@style/fill_parent"
+            android:layout_gravity="center"
+            android:layout_margin="3dip" />
+
+        <ImageView
+            style="@style/fill_parent"
+            android:background="@drawable/icon_bg2" />
+    </FrameLayout>
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/cameraBtn"
+        style="@style/btn_common"
+        android:layout_marginTop="3dip"
+        android:text="照相机" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/photoGalleryBtn"
+        style="@style/btn_common"
+        android:layout_marginTop="3dip"
+        android:text="图片库" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/saveBtn"
+        style="@style/btn_common"
+        android:layout_marginTop="3dip"
+        android:text="保存徽章" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/closeBtn"
+        style="@style/btn_common"
+        android:layout_marginTop="3dip"
+        android:text="关闭" />
+
+</LinearLayout>

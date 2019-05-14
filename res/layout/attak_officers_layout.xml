@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/major_icon"
+        android:layout_width="79dip"
+        android:layout_height="79dip"
+        android:layout_marginLeft="4dip"
+        android:layout_marginTop="1dip"
+   		
+        >
+        <include layout="@layout/officers_icon" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/second_officer_layout"
+        android:layout_width="39dip"
+        android:layout_height="39dip"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="4dip"
+        android:layout_marginTop="1dip">
+        <include layout="@layout/second_officers_icon" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/second_officers_two"
+        android:layout_width="39dip"
+        android:layout_height="39dip"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/second_officer_layout"
+        android:layout_marginRight="4dip"
+        android:layout_marginTop="1dip">
+       
+        <include layout="@layout/second_officers_icon" />
+    </FrameLayout>
+    
+<!-- 
+ android:background="@drawable/frame_vice_white" >
+ -->
+
+</RelativeLayout>

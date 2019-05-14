@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:layout_marginBottom="10dip"
+    android:layout_marginLeft="3dip"
+    android:layout_marginRight="3dip"
+    android:background="@drawable/setoff_cnt_sg"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="2dip" >
+
+    <ImageView
+        style="@style/wrap_content"
+        android:background="@drawable/stronger_title_bg" />
+
+    <!-- 提升将领 -->
+
+    <FrameLayout
+        android:id="@+id/general_upgrade"
+        style="@style/stronger_item_style"
+        android:layout_marginTop="10dip" >
+
+        <ImageView
+            style="@style/wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:background="@drawable/def_general_bg" />
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_width="100dip"
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginLeft="65dip"
+            android:orientation="vertical" >
+
+            <FrameLayout
+                style="@style/w_fill_h_wrap"
+                android:layout_gravity="top|left" >
+
+                <ImageView
+                    style="@style/color7_12"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/upgrade_general_bg" />
+
+                <FrameLayout
+                    android:id="@+id/recommand"
+                    style="@style/wrap_content"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginRight="2dip"
+                    android:background="@drawable/recommend_angle_bg" >
+
+                    <View
+                        style="@style/wrap_content"
+                        android:layout_width="15dip"
+                        android:layout_height="15dip"
+                        android:layout_gravity="center"
+                        android:background="@drawable/recommend_txt" />
+                </FrameLayout>
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/upgrade_spec"
+                style="@style/color9_10"
+                android:layout_width="100dip"
+                android:layout_marginTop="3dip"
+                android:gravity="left"
+                android:maxLines="2"
+                android:paddingLeft="3dip"
+                android:text="拥有什么发简单快速反击的历史发" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="5dip"
+            android:orientation="vertical" >
+
+            <!-- 星星 -->
+
+            <LinearLayout
+                android:id="@+id/starLayout"
+                style="@style/wrap_content"
+                android:layout_gravity="center_horizontal|top"
+                android:layout_marginTop="7dip"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/star1"
+                    style="@style/wrap_content"
+                    android:background="@drawable/star"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/star2"
+                    style="@style/wrap_content"
+                    android:background="@drawable/star"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/star3"
+                    style="@style/wrap_content"
+                    android:background="@drawable/star"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/star4"
+                    style="@style/wrap_content"
+                    android:background="@drawable/star"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/star5"
+                    style="@style/wrap_content"
+                    android:background="@drawable/star"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/go_upgrade"
+                style="@style/color13_14"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="5dip"
+                android:background="@drawable/upgrade_bg_btn"
+                android:text="去提升"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- 提升装备 -->
+
+    <FrameLayout
+        android:id="@+id/equipmen_upgrade"
+        style="@style/stronger_item_style" >
+
+        <ImageView
+            style="@style/wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:background="@drawable/def_equipmen_bg" />
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_width="100dip"
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginLeft="65dip"
+            android:orientation="vertical" >
+
+            <FrameLayout
+                style="@style/w_fill_h_wrap"
+                android:layout_gravity="top|left" >
+
+                <ImageView
+                    style="@style/color7_12"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/upgrade_shadow_bg" />
+
+                <FrameLayout
+                    android:id="@+id/recommand"
+                    style="@style/wrap_content"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginRight="2dip"
+                    android:background="@drawable/recommend_angle_bg" >
+
+                    <View
+                        style="@style/wrap_content"
+                        android:layout_width="15dip"
+                        android:layout_height="15dip"
+                        android:layout_gravity="center"
+                        android:background="@drawable/recommend_txt" />
+                </FrameLayout>
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/upgrade_spec"
+                style="@style/color9_10"
+                android:layout_width="100dip"
+                android:layout_marginTop="3dip"
+                android:gravity="left"
+                android:maxLines="2"
+                android:paddingLeft="3dip"
+                android:text="拥有什么发简单快速反击的历史发" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="5dip"
+            android:orientation="vertical" >
+
+            <!-- 星星 -->
+
+            <LinearLayout
+                android:id="@+id/starLayout"
+                style="@style/wrap_content"
+                android:layout_gravity="center_horizontal|top"
+                android:layout_marginTop="7dip"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/star1"
+                    style="@style/wrap_content"
+                    android:background="@drawable/star"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/star2"
+                    style="@style/wrap_content"
+                    android:background="@drawable/star"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/star3"
+                    style="@style/wrap_content"
+                    android:background="@drawable/star"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/star4"
+                    style="@style/wrap_content"
+                    android:background="@drawable/star"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/star5"
+                    style="@style/wrap_content"
+                    android:background="@drawable/star"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/go_upgrade"
+                style="@style/color13_14"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="5dip"
+                android:background="@drawable/upgrade_bg_btn"
+                android:text="去提升"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- 提升士兵 -->
+
+    <FrameLayout
+        android:id="@+id/soldier_upgrade"
+        style="@style/stronger_item_style" >
+
+        <ImageView
+            style="@style/wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:background="@drawable/def_soldier_bg" />
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_width="100dip"
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginLeft="65dip"
+            android:orientation="vertical" >
+
+            <FrameLayout
+                style="@style/w_fill_h_wrap"
+                android:layout_gravity="top|left" >
+
+                <ImageView
+                    style="@style/color7_12"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/upgrade_soldier_bg" />
+
+                <FrameLayout
+                    android:id="@+id/recommand"
+                    style="@style/wrap_content"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginRight="2dip"
+                    android:background="@drawable/recommend_angle_bg" >
+
+                    <View
+                        style="@style/wrap_content"
+                        android:layout_width="15dip"
+                        android:layout_height="15dip"
+                        android:layout_gravity="center"
+                        android:background="@drawable/recommend_txt" />
+                </FrameLayout>
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/upgrade_spec"
+                style="@style/color9_10"
+                android:layout_width="100dip"
+                android:layout_marginTop="3dip"
+                android:gravity="left"
+                android:maxLines="2"
+                android:paddingLeft="3dip"
+                android:text="拥有什么发简单快速反击的历史发" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="5dip"
+            android:orientation="vertical" >
+
+            <!-- 星星 -->
+
+            <LinearLayout
+                android:id="@+id/starLayout"
+                style="@style/wrap_content"
+                android:layout_gravity="center_horizontal|top"
+                android:layout_marginTop="7dip"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/star1"
+                    style="@style/wrap_content"
+                    android:background="@drawable/star"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/star2"
+                    style="@style/wrap_content"
+                    android:background="@drawable/star"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/star3"
+                    style="@style/wrap_content"
+                    android:background="@drawable/star"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/star4"
+                    style="@style/wrap_content"
+                    android:background="@drawable/star"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/star5"
+                    style="@style/wrap_content"
+                    android:background="@drawable/star"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/go_upgrade"
+                style="@style/color13_14"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="5dip"
+                android:background="@drawable/upgrade_bg_btn"
+                android:text="去提升"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

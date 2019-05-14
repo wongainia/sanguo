@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent"
+    android:background="@drawable/battle_map"
+    android:clickable="true" >
+
+    <ImageView
+        style="@style/fill_parent"
+        android:background="@color/battle_result" />
+
+    <LinearLayout
+        style="@style/fill_parent"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="50dip"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:background="@drawable/jianbian_bg"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:orientation="horizontal" >
+
+                <!-- 攻方信息 -->
+
+                <LinearLayout
+                    style="@style/wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        style="@style/w_fill_h_wrap"
+                        android:orientation="horizontal" >
+
+                        <FrameLayout
+                            android:id="@+id/atkIcon"
+                            style="@style/wrap_content"
+                            android:layout_gravity="center_vertical|left"
+                            android:layout_marginLeft="2dip" >
+
+                            <include layout="@layout/user_icon" />
+                        </FrameLayout>
+
+                        <!-- 头像/姓名/结果 -->
+
+                        <LinearLayout
+                            style="@style/w_fill_h_wrap"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="left"
+                            android:orientation="vertical" >
+
+                            <LinearLayout
+                                style="@style/wrap_content"
+                                android:orientation="horizontal" >
+
+                                <TextView
+                                    style="@style/k7_color2_13"
+                                    android:text="攻方" />
+
+                                <ImageView
+                                    android:id="@+id/atkResult"
+                                    style="@style/wrap_content"
+                                    android:layout_gravity="center_vertical" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/atkName"
+                                style="@style/k7_color2_13"
+                                android:gravity="left" />
+
+                            <TextView
+                                android:id="@+id/atkNo"
+                                style="@style/k7_color2_11" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    style="@style/wrap_content"
+                    android:layout_weight="0.1" />
+
+                <!-- 守方信息 -->
+
+                <LinearLayout
+                    style="@style/wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <FrameLayout style="@style/w_fill_h_wrap" >
+
+                        <LinearLayout
+                            style="@style/wrap_content"
+                            android:layout_gravity="right|center_vertical"
+                            android:layout_marginRight="2dip"
+                            android:orientation="horizontal" >
+
+                            <!-- 头像/姓名/结果 -->
+
+                            <LinearLayout
+                                style="@style/wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:gravity="right"
+                                android:orientation="vertical" >
+
+                                <LinearLayout
+                                    style="@style/wrap_content"
+                                    android:gravity="right"
+                                    android:orientation="horizontal" >
+
+                                    <ImageView
+                                        android:id="@+id/defResult"
+                                        style="@style/wrap_content"
+                                        android:layout_gravity="center_vertical" />
+
+                                    <TextView
+                                        style="@style/k7_color2_13"
+                                        android:gravity="right"
+                                        android:text="守方" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/defName"
+                                    style="@style/k7_color2_13"
+                                    android:gravity="right" />
+
+                                <TextView
+                                    android:id="@+id/defNo"
+                                    style="@style/k7_color2_11" />
+                            </LinearLayout>
+
+                            <FrameLayout
+                                android:id="@+id/defIcon"
+                                style="@style/center_v" >
+
+                                <include layout="@layout/user_icon" />
+                            </FrameLayout>
+                        </LinearLayout>
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal" >
+
+                <!-- 攻方信息 -->
+
+                <LinearLayout
+                    android:id="@+id/atkHeros"
+                    android:layout_width="150dip"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/jianbian_bg"
+                    android:orientation="horizontal" >
+
+                    <FrameLayout
+                        android:id="@+id/hero1"
+                        style="@style/wrap_content" >
+
+                        <include layout="@layout/hero_icon" />
+
+                        <ImageView
+                            android:id="@+id/die"
+                            style="@style/wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/btl_die" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/hero2"
+                        style="@style/wrap_content" >
+
+                        <include layout="@layout/hero_icon" />
+
+                        <ImageView
+                            android:id="@+id/die"
+                            style="@style/wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/btl_die" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/hero3"
+                        style="@style/wrap_content" >
+
+                        <include layout="@layout/hero_icon" />
+
+                        <ImageView
+                            android:id="@+id/die"
+                            style="@style/wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/btl_die" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="150dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dip"
+                    android:background="@drawable/jianbian_bg" >
+
+                    <LinearLayout
+                        android:id="@+id/defHeros"
+                        style="@style/wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:orientation="horizontal" >
+
+                        <FrameLayout
+                            android:id="@+id/hero1"
+                            style="@style/wrap_content" >
+
+                            <include layout="@layout/hero_icon" />
+
+                            <ImageView
+                                android:id="@+id/die"
+                                style="@style/wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/btl_die" />
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:id="@+id/hero2"
+                            style="@style/wrap_content" >
+
+                            <include layout="@layout/hero_icon" />
+
+                            <ImageView
+                                android:id="@+id/die"
+                                style="@style/wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/btl_die" />
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:id="@+id/hero3"
+                            style="@style/wrap_content" >
+
+                            <include layout="@layout/hero_icon" />
+
+                            <ImageView
+                                android:id="@+id/die"
+                                style="@style/wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/btl_die" />
+                        </FrameLayout>
+                    </LinearLayout>
+                </FrameLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            style="@style/setoff_troop_top"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="2dip"
+            android:text="点击回放可以查看各对局的战况动画"
+            android:textColor="@color/k7_color1" />
+
+        <ListView
+            android:id="@+id/listView"
+            style="@style/common_list_no_anim"
+            android:layout_marginBottom="10dip"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:layout_marginTop="5dip"
+            android:background="@drawable/jianbian_bg" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/belowBtnFrame"
+        style="@style/w_fill_h_wrap"
+        android:layout_gravity="bottom|center_horizontal" >
+
+        <ImageView
+            style="@style/w_fill_h_wrap"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@drawable/custom_dialog_btm" />
+
+        <com.vikings.sanguo.ui.PressedZoomButton
+            android:id="@+id/belowBtn"
+            style="@style/btn_common"
+            android:layout_gravity="center_horizontal|bottom"
+            android:text="离    开" />
+    </FrameLayout>
+
+</FrameLayout>

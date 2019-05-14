@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:layout_gravity="center"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="2dip" >
+
+    <TextView
+        android:id="@+id/desc"
+        style="@style/color7_14"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="0dip" />
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_marginTop="7dip"
+        android:background="@drawable/setoff_cnt_sg"
+        android:orientation="vertical"
+        android:padding="5dip" >
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <ImageView
+                style="@style/wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/potpourri_bg" />
+
+            <TextView
+                android:id="@+id/descBuff"
+                style="@style/color7_12"
+                android:layout_marginLeft="3dip"
+                android:layout_marginRight="3dip"
+                android:layout_weight="1"
+                android:text="获得物品"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/poto_right"
+                style="@style/wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/potpourri_bg" />
+        </LinearLayout>
+		<ScrollView
+        	android:layout_width="match_parent"
+        	android:layout_height="180dip"
+        	android:layout_gravity="center_horizontal"
+        	android:scrollbars="none" 
+        	android:layout_marginTop="3dip">
+        <LinearLayout
+            android:id="@+id/gainContent"
+            style="@style/wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="5dip" >
+        </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/abandonBtn"
+        style="@style/btn_common"
+        android:layout_marginTop="10dip"
+        android:text="分   解" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/closeBt"
+        style="@style/btn_common"
+        android:layout_marginTop="5dip"
+        android:text="关   闭" />
+
+</LinearLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="62dip"
+    android:layout_height="65dip"
+    android:layout_gravity="center" >
+
+    <FrameLayout
+        android:layout_width="50dip"
+        android:layout_height="50dip"
+        android:layout_gravity="center" >
+
+        <ImageView
+            android:id="@+id/img"
+            style="@style/wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/vip_9" />
+    </FrameLayout>
+
+</FrameLayout>

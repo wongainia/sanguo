@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent"
+    android:scrollbars="none" >
+
+    <FrameLayout style="@style/w_fill_h_wrap" >
+
+        <ImageView
+            android:id="@+id/evolveBg"
+            style="@style/wrap_content"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_marginTop="20dip" />
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_gravity="center_horizontal|top"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/evolveContent"
+                style="@style/wrap_content"
+                android:layout_width="292dip"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dip"
+                android:orientation="vertical" >
+
+                <FrameLayout
+                    style="@style/w_fill_h_wrap"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="30dip"
+                    android:gravity="center_vertical" >
+
+                    <FrameLayout
+                        android:id="@+id/heroLayout"
+                        style="@style/wrap_content"
+                        android:layout_gravity="left|center_vertical"
+                        android:orientation="vertical" >
+
+                        <LinearLayout
+                            android:id="@+id/evole_icon_layout1"
+                            android:layout_width="120dip"
+                            android:layout_height="120dip"
+                            android:gravity="center" >
+
+                            <include
+                                android:layout_gravity="center_horizontal"
+                                layout="@layout/hero_icon" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/heroDesc"
+                            style="@style/color1_14"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="7dip" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        style="@style/wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/evolveDesc"
+                            style="@style/color20_12" />
+
+                        <ImageView
+                            style="@style/wrap_content"
+                            android:background="@drawable/evolve_arrow" />
+                    </LinearLayout>
+
+                    <FrameLayout
+                        android:id="@+id/newHeroLayout"
+                        style="@style/wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:orientation="vertical" >
+
+                        <LinearLayout
+                            android:id="@+id/evole_icon_layout"
+                            style="@style/wrap_content"
+                            android:gravity="center" >
+
+                            <include
+                                android:layout_gravity="center_horizontal"
+                                layout="@layout/hero_icon" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/heroDesc"
+                            style="@style/color1_14"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="7dip" />
+                    </FrameLayout>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/effectTitleLayout"
+                    style="@style/wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="30dip" >
+
+                    <ImageView
+                        style="@style/wrap_content"
+                        android:background="@drawable/red_bg" />
+
+                    <TextView
+                        style="@style/color6_14"
+                        android:layout_gravity="center"
+                        android:text="进化成功后，武将获得以下提升" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:id="@+id/evolveArmprops"
+                    style="@style/w_fill_h_wrap"
+                    android:layout_marginTop="10dip"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="5dip" >
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/cost"
+                    style="@style/color5_12"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dip" />
+
+                <TextView
+                    android:id="@+id/worldLevelDesc"
+                    style="@style/color11_10"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dip" />
+            </LinearLayout>
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/evolveBtn"
+                style="@style/btn_common"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dip"
+                android:text="开始进化" />
+        </LinearLayout>
+    </FrameLayout>
+
+</ScrollView>

@@ -1,0 +1,1 @@
+for /f  %%i in (c.txt) do  ant -f build.xml -Dchannel.id=%%i pakChannel 

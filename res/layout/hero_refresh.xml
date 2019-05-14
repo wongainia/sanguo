@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/bg"
+        style="@style/w_fill_h_wrap" />
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="306dip"
+        android:layout_gravity="top"
+        android:layout_marginTop="30dip" >
+
+        <AbsoluteLayout
+            android:id="@+id/heroLayout"
+            style="@style/wrap_content"
+            android:layout_gravity="left" >
+
+            <ImageView
+                android:id="@+id/hdImg"
+                style="@style/wrap_content" />
+        </AbsoluteLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        style="@style/fill_parent"
+        android:orientation="vertical" >
+
+        <!-- 上部分 -->
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="310dip" >
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/midLeft"
+                    style="@style/wrap_content" />
+
+                <ImageView
+                    android:id="@+id/midRight"
+                    style="@style/wrap_content" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/top"
+                style="@style/w_fill_h_wrap"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/color7_24"
+                android:layout_gravity="top|center_horizontal"
+                android:layout_marginTop="10dip"
+                android:text="盲  选" />
+
+            <RelativeLayout
+                android:id="@+id/groupLayout"
+                style="@style/fill_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="0dip"
+                android:background="#b0000000"
+                android:gravity="center_horizontal"
+                android:visibility="gone" >
+
+                <LinearLayout
+                    android:id="@+id/hero1"
+                    style="@style/wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="31dip" >
+
+                    <include layout="@layout/hero_refresh_item" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/hero2"
+                    style="@style/wrap_content"
+                    android:layout_marginLeft="5dip"
+                    android:layout_marginTop="31dip"
+                    android:layout_toRightOf="@id/hero1" >
+
+                    <include layout="@layout/hero_refresh_item" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/hero3"
+                    style="@style/wrap_content"
+                    android:layout_marginLeft="5dip"
+                    android:layout_marginTop="31dip"
+                    android:layout_toRightOf="@id/hero2" >
+
+                    <include layout="@layout/hero_refresh_item" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/hero4"
+                    style="@style/wrap_content"
+                    android:layout_marginLeft="5dip"
+                    android:layout_marginTop="31dip"
+                    android:layout_toRightOf="@id/hero3" >
+
+                    <include layout="@layout/hero_refresh_item" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/hero5"
+                    style="@style/wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/hero1" >
+
+                    <include layout="@layout/hero_refresh_item" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/hero6"
+                    style="@style/wrap_content"
+                    android:layout_below="@id/hero2"
+                    android:layout_marginLeft="5dip"
+                    android:layout_toRightOf="@id/hero5" >
+
+                    <include layout="@layout/hero_refresh_item" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/hero7"
+                    style="@style/wrap_content"
+                    android:layout_below="@id/hero3"
+                    android:layout_marginLeft="5dip"
+                    android:layout_toRightOf="@id/hero6" >
+
+                    <include layout="@layout/hero_refresh_item" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/hero8"
+                    style="@style/wrap_content"
+                    android:layout_below="@id/hero4"
+                    android:layout_marginLeft="5dip"
+                    android:layout_toRightOf="@id/hero7" >
+
+                    <include layout="@layout/hero_refresh_item" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/most_stronger"
+                style="@style/color4_16"
+                android:layout_gravity="bottom|right"
+                android:layout_marginBottom="15dip"
+                android:layout_marginRight="15dip"
+                android:background="@drawable/most_stronger_hero"
+                android:gravity="center"
+                android:lineSpacingMultiplier="1.4"
+                android:text="当\n世\n最\n强"
+                android:textStyle="bold"
+                android:visibility="gone" />
+            
+               <TextView
+                android:id="@+id/hero_detail"
+                style="@style/color13_11"
+                android:layout_gravity="right|bottom"
+                android:layout_marginBottom="20dip"
+                android:layout_marginRight="5dip"
+                android:drawableRight="@drawable/vip_detail_btn"
+                android:text="查看详情" 
+                android:visibility="gone"
+                android:background="@drawable/black_shade_bg"
+                android:paddingBottom="6dip"
+                android:paddingLeft="8dip"
+                android:paddingRight="4dip"
+                android:paddingTop="6dip"
+                android:drawablePadding="4dip"/>
+
+            <FrameLayout
+                android:id="@+id/progress_layout"
+                style="@style/wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone" >
+
+                <ProgressBar
+                    style="?android:attr/progressBarStyleLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/loading"
+                    style="@style/color13_12"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="加载中" />
+            </FrameLayout>
+        </FrameLayout>
+
+        <!-- 中部分 -->
+
+        <FrameLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_marginTop="-7dip" >
+
+            <ImageView
+                android:id="@+id/heroRefreshMid"
+                style="@style/w_fill_h_wrap"/>
+
+            <TextView
+                android:id="@+id/gradientMsg"
+                style="@style/color5_13"
+                android:layout_gravity="center"
+                android:minWidth="283dip"
+                android:singleLine="true"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/propertyLayout"
+                style="@style/w_fill_h_wrap"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                <FrameLayout
+                    style="@style/w_fill_h_wrap"
+                    android:gravity="center" >
+
+                    <LinearLayout
+                        style="@style/wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center" >
+
+                        <TextView
+                            android:id="@+id/heroTalent"
+                            style="@style/color24_16" />
+
+                        <TextView
+                            android:id="@+id/heroName"
+                            style="@style/color24_16"
+                            android:layout_marginLeft="3dip" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/rating"
+                        style="@style/wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="10dip"
+                        android:visibility="gone" />
+                </FrameLayout>
+
+                <LinearLayout
+                    style="@style/w_fill_h_wrap"
+                    android:gravity="center"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/force"
+                        style="@style/color19_13"
+                        android:layout_marginLeft="15dip" />
+
+                    <TextView
+                        android:id="@+id/defend"
+                        style="@style/color19_13"
+                        android:layout_marginLeft="25dip" />
+
+                    <TextView
+                        android:id="@+id/skilled"
+                        style="@style/color19_13"
+                        android:layout_marginLeft="30dip"
+                        android:text="统率: "
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:id="@+id/proficientLayout"
+                        style="@style/wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+                    </LinearLayout>
+                    <!-- 添加属性 图标 -->
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- 下部分 -->
+
+        <FrameLayout
+            android:id="@+id/refresh_btn_layout"
+            style="@style/w_fill_h_wrap"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:id="@+id/heroRefreshBottom"
+                style="@style/fill_parent" />
+
+            <LinearLayout
+                style="@style/fill_parent"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/wrap_content"
+                    android:layout_weight="1" />
+
+                <com.vikings.sanguo.ui.PressedZoomButton
+                    android:id="@+id/refreshBtn"
+                    style="@style/btn_common"
+                    android:text="招  募" />
+
+                <TextView
+                    style="@style/wrap_content"
+                    android:layout_weight="1" />
+
+                <com.vikings.sanguo.ui.PressedZoomButton
+                    android:id="@+id/backBtn"
+                    style="@style/btn_common"
+                    android:text="返  回" />
+
+                <TextView
+                    style="@style/wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tip_layout"
+        style="@style/w_fill_h_wrap"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="200dip"
+        android:background="@drawable/guide_txt_bg"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <TextView
+            style="@style/color7_16"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="恭喜你获得" />
+
+        <TextView
+            android:id="@+id/tipTalent"
+            style="@style/color24_16" />
+
+        <TextView
+            android:id="@+id/tipName"
+            style="@style/color24_16"
+            android:layout_marginLeft="5dip" />
+    </LinearLayout>
+
+</FrameLayout>

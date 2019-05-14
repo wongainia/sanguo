@@ -1,0 +1,819 @@
+package com.vikings.sanguo.ui.window;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.ExpandableListView;
+import android.widget.TextView;
+
+import com.vikings.sanguo.BattleStatus;
+import com.vikings.sanguo.Constants;
+import com.vikings.sanguo.R;
+import com.vikings.sanguo.biz.GameBiz;
+import com.vikings.sanguo.cache.Account;
+import com.vikings.sanguo.cache.CacheMgr;
+import com.vikings.sanguo.config.Config;
+import com.vikings.sanguo.exception.GameException;
+import com.vikings.sanguo.invoker.BaseInvoker;
+import com.vikings.sanguo.invoker.BattleConfirmInvoker;
+import com.vikings.sanguo.invoker.ShowFiefDetailInvoker;
+import com.vikings.sanguo.message.RichBattleInfoQueryResp;
+import com.vikings.sanguo.model.BriefBattleInfoClient;
+import com.vikings.sanguo.model.BriefFiefInfoClient;
+import com.vikings.sanguo.model.BriefGuildInfoClient;
+import com.vikings.sanguo.model.BriefUserInfoClient;
+import com.vikings.sanguo.model.HolyProp;
+import com.vikings.sanguo.model.MoveTroopInfoClient;
+import com.vikings.sanguo.model.RichBattleInfoClient;
+import com.vikings.sanguo.protos.BattleAttackType;
+import com.vikings.sanguo.thread.AddrLoader;
+import com.vikings.sanguo.thread.CallBack;
+import com.vikings.sanguo.ui.PressedZoomButton;
+import com.vikings.sanguo.ui.adapter.WarInfosAdapter;
+import com.vikings.sanguo.ui.alert.HeroSkillTip;
+import com.vikings.sanguo.ui.alert.ToShopTip;
+import com.vikings.sanguo.ui.alert.WarConfirmTip;
+import com.vikings.sanguo.ui.alert.WarEndInfromTip;
+import com.vikings.sanguo.ui.listener.ShowOtherCastleClickListener;
+import com.vikings.sanguo.utils.ListUtil;
+import com.vikings.sanguo.utils.StringUtil;
+import com.vikings.sanguo.utils.TileUtil;
+import com.vikings.sanguo.utils.ViewUtil;
+import com.vikings.sanguo.widget.CustomPopupWindow;
+import com.vikings.sanguo.widget.FiefDetailTopInfo;
+import com.vikings.sanguo.widget.WarInfoListView;
+
+public class WarInfoWindow extends CustomPopupWindow {
+
+	private static final int ATK_LOCK_TIME = 20;
+	private final static int INTEVAL_TO_SHOW_BATTLE_OVER = -10;
+
+	private BriefFiefInfoClient bfic;
+	private RichBattleInfoClient rbic;
+	private WarInfoListView atkList, defList;
+	private BriefGuildInfoClient attackGuild, defendGuild;
+	private PressedZoomButton leftBattleBtn, rightBattleBtn;
+	private ExpandableListView attackList, defendList;
+	private View atkTop, defTop;
+	private String txtL = "";
+
+	private boolean needRefreshTroop = true;
+	private boolean isAutoBattleFinished = false;
+	
+
+	public void open(BriefFiefInfoClient fief) {
+		this.bfic = fief;
+		new FetchInvoker().start();
+	}
+	
+	@Override
+	protected void init() {
+		super.init(null == rbic ? "战场信息" : rbic.getBattleTypeName());
+		if (bfic.isHoly() && BriefUserInfoClient.isNPC(bfic.getUserId())
+				&& rbic.getBattleTypeName().contains("占领")
+				&& !bfic.canOccupied()) {
+			super.init(null == rbic ? "战场信息" : "征讨战");
+		}
+		setLeftBtn("刷新战场", new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				new FetchInvoker().start();
+			}
+		});
+		setContentBelowTitle(R.layout.war_info_top);
+		setBattleAddress();
+		setBtnDetails();
+		setContent(R.layout.war_info_double_list);
+		atkTop = content.findViewById(R.id.atkTop);
+		defTop = content.findViewById(R.id.defTop);
+		setNameAndFamily();
+		setBothSideSkills();
+		attackList = (ExpandableListView) findViewById(R.id.atkList);
+		defendList = (ExpandableListView) findViewById(R.id.defList);
+	}
+
+	private void setBattleAddress() {
+		if (null == bfic)
+			return;
+		long tileId = TileUtil.fiefId2TileId(bfic.getId());
+		TextView subAddr = (TextView) window.findViewById(R.id.subAddr);
+		new AddrLoader(subAddr, tileId, AddrLoader.TYPE_SUB);
+		ViewUtil.setBold(subAddr);
+		ViewUtil.setText(window, R.id.position,
+				" (" + TileUtil.uniqueMarking(bfic.getId()) + ")");
+	}
+
+	private void setBtnDetails() {
+		if (null == rbic)
+			return;
+
+		leftBattleBtn = (PressedZoomButton) findViewById(R.id.btn1);
+		rightBattleBtn = (PressedZoomButton) findViewById(R.id.btn2);
+
+		setLeftBattleBtn();
+		setRightBattleBtn();
+	}
+
+	private void setLeftBattleBtn() {
+		if (null == rbic)
+			return;
+
+		OnClickListener l = null;
+		if (rbic.isAttacker()) {
+			txtL = "发动进攻";
+			l = new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					// 单挑或者屠城 并且为围城状态 点击进攻按钮 提示框
+					if (rbic.isMassacreOrDuelSurround()) {
+						controller.alert(rbic.getBattleTypeName()
+								+ "必须等待围城结束后才可以进攻");
+						return;
+					}
+					battleConfirm();
+				}
+			};
+		} else if (rbic.isDefender()) {
+			/*
+			 * 当自己是0兵时， 出城应战 按钮改成 “ 协助防守( 李浩提出)
+			 */
+			if (rbic.getDefendArmCountByUserID(Account.user.getId()) == 0) {
+				txtL = "协助防守";
+				l = new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						if (rbic.isReinforceEvilDoorUserFull(Account.user
+								.getId()))
+							return;
+						openTroopMoveDetailWindow();
+					}
+				};
+			} else {
+
+				txtL = "出城应战";
+				l = new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						// 单挑或者屠城 并且为围城状态 点击进攻按钮 提示框
+						if (rbic.isMassacreOrDuelSurround()) {
+							controller.alert(rbic.getBattleTypeName()
+									+ "必须等待围城结束后才可以进攻");
+							return;
+						}
+						battleConfirm();
+					}
+				};
+
+			}
+
+		} else if (rbic.canReinforceAttack()) {
+			txtL = "协助进攻";
+			l = new OnClickListener() {
+				@Override
+				public void onClick(View v) {	
+					HolyProp hpHolyProp = null;
+					try
+					{
+						hpHolyProp = (HolyProp) CacheMgr.holyPropCache
+								.get(bfic.getId());
+					} catch (GameException e)
+					{
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					if(hpHolyProp == null)
+					{
+						return;
+					}
+					
+					boolean isGoShop = false;
+					if(bfic.isHoly() && bfic.canOccupied())
+					{
+						if(BriefUserInfoClient.isNPC(bfic.getAttackerId()))
+						{
+							isGoShop = true;
+						}
+						else
+						{
+							isGoShop = false;
+						}
+					}
+					else
+					{
+						isGoShop = true;
+					}
+					
+					boolean isReinfoceAttack = reinforceData();
+					if(rbic != null)
+					{
+						if(rbic.isReinforce(isReinfoceAttack))  //是否增援过
+						{
+							isGoShop = false;
+						}
+					}
+						//如果自己援助自己不需要消耗物品 
+					if(isGoShop)
+					{
+							if(!bfic.isMyFief() && rbic!= null && !rbic.isAttacker() && !rbic.isDefender())
+							{
+									if (!FiefDetailTopInfo.SpecialConsumableIsEnough(hpHolyProp,
+										Constants.ASSISTATTACK)) {
+										new ToShopTip(hpHolyProp.getItemId()).show();
+										return;
+								}
+							}
+					}
+					openTroopMoveDetailWindow();
+				}
+			};
+		} else if (rbic.canReinforceDefend()) {
+			txtL = "协助防守";
+			l = new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					if (rbic.isReinforceEvilDoorUserFull(Account.user.getId()))
+						return;
+					HolyProp hpHolyProp = null;
+					try
+					{
+						hpHolyProp = (HolyProp) CacheMgr.holyPropCache
+								.get(bfic.getId());
+					} catch (GameException e)
+					{
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					if(hpHolyProp == null)
+					{
+						return;
+					}
+					
+					boolean isGoShop = false;
+					if(bfic.isHoly() && bfic.canOccupied())
+					{
+						if(BriefUserInfoClient.isNPC(bfic.getAttackerId()))
+						{
+							isGoShop = true;
+						}
+						else
+						{
+							isGoShop = false;
+						}
+					}
+					else
+					{
+						isGoShop = true;
+					}
+					
+					boolean isReinfoceAttack = reinforceData();
+					if(rbic != null)
+					{
+						if(rbic.isReinforce(isReinfoceAttack))  //是否增援过
+						{
+							isGoShop = false;
+						}
+					}
+						//如果自己援助自己不需要消耗物品 
+					if(isGoShop)
+					{
+							if(!bfic.isMyFief() && rbic!= null && !rbic.isAttacker() && !rbic.isDefender())
+							{
+									if (!FiefDetailTopInfo.SpecialConsumableIsEnough(hpHolyProp,
+										Constants.ASSISTATTACK)) {
+										new ToShopTip(hpHolyProp.getItemId()).show();
+										return;
+								}
+							}
+					}
+					openTroopMoveDetailWindow();
+				}
+			};
+		} else {
+			txtL = "历史战况";
+			l = new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					controller.openHistoryWarInfoWindow(bfic);
+				}
+			};
+		}
+		ViewUtil.setText(leftBattleBtn, txtL);
+		leftBattleBtn.setOnClickListener(l);
+		leftBattleBtn.setTag(true);// 用于闪烁
+	}
+
+	private void openTroopMoveDetailWindow() {
+		new TroopMoveDetailWindow().open(Account.richFiefCache.getManorFief()
+				.brief(), bfic, null, Constants.TROOP_REINFORCE);
+	}
+
+	private void setRightBattleBtn() {
+		if (null == rbic)
+			return;
+
+		OnClickListener l = null;
+		if (rbic.isAttacker() || rbic.isDefender()) {
+			ViewUtil.setText(rightBattleBtn, "购买神兵");
+			l = new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					needRefreshTroop = true;
+					controller.openAssistGodSoldierWindow("购买神兵", rbic, rbic
+							.getBbic().getType());
+				}
+			};
+		} else if (rbic.isReinforce(Account.user.getId())) {
+			ViewUtil.setText(rightBattleBtn, "支援神兵");
+			l = new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					if (rbic.getAutoBattleTime() < 0)
+						controller.alert("战争已自动开启，无法支援神兵！");
+					else {
+						needRefreshTroop = true;
+						controller.openAssistGodSoldierWindow("支援神兵", rbic);
+					}
+				}
+			};
+		} else {
+			ViewUtil.setText(rightBattleBtn, "领地详情");
+			l = new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					if (null != rbic && null != rbic.getBbic())
+						new ShowFiefDetailInvoker(rbic.getBbic()
+								.getDefendFiefid()).start();
+				}
+			};
+		}
+
+		rightBattleBtn.setOnClickListener(l);
+	}
+
+	private void setNameAndFamily() {
+		if (null != rbic && null != rbic.getBbic()) {
+			// 攻守方
+			setUserName(atkTop.findViewById(R.id.atkName), rbic.getBbic()
+					.getAttackerUser());
+
+			ViewUtil.setText(defTop, R.id.atk, "守方:");
+			setUserName(defTop.findViewById(R.id.atkName), rbic.getBbic()
+					.getDefenderUser());
+
+			// 家族
+			setFamilyInfo(atkTop, attackGuild);
+			setFamilyInfo(defTop, defendGuild);
+		}
+	}
+
+	@Override
+	public void showUI() {
+		setLeftTime();
+		setTroopDetails();
+		finishAutoBattle();
+
+		// 单挑和屠城 围城期间不可使用强攻和突围功能，按钮灰掉不可使用
+		if (rbic.getBattleInfo().getBbic().getType() == BattleAttackType.E_BATTLE_DUEL_ATTACK
+				.getNumber()) {
+			if (!rbic.isAttacker() && !rbic.isDefender()) {
+				if (!rbic.canReinforceAttack() && !rbic.canReinforceDefend()) {
+					ViewUtil.enableButton(leftBattleBtn);
+				} else {
+					ViewUtil.disableButton(leftBattleBtn);
+					if (rbic.isMassacreOrDuelSurround()) {
+						leftBattleBtn.setEnabled(true);
+					}
+				}
+
+			} else {
+				if (rbic.getCurState() < BattleStatus.BATTLE_STATE_SURROUND_END) {
+					ViewUtil.disableButton(leftBattleBtn);
+					if (rbic.isMassacreOrDuelSurround()) {
+						leftBattleBtn.setEnabled(true);
+					}
+				} else
+					ViewUtil.enableButton(leftBattleBtn);
+			}
+		} else if (rbic.getBattleInfo().getBbic().getType() == BattleAttackType.E_BATTLE_MASSACRE_ATTACK
+				.getNumber()) {
+			if (!rbic.isAttacker() && !rbic.isDefender()) {
+				ViewUtil.enableButton(leftBattleBtn);
+			} else {
+				if (rbic.getCurState() < BattleStatus.BATTLE_STATE_SURROUND_END) {
+					ViewUtil.disableButton(leftBattleBtn);
+					if (rbic.isMassacreOrDuelSurround()) {
+						leftBattleBtn.setEnabled(true);
+					}
+				} else
+					ViewUtil.enableButton(leftBattleBtn);
+			}
+		} else {
+			setAtkLockTime();
+			setLeftBattleBtnBlink();
+		}
+		super.showUI();
+	}
+
+	private void setLeftTime() {
+		if (null == rbic)
+			return;
+
+		ViewUtil.setRichText(window, R.id.leftTime, rbic.getCountDownDesc());
+	}
+
+	private void finishAutoBattle() {
+		if (null == rbic)
+			return;
+
+		if (rbic.getAutoBattleTime() < INTEVAL_TO_SHOW_BATTLE_OVER) {
+			if (!isAutoBattleFinished) {
+				isAutoBattleFinished = true;
+				battleConfirm();
+			}
+		}
+	}
+
+	private void setTroopDetails() {
+		setTroopSummary();
+		setTroopList();
+	}
+
+	private void setTroopSummary() {
+		if (null != rbic) {
+			// 主力
+			ViewUtil.setText(atkTop, R.id.troop, rbic.getAtkMainForcesCount());
+			ViewUtil.setText(defTop, R.id.troop, rbic.getDefMainForcesCount());
+
+			// 援军
+			ViewUtil.setText(atkTop, R.id.assist, rbic.getAtkReinForcesCount());
+			ViewUtil.setText(defTop, R.id.assist, rbic.getDefReinForcesCount());
+
+			// 战力
+			ViewUtil.setText(atkTop, R.id.attack_stronger,
+					rbic.getAttackHeroAbility());
+			ViewUtil.setText(defTop, R.id.attack_stronger,
+					rbic.getDefendHeroAbility());
+		}
+	}
+
+	private void setFamilyInfo(View atkTop, BriefGuildInfoClient family) {
+		if (null != family)
+			ViewUtil.setText(atkTop, R.id.family, family.getName());
+		else
+			ViewUtil.setText(atkTop, R.id.family, "无");
+	}
+
+	private void setLeftBattleBtnBlink() {
+		if (null == rbic)
+			return;
+
+		if (rbic.isSurroundEnd()) {
+			if (true == (Boolean) leftBattleBtn.getTag()) {
+				leftBattleBtn.setTag(false);
+				// leftBattleBtn
+				// .setBackgroundResource(R.drawable.war_info_btn_light);
+				leftBattleBtn.handZoom(true);
+			} else {
+				leftBattleBtn.setTag(true);
+				leftBattleBtn.handZoom(false);
+				// leftBattleBtn.setBackgroundResource(R.drawable.war_info_btn_sg);
+			}
+		}
+	}
+
+	private void setAtkLockTime() {
+		if (null == rbic || null == bfic)
+			return;
+
+		if (rbic.hasAtkLockTime()) {
+			if (getAtkCountDown() > 0) {
+				ViewUtil.setText(leftBattleBtn, txtL + "(" + getAtkCountDown()
+						+ "秒)");
+				ViewUtil.disableButton(leftBattleBtn);
+			} else {
+				ViewUtil.setText(leftBattleBtn, txtL);
+				ViewUtil.enableButton(leftBattleBtn);
+			}
+		} else {
+			ViewUtil.setText(leftBattleBtn, txtL);
+			ViewUtil.enableButton(leftBattleBtn);
+		}
+		if (rbic.isMassacreOrDuelSurround()) {
+			leftBattleBtn.setEnabled(true);
+		}
+	}
+
+	private int getAtkCountDown() {
+		return rbic.timeToNextState() + ATK_LOCK_TIME - bfic.getFiefLockTime();
+	}
+
+	private void setUserName(View view, BriefUserInfoClient brief) {
+		if (null == view || null == brief)
+			return;
+		String country = StringUtil.color(brief.getCountryName(),
+				R.color.k7_color12);
+
+		if (BriefUserInfoClient.isNPC(brief.getId().intValue())
+				|| brief.getId().intValue() == Account.user.getId()) {
+			ViewUtil.setRichText(view, country + " " + brief.getHtmlNickName());
+		} else
+			ViewUtil.setRichText(view,
+					country + "<u>" + brief.getHtmlNickName() + "</u>", true);
+
+		view.setOnClickListener(new ShowOtherCastleClickListener(brief));
+	}
+
+	private void setTroopList() {
+		if (!needRefreshTroop)
+			return;
+		else
+			needRefreshTroop = false;
+
+		// 设置攻守双方兵力
+		setAtkTroopDetails();
+		setDefTroopDetails();
+	}
+
+	private void setAtkTroopDetails() {
+		if (null == rbic)
+			return;
+
+		if (!ListUtil.isNull(rbic.getAttackTroopInfos())) {
+			List<MoveTroopInfoClient> ls = MoveTroopInfoClient.merge(rbic
+					.getAttackTroopInfos());
+			Collections.sort(ls); // rbic.getAttackTroopInfos()
+
+			if (null == atkList)
+				atkList = new WarInfoListView(attackList, findViewById(
+						R.id.atkLoading).findViewById(R.id.loading),
+						rbic.getUserTroopEffectInfos(), null, ls,
+						rbic.getAttackHeroInfos()); // rbic.getAttackTroopInfos()
+			else {
+				atkList.updateAdpater(
+						ls, // rbic.getAttackTroopInfos()
+						rbic.getAttackHeroInfos(),
+						rbic.getUserTroopEffectInfos());
+			}
+
+		} else if (!ListUtil.isNull(rbic.getAttackHeroInfos())) {
+			ViewUtil.setGone(attackList);
+			ViewGroup atkHeroFrame = (ViewGroup) window
+					.findViewById(R.id.atkHeroFrame);
+			ViewUtil.setVisible(atkHeroFrame);
+			//
+			// ViewUtil.setWarHeroInfo(atkHeroFrame, rbic.getAttackHeroInfos()
+			// .get(0).getHeroInfo(), rbic.getBbic().getAttackerUser());
+
+			WarInfosAdapter.dealWithHeros(atkHeroFrame, rbic.getBbic()
+					.getAttackerUser(), rbic.getAttackHeroInfos());
+		}
+	}
+
+	private void setDefTroopDetails() {
+		if (null == rbic)
+			return;
+
+		if (!ListUtil.isNull(rbic.getDefendTroopInfos())) {
+			List<MoveTroopInfoClient> ls = MoveTroopInfoClient.merge(rbic
+					.getDefendTroopInfos());
+			Collections.sort(ls);
+
+			if (null == defList)
+				defList = new WarInfoListView(defendList, findViewById(
+						R.id.defLoading).findViewById(R.id.loading),
+						rbic.getUserTroopEffectInfos(), bfic.getProp(), ls,
+						rbic.getDefendHeroInfos());
+			else
+				defList.updateAdpater(ls, rbic.getDefendHeroInfos(),
+						rbic.getUserTroopEffectInfos());
+		} else if (!ListUtil.isNull(rbic.getDefendHeroInfos())) {
+			ViewUtil.setGone(defendList);
+			ViewGroup defHeroFrame = (ViewGroup) window
+					.findViewById(R.id.defHeroFrame);
+			ViewUtil.setVisible(defHeroFrame);
+
+			// ViewUtil.setWarHeroInfo(defHeroFrame, rbic.getDefendHeroInfos()
+			// .get(0).getHeroInfo(), rbic.getBbic().getDefenderUser());
+
+			WarInfosAdapter.dealWithHeros(defHeroFrame, rbic.getBbic()
+					.getDefenderUser(), rbic.getDefendHeroInfos());
+		}
+	}
+
+	// 显示双方技能
+	private void setBothSideSkills() {
+		if (null == rbic)
+			return;
+
+		ViewGroup atkSkill = (ViewGroup) findViewById(R.id.atkTop)
+				.findViewById(R.id.skill);
+		ViewGroup defSkill = (ViewGroup) findViewById(R.id.defTop)
+				.findViewById(R.id.skill);
+
+		// 刷新技能时将之间的技能清空
+		atkSkill.removeAllViews();
+		defSkill.removeAllViews();
+
+		// 攻击方英雄技能
+		if (!ListUtil.isNull(rbic.getAtkHeroSkills())
+				&& rbic.getMainHeroInfo(rbic.getAttackHeroInfos()) != null) {
+			ViewUtil.addSkillSlot(
+					rbic.getMainHeroInfo(rbic.getAttackHeroInfos())
+							.getHeroInfo().getSkillSlotInfos(), atkSkill);
+		}
+
+		// 防守方英雄技能
+		if (!ListUtil.isNull(rbic.getDefHeroSkills())
+				&& rbic.getMainHeroInfo(rbic.getDefendHeroInfos()) != null) {
+			ViewUtil.addSkillSlot(
+					rbic.getMainHeroInfo(rbic.getDefendHeroInfos())
+							.getHeroInfo().getSkillSlotInfos(), defSkill);
+		}
+		// 不管守城方是否有将领，都要显示城防技能
+		if (bfic.getDefenceSkill() != null)
+			ViewUtil.addSkillImageView(defSkill, bfic.getDefenceSkill()
+					.getIcon());
+
+		atkSkill.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (rbic.hasHeroSkill(true)
+						&& !ListUtil.isNull(rbic.getAtkHeroSkills())) {
+					new HeroSkillTip(rbic.getAtkHeroSkills(), rbic
+							.getAtkHeroArmProp(), -1).show();
+				}
+			}
+		});
+		defSkill.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (!ListUtil.isNull(rbic.getDefHeroSkills())
+						&& rbic.getMainHeroInfo(rbic.getDefendHeroInfos()) != null
+						|| null != bfic.getDefenceSkill()) {
+					new HeroSkillTip(rbic.getDefHeroSkills(), rbic
+							.getDefHeroArmProp(), bfic.getFiefDefSkillId())
+							.show();
+				}
+			}
+		});
+	}
+
+	@Override
+	protected View getPopupView() {
+		return window;
+	}
+
+	public static void inform(List<BriefBattleInfoClient> delBattlefList,
+			List<BriefBattleInfoClient> changeBattlefList) {
+		PopupUI w = Config.getController().getCurPopupUI();
+		if (w instanceof WarInfoWindow) {
+			((WarInfoWindow) w).inspectDate(delBattlefList, changeBattlefList);
+		}
+	}
+
+	private void inspectDate(List<BriefBattleInfoClient> delBattlefList,
+			List<BriefBattleInfoClient> changeBattlefList) {
+		for (BriefBattleInfoClient bbif : delBattlefList) {
+			if (bbif.getBattleid() == rbic.getId()) {
+				controller.goBack();
+				new WarEndInfromTip(rbic.getEndType(), rbic.getBattleInfo()
+						.getBbic().getDefendFiefid()).show();
+			}
+		}
+		for (BriefBattleInfoClient bbif : changeBattlefList) {
+			if (bbif.getBattleid() == rbic.getId()) {
+				if (bbif.getAttackUnit() != rbic.getAttackArmTotalCount()
+						|| bbif.getDefendUnit() != rbic
+								.getDefendArmTotalCount()) {
+					showUI();
+					return;
+				}
+			}
+		}
+	}
+
+	@Override
+	protected void destory() {
+		controller.removeContentFullScreen(window);
+	}
+
+	private class FetchInvoker extends BaseInvoker {
+
+		@Override
+		protected String failMsg() {
+			return "获取数据失败";
+		}
+
+		@Override
+		protected String loadingMsg() {
+			return "正在加载";
+		}
+
+		@Override
+		protected void fire() throws GameException {
+			RichBattleInfoQueryResp resp = GameBiz.getInstance()
+					.richBattleInfoQuery(bfic.getId(), true);
+			rbic = resp.getInfo();
+
+			// 获取双方家族信息
+			if (null != rbic && null != rbic.getBbic()) {
+				BriefUserInfoClient atk = rbic.getBbic().getAttackerUser();
+				BriefUserInfoClient def = rbic.getBbic().getDefenderUser();
+
+				List<Integer> guildIds = new ArrayList<Integer>();
+				if (null != atk && atk.getGuildid() > 0)
+					guildIds.add(atk.getGuildid());
+
+				if (null != def && def.getGuildid() > 0)
+					guildIds.add(def.getGuildid());
+
+				List<BriefGuildInfoClient> ls = CacheMgr.bgicCache
+						.get(guildIds);
+				for (BriefGuildInfoClient it : ls) {
+					if (it.getId() == atk.getGuildid())
+						attackGuild = it;
+					else if (it.getId() == def.getGuildid())
+						defendGuild = it;
+				}
+			}
+		}
+
+		@Override
+		protected void onOK() {
+			if (BattleStatus.isNoBattle(rbic.getCurState()))
+				new WarEndInfromTip(rbic.getEndType(), bfic.getId()).show();
+
+			needRefreshTroop = true;
+			if (isShow()) {
+				// 增援部队中有将领会改变技能
+				setBothSideSkills();
+				setLeftBattleBtn();
+			} else
+				doOpen();
+		}
+	}
+
+	@Override
+	protected int refreshInterval() {
+		return 1000;
+	}
+
+	private void battleConfirm() {
+		new BattleConfirmInvoker(bfic.getId(), rbic.getEndType(), rbic,
+				new CallBack() {
+					@Override
+					public void onCall() {
+						showUI();
+						attackConfirm();
+					}
+				}).start();
+	}
+
+	@Override
+	protected byte getLeftBtnBgType() {
+		return WINDOW_BTN_BG_TYPE_CLICK;
+	}
+
+	private void attackConfirm() {
+		if (BattleStatus.isInBattle(rbic.getCurState()))
+			new WarConfirmTip(bfic.getId(), rbic).show(); // callBack,
+		else {
+			new WarEndInfromTip(rbic.getEndType(), bfic.getId()).show();
+		}
+	}
+		
+	private boolean reinforceData()
+	{
+		boolean isReinAttack = true;
+		if(!bfic.isMyFief() && bfic.getAttackerId() == Account.user.getId())
+		{
+			isReinAttack = true;
+		}
+		else if(bfic.isMyFief() && bfic.getAttackerId() != Account.user.getId())  //自己的领地   协助防守自己
+		{
+			isReinAttack = false;
+		}
+		else
+		{
+			if(rbic.isAttackerById(bfic.getAttackerId()))
+			{
+				if((bfic.isHoly() && rbic.canReinforceAttackInShenJi()) || (!bfic.isHoly()&&rbic.canReinforceAttack()))
+				{
+					isReinAttack = true;
+				}		
+			}
+			else
+			{
+				if((bfic.isHoly() &&rbic.canReinforceDefendInShenJi()) || (!bfic.isHoly()&&rbic.canReinforceDefend()))
+				{
+					isReinAttack = false;
+				}
+			}
+		}
+		return isReinAttack;
+	}
+}

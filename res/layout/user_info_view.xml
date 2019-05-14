@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent"
+    android:background="@drawable/common_list_bg" >
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"
+        android:paddingTop="5dip" >
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_marginTop="10dip"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <FrameLayout
+                android:id="@+id/iconLayout"
+                android:layout_width="60.5dip"
+                android:layout_height="60.5dip"
+                android:layout_gravity="center_vertical" >
+
+                <ImageView
+                    style="@style/fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="4dip"
+                    android:background="@drawable/user_icon_black_bg" />
+
+                <ImageView
+                    android:id="@+id/icon"
+                    style="@style/wrap_content"
+                    android:layout_gravity="center" />
+
+                <ImageView
+                    style="@style/wrap_content"
+                    android:layout_gravity="top|center_horizontal"
+                    android:background="@drawable/user_icon_bg" />
+            </FrameLayout>
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:layout_marginLeft="8dip"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    style="@style/wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/color7_13"
+                        android:text="昵称: " />
+
+                    <TextView
+                        android:id="@+id/name"
+                        style="@style/color7_13" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/wrap_content"
+                    android:layout_marginTop="2dip"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/color7_13"
+                        android:text="ID: " />
+
+                    <TextView
+                        android:id="@+id/userID"
+                        style="@style/color7_13" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/wrap_content"
+                    android:layout_marginTop="2dip"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/color7_13"
+                        android:text="家族: " />
+
+                    <TextView
+                        android:id="@+id/guild"
+                        style="@style/color7_13" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_marginLeft="15dip"
+            android:layout_marginRight="15dip"
+            android:layout_marginTop="15dip"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/color9_13"
+                    android:text="性别: " />
+
+                <TextView
+                    android:id="@+id/gender"
+                    style="@style/color7_13" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:layout_marginTop="8dip"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/color9_13"
+                    android:text="年龄: " />
+
+                <TextView
+                    android:id="@+id/age"
+                    style="@style/color7_13" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:layout_marginTop="8dip"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/color9_13"
+                    android:text="生日: " />
+
+                <TextView
+                    android:id="@+id/birthday"
+                    style="@style/color7_13" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:layout_marginTop="8dip"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/color9_13"
+                    android:text="签名: " />
+
+                <TextView
+                    android:id="@+id/sign"
+                    style="@style/color7_13"
+                    android:gravity="left" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/securityLayout"
+            style="@style/w_fill_h_wrap"
+            android:layout_marginLeft="15dip"
+            android:layout_marginRight="15dip"
+            android:layout_marginTop="25dip"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/color9_13"
+                    android:text="安全状态: " />
+
+                <LinearLayout
+                    style="@style/w_fill_h_wrap"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:id="@+id/emailLayout"
+                        style="@style/wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            style="@style/color7_13"
+                            android:text="邮箱绑定" />
+
+                        <ImageView
+                            android:id="@+id/state"
+                            style="@style/wrap_content"
+                            android:layout_marginLeft="35dip" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/phoneLayout"
+                        style="@style/wrap_content"
+                        android:layout_marginTop="3dip"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            style="@style/color7_13"
+                            android:text="手机绑定" />
+
+                        <ImageView
+                            android:id="@+id/state"
+                            style="@style/wrap_content"
+                            android:layout_marginLeft="35dip" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/idCardLayout"
+                        style="@style/wrap_content"
+                        android:layout_marginTop="3dip"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            style="@style/color7_13"
+                            android:text="实名认证" />
+
+                        <ImageView
+                            android:id="@+id/state"
+                            style="@style/wrap_content"
+                            android:layout_marginLeft="35dip" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_marginTop="35dip"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <!--
+            <TextView
+                android:id="@+id/albumBtn"
+                style="@style/custom_dialog_btn"
+                android:text="我的相册" /> 
+            -->
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/editBtn"
+                style="@style/btn_common"
+                android:text="修改资料" />
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/manageBtn"
+                style="@style/btn_common"
+                android:layout_marginTop="15dip"
+                android:text="管理账号" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:clickable="true" >
+
+    <TextView
+        android:id="@+id/version"
+        style="@style/color23_15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/website"
+        style="@style/color23_15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:visibility="invisible" />
+
+    <AbsoluteLayout
+        android:layout_width="354.7dip"
+        android:layout_height="448dip"
+        android:layout_gravity="bottom|right" >
+
+        <ImageView
+            style="@style/wrap_content"
+            android:layout_x="33dip"
+            android:layout_y="214dip"
+            android:background="@drawable/home_layer1" />
+
+        <ImageView
+            android:id="@+id/animHair1"
+            style="@style/wrap_content"
+            android:layout_x="102.3dip"
+            android:layout_y="12dip"
+            android:background="@drawable/home_layer2" />
+
+        <ImageView
+            android:id="@+id/animHair2"
+            style="@style/wrap_content"
+            android:layout_x="0.6dip"
+            android:layout_y="219.3dip"
+            android:background="@drawable/home_layer3" />
+
+        <ImageView
+            style="@style/wrap_content"
+            android:layout_x="23dip"
+            android:layout_y="0dip"
+            android:background="@drawable/home_layer4" />
+
+        <ImageView
+            android:id="@+id/animFlower1"
+            style="@style/wrap_content"
+            android:layout_x="160dip"
+            android:layout_y="20dip"
+            android:background="@drawable/home_layer5_flower1" />
+
+        <ImageView
+            android:id="@+id/animFlower2"
+            style="@style/wrap_content"
+            android:layout_x="210dip"
+            android:layout_y="180dip"
+            android:background="@drawable/home_layer5_flower2" />
+
+        <ImageView
+            android:id="@+id/animHair3"
+            style="@style/wrap_content"
+            android:layout_x="170dip"
+            android:layout_y="120dip"
+            android:background="@drawable/home_layer7" />
+
+        <ImageView
+            android:id="@+id/animFlower3"
+            style="@style/wrap_content"
+            android:layout_x="330dip"
+            android:layout_y="200dip"
+            android:background="@drawable/home_layer5_flower3" />
+
+        <ImageView
+            android:id="@+id/animEye"
+            style="@style/wrap_content"
+            android:layout_x="197dip"
+            android:layout_y="105dip"
+            android:background="@drawable/home_layer6"
+            android:visibility="gone" />
+    </AbsoluteLayout>
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginTop="9dip" />
+
+    <FrameLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_gravity="bottom"
+        android:background="@color/color_half_black"
+        android:visibility="gone" >
+
+        <TextView
+            style="@style/color6_11"
+            android:layout_gravity="center"
+            android:text="晨月游戏运营    维京人网络提供" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tipText"
+        style="@style/color13_14"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="130dip"
+        android:background="@drawable/bg_server_choose"
+        android:gravity="left"
+        android:paddingBottom="10dip"
+        android:paddingLeft="40dip"
+        android:paddingRight="40dip"
+        android:paddingTop="10dip"
+        android:visibility="gone" />
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="70dip"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/serverChooseLayout"
+            style="@style/w_fill_h_wrap"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@drawable/bg_server_choose"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="2dip"
+            android:paddingTop="2dip" >
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/wrap_content"
+                    android:layout_weight="2" />
+
+                <ImageView
+                    android:id="@+id/state"
+                    style="@style/wrap_content" />
+
+                <TextView
+                    style="@style/wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/serverName"
+                    style="@style/color13_14"
+                    android:layout_marginLeft="5dip"
+                    android:shadowColor="@color/shadow_color"
+                    android:shadowRadius="3"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/userName"
+                    style="@style/color13_11"
+                    android:layout_marginLeft="5dip"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/wrap_content"
+                    android:layout_weight="2" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/color13_11"
+                android:gravity="center_horizontal"
+                android:text="点击选择服务器"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/enter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dip" >
+
+            <ImageView
+                android:id="@+id/enterGameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="20dip"
+        android:orientation="horizontal" >
+
+        <FrameLayout
+            android:id="@+id/repair"
+            style="@style/wrap_content"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/bgMirror"
+                style="@style/wrap_content" />
+
+            <ImageView
+                style="@style/wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:layout_marginRight="5dip"
+                android:background="@drawable/txt_yxsz" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/retrievepassword"
+            style="@style/wrap_content"
+            android:layout_marginLeft="10dip"
+            android:orientation="horizontal" >
+
+            <ImageView
+                style="@style/wrap_content"
+                android:background="@drawable/home_op_bg" />
+
+            <ImageView
+                style="@style/wrap_content"
+                android:layout_gravity="center_vertical|left"
+                android:layout_marginLeft="5dip"
+                android:background="@drawable/txt_qhzh" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <com.vikings.sanguo.ui.ProgressBar
+        android:id="@+id/loadingBar"
+        style="@style/wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="85dip"
+        android:background="@drawable/progress_bg_user_337"
+        android:src="@drawable/progress_blue_user_327" />
+
+    <TextView
+        android:id="@+id/loadingText"
+        style="@style/color13_14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="55dip"
+        android:textStyle="bold" />
+
+    <FrameLayout
+        android:id="@+id/listViewLayout"
+        style="@style/fill_parent"
+        android:background="@color/color_half_black"
+        android:clickable="true"
+        android:paddingBottom="20dip"
+        android:paddingTop="20dip"
+        android:visibility="gone" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="320dip"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ListView
+                android:id="@+id/listView"
+                style="@style/common_list_no_anim"
+                android:layout_width="270dip"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dip"
+                android:background="@drawable/castle_prop_bg"
+                android:footerDividersEnabled="false"
+                android:minHeight="140dip"
+                android:padding="10dip"
+                android:scrollbars="none" >
+            </ListView>
+        </LinearLayout>
+    </FrameLayout>
+
+</FrameLayout>

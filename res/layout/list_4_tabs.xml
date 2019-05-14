@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:layout_gravity="center_horizontal"
+    android:clickable="true"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50dip"
+        android:layout_gravity="center_horizontal"
+        android:paddingLeft="1dip"
+        android:paddingRight="1dip" >
+
+        <ImageView
+            style="@style/wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@drawable/tab_bottom" />
+
+        <LinearLayout
+            android:id="@+id/tabLayout"
+            style="@style/wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="10dip"
+            android:gravity="center_horizontal|bottom"
+            android:orientation="horizontal" >
+
+            <ImageButton
+                android:id="@+id/tab1"
+                style="@style/tab_4item"
+                android:layout_marginRight="2dip"
+                android:background="@drawable/tab_btn1_press" />
+
+            <ImageButton
+                android:id="@+id/tab2"
+                style="@style/tab_4item"
+                android:layout_marginRight="2dip"
+                android:background="@drawable/tab_btn1" />
+
+            <ImageButton
+                android:id="@+id/tab3"
+                style="@style/tab_4item"
+                android:layout_marginRight="2dip"
+                android:background="@drawable/tab_btn1" />
+
+            <ImageButton
+                android:id="@+id/tab4"
+                style="@style/tab_4item"
+                android:layout_marginRight="2dip"
+                android:background="@drawable/tab_btn1" />
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

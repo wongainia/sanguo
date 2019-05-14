@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/wrap_content" >
+
+    <ImageView
+        android:id="@+id/light"
+        style="@style/wrap_content"
+        android:layout_gravity="center" />
+
+    <FrameLayout
+        android:id="@+id/battleBg"
+        style="@style/wrap_content"
+        android:layout_gravity="center" >
+
+        <ImageView
+            android:id="@+id/result"
+            style="@style/wrap_content"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+</FrameLayout>

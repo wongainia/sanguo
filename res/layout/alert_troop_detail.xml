@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent" >
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="3dip"
+        android:layout_marginRight="3dip"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <include layout="@layout/arm_icon" />
+
+            <LinearLayout
+                style="@style/fill_parent"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="4dip"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    style="@style/w_fill_h_wrap"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/troopName"
+                        style="@style/color7_16"
+                        android:gravity="left"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        style="@style/wrap_content"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:id="@+id/armicon"
+                        style="@style/wrap_content"
+                        android:layout_gravity="center_vertical" />
+
+                    <TextView
+                        android:id="@+id/troopType"
+                        style="@style/color5_12"
+                        android:layout_marginRight="5dip" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/desc"
+                    style="@style/color5_11"
+                    android:layout_width="fill_parent"
+                    android:gravity="left" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_marginTop="8dip"
+            android:background="@drawable/setoff_cnt_sg"
+            android:orientation="vertical"
+            android:padding="3dip" >
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:layout_marginLeft="3dip"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/hp"
+                    style="@style/color5_11"
+                    android:layout_width="130dip"
+                    android:gravity="left"
+                    android:text="生命" />
+
+                <TextView
+                    android:id="@+id/range"
+                    style="@style/color5_11"
+                    android:gravity="left"
+                    android:text="射程" />
+            </LinearLayout>
+
+            <!-- 攻击、防御 -->
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:layout_marginLeft="3dip"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/atk"
+                    style="@style/color5_11"
+                    android:layout_width="130dip"
+                    android:gravity="left"
+                    android:text="攻击" />
+
+                <TextView
+                    android:id="@+id/def"
+                    style="@style/color5_11"
+                    android:gravity="left"
+                    android:text="防御" />
+            </LinearLayout>
+
+            <!-- 暴击率、暴伤 -->
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:layout_marginLeft="3dip"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/crit"
+                    style="@style/color5_11"
+                    android:layout_width="130dip"
+                    android:gravity="left"
+                    android:text="暴击率" />
+
+                <TextView
+                    android:id="@+id/critTitle"
+                    style="@style/color5_11"
+                    android:gravity="left"
+                    android:text="暴伤" />
+            </LinearLayout>
+
+            <!-- 韧性 -->
+
+            <TextView
+                android:id="@+id/antiCritTitle"
+                style="@style/color5_11"
+                android:layout_marginLeft="3dip"
+                android:gravity="left"
+                android:text="韧性" />
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:layout_marginLeft="3dip"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/food"
+                    style="@style/color5_11"
+                    android:layout_width="130dip"
+                    android:gravity="left"
+                    android:text="出征消耗" />
+
+                <TextView
+                    android:id="@+id/foodConsume"
+                    style="@style/color5_11"
+                    android:gravity="left"
+                    android:text="驻防消耗" />
+            </LinearLayout>
+        </LinearLayout>
+        <!-- 士兵Buff -->
+
+        <LinearLayout
+            android:id="@+id/buffLayout"
+            style="@style/w_fill_h_wrap"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:layout_marginTop="8dip"
+                android:background="@drawable/setoff_cnt_sg"
+                android:orientation="vertical"
+                android:padding="3dip" >
+
+                <LinearLayout
+                    style="@style/wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        style="@style/wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/potpourri_bg" />
+
+                    <TextView
+                        android:id="@+id/descBuff"
+                        style="@style/color7_12"
+                        android:layout_marginLeft="3dip"
+                        android:layout_marginRight="3dip"
+                        android:layout_weight="1"
+                        android:text="附加状态"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/poto_right"
+                        style="@style/wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/potpourri_bg" />
+                </LinearLayout>
+
+                <!-- 士兵buff -->
+
+                <HorizontalScrollView
+                    style="@style/w_fill_h_wrap"
+                    android:layout_gravity="center_horizontal"
+                    android:scrollbars="none" >
+
+                    <LinearLayout
+                        android:id="@+id/armbuffLayout"
+                        style="@style/w_fill_h_wrap"
+                        android:layout_gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="1dip"
+                        android:paddingRight="6dip" >
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <!-- 无buff状态显示 -->
+
+                <FrameLayout
+                    style="@style/w_fill_h_wrap"
+                    android:layout_gravity="center" >
+
+                    <TextView
+                        android:id="@+id/nobuff"
+                        style="@style/color5_10"
+                        android:layout_gravity="center"
+                        android:paddingBottom="20dip"
+                        android:paddingTop="28dip"
+                        android:text="无" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <!-- 关闭按钮 -->
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/closeBtn3"
+                style="@style/btn_common"
+                android:layout_marginTop="10dip"
+                android:text="关   闭" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/armDescProp"
+        style="@style/w_fill_h_wrap"
+        android:layout_marginTop="120dip"
+        android:background="@drawable/arm_buf_desc_bg"
+        android:gravity="left"
+        android:padding="3dip"
+        android:visibility="gone" />
+
+</FrameLayout>

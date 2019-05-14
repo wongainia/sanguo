@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:orientation="vertical" >
+
+    <include layout="@layout/alert_store_item" />
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:paddingBottom="20dip" >
+
+        <TextView
+            style="@style/color13_12"
+            android:text="请输入追杀目标的ID:" />
+
+        <EditText
+            android:id="@+id/userID"
+            style="@style/custom_dialog_edit"
+            android:layout_width="100dip"
+            android:inputType="numberSigned"
+            android:singleLine="true"
+            android:textSize="13dip" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="10dip" >
+
+    <!-- 属性 -->
+
+    <include layout="@layout/alert_fief_head" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="5dip" />
+
+    <!-- 资源 -->
+
+    <include layout="@layout/fief_resources" />
+
+    <TextView
+        style="@style/wrap_content"
+        android:layout_weight="1" />
+
+    <!-- 按钮 -->
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/sendTroop"
+        style="@style/btn_common"
+        android:layout_marginTop="4dip"
+        android:text="出兵征战" />
+
+        <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/battleField"
+        style="@style/btn_common"
+        android:layout_marginTop="4dip"
+        android:text="查看战场" 
+        android:visibility="gone"/>
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/assistAtk"
+        style="@style/btn_common"
+        android:layout_marginTop="4dip"
+        android:text="协助进攻" 
+        android:visibility="gone"/>
+    
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/detail"
+        style="@style/btn_common"
+        android:layout_marginTop="4dip"
+        android:text="驻兵信息" />
+    
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/history"
+        style="@style/btn_common"
+        android:layout_marginTop="4dip"
+        android:text="历史战况" />
+    
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/favorite"
+        style="@style/btn_common"
+        android:layout_marginTop="4dip"
+        android:text="添加收藏" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/close"
+        style="@style/btn_common"
+        android:layout_marginTop="4dip"
+        android:text="关闭" />
+
+    <TextView
+        style="@style/wrap_content"
+        android:layout_weight="1" />
+
+</LinearLayout>

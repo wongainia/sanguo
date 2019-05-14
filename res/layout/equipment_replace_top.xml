@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/topLayout"
+    style="@style/w_fill_h_wrap"
+    android:orientation="vertical"
+    android:paddingBottom="2dip"
+    android:paddingTop="2dip" >
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/common_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="5dip"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"
+        android:paddingTop="5dip" >
+
+        <include layout="@layout/equipment" />
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_marginLeft="2dip"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/name"
+                    style="@style/color11_14" />
+
+                <TextView
+                    android:id="@+id/quality"
+                    style="@style/color11_12" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/properties"
+                style="@style/color7_12" />
+
+            <TextView
+                android:id="@+id/effect"
+                style="@style/color7_12" />
+
+            <TextView
+                android:id="@+id/stone"
+                style="@style/color7_12" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        style="@style/wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="2dip" >
+
+        <include
+            android:layout_gravity="center_horizontal"
+            layout="@layout/gradient_msg" />
+    </FrameLayout>
+
+</LinearLayout>

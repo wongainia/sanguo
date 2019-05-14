@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/loading"
+        style="@style/color13_16"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dip"
+        android:text="正在加载说明..."
+        android:visibility="gone" />
+
+    <ScrollView
+        android:id="@+id/scroll"
+        style="@style/fill_parent"
+        android:layout_gravity="center_horizontal" >
+
+        <LinearLayout
+            style="@style/fill_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="1dip"
+            android:orientation="vertical"
+            android:paddingLeft="5dip"
+            android:paddingRight="5dip" >
+
+            <LinearLayout
+                android:id="@+id/body"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal" >
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

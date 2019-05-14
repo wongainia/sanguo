@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="74dip"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/iconLayout"
+        android:layout_width="60dip"
+        android:layout_height="60dip"
+        android:layout_gravity="center" >
+
+        <ImageView
+            style="@style/wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/hero_icon_frame_bg" />
+
+        <ImageView
+            android:id="@+id/icon"
+            style="@style/wrap_content"
+            android:layout_gravity="center" />
+
+        <ImageView
+            style="@style/fill_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/hero_yin_frame_bg" />
+    </FrameLayout>
+
+    <TextView
+        style="@style/wrap_content"
+        android:layout_height="3dip" />
+
+    <TextView
+        android:id="@+id/heroName"
+        style="@style/color9_10"
+        android:layout_gravity="center_horizontal" />
+
+</LinearLayout>

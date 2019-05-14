@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/res_pop"
+    android:layout_width="wrap_content"
+    android:text="国会会" 
+    android:gravity="center"
+    style="@style/k7_color6_15" 
+    android:layout_height="wrap_content" />

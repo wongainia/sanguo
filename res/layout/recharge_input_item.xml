@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/itemLayout"
+    style="@style/w_fill_h_wrap"
+    android:layout_marginTop="3dip"
+    android:background="@drawable/general_detail_bg"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:paddingLeft="15dip"
+    android:paddingRight="10dip" >
+
+    <TextView
+        android:id="@+id/desc"
+        style="@style/color7_14" />
+
+    <TextView
+        android:id="@+id/extDesc"
+        style="@style/color9_12"
+        android:layout_marginTop="5dip" />
+
+</LinearLayout>

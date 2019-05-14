@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 领地资源 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/resourceLayout"
+    style="@style/w_fill_h_wrap"
+    android:background="@drawable/setoff_cnt_sg"
+    android:orientation="vertical"
+    android:paddingLeft="5dip" >
+
+    <TextView
+        android:id="@+id/resTitle"
+        style="@style/color9_11"
+        android:layout_gravity="center_horizontal"
+        android:text="可被掠夺的资源数量" />
+
+    <ImageView style="@style/separate_line1" />
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_marginTop="1dip"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/money"
+                style="@style/color8_10" />
+
+            <TextView
+                android:id="@+id/material3"
+                style="@style/color8_10"
+                android:layout_marginTop="2dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/food"
+                style="@style/color8_10" />
+
+            <TextView
+                android:id="@+id/material4"
+                style="@style/color8_10"
+                android:layout_marginTop="2dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/material0"
+                style="@style/color8_10" />
+
+            <TextView
+                android:id="@+id/material5"
+                style="@style/color8_10"
+                android:layout_marginTop="2dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/material1"
+                style="@style/color8_10" />
+
+            <TextView
+                android:id="@+id/material6"
+                style="@style/color8_10"
+                android:layout_marginTop="2dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/material2"
+                style="@style/color8_10" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

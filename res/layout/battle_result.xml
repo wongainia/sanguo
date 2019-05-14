@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.vikings.sanguo.ui.AbnormalFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bg"
+    style="@style/fill_parent"
+    android:clickable="true" >
+
+    <ImageView
+        style="@style/fill_parent"
+        android:background="@color/battle_result" />
+
+    <LinearLayout
+        style="@style/fill_parent"
+        android:layout_gravity="center_horizontal|bottom"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:layout_marginTop="5dip"
+            android:orientation="vertical" >
+
+            <FrameLayout style="@style/w_fill_h_wrap" >
+
+                <ImageView
+                    style="@style/wrap_content"
+                    android:layout_gravity="top|center_horizontal"
+                    android:layout_marginTop="-10dip"
+                    android:background="@drawable/btl_vs_sg" />
+
+                <LinearLayout
+                    style="@style/w_fill_h_wrap"
+                    android:orientation="horizontal" >
+
+                    <!-- 攻方信息 -->
+
+                    <LinearLayout
+                        style="@style/wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical" >
+
+                        <LinearLayout
+                            style="@style/w_fill_h_wrap"
+                            android:orientation="horizontal" >
+
+                            <FrameLayout
+                                android:id="@+id/atkIcon"
+                                style="@style/wrap_content"
+                                android:layout_gravity="center_vertical|left"
+                                android:layout_marginLeft="2dip" >
+
+                                <include layout="@layout/user_icon" />
+                            </FrameLayout>
+
+                            <!-- 头像/姓名/结果 -->
+
+                            <LinearLayout
+                                style="@style/w_fill_h_wrap"
+                                android:layout_gravity="center_vertical"
+                                android:gravity="left" >
+
+                                <ImageView
+                                    android:id="@+id/atkResult"
+                                    style="@style/wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:background="@drawable/btl_tri_icon_sg" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/wrap_content"
+                        android:layout_weight="0.1" />
+
+                    <!-- 守方信息 -->
+
+                    <FrameLayout
+                        style="@style/wrap_content"
+                        android:layout_weight="1" >
+
+                        <LinearLayout
+                            style="@style/wrap_content"
+                            android:layout_gravity="right|center_vertical"
+                            android:layout_marginRight="2dip"
+                            android:orientation="horizontal" >
+
+                            <!-- 头像/姓名/结果 -->
+
+                            <LinearLayout
+                                style="@style/wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:gravity="right"
+                                android:orientation="horizontal" >
+
+                                <ImageView
+                                    android:id="@+id/defResult"
+                                    style="@style/wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:background="@drawable/btl_fail_icon_sg" />
+                            </LinearLayout>
+
+                            <FrameLayout
+                                android:id="@+id/defIcon"
+                                style="@style/center_v" >
+
+                                <include layout="@layout/user_icon" />
+                            </FrameLayout>
+                        </LinearLayout>
+                    </FrameLayout>
+                </LinearLayout>
+            </FrameLayout>
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:layout_marginTop="-5dip"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal" >
+
+                <!-- 攻方信息 -->
+
+                <LinearLayout
+                    android:layout_width="150dip"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/common_bg_tm1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/atkName"
+                        style="@style/color16_14"
+                        android:layout_marginLeft="5dip"
+                        android:gravity="left"
+                        android:text="攻方玩家名字" />
+                    <!-- 总兵力/总伤亡 -->
+
+                    <FrameLayout style="@style/w_fill_h_wrap" >
+
+                        <TextView
+                            style="@style/color6_11"
+                            android:layout_gravity="left|center_vertical"
+                            android:layout_marginLeft="5dip"
+                            android:text="兵力 " />
+
+                        <TextView
+                            android:id="@+id/atkTotal"
+                            style="@style/color6_11"
+                            android:layout_gravity="right|center_vertical"
+                            android:layout_marginRight="5dip" />
+                    </FrameLayout>
+
+                    <FrameLayout style="@style/w_fill_h_wrap" >
+
+                        <TextView
+                            style="@style/color9_11"
+                            android:layout_gravity="left|center_vertical"
+                            android:layout_marginLeft="5dip"
+                            android:text="伤亡" />
+
+                        <TextView
+                            android:id="@+id/atkTotalLoss"
+                            style="@style/color9_11"
+                            android:layout_gravity="right|center_vertical"
+                            android:layout_marginRight="5dip" />
+                    </FrameLayout>
+
+                    <FrameLayout style="@style/w_fill_h_wrap" >
+
+                        <TextView
+                            style="@style/color9_11"
+                            android:layout_gravity="left|center_vertical"
+                            android:layout_marginLeft="5dip"
+                            android:text="复活" />
+
+                        <TextView
+                            android:id="@+id/atkHurt"
+                            style="@style/color9_11"
+                            android:layout_gravity="right|center_vertical"
+                            android:layout_marginRight="5dip" />
+                    </FrameLayout>
+
+                    <FrameLayout style="@style/w_fill_h_wrap" >
+
+                        <TextView
+                            style="@style/color9_11"
+                            android:layout_gravity="left|center_vertical"
+                            android:layout_marginLeft="5dip"
+                            android:text="死亡" />
+
+                        <TextView
+                            android:id="@+id/atkDeath"
+                            style="@style/color9_11"
+                            android:layout_gravity="right|center_vertical"
+                            android:layout_marginRight="5dip" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <!-- 守方信息 -->
+
+                <LinearLayout
+                    android:layout_width="150dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dip"
+                    android:background="@drawable/common_bg_tm1"
+                    android:orientation="vertical" >
+
+                    <FrameLayout style="@style/w_fill_h_wrap" >
+
+                        <TextView
+                            android:id="@+id/defName"
+                            style="@style/color16_14"
+                            android:layout_gravity="right|center_vertical"
+                            android:layout_marginRight="5dip"
+                            android:text="守方名字" />
+                    </FrameLayout>
+
+                    <FrameLayout style="@style/w_fill_h_wrap" >
+
+                        <TextView
+                            android:id="@+id/defTotal"
+                            style="@style/color6_11"
+                            android:layout_gravity="right|center_vertical"
+                            android:layout_marginRight="5dip" />
+
+                        <TextView
+                            style="@style/color6_11"
+                            android:layout_gravity="left|center_vertical"
+                            android:layout_marginLeft="5dip"
+                            android:text="兵力" />
+                    </FrameLayout>
+                    <!-- 总兵力/总伤亡 -->
+
+                    <FrameLayout style="@style/w_fill_h_wrap" >
+
+                        <TextView
+                            android:id="@+id/defTotalLoss"
+                            style="@style/color9_11"
+                            android:layout_gravity="right|center_vertical"
+                            android:layout_marginRight="5dip" />
+
+                        <TextView
+                            style="@style/color9_11"
+                            android:layout_gravity="left|center_vertical"
+                            android:layout_marginLeft="5dip"
+                            android:text="伤亡" />
+                    </FrameLayout>
+
+                    <FrameLayout style="@style/w_fill_h_wrap" >
+
+                        <TextView
+                            android:id="@+id/defHurt"
+                            style="@style/color9_11"
+                            android:layout_gravity="right|center_vertical"
+                            android:layout_marginRight="5dip" />
+
+                        <TextView
+                            style="@style/color9_11"
+                            android:layout_gravity="left|center_vertical"
+                            android:layout_marginLeft="5dip"
+                            android:text="复活" />
+                    </FrameLayout>
+
+                    <FrameLayout style="@style/w_fill_h_wrap" >
+
+                        <TextView
+                            android:id="@+id/defDeath"
+                            style="@style/color9_11"
+                            android:layout_gravity="right|center_vertical"
+                            android:layout_marginRight="5dip" />
+
+                        <TextView
+                            style="@style/color9_11"
+                            android:layout_gravity="left|center_vertical"
+                            android:layout_marginLeft="5dip"
+                            android:text="死亡" />
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/levelLimit"
+            style="@style/k7_color3_13"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="2dip"
+            android:visibility="gone" />
+
+        <!-- 奖励/战报/详情 -->
+
+        <RelativeLayout
+            style="@style/fill_parent"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:layout_marginTop="5dip"
+            android:orientation="vertical" >
+
+            <!-- 占位控件 start -->
+
+            <LinearLayout
+                android:id="@+id/plesholdr_panel"
+                style="@style/wrap_content"
+                android:visibility="invisible" >
+
+                <Button
+                    style="@style/wrap_content"
+                    android:background="@drawable/settlement_tab_pressed" />
+            </LinearLayout>
+            <!-- 占位控件 end -->
+             <!--  android:id="@+id/battle_panel" -->
+              <ImageView
+                     android:id="@+id/battle_panel"
+           			 style="@style/fill_parent"
+           			 android:layout_marginTop="-3dip"  
+           			 android:layout_below="@id/plesholdr_panel"/>  
+            <FrameLayout
+                style="@style/fill_parent"
+                android:layout_below="@id/plesholdr_panel"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="-5dip"                
+                android:gravity="center|bottom" 
+                android:paddingBottom="35dip"
+                >
+                                      
+                <!--  
+                放到代码里加载
+                android:background="@drawable/jianbian_bg"
+                 -->
+                
+                <!-- 战斗奖励 -->
+
+                <include layout="@layout/battle_result_award" />
+                <!-- 巅峰提示 -->
+
+                <include layout="@layout/battle_result_arena" />
+                <!-- 伤亡 -->
+
+                <include layout="@layout/battle_result_loss" />
+                <!-- 详情 -->
+
+                <include layout="@layout/battle_result_log" />
+            </FrameLayout>
+
+            <!-- tab start: 奖励/战报/详情 -->
+
+            <LinearLayout
+                android:id="@+id/tabs"
+                style="@style/wrap_content"
+                android:layout_width="fill_parent"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center|bottom"
+                android:orientation="horizontal" >
+
+                <FrameLayout
+                    android:id="@+id/tab_award_layout"
+                    style="@style/wrap_content"
+                    android:layout_marginRight="2dip" 
+                    >
+
+                    <Button
+                        android:id="@+id/tab_award"
+                        style="@style/wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/settlement_tab_pressed"
+                        android:gravity="center"
+                        android:text="奖励"
+                        android:textColor="@color/color7"
+                        android:textStyle="bold" />
+                </FrameLayout>
+
+                <FrameLayout style="@style/wrap_content" >
+
+                    <Button
+                        android:id="@+id/tab_battle_result"
+                        style="@style/wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/settlement_tab_normal"
+                        android:gravity="center"
+                        android:text="战报"
+                        android:textColor="@color/color9" />
+                </FrameLayout>
+
+                <FrameLayout
+                    style="@style/wrap_content"
+                    android:layout_marginLeft="2dip" >
+
+                    <Button
+                        android:id="@+id/tab_battle_log"
+                        style="@style/wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/settlement_tab_normal"
+                        android:gravity="center"
+                        android:text="详情"
+                        android:textColor="@color/color9" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <!-- tab end -->
+        </RelativeLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/belowBtnFrame"
+        style="@style/w_fill_h_wrap"
+        android:layout_gravity="bottom|center_horizontal" >
+
+        <ImageView
+            style="@style/w_fill_h_wrap"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@drawable/custom_dialog_btm" />
+
+        <com.vikings.sanguo.ui.PressedZoomButton
+            android:id="@+id/belowBtn"
+            style="@style/btn_common"
+            android:layout_gravity="center_horizontal|bottom"
+            android:text="离    开" />
+    </FrameLayout>
+
+</com.vikings.sanguo.ui.AbnormalFrameLayout>

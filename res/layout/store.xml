@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 仓库界面 -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/storeLayout"
+    style="@style/fill_parent"
+    android:layout_gravity="center_horizontal"
+    android:background="@drawable/common_list_bg"
+    android:clickable="true"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50dip"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dip"
+        android:paddingLeft="1dip"
+        android:paddingRight="1dip" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_marginTop="30dip"
+            android:background="@drawable/tab_bottom" />
+
+        <LinearLayout
+            android:id="@+id/tab"
+            style="@style/wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center|bottom"
+            android:orientation="horizontal" >
+
+            <FrameLayout
+                style="@style/wrap_content"
+                android:layout_marginRight="1dip" >
+
+                <ImageButton
+                    android:id="@+id/tab1"
+                    style="@style/tab_4item"
+                    android:background="@drawable/tab_btn1_press"
+                    android:gravity="bottom|center_horizontal" />
+
+                <ImageView
+                    android:id="@+id/tabwords1"
+                    style="@style/wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/robe_woed_press" />
+            </FrameLayout>
+
+            <FrameLayout style="@style/wrap_content" >
+
+                <ImageButton
+                    android:id="@+id/tab2"
+                    style="@style/tab_4item"
+                    android:background="@drawable/tab_btn1"
+                    android:gravity="bottom|center_horizontal" />
+
+                <ImageView
+                    android:id="@+id/tabwords2"
+                    style="@style/wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/tools_word" />
+            </FrameLayout>
+
+            <FrameLayout
+                style="@style/wrap_content"
+                android:layout_marginLeft="1dip" >
+
+                <ImageButton
+                    android:id="@+id/tab3"
+                    style="@style/tab_4item"
+                    android:background="@drawable/tab_btn1"
+                    android:gravity="bottom|center_horizontal" />
+
+                <ImageView
+                    android:id="@+id/tabwords3"
+                    style="@style/wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/equipments_word_bg" />
+            </FrameLayout>
+
+            <FrameLayout
+                style="@style/wrap_content"
+                android:layout_marginLeft="1dip" >
+
+                <ImageButton
+                    android:id="@+id/tab4"
+                    style="@style/tab_4item"
+                    android:background="@drawable/tab_btn1"
+                    android:gravity="bottom|center_horizontal" />
+
+                <ImageView
+                    android:id="@+id/tabwords4"
+                    style="@style/wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/stone_word_bg" />
+            </FrameLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+    <GridView
+        android:id="@+id/gridView"
+        android:layout_width="286dip"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center"
+        android:layout_marginTop="-5dip"
+        android:cacheColorHint="#00000000"
+        android:numColumns="3"
+        android:scrollbarThumbVertical="@drawable/scroll_bar"
+        android:verticalSpacing="5dip" />
+
+</LinearLayout>

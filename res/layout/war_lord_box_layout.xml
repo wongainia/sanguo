@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        style="@style/fill_parent"
+        android:layout_margin="8dip"
+        android:background="@drawable/jianbian_bg"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="5dip" >
+
+        <include
+            android:id="@+id/content_title"
+            layout="@layout/gradient_msg" />
+
+        <ImageView
+            style="@style/wrap_content"
+            android:layout_marginTop="20dip"
+            android:background="@drawable/open_box_title_bg" />
+
+        <!-- 金箱子 -->
+
+        <FrameLayout
+            android:id="@+id/goldBox"
+            style="@style/w_fill_h_wrap"
+            android:layout_marginTop="10dip"
+            android:orientation="vertical" >
+
+            <ImageView
+                style="@style/wrap_content"
+                android:layout_gravity="left|center_vertical"
+                android:background="@drawable/item_box_012" />
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:paddingLeft="10dip" >
+
+                <TextView
+                    android:id="@+id/openBoxSpc"
+                    style="@style/color19_12"
+                    android:paddingBottom="3dip" />
+
+                <TextView
+                    android:id="@+id/openBoxPrompt"
+                    style="@style/color13_10"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/common_bg_godbox"
+                    android:minWidth="100dip" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="10dip"
+                android:orientation="vertical" >
+
+                <com.vikings.sanguo.ui.PressedZoomButton
+                    android:id="@+id/openbox"
+                    style="@style/color13_14"
+                    android:background="@drawable/button5"
+                    android:text="开 启"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/currency_expend"
+                    style="@style/color6_10"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- 银箱子 -->
+
+        <FrameLayout
+            android:id="@+id/silverBox"
+            style="@style/w_fill_h_wrap"
+            android:layout_marginTop="10dip"
+            android:orientation="vertical" >
+
+            <ImageView
+                style="@style/wrap_content"
+                android:layout_gravity="left|center_vertical"
+                android:background="@drawable/item_box_011" />
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:paddingLeft="10dip" >
+
+                <TextView
+                    android:id="@+id/openBoxSpc"
+                    style="@style/color19_12"
+                    android:paddingBottom="3dip" />
+
+                <TextView
+                    android:id="@+id/openBoxPrompt"
+                    style="@style/color13_10"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/common_bg_godbox"
+                    android:minWidth="100dip" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="10dip"
+                android:orientation="vertical" >
+
+                <com.vikings.sanguo.ui.PressedZoomButton
+                    android:id="@+id/openbox"
+                    style="@style/color13_14"
+                    android:background="@drawable/button5"
+                    android:text="开 启"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/currency_expend"
+                    style="@style/color6_10"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- 木箱子 -->
+
+        <FrameLayout
+            android:id="@+id/woodBox"
+            style="@style/w_fill_h_wrap"
+            android:layout_marginTop="10dip"
+            android:orientation="vertical" >
+
+            <ImageView
+                style="@style/wrap_content"
+                android:layout_gravity="left|center_vertical"
+                android:background="@drawable/item_box_010" />
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:paddingLeft="10dip" >
+
+                <TextView
+                    android:id="@+id/openBoxSpc"
+                    style="@style/color19_12"
+                    android:paddingBottom="3dip" />
+
+                <TextView
+                    android:id="@+id/openBoxPrompt"
+                    style="@style/color13_10"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/common_bg_godbox"
+                    android:minWidth="100dip" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="10dip"
+                android:orientation="vertical" >
+
+                <com.vikings.sanguo.ui.PressedZoomButton
+                    android:id="@+id/openbox"
+                    style="@style/color13_14"
+                    android:background="@drawable/button5"
+                    android:text="开 启"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/currency_expend"
+                    style="@style/color6_10"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:orientation="vertical"
+    android:paddingBottom="1dip"
+    android:paddingTop="1dip" >
+
+    <TextView
+        android:id="@+id/name"
+        style="@style/k7_color6_15" />
+
+    <TextView
+        android:id="@+id/desc"
+        style="@style/k7_color6_13"
+        android:layout_marginTop="2dip"
+        android:gravity="left" />
+
+    <ImageView
+        android:id="@+id/line"
+        style="@style/separate_line1"
+        android:layout_marginTop="2dip" />
+
+</LinearLayout>

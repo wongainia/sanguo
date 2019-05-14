@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent"
+    android:layout_gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/msg"
+        style="@style/color13_12"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dip" />
+
+    <TextView
+        android:id="@+id/msgTip"
+        style="@style/color13_13"
+        android:layout_marginTop="8dip"
+        android:gravity="center_horizontal" />
+
+</LinearLayout>

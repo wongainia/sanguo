@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/wrap_content" >
+
+    <include layout="@layout/hero_icon"/>
+
+    <LinearLayout
+        android:id="@+id/skill"
+        style="@style/wrap_content"
+        android:layout_gravity="left|bottom"
+        android:layout_marginBottom="5dip"
+        android:layout_marginLeft="10dip"
+        android:orientation="horizontal" >
+
+        <FrameLayout
+            style="@style/wrap_content"
+            android:visibility="invisible" >
+
+            <ImageView
+                style="@style/wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:background="@drawable/hero_prof" />
+        </FrameLayout>
+
+        <FrameLayout
+            style="@style/wrap_content"
+            android:layout_marginLeft="2dip"
+            android:visibility="invisible" >
+
+            <ImageView
+                style="@style/wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:background="@drawable/hero_prof" />
+        </FrameLayout>
+
+        <FrameLayout
+            style="@style/wrap_content"
+            android:layout_marginLeft="2dip"
+            android:visibility="invisible" >
+
+            <ImageView
+                style="@style/wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:background="@drawable/hero_prof" />
+        </FrameLayout>
+    </LinearLayout>
+
+</FrameLayout>

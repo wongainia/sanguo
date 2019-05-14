@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent"
+    android:background="@drawable/common_list_bg"
+    android:orientation="vertical"
+    android:padding="5dip" >
+
+    <ScrollView
+        style="@style/fill_parent"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:layout_marginTop="5dip"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    style="@style/w_fill_h_wrap"
+                    android:background="@drawable/gradient_bg" >
+
+                    <TextView
+                        style="@style/color16_14"
+                        android:layout_marginLeft="10dip"
+                        android:text="第一步" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/color14_14"
+                    android:layout_marginLeft="2dip"
+                    android:layout_marginTop="3dip"
+                    android:text="通过手机/邮箱找回" />
+
+                <com.vikings.sanguo.ui.PressedZoomButton
+                    android:id="@+id/phoneBtn"
+                    style="@style/btn_common"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dip"
+                    android:text="手机找回" />
+
+                <com.vikings.sanguo.ui.PressedZoomButton
+                    android:id="@+id/mailBtn"
+                    style="@style/btn_common"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dip"
+                    android:text="邮箱找回" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:layout_marginTop="5dip"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    style="@style/w_fill_h_wrap"
+                    android:background="@drawable/gradient_bg" >
+
+                    <TextView
+                        style="@style/color16_14"
+                        android:layout_marginLeft="10dip"
+                        android:text="第二步" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/color14_14"
+                    android:layout_marginLeft="2dip"
+                    android:layout_marginTop="3dip"
+                    android:text="手动输入您收到的验证码" />
+
+                <com.vikings.sanguo.ui.PressedZoomButton
+                    android:id="@+id/verifyBtn"
+                    style="@style/btn_common"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dip"
+                    android:text="填写验证码" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:layout_marginTop="15dip"
+                android:orientation="vertical"
+                android:padding="5dip" >
+
+                <TextView
+                    style="@style/color7_14"
+                    android:layout_marginTop="5dip"
+                    android:text="温馨提示：" />
+
+                <TextView
+                    style="@style/color7_14"
+                    android:layout_marginTop="3dip"
+                    android:gravity="left"
+                    android:text="1、请正确选择您需要的找回方式，若未进行过绑定操作，请联系客服。" />
+
+                <TextView
+                    style="@style/color7_14"
+                    android:layout_marginTop="3dip"
+                    android:gravity="left"
+                    android:text="2、邮箱找回可能会有5-10分钟延迟，建议采用手机方式找回。" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

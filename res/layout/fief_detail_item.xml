@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:orientation="horizontal" 
+    android:layout_marginTop="5dip">
+
+    <include layout="@layout/fief_icon"/>
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_marginLeft="5dip"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/idx"
+            style="@style/k7_color6_13"
+            android:gravity="left"/>
+
+        <TextView
+            android:id="@+id/lord"
+            style="@style/k7_color6_13"
+            android:gravity="left"/>
+
+        <TextView
+            android:id="@+id/guild"
+            style="@style/k7_color6_13"
+            android:visibility="gone"
+            android:gravity="left"/>
+
+        <TextView
+            android:id="@+id/hero"
+            style="@style/k7_color6_13"
+            android:gravity="left"/>
+
+        <TextView
+            android:id="@+id/troop"
+            style="@style/k7_color6_13"
+            android:gravity="left"/>
+    </LinearLayout>
+
+</LinearLayout>

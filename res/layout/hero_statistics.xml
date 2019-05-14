@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 将领图鉴界面 -->
+<GridView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/gridView"
+    style="@style/fill_parent"
+    android:layout_gravity="center"
+    android:cacheColorHint="@android:color/transparent"
+    android:listSelector="@android:color/transparent"
+    android:numColumns="4"
+    android:padding="3dip"
+    android:scrollbarThumbVertical="@drawable/scroll_bar" />

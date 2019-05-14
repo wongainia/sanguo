@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:orientation="vertical"
+     >
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="220dip"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/alert_ext_bg"
+        android:padding="5dip" >
+
+        <LinearLayout
+            android:id="@+id/skill_item"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingLeft="5dip"
+            android:paddingRight="5dip" >
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        style="@style/wrap_content"
+        android:layout_height="5dip" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/closeBtn1"
+        style="@style/btn_common"
+        android:layout_marginTop="6dip"
+        android:text="关闭" />
+
+    <TextView
+        style="@style/wrap_content"
+        android:layout_height="5dip" />
+
+</LinearLayout>

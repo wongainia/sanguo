@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/item_bg"
+    android:paddingLeft="10dip" >
+
+    <FrameLayout
+        style="@style/wrap_content"
+        android:layout_gravity="center_vertical" >
+
+        <include layout="@layout/item_icon" />
+
+        <TextView
+            android:id="@+id/state"
+            style="@style/color25_10"
+            android:layout_width="53dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="3dip"
+            android:background="@drawable/fief_scroll_hero_cnt_bg"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingLeft="5dip"
+        android:paddingRight="8dip" >
+
+        <TextView
+            android:id="@+id/name"
+            style="@style/color24_12" />
+
+        <TextView
+            android:id="@+id/desc"
+            style="@style/color9_11"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:lines="2" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent"
+    android:background="@drawable/common_list_bg" >
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"
+        android:paddingTop="5dip" >
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_gravity="left"
+            android:layout_margin="10dip"
+            android:orientation="horizontal" >
+
+            <FrameLayout
+            android:id="@+id/iconLayout"
+            android:layout_width="60dip"
+            android:layout_height="60dip"
+            android:layout_gravity="center_horizontal" >
+
+                <ImageView
+                    style="@style/fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="4dip"
+                    android:background="@drawable/user_icon_black_bg" />
+    
+                <ImageView
+                    android:id="@+id/icon"
+                    style="@style/wrap_content"
+                    android:layout_gravity="center" />
+    
+                <ImageView
+                    style="@style/fill_parent"
+                    android:layout_gravity="center"
+                    android:background="@drawable/icon_bg2" />
+    
+                <TextView
+                    style="@style/k7_color1_11"
+                    android:layout_gravity="center"
+                    android:background="@drawable/color_bg1"
+                    android:text="点击更换" />
+            </FrameLayout>
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:layout_width="120dip"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="8dip"
+                android:orientation="horizontal" >
+
+                <LinearLayout 
+                    style="@style/wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <TextView
+                        style="@style/color7_13"
+                        android:gravity="left"
+                        android:text="昵称: " />
+                    
+                    <TextView
+                        style="@style/color7_13"
+                        android:gravity="left"
+                        android:text="ID: " />
+                    
+                    <TextView
+                        style="@style/color7_13"
+                        android:gravity="left"
+                        android:text="家族: " />
+                </LinearLayout>
+                
+                <LinearLayout 
+                    style="@style/wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <TextView
+                        android:id="@+id/name"
+                        style="@style/color7_13"
+                        android:text="丧心病狂的猪"
+                         />
+                    
+                    <TextView
+                        android:id="@+id/userID"
+                        android:text="1000217"
+                        style="@style/color7_13" />
+                    
+                    <TextView
+                        android:id="@+id/guild"
+                        style="@style/color7_13" 
+                        android:text="蛇精病学院"
+                        />
+                </LinearLayout>
+                
+            </LinearLayout>
+            
+            <TextView 
+                style="@style/wrap_content"
+                android:layout_weight="1"
+                />
+            
+            <TextView
+                android:id="@+id/rename"
+                style="@style/color14_12"
+                android:layout_width="70dip"
+                android:layout_gravity="top"
+                android:background="@drawable/small_btn"
+                android:text="修改昵称"
+                android:textStyle="bold" />
+        </LinearLayout>
+        
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dip"
+            android:layout_marginLeft="15dip"
+            android:layout_marginRight="15dip"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:orientation="horizontal" >
+
+
+                <LinearLayout
+                    android:id="@+id/femaleLayout"
+                    style="@style/wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/color9_13"
+                        android:text="性别：" />
+                    
+                    <FrameLayout
+                        style="@style/wrap_content"
+                        android:layout_marginLeft="1dip"
+                        android:background="@drawable/unchecked" >
+
+                        <ImageView
+                            android:id="@+id/checked"
+                            style="@style/wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/checked" />
+                    </FrameLayout>
+
+                    <TextView
+                        style="@style/color7_13"
+                        android:text="女" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/maleLayout"
+                    style="@style/wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <FrameLayout
+                        style="@style/wrap_content"
+                        android:layout_marginLeft="1dip"
+                        android:background="@drawable/unchecked" >
+
+                        <ImageView
+                            android:id="@+id/checked"
+                            style="@style/wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/checked" />
+                    </FrameLayout>
+                    
+                    <TextView
+                        style="@style/color7_13"
+                        android:text="男" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            
+                <LinearLayout
+                    style="@style/wrap_content"
+                    android:layout_marginTop="25dip"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/color9_13"
+                        android:text="年龄: " />
+
+                    <TextView
+                        android:id="@+id/age"
+                        style="@style/color7_13" />
+                </LinearLayout>
+            
+            <LinearLayout
+                style="@style/wrap_content"
+                android:layout_marginTop="25dip"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/color9_13"
+                    android:text="生日：" />
+
+                <TextView
+                    android:id="@+id/birthday"
+                    style="@style/custom_dialog_edit"
+                    android:layout_width="220dip"
+                    android:gravity="left"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:layout_marginTop="25dip"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/color9_13"
+                    android:text="签名：" />
+
+                <EditText
+                    android:id="@+id/sign"
+                    style="@style/custom_dialog_edit"
+                    android:layout_width="220dip"
+                    android:gravity="left|top"
+                    android:maxLength="24"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

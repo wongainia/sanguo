@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dailyReward"
+    style="@style/fill_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="5dip" >
+
+    <ImageView
+        style="@style/wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/update_img" />
+
+    <FrameLayout
+        android:id="@+id/scrollFrame"
+        android:layout_width="fill_parent"
+        android:layout_height="250dip"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dip"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/loading"
+            style="@style/color13_14"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dip"
+            android:text="正在加载说明..."
+            android:visibility="gone" />
+
+        <ScrollView
+            android:id="@+id/scroll"
+            style="@style/fill_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/alert_ext_bg"
+            android:fadingEdge="none"
+            android:fadingEdgeLength="0dip"
+            android:scrollbars="none" >
+
+            <LinearLayout
+                android:id="@+id/body"
+                style="@style/fill_parent"
+                android:layout_gravity="center_horizontal" >
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/desc"
+        style="@style/color19_11"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dip" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/update"
+        style="@style/btn_common"
+        android:layout_marginTop="5dip"
+        android:shadowColor="@color/black"
+        android:shadowRadius="2.0"
+        android:text="下载新版本" />
+
+</LinearLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/wrap_content"
+    android:paddingBottom="2dip"
+    android:paddingTop="2dip" >
+
+    <ImageView
+        android:id="@+id/gradientBg"
+        style="@style/wrap_content"
+        android:background="@drawable/gradient_bg" />
+
+    <TextView
+        android:id="@+id/gradientMsg"
+        style="@style/color16_13"
+        android:layout_gravity="center"
+        android:minWidth="283dip"
+        android:singleLine="true"
+        android:textStyle="bold" />
+
+</FrameLayout>

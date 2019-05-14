@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="10dip"
+    android:paddingLeft="5dip"
+    android:paddingRight="5dip" >
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:layout_marginTop="60dip"
+        android:orientation="vertical"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip" >
+
+        <TextView
+            style="@style/color6_12"
+            android:gravity="left"
+            android:lineSpacingMultiplier="1.5"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
+            android:text="恭喜你！你已经存满了积分，享有一次充值双倍优惠的权利！" />
+
+        <View
+            style="@style/wrap_content"
+            android:layout_height="2dip"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="5dip"
+            android:layout_marginTop="5dip"
+            android:background="@drawable/duplicate_content_line" />
+
+        <TextView
+            style="@style/color6_12"
+            android:gravity="left"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
+            android:text="单笔充值30元以上，充多少就送多少，充的越多，送的越多！" />
+
+        <TextView
+            style="@style/color19_10"
+            android:layout_marginTop="10dip"
+            android:gravity="left"
+            android:text="短信充值不享受双倍优惠，单笔充值30元，不会占用双倍优惠次数" />
+    </LinearLayout>
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/i_know"
+        android:layout_width="130dip"
+        android:layout_height="40dip"
+        android:layout_marginTop="10dip"
+        android:background="@drawable/checkin_rewards"
+        android:text="我知道了"
+        android:textColor="@color/color6"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="10dip" />
+
+</LinearLayout>

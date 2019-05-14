@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/item_bg1" >
+
+    <ImageView
+        android:id="@+id/logIcon"
+        style="@style/wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="20dip" />
+
+    <LinearLayout
+        style="@style/center_v"
+        android:layout_width="fill_parent"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="25dip"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/name"
+            style="@style/color13_13"
+            android:layout_gravity="left|top"
+            android:layout_marginLeft="10dip"
+            android:background="@drawable/txt_bg3"
+            android:gravity="left"
+            android:paddingLeft="4dip" />
+
+        <TextView
+            android:id="@+id/desc"
+            style="@style/color14_11"
+            android:layout_width="fill_parent"
+            android:layout_gravity="left"
+            android:layout_marginTop="3dip"
+            android:gravity="left" />
+    </LinearLayout>
+
+</LinearLayout>

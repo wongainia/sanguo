@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/topInfo"
+    android:layout_width="314.6dip"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginTop="24dip"
+    android:background="@drawable/castle_user_info_bg"
+    android:clickable="true"
+    android:orientation="horizontal"
+    android:paddingLeft="13dip"
+    android:paddingRight="13dip"
+    android:paddingTop="8dip" >
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <FrameLayout
+            android:id="@+id/iconFrame"
+            android:layout_width="60.5dip"
+            android:layout_height="60.5dip"
+            android:layout_gravity="center_vertical" >
+
+            <ImageView
+                android:id="@+id/icon"
+                style="@style/wrap_content"
+                android:layout_gravity="top|center_horizontal"
+                android:layout_marginTop="2dip" />
+
+            <FrameLayout
+                style="@style/w_fill_h_wrap"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginBottom="2dip"
+                android:background="@drawable/state_bg" >
+
+                <TextView
+                    android:id="@+id/level"
+                    style="@style/wrap_content"
+                    android:layout_gravity="center" />
+            </FrameLayout>
+
+            <ImageView
+                style="@style/wrap_content"
+                android:layout_gravity="top|center_horizontal"
+                android:background="@drawable/user_icon_bg" />
+        </FrameLayout>
+
+        <FrameLayout
+            style="@style/wrap_content"
+            android:layout_marginTop="5dip"
+            android:background="@drawable/country_bg" >
+
+            <TextView
+                android:id="@+id/country"
+                style="@style/color14_10"
+                android:layout_gravity="center" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:layout_marginLeft="2dip"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/user_name_bg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="20dip"
+            android:paddingRight="20dip" >
+
+            <TextView
+                android:id="@+id/name"
+                style="@style/color14_11"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/guildName"
+                style="@style/color20_9"
+                android:layout_marginLeft="3dip" />
+
+            <TextView
+                style="@style/wrap_content"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:id="@+id/vipLayout"
+                style="@style/wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/vipIcon"
+                    style="@style/wrap_content"
+                    android:background="@drawable/vip_icon" />
+
+                <ImageView
+                    android:id="@+id/num0Icon"
+                    style="@style/wrap_content"
+                    android:background="@drawable/v0"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/vipLevel"
+                    style="@style/wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_marginTop="1dip"
+            android:background="@drawable/material_info_bg"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:orientation="horizontal" >
+
+                <!-- 金币 -->
+
+                <LinearLayout
+                    android:layout_width="112dip"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        style="@style/wrap_content"
+                        android:src="@drawable/money" />
+
+                    <TextView
+                        style="@style/color6_11"
+                        android:text="金币:" />
+
+                    <TextView
+                        android:id="@+id/money"
+                        style="@style/color6_11"
+                        android:layout_marginLeft="2dip" />
+                </LinearLayout>
+
+                <!-- 粮草 -->
+
+                <LinearLayout
+                    android:layout_width="100dip"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        style="@style/wrap_content"
+                        android:src="@drawable/fief_food" />
+
+                    <TextView
+                        style="@style/color6_11"
+                        android:text="粮草:" />
+
+                    <TextView
+                        android:id="@+id/food"
+                        style="@style/color6_11"
+                        android:layout_marginLeft="2dip" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:layout_marginTop="1dip"
+                android:orientation="horizontal" >
+
+                <!-- 兵力 -->
+
+                <LinearLayout
+                    android:layout_width="112dip"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        style="@style/wrap_content"
+                        android:src="@drawable/arm" />
+
+                    <TextView
+                        style="@style/color6_11"
+                        android:text="兵力:" />
+
+                    <TextView
+                        android:id="@+id/armCnt"
+                        style="@style/color6_11"
+                        android:layout_marginLeft="2dip" />
+                </LinearLayout>
+
+                <!-- 元宝 -->
+
+                <LinearLayout
+                    android:id="@+id/currencyLayout"
+                    android:layout_width="100dip"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        style="@style/wrap_content"
+                        android:src="@drawable/rmb" />
+
+                    <TextView
+                        style="@style/color6_11"
+                        android:text="元宝:" />
+
+                    <TextView
+                        android:id="@+id/currency"
+                        style="@style/color6_11"
+                        android:layout_marginLeft="2dip" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <FrameLayout
+            style="@style/wrap_content"
+            android:layout_marginTop="5dip" >
+
+            <com.vikings.sanguo.ui.ProgressBar
+                android:id="@+id/progressBar"
+                style="@style/wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:background="@drawable/progress_bg_user_337"
+                android:src="@drawable/progress_blue_user_327" />
+
+            <TextView
+                android:id="@+id/progressDesc"
+                style="@style/color13_10"
+                android:layout_gravity="center" />
+        </FrameLayout>
+    </LinearLayout>
+
+</LinearLayout>

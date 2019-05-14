@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent"
+    android:orientation="vertical" >
+
+    <include
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="3dip"
+        layout="@layout/gradient_msg" />
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:layout_width="283dip"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="3dip"
+        android:background="@drawable/hero_add_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="5dip"
+        android:paddingRight="5dip" >
+
+        <ImageView
+            android:id="@+id/armIcon"
+            style="@style/wrap_content" />
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/armName"
+                style="@style/color6_12" />
+
+            <TextView
+                android:id="@+id/armDesc"
+                style="@style/color14_11" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:layout_width="283dip"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dip"
+        android:background="@drawable/common_bg_tm2"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/layout1"
+            style="@style/w_fill_h_wrap"
+            android:layout_marginTop="5dip"
+            android:orientation="horizontal"
+            android:padding="3dip" >
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    style="@style/wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        style="@style/wrap_content"
+                        android:background="@drawable/txt_jlzm" />
+
+                    <TextView
+                        android:id="@+id/price"
+                        style="@style/color7_10"
+                        android:layout_marginLeft="5dip" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/desc"
+                    style="@style/color16_11" />
+            </LinearLayout>
+
+            <com.vikings.sanguo.ui.PressedImageButton
+                android:id="@+id/btn"
+                style="@style/btn_5"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:src="@drawable/txt_zm" />
+        </LinearLayout>
+
+        <ImageView
+            style="@style/separate_line4"
+            android:layout_gravity="center_horizontal" />
+
+        <LinearLayout
+            android:id="@+id/layout2"
+            style="@style/w_fill_h_wrap"
+            android:layout_marginTop="5dip"
+            android:orientation="horizontal"
+            android:padding="3dip" >
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    style="@style/wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        style="@style/wrap_content"
+                        android:background="@drawable/txt_ylzm" />
+
+                    <TextView
+                        android:id="@+id/price"
+                        style="@style/color7_10"
+                        android:layout_marginLeft="5dip" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/desc"
+                    style="@style/color16_11" />
+            </LinearLayout>
+
+            <com.vikings.sanguo.ui.PressedImageButton
+                android:id="@+id/btn"
+                style="@style/btn_5"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:src="@drawable/txt_zm" />
+        </LinearLayout>
+
+        <ImageView
+            style="@style/separate_line4"
+            android:layout_gravity="center_horizontal" />
+
+        <LinearLayout
+            android:id="@+id/layout3"
+            style="@style/w_fill_h_wrap"
+            android:layout_marginTop="5dip"
+            android:orientation="horizontal"
+            android:padding="3dip" >
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    style="@style/wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        style="@style/wrap_content"
+                        android:background="@drawable/txt_tlzm" />
+
+                    <TextView
+                        android:id="@+id/price"
+                        style="@style/color7_10"
+                        android:layout_marginLeft="5dip" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/desc"
+                    style="@style/color16_11" />
+            </LinearLayout>
+
+            <com.vikings.sanguo.ui.PressedImageButton
+                android:id="@+id/btn"
+                style="@style/btn_5"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:src="@drawable/txt_zm" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/effectTitleLayout"
+        style="@style/wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dip" >
+
+        <ImageView
+            style="@style/wrap_content"
+            android:background="@drawable/red_bg" />
+
+        <TextView
+            android:id="@+id/total"
+            style="@style/color6_14"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+    <ListView
+        android:id="@+id/log"
+        style="@style/list_expand"
+        android:layout_marginBottom="5dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="5dip" >
+    </ListView>
+
+</LinearLayout>

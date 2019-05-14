@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent" >
+
+    <ImageView
+        android:id="@+id/screen_frame"
+        style="@style/fill_parent"
+        android:layout_gravity="center"
+        android:background="#a0000000"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/light_effect"
+        android:layout_width="320dip"
+        android:layout_height="320dip"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="45dip"
+        android:visibility="invisible" />
+
+    <com.vikings.sanguo.battle.anim.StarFlyAnim
+        android:id="@+id/fly_star"
+        android:layout_width="170dip"
+        android:layout_height="170dip"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="115dip" >
+    </com.vikings.sanguo.battle.anim.StarFlyAnim>
+
+    <FrameLayout
+        android:id="@+id/reward_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="230dip"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="165dip"
+        android:visibility="invisible" >
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dip"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/color6_14"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dip" />
+
+            <ScrollView
+                android:id="@+id/award_scroll"
+                android:layout_width="240dip"
+                android:layout_height="120dip"
+                android:layout_gravity="center_horizontal" >
+"
+
+                <LinearLayout
+                    android:id="@+id/items"
+                    android:layout_width="200dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="vertical" >
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/touch"
+            style="@style/color14_11"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="15dip"
+            android:text="点击任意位置继续" />
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/knife_left"
+        style="@style/wrap_content"
+        android:layout_gravity="left|top"
+        android:layout_marginLeft="75dip"
+        android:layout_marginTop="143dip"
+        android:background="@drawable/knife_left"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/knife_shadow_left"
+        style="@style/wrap_content"
+        android:layout_gravity="left|top"
+        android:background="@drawable/knife_shadow"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/knife_right"
+        style="@style/wrap_content"
+        android:layout_gravity="right|top"
+        android:layout_marginRight="75dip"
+        android:layout_marginTop="143dip"
+        android:background="@drawable/knife_right"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/knife_shadow_right"
+        style="@style/wrap_content"
+        android:layout_gravity="left|top"
+        android:background="@drawable/knife_shadow"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/subject"
+        style="@style/wrap_content"
+        android:layout_width="266dip"
+        android:layout_height="86dip"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="145dip"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/name"
+        style="@style/wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="150dip"
+        android:visibility="invisible" />
+
+</FrameLayout>

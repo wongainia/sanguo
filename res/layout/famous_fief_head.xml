@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 领地的各种弹出框中的属性信息 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/infoLayout"
+    style="@style/w_fill_h_wrap"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <include layout="@layout/fief_icon" />
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="3dip"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/lordName"
+                style="@style/color6_11" />
+
+            <TextView
+                android:id="@+id/battleNumber"
+                style="@style/color8_11"
+                android:layout_marginTop="3dip" />
+
+            <TextView
+                android:id="@+id/position"
+                style="@style/color8_11"
+                android:layout_marginTop="3dip" />
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_marginTop="5dip"
+        android:background="@drawable/setoff_cnt_sg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="5dip"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/color8_11"
+                android:text="状态：" />
+
+            <TextView
+                android:id="@+id/status"
+                style="@style/color8_11" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dip"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/color8_11"
+                android:text="驻兵：" />
+
+            <TextView
+                android:id="@+id/armCount"
+                style="@style/color8_11" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent"
+    android:layout_gravity="center" >
+
+    <FrameLayout
+        style="@style/wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/everyday_checkin_bg" >
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/numBg"
+        style="@style/wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/add" />
+
+    <TextView
+        android:id="@+id/num"
+        style="@style/color1_14"
+        android:layout_width="wrap_content"
+        android:layout_gravity="top|right"
+        android:text="x2" />
+
+    <FrameLayout
+        android:id="@+id/check"
+        style="@style/wrap_content"
+        android:layout_gravity="bottom|left"
+        android:background="@drawable/everyday_checked" >
+
+        <FrameLayout
+            android:id="@+id/days"
+            style="@style/wrap_content"
+            android:layout_gravity="center_vertical|left"
+            android:background="@drawable/checkin_oneday" />
+    </FrameLayout>
+
+</FrameLayout>

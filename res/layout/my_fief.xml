@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent"
+    android:visibility="gone" >
+
+    <com.vikings.sanguo.ui.map.core.MapView
+        android:id="@+id/mapView"
+        style="@style/fill_parent"
+        android:clickable="true" />
+
+    <LinearLayout
+        android:layout_width="320dip"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="28dip"
+        android:background="@drawable/fief_list_bg"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingBottom="8dip"
+        android:paddingLeft="10dip"
+        android:paddingRight="5dip" >
+
+        <HorizontalScrollView style="@style/w_fill_h_wrap" >
+
+            <LinearLayout
+                android:id="@+id/myFiefScroll"
+                style="@style/wrap_content"
+                android:orientation="horizontal" >
+            </LinearLayout>
+        </HorizontalScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fiefCountLayout"
+        style="@style/wrap_content"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginTop="135dip"
+        android:background="@drawable/fief_count_bg"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/fiefCount"
+            style="@style/color25_11" />
+    </LinearLayout>
+
+    <include layout="@layout/my_fief_menu" />
+
+</FrameLayout>

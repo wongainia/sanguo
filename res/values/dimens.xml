@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <dimen name="my_state_height">91.0dip</dimen>
+    <dimen name="user_state_height">88.0dip</dimen>
+    <dimen name="location_addressbar_height">25.0dip</dimen>
+    <dimen name="group_title_height">25.0dip</dimen>
+    <dimen name="friend_item_height">72.0dip</dimen>
+    <dimen name="signle_line_item_height">64.0dip</dimen>
+    <dimen name="notify_item_height">48.0dip</dimen>
+    <dimen name="add_content_height">8.0dip</dimen>
+    <dimen name="empty_view_height">110.0dip</dimen>
+    <dimen name="event_detail_info_height">93.0dip</dimen>
+    <dimen name="venue_title_height">108.0dip</dimen>
+    <dimen name="append_more_height">52.0dip</dimen>
+    <dimen name="quick_actions_bar_height">52.0dip</dimen>
+    <dimen name="login_input_back_width">276.0dip</dimen>
+    <dimen name="login_input_back_height">37.0dip</dimen>
+    <dimen name="login_input_width">188.0dip</dimen>
+    <dimen name="login_input_height">29.0dip</dimen>
+    <dimen name="small_user_icon_width">42.0dip</dimen>
+    <dimen name="small_user_icon_height">42.0dip</dimen>
+    <dimen name="big_user_icon_width">62.0dip</dimen>
+    <dimen name="big_user_icon_height">73.0dip</dimen>
+    <dimen name="category_icon_width">39.0dip</dimen>
+    <dimen name="category_icon_height">39.0dip</dimen>
+    <dimen name="badge_height">60.0dip</dimen>
+    <dimen name="badge_width">60.0dip</dimen>
+    <dimen name="checkin_button_height">38.0dip</dimen>
+    <dimen name="checkin_button_width">113.0dip</dimen>
+    <dimen name="badges_button_height">50.0dip</dimen>
+    <dimen name="badges_button_width">113.0dip</dimen>
+    <dimen name="long_button1_width">309.0dip</dimen>
+    <dimen name="long_button1_height">38.0dip</dimen>
+    <dimen name="long_button2_width">310.0dip</dimen>
+    <dimen name="long_button2_height">47.0dip</dimen>
+    <dimen name="small_button_width">24.0dip</dimen>
+    <dimen name="small_button_height">24.0dip</dimen>
+    <dimen name="accept_button_height">38.0dip</dimen>
+    <dimen name="accept_button_width">69.0dip</dimen>
+    <dimen name="user_icon_margin">10.0dip</dimen>
+    <dimen name="user_pointer_margin">28.5dip</dimen>
+    <dimen name="big_user_icon_margin">4.0dip</dimen>
+    <dimen name="category_margin">6.0dip</dimen>
+    <dimen name="long_button_margin">5.0dip</dimen>
+    <dimen name="notify_icon_margin">17.0dip</dimen>
+    <dimen name="detail_box_left">8.0dip</dimen>
+    <dimen name="detail_box_top">5.0dip</dimen>
+    <dimen name="detail_box_bottom">3.0dip</dimen>
+    <dimen name="widget_margin">5.0dip</dimen>
+    <dimen name="widget_top_padding">10.0dip</dimen>
+    <dimen name="widget_left_padding">6.0dip</dimen>
+    <dimen name="title_size">16.0dip</dimen>
+    <dimen name="address_size">14.0dip</dimen>
+    <dimen name="distance_size">12.0dip</dimen>
+    <dimen name="category_icon_padding">12.0dip</dimen>
+    <dimen name="address_margin_bottom">3.0dip</dimen>
+    <dimen name="current_person_icon_padding">3.0dip</dimen>
+    <dimen name="widget_corner">6.0dip</dimen>
+    <dimen name="login_margin">6.0dip</dimen>
+    <dimen name="login_input_margin">80.0dip</dimen>
+
+    <!-- 以下是斯凯支付依赖的资源 -->
+    <dimen name="button_height">31.3dip</dimen>
+    <dimen name="bottom_tab_font_size">15.0dip</dimen>
+    <dimen name="bottom_tab_padding_up">12.0dip</dimen>
+    <dimen name="bottom_tab_padding_drawable">12.0dip</dimen>
+    <dimen name="switch_logo_bottom_padding">30.0sp</dimen>
+
+</resources>

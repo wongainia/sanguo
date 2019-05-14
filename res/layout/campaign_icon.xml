@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/iconGroup"
+    android:layout_width="80dip"
+    android:layout_height="80dip"
+    android:layout_marginLeft="10dip" >
+
+    <FrameLayout
+        android:layout_width="60dip"
+        android:layout_height="60dip"
+        android:layout_gravity="center" >
+
+        <ImageView
+            android:id="@+id/hasTroopBg"
+            android:layout_width="54dip"
+            android:layout_height="54dip"
+            android:layout_gravity="center"
+            android:background="@drawable/has_troop_bg" />
+
+        <ImageView
+            android:id="@+id/icon"
+            style="@style/wrap_content"
+            android:layout_gravity="center" />
+
+        <ImageView
+            android:id="@+id/iconBg"
+            style="@style/fill_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/hero_icon_frame" />
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/bossImage"
+        style="@style/wrap_content"
+        android:background="@drawable/stamp_boss"
+        android:visibility="gone" />
+
+</FrameLayout>

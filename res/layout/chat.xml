@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:orientation="vertical"
+    android:paddingBottom="1dip"
+    android:paddingLeft="10dip"
+    android:paddingRight="10dip"
+    android:paddingTop="5dip" >
+
+    <LinearLayout
+        android:id="@+id/costLayout"
+        style="@style/w_fill_h_wrap"
+        android:background="@drawable/gradient_bg"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/cost"
+            style="@style/color13_10" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_marginTop="1dip"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/inputText"
+            style="@style/custom_dialog_edit"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:maxLength="128"
+            android:maxLines="3"
+            android:minHeight="45dip" />
+
+        <com.vikings.sanguo.ui.PressedZoomButton
+            android:id="@+id/sendBtn"
+            style="@style/color6_16"
+            android:layout_marginLeft="5dip"
+            android:background="@drawable/button1"
+            android:text="发送"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:orientation="vertical"
+    android:paddingBottom="5dip"
+    android:paddingLeft="5dip"
+    android:paddingRight="5dip" >
+
+    <TextView
+        android:id="@+id/contentTitle"
+        style="@style/color16_12"
+        android:text="活动内容：" />
+
+    <TextView
+        android:id="@+id/content"
+        style="@style/color5_11"
+        android:layout_width="fill_parent"
+        android:gravity="left" />
+
+    <TextView
+        android:id="@+id/timeTitle"
+        style="@style/color16_12"
+        android:text="活动倒计时：" />
+
+    <TextView
+        android:id="@+id/time"
+        style="@style/color5_11"
+        android:layout_width="fill_parent"
+        android:gravity="left" />
+
+    <TextView
+        android:id="@+id/rewardTitle"
+        style="@style/color16_12"
+        android:text="活动奖励：" />
+
+    <TextView
+        android:id="@+id/reward"
+        style="@style/color5_11"
+        android:layout_width="fill_parent"
+        android:gravity="left" />
+
+    <TextView
+        style="@style/wrap_content"
+        android:layout_height="5dip" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/go"
+        style="@style/color13_14"
+        android:layout_width="160dip"
+        android:layout_height="29dip"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/btn_blue"
+        android:text="立刻参加" />
+
+</LinearLayout>

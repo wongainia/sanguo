@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent"
+    android:background="@drawable/common_list_bg"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <include
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        layout="@layout/guild_detail_top" />
+
+    <LinearLayout
+        android:id="@+id/descLayout"
+        android:layout_width="290dip"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dip"
+        android:layout_marginRight="3dip"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <TextView
+            style="@style/color16_13"
+            android:layout_marginTop="5dip"
+            android:background="@drawable/gradient_bg"
+            android:text="家族宗旨" />
+
+        <EditText
+            android:id="@+id/desc"
+            style="@style/custom_dialog_edit"
+            android:layout_width="fill_parent"
+            android:layout_marginLeft="9dip"
+            android:layout_marginRight="9dip"
+            android:layout_marginTop="5dip"
+            android:gravity="left|top"
+            android:hint="最多输入32个字"
+            android:lines="2"
+            android:maxLength="32"
+            android:textColorHint="@color/k7_color13"
+            android:textSize="11sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/announcementLayout"
+        android:layout_width="290dip"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dip"
+        android:layout_marginRight="3dip"
+        android:layout_marginTop="3dip"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <TextView
+            style="@style/color16_13"
+            android:layout_marginTop="5dip"
+            android:background="@drawable/gradient_bg"
+            android:text="家族公告" />
+
+        <EditText
+            android:id="@+id/announcement"
+            style="@style/custom_dialog_edit"
+            android:layout_width="fill_parent"
+            android:layout_marginLeft="9dip"
+            android:layout_marginRight="9dip"
+            android:layout_marginTop="5dip"
+            android:gravity="left|top"
+            android:hint="最多输入64个字"
+            android:lines="3"
+            android:maxLength="64"
+            android:textColorHint="@color/k7_color13"
+            android:textSize="11sp" />
+    </LinearLayout>
+
+</LinearLayout>

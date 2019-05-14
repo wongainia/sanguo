@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:orientation="vertical"
+    android:padding="10dip" >
+
+    <TextView
+        android:id="@+id/desc"
+        style="@style/color11_18"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/ext"
+        style="@style/color8_11"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="20dip"
+        android:gravity="left"
+        android:textStyle="bold" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/rechargeBtn"
+        style="@style/color13_14"
+        android:layout_width="180dip"
+        android:layout_height="35dip"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="55dip"
+        android:background="@drawable/btn_red"
+        android:text="4元立即开通VIP" />
+
+    <TextView
+        android:id="@+id/smNotice"
+        style="@style/color5_10"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dip"
+        android:gravity="left"
+        android:visibility="gone" />
+
+</LinearLayout>

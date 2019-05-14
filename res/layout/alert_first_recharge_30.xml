@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="300dip"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/img"
+            style="@style/wrap_content" />
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_marginTop="15dip"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="20dip"
+            android:paddingRight="20dip" >
+
+            <LinearLayout
+                android:layout_width="60dip"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    style="@style/wrap_content"
+                    android:background="@drawable/player_vip" />
+
+                <ImageView
+                    style="@style/wrap_content"
+                    android:background="@drawable/vip_4" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/k7_color7_13"
+                android:gravity="left"
+                android:text="开通VIP4，同时获赠两大无双神将和更多神兵，会员特权再升级！" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/charge"
+            style="@style/k7_color4_17"
+            android:layout_width="220dip"
+            android:layout_height="40dip"
+            android:layout_marginTop="40dip"
+            android:shadowColor="@color/black"
+            android:shadowRadius="2.0"
+            android:text="立即开通" />
+
+        <TextView
+            android:id="@+id/smNotice"
+            style="@style/k7_color15_11"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="15dip"
+            android:layout_marginRight="15dip"
+            android:layout_marginTop="10dip"
+            android:gravity="left"
+            android:text="" />
+    </LinearLayout>
+
+</LinearLayout>

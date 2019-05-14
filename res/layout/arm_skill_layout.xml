@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/armSkillLayout"
+    style="@style/wrap_content"
+    android:layout_gravity="center_vertical"
+    android:visibility="gone" >
+
+    <ImageView
+        android:id="@+id/arm_skill_bg"
+        android:layout_width="115dip"
+        android:layout_height="136dip"
+        android:background="@drawable/arm_skill_bg" >
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/arm_skill"
+        android:layout_width="90dip"
+        android:layout_height="90dip"
+        android:layout_gravity="bottom|center_horizontal"
+        android:background="@drawable/arm_skill" >
+    </ImageView>
+
+    <TextView
+        android:id="@+id/arm_skill_bottom"
+        android:layout_width="98dip"
+        android:layout_height="27dip"
+        android:layout_gravity="bottom|center_horizontal"
+        android:background="@drawable/arm_skill_bottom"
+        android:gravity="center"
+        android:textColor="@color/color9"
+        android:textSize="15sp" 
+       >
+    </TextView>
+
+    <!-- 
+     android:textSize="15sp" 
+     android:textColor="@color/color25"
+     -->
+    <ImageView
+        android:id="@+id/skill_small"
+        style="@style/wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="35dip"
+        android:visibility="invisible" >
+    </ImageView>
+
+</FrameLayout>

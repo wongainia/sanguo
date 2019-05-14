@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/item_bg" 
+    android:gravity="center_vertical">
+
+    <FrameLayout style="@style/wrap_content"
+        android:layout_marginLeft="10dip"
+        android:layout_gravity="center_vertical">
+        <include layout="@layout/arm_icon" />        
+    </FrameLayout>
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical" >
+
+        <FrameLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_marginLeft="5dip" >
+
+            <TextView
+                android:id="@+id/name"
+                style="@style/color11_16"
+                android:layout_gravity="left|top" />
+
+            <TextView
+                android:id="@+id/count"
+                style="@style/color9_12"
+                android:layout_gravity="right|top"
+                android:layout_marginRight="10dip" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/desc"
+            style="@style/color9_12"
+            android:layout_width="fill_parent"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="10dip"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:maxLines="2" />
+    </LinearLayout>
+
+</LinearLayout>

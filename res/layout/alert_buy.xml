@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:layout_gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="5dip"
+    android:paddingLeft="10dip"
+    android:paddingRight="10dip"
+    android:paddingTop="5dip" >
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:orientation="horizontal" >
+
+        <include layout="@layout/item_icon" />
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingLeft="5dip" >
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/discountName"
+                    style="@style/color7_14"
+                    android:text="单价:"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/oldPrice"
+                    style="@style/color7_14"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dip"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/price"
+                    style="@style/color7_14" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/type"
+                style="@style/color7_14"
+                android:layout_marginTop="3dip" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/desc"
+        style="@style/color5_12"
+        android:layout_marginTop="10dip"
+        android:gravity="left" />
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_marginTop="15dip"
+        android:background="@drawable/common_bg_tm5"
+        android:gravity="left|top"
+        android:orientation="vertical"
+        android:padding="10dip" >
+
+        <!-- 限购数量提示 -->
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_gravity="center_horizontal" >
+
+            <TextView
+                android:id="@+id/limitProp"
+                style="@style/color19_10"
+                 />
+
+            <TextView
+                android:id="@+id/countDown"
+                style="@style/color19_10"
+                android:paddingLeft="5dip" />
+        </LinearLayout>
+        <!-- 数量 -->
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/amountText"
+                style="@style/color8_12"
+                android:text="数量："
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/amount"
+                style="@style/color3_12"
+                android:layout_width="120dip"
+                android:background="@drawable/common_input1"
+                android:gravity="center_horizontal"
+                android:maxLength="7"
+                android:numeric="integer"
+                android:singleLine="true" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/color8_12"
+                android:text="总价："
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/cost"
+                style="@style/color8_12"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

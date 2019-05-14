@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ownBtnLayout"
+    style="@style/wrap_content"
+    android:layout_gravity="bottom|center_horizontal"
+    android:visibility="gone" >
+
+    <!-- 右侧menu列表 -->
+
+    <FrameLayout
+        android:id="@+id/popupMenu"
+        style="@style/wrap_content"
+        android:layout_gravity="bottom|right"
+        android:visibility="gone" >
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="20dip"
+            android:paddingRight="1dip" >
+
+            <ImageView
+                style="@style/wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/popup_top" />
+
+            <FrameLayout
+                android:id="@+id/shopBt"
+                style="@style/popup_btn" >
+
+                <ImageView
+                    style="@style/wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/txt_sc" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/firendBt"
+                style="@style/popup_btn" >
+
+                <ImageView
+                    style="@style/wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/txt_hy" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/chatBt"
+                style="@style/popup_btn" >
+
+                <ImageView
+                    style="@style/wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/txt_lt" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/guildBt"
+                style="@style/popup_btn" >
+
+                <ImageView
+                    style="@style/wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/txt_jz" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/rankBt"
+                style="@style/popup_btn" >
+
+                <ImageView
+                    style="@style/wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/txt_pm" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/moreBt"
+                style="@style/popup_btn" >
+
+                <ImageView
+                    style="@style/wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/txt_gd" />
+            </FrameLayout>
+
+            <ImageView
+                style="@style/wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/popup_bottom" />
+        </LinearLayout>
+
+        <FrameLayout
+            style="@style/wrap_content"
+            android:layout_gravity="left|top"
+            android:visibility="gone" >
+
+            <ImageView
+                style="@style/wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/msg_count_bg" />
+
+            <ImageView
+                style="@style/wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/hot" />
+        </FrameLayout>
+    </FrameLayout>
+
+    <ImageView
+        style="@style/wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@drawable/main_menu_bg" />
+
+    <FrameLayout
+        android:layout_width="320dip"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom" >
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_gravity="bottom"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            android:paddingBottom="15dip" >
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/worldBt"
+                style="@style/wrap_content"
+                android:background="@drawable/menu_world" />
+
+            <TextView
+                style="@style/wrap_content"
+                android:layout_weight="1" />
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/campaignBt"
+                style="@style/wrap_content"
+                android:background="@drawable/menu_campaign" />
+
+            <TextView
+                style="@style/wrap_content"
+                android:layout_weight="1" />
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/storeBt"
+                style="@style/wrap_content"
+                android:background="@drawable/menu_store" />
+
+            <TextView
+                style="@style/wrap_content"
+                android:layout_weight="1" />
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/troopBt"
+                style="@style/wrap_content"
+                android:background="@drawable/menu_troop" />
+
+            <TextView
+                style="@style/wrap_content"
+                android:layout_weight="1" />
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/rechargeBt"
+                style="@style/wrap_content"
+                android:background="@drawable/menu_recharge" />
+
+            <TextView
+                style="@style/wrap_content"
+                android:layout_weight="1" />
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/systemBt"
+                style="@style/wrap_content"
+                android:background="@drawable/menu_system" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_gravity="bottom"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            android:paddingBottom="2dip"
+            android:paddingLeft="5dip"
+            android:paddingRight="5dip" >
+
+            <ImageView
+                style="@style/wrap_content"
+                android:background="@drawable/txt_menu_sj" />
+
+            <TextView
+                style="@style/wrap_content"
+                android:layout_weight="1" />
+
+            <ImageView
+                style="@style/wrap_content"
+                android:background="@drawable/txt_menu_fb" />
+
+            <TextView
+                style="@style/wrap_content"
+                android:layout_weight="1" />
+
+            <ImageView
+                style="@style/wrap_content"
+                android:background="@drawable/txt_menu_bb" />
+
+            <TextView
+                style="@style/wrap_content"
+                android:layout_weight="1" />
+
+            <ImageView
+                style="@style/wrap_content"
+                android:background="@drawable/txt_menu_jl" />
+
+            <TextView
+                style="@style/wrap_content"
+                android:layout_weight="1" />
+
+            <ImageView
+                style="@style/wrap_content"
+                android:background="@drawable/txt_menu_cz" />
+
+            <TextView
+                style="@style/wrap_content"
+                android:layout_weight="1" />
+
+            <ImageView
+                style="@style/wrap_content"
+                android:background="@drawable/txt_menu_xt" />
+        </LinearLayout>
+    </FrameLayout>
+
+</FrameLayout>

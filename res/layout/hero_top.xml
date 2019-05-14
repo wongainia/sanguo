@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="3dip" >
+
+    <include
+        android:id="@+id/gradientLayout"
+        layout="@layout/gradient_msg" />
+
+    <LinearLayout
+        android:id="@+id/heroLayout"
+        style="@style/wrap_content"
+        android:layout_marginTop="3dip"
+        android:background="@drawable/hero_add_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            style="@style/wrap_content"
+            android:layout_weight="1" />
+        <!-- 副将 -->
+
+        <include
+            android:id="@+id/hero2"
+            layout="@layout/hero_info_icon" />
+
+        <TextView
+            style="@style/wrap_content"
+            android:layout_weight="1" />
+        <!-- 主将 -->
+
+        <include
+            android:id="@+id/hero1"
+            layout="@layout/hero_info_icon" />
+
+        <TextView
+            style="@style/wrap_content"
+            android:layout_weight="1" />
+        <!-- 副将 -->
+
+        <include
+            android:id="@+id/hero3"
+            layout="@layout/hero_info_icon" />
+
+        <TextView
+            style="@style/wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <include
+        android:id="@+id/gradientBelowLayout"
+        layout="@layout/gradient_msg" />
+
+</LinearLayout>

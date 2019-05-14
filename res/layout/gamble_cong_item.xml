@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="wrap_content"
+	android:orientation="horizontal">
+
+	<!-- 
+	<FrameLayout android:layout_width="30dip" android:layout_height="30dip" 
+		android:background="@drawable/item_bg" android:layout_gravity="center_vertical"
+		android:layout_marginLeft="20dip" android:layout_marginTop="5dip"
+		android:layout_marginBottom="5dip">
+		<ImageView android:layout_width="30dip" android:layout_height="30dip" 
+			android:layout_gravity="center" android:id="@+id/icon"/>
+	</FrameLayout>
+	 -->
+	<ImageView android:layout_width="30dip" android:layout_height="30dip" 
+		android:layout_gravity="center_vertical" android:id="@+id/icon"
+		android:layout_marginLeft="20dip" android:layout_marginTop="5dip"
+		android:layout_marginBottom="5dip"/>
+
+	<TextView style="@style/gamble_13_bold_text" android:textSize="15sp" 
+		android:id="@+id/name" android:layout_gravity="center_vertical" 
+		android:layout_marginLeft="5dip"/>
+
+	<TextView style="@style/wrap_content" android:layout_weight="1" />
+
+	<TextView style="@style/gamble_13_bold_text" android:textSize="15sp"
+		android:id="@+id/cnt" android:layout_gravity="center_vertical" 
+		android:layout_marginRight="20dip"/>
+</LinearLayout>

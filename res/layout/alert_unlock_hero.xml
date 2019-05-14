@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingLeft="15dip"
+    android:paddingRight="15dip"
+    android:paddingTop="20dip" >
+
+    <TextView
+        android:id="@+id/vipOpenDesc"
+        style="@style/color6_12"
+        android:gravity="left" />
+
+    <TextView
+        android:id="@+id/desc"
+        style="@style/color6_10"
+        android:layout_marginTop="20dip"
+        android:gravity="left" />
+
+</LinearLayout>

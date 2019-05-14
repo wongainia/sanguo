@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/loading"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:visibility="gone">
+
+    <ProgressBar
+        android:id="@+id/footLoading"
+        style="@style/listloadingStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        style="@style/color2_17"
+        android:text="加载中"/>
+
+</LinearLayout>

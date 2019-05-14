@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent" >
+
+    <ImageView
+        android:id="@+id/doubleRechargeBg"
+        style="@style/fill_parent" />
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="10dip"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:background="@drawable/common_bg_tm2"
+            android:orientation="horizontal"
+            android:padding="5dip" >
+
+            <TextView
+                android:id="@+id/desc"
+                style="@style/color13_10"
+                android:layout_width="fill_parent"
+                android:gravity="left" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:background="@drawable/recharge_bg"
+            android:orientation="vertical"
+            android:padding="10dip" >
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="3dip"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    style="@style/wrap_content"
+                    android:background="@drawable/pattern_line" />
+
+                <ImageView
+                    style="@style/wrap_content"
+                    android:background="@drawable/txt_wdjf" />
+
+                <ImageView
+                    android:id="@+id/pattenMirror"
+                    style="@style/wrap_content"
+                    android:layout_marginLeft="5dip"
+                    android:background="@drawable/pattern_line" />
+            </LinearLayout>
+
+            <FrameLayout
+                style="@style/wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dip" >
+
+                <ImageView
+                    android:id="@+id/progressBg"
+                    style="@style/wrap_content"
+                    android:layout_width="240dip"
+                    android:layout_gravity="center"
+                    android:background="@drawable/progress_bg_23" />
+
+                <ImageView
+                    android:id="@+id/progress"
+                    style="@style/wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/progress_23" />
+
+                <TextView
+                    android:id="@+id/progressDesc"
+                    style="@style/color13_10"
+                    android:layout_gravity="center" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/needDesc"
+                style="@style/color6_10"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="2dip"
+                android:text="再获得xx,即可获得双倍优惠" />
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/rechargeBtn"
+                style="@style/color13_14"
+                android:layout_width="160dip"
+                android:layout_height="25dip"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="2dip"
+                android:background="@drawable/btn_red"
+                android:text="去  充  值" />
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

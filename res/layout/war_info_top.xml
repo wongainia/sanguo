@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_margin="5dip"
+        android:background="@drawable/common_bg"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_marginLeft="15dip"
+            android:layout_marginRight="15dip"
+            android:layout_marginTop="10dip"
+            android:background="@drawable/setoff_cnt_sg"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:paddingTop="5dip" >
+
+                <TextView
+                    android:id="@+id/subAddr"
+                    style="@style/color4_13"
+                    android:layout_gravity="bottom" />
+
+                <TextView
+                    android:id="@+id/position"
+                    style="@style/color4_13"
+                    android:layout_gravity="bottom" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/leftTime"
+                style="@style/color24_13"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dip"
+                android:paddingBottom="5dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dip" >
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/btn1"
+                style="@style/btn_3"
+                android:paddingLeft="10dip"
+                android:paddingRight="10dip"
+                android:textSize="12sp" />
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/btn2"
+                style="@style/btn_3"
+                android:layout_marginLeft="30dip"
+                android:paddingLeft="10dip"
+                android:paddingRight="10dip"
+                android:text="历史战况"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

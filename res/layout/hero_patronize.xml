@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent" >
+
+    <LinearLayout
+        style="@style/fill_parent"
+        android:orientation="vertical" >
+
+        <!-- 上部分 -->
+
+        <FrameLayout
+            android:id="@+id/bgLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="310dip" >
+
+            <FrameLayout
+        		android:layout_width="fill_parent"
+        		android:layout_height="306dip"
+       	 		android:layout_gravity="top"
+        		android:layout_marginTop="30dip" >
+
+        		<AbsoluteLayout
+            		android:id="@+id/heroLayout"
+            		style="@style/wrap_content"
+           			android:layout_gravity="left" >
+
+            	<ImageView
+                	android:id="@+id/hdImg"
+               	 	style="@style/wrap_content" />
+        </AbsoluteLayout>
+    </FrameLayout>
+ 			<LinearLayout
+                style="@style/wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/midLeft"
+                    style="@style/wrap_content" />
+
+                <ImageView
+                    android:id="@+id/midRight"
+                    style="@style/wrap_content" />
+            </LinearLayout>
+            <ImageView
+                android:id="@+id/top"
+                style="@style/w_fill_h_wrap"
+                android:layout_gravity="center_horizontal" />
+
+            <ImageView
+                android:id="@+id/title"
+                style="@style/wrap_content"
+                android:layout_gravity="top|center_horizontal"
+                android:layout_marginTop="10dip"
+                android:background="@drawable/patronize_colorword" />
+
+           
+            
+            <LinearLayout
+                android:id="@+id/luckLayout"
+                style="@style/w_fill_h_wrap"
+                android:layout_gravity="center"
+                android:layout_marginTop="70dip"
+                android:background="@drawable/prompt_bg"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                  
+                <TextView
+                    android:id="@+id/dressTip"
+                    style="@style/color21_16"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="3dip"
+                    android:text="换衣服咯!" />
+			
+                <TextView
+                    android:id="@+id/luckDesc"
+                    style="@style/color6_12"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="3dip"
+                    android:layout_marginTop="3dip" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/favourMe"
+                style="@style/color16_14"
+                android:layout_gravity="center_vertical|left"
+                android:layout_marginBottom="50dip"
+                android:layout_marginLeft="25dip"
+                android:background="@drawable/chatto_bg"
+                android:gravity="left"
+                android:maxWidth="120dip"
+                android:paddingBottom="5dip"
+                android:paddingLeft="5dip"
+                android:paddingRight="10dip"
+                android:paddingTop="5dip"
+                android:visibility="gone" />
+            
+            <TextView
+                android:id="@+id/favourRemark"
+                style="@style/color25_10"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginBottom="8dip"
+                android:background="@drawable/black_shade_bg"
+                android:maxWidth="185dip"
+                android:paddingBottom="2dip"
+                android:paddingLeft="2dip"
+                android:paddingRight="0dip"
+                android:paddingTop="2dip"
+                android:gravity="left|center_vertical"/>
+            
+            
+            
+              <FrameLayout
+                android:id="@+id/progress_layout"
+                style="@style/wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone" >
+
+                <ProgressBar
+                    style="?android:attr/progressBarStyleLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/loading"
+                    style="@style/color13_12"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="加载中" />
+            </FrameLayout>
+            
+        </FrameLayout>
+
+        <!-- 中部分 -->
+
+        <FrameLayout style="@style/w_fill_h_wrap" 
+            android:layout_marginTop="-7dip">
+
+            <ImageView
+                android:id="@+id/heroRefreshMid"
+                style="@style/w_fill_h_wrap" />
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    style="@style/w_fill_h_wrap"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:orientation="horizontal"
+                    android:visibility="gone" >
+
+                    <TextView
+                        android:id="@+id/the_result"
+                        style="@style/color6_12"
+                        android:layout_marginLeft="10dip"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:text="当前效果: 无" />
+
+                    <TextView
+                        android:id="@+id/the_time"
+                        style="@style/color6_12"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="10dip"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="剩余时间: 无" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/fill_parent"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="0dip"                    
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical" >
+
+                    <TextView
+                        android:id="@+id/excite_level"
+                        style="@style/color8_15"
+                        android:layout_marginLeft="10dip"
+                        android:gravity="left"
+                        android:text="兴奋值LV1: " 
+                        android:textStyle="bold"/>
+
+                    <FrameLayout
+                        style="@style/wrap_content"
+                        android:layout_marginTop="0dip"
+                        android:layout_marginLeft="4dip" >
+
+                        <com.vikings.sanguo.ui.ProgressBar
+                            android:id="@+id/progressBar"
+                            style="@style/wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/progress_bg_favour_328"
+                            android:src="@drawable/progress_favour_328" />
+
+                        <TextView
+                            android:id="@+id/progressDesc"
+                            style="@style/color14_12"
+                            android:layout_gravity="center" />
+                    </FrameLayout>
+                </LinearLayout>
+                
+                  <LinearLayout
+                    style="@style/w_fill_h_wrap"
+                    android:id="@+id/exciteFullTip"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:layout_marginTop="5dip"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/excite_full_tip"
+                        style="@style/color8_15"
+                        android:layout_marginLeft="10dip"
+                        android:gravity="left"
+                        android:text="兴奋值满后:" 
+                        android:textStyle="bold"/>
+                      
+                    <TextView
+                        android:id="@+id/attack_add"
+                        style="@style/color19_12"
+                        android:layout_marginLeft="3dip"
+                        android:text=""
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/defend_add"
+                        style="@style/color19_12"
+                        android:layout_marginLeft="10dip"
+                        android:text="" 
+                        android:textStyle="bold"/>
+                </LinearLayout>
+                
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- 下部分 -->
+
+        <FrameLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:id="@+id/heroRefreshBottom"
+                style="@style/fill_parent" />
+
+            
+            <LinearLayout
+                style="@style/fill_parent"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                   	android:layout_width="fill_parent"
+                   	android:layout_height="50dip"
+                    android:layout_gravity="top"
+                    android:layout_weight="1"
+                    android:gravity="center" 
+                    android:id="@+id/costTipLayout">"
+
+                     <TextView
+                        android:id="@+id/costtip"
+                        style="@style/color24_13"
+                        android:layout_gravity="center"
+                        android:text="道具增加兴奋，每次" />
+                    
+                    <TextView
+                        android:id="@+id/costDesc"
+                        style="@style/color4_13"
+                        android:layout_gravity="center"
+                        android:text="" />
+                </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/groupLayout"
+                style="@style/w_fill_h_wrap"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="0dip"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:paddingBottom="10dip"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:id="@+id/tools1"
+                    style="@style/wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical" 
+                    android:layout_gravity="bottom">
+
+                    <ImageView
+                        android:id="@+id/icon"
+                        style="@style/wrap_content" />
+
+                    <TextView
+                        android:id="@+id/name"
+                        style="@style/color6_16"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tools2"
+                    style="@style/wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical" 
+                    android:layout_gravity="bottom">
+
+                    <ImageView
+                        android:id="@+id/icon"
+                        style="@style/wrap_content" />
+
+                    <TextView
+                        android:id="@+id/name"
+                        style="@style/color6_16"
+                        android:text="面具"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tools3"
+                    style="@style/wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical" 
+                    android:layout_gravity="bottom">
+
+                    <ImageView
+                        android:id="@+id/icon"
+                        style="@style/wrap_content" />
+
+                    <TextView
+                        android:id="@+id/name"
+                        style="@style/color6_16"
+                        android:text="皮鞭"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tools4"
+                    style="@style/wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical" 
+                    android:layout_gravity="bottom">
+
+                    <ImageView
+                        android:id="@+id/icon"
+                        style="@style/wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/name"
+                        style="@style/color6_16"
+                        android:text="麻绳"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:layout_gravity="top|right" >
+
+        <include layout="@layout/goback" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/animLayout"
+        style="@style/fill_parent" 
+        >
+    </FrameLayout>
+
+</FrameLayout>

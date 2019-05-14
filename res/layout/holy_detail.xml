@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent"
+    android:background="@drawable/common_list_bg" >
+
+    <LinearLayout
+        android:id="@+id/top_layout"
+        style="@style/w_fill_h_wrap"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="5dip"
+        android:background="@drawable/common_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip" >
+
+        <include layout="@layout/fief_icon" />
+
+        <LinearLayout
+            android:id="@+id/descFrame"
+            style="@style/w_fill_h_wrap"
+            android:layout_marginLeft="1dip"
+            android:background="@drawable/setoff_cnt_sg"
+            android:orientation="vertical"
+            android:padding="2dip" >
+
+            <TextView
+                android:id="@+id/name"
+                style="@style/color7_13" />
+
+            <TextView
+                android:id="@+id/desc"
+                style="@style/color9_11"
+                android:layout_marginTop="2dip"
+                android:ellipsize="end"
+                android:gravity="left"
+                android:lines="2"
+                android:maxLines="2" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom_layout"
+        style="@style/w_fill_h_wrap"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <FrameLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_gravity="bottom|center_horizontal" >
+
+            <ImageView
+                style="@style/w_fill_h_wrap"
+                android:layout_gravity="bottom|center_horizontal"
+                android:background="@drawable/custom_dialog_btm" />
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/occupyBtn"
+                style="@style/color6_16"
+                android:layout_gravity="center_horizontal|bottom"
+                android:background="@drawable/button_common"
+                android:gravity="center"
+                android:text="征讨外敌"
+                android:visibility="gone" />
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/assistAttackBtn"
+                style="@style/color6_16"
+                android:layout_gravity="center_horizontal|bottom"
+                android:background="@drawable/button_common"
+                android:gravity="center"
+                android:text="协助进攻"
+                android:visibility="gone" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_layout"
+        android:layout_below="@id/top_layout" >
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:orientation="vertical"
+            android:paddingBottom="30dip"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
+            android:paddingTop="5dip" >
+
+            <TextView
+                style="@style/color16_13"
+                android:layout_width="fill_parent"
+                android:background="@drawable/gradient_bg"
+                android:gravity="center"
+                android:paddingLeft="15dip"
+                android:text="掉落信息" />
+
+            <TextView
+                android:id="@+id/dropDesc"
+                style="@style/color7_13"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="5dip"
+                android:background="@drawable/setoff_cnt_sg"
+                android:gravity="left" />
+
+            <TextView
+                style="@style/color16_13"
+                android:layout_width="fill_parent"
+                android:background="@drawable/gradient_bg"
+                android:gravity="center"
+                android:paddingLeft="15dip"
+                android:text="敌军信息" />
+
+            <LinearLayout
+                android:id="@+id/enemyContent"
+                style="@style/w_fill_h_wrap"
+                android:layout_marginTop="5dip"
+                android:orientation="vertical"
+                android:padding="1dip" >
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

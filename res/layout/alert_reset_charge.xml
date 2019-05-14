@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/wrap_content"
+    android:background="@drawable/alert_common_bg" >
+
+    <TextView
+        android:id="@+id/msg"
+        style="@style/k7_color4_15"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dip"
+        android:maxWidth="220dip" />
+
+    <TextView
+        android:id="@+id/recharge"
+        style="@style/btn_common_short"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="15dip"
+        android:text="去充值" />
+
+</FrameLayout>

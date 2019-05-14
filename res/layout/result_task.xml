@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingTop="50dip" >
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/color6_14"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dip"
+            android:text="你获得了以下奖励" />
+
+        <LinearLayout
+            android:id="@+id/items"
+            android:layout_width="200dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical" >
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/touch"
+        style="@style/color15_10"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="15dip"
+        android:text="点击任意位置继续" />
+
+</LinearLayout>

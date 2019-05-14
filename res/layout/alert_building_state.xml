@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="5dip"
+    android:paddingLeft="3dip"
+    android:paddingRight="3dip"
+    android:paddingTop="5dip" >
+
+    <FrameLayout
+        style="@style/wrap_content"
+        android:paddingTop="10dip" >
+
+        <ImageView
+            style="@style/wrap_content"
+            android:background="@drawable/alert_content_bg" />
+
+        <ImageView
+            android:id="@+id/buildingIcon"
+            style="@style/wrap_content"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/level"
+            style="@style/color7_16"
+            android:layout_marginBottom="16dip"
+            android:layout_marginRight="14dip"
+            android:background="@drawable/txt_bg5"
+            android:gravity="center" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/desc"
+        style="@style/color5_12"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dip"
+        android:gravity="left"
+        android:maxWidth="230dip" />
+
+    <LinearLayout
+        android:id="@+id/speedUpGroup"
+        style="@style/w_fill_h_wrap"
+        android:layout_marginTop="10dip"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <FrameLayout style="@style/wrap_content" >
+
+            <com.vikings.sanguo.ui.ProgressBar
+                android:id="@+id/progressBar"
+                style="@style/wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:background="@drawable/progress_bg_200"
+                android:src="@drawable/progress_blue_200" />
+
+            <TextView
+                android:id="@+id/progressDesc"
+                style="@style/k7_color1_11"
+                android:layout_gravity="center" />
+        </FrameLayout>
+
+        <com.vikings.sanguo.ui.PressedZoomButton
+            android:id="@+id/speedUpBtn"
+            style="@style/k7_color1_11"
+            android:layout_height="24dip"
+            android:layout_marginLeft="2dip"
+            android:background="@drawable/sunken_btn_small"
+            android:text="加  速"
+            android:visibility="visible" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/speedUpDesc"
+        style="@style/k7_color7_11"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/speedUpItemDesc"
+        style="@style/k7_color15_13"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/upgradeBtn"
+        style="@style/btn_common"
+        android:layout_marginTop="16dip"
+        android:text="升  级" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/closeBt"
+        style="@style/btn_common"
+        android:layout_marginTop="5dip"
+        android:text="关  闭" />
+
+</LinearLayout>

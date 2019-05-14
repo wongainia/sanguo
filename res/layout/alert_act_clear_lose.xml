@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/msg"
+        style="@style/color11_16"
+        android:layout_marginTop="20dip"
+        android:text="很遗憾,扫荡失败!" />
+
+    <TextView
+        style="@style/color11_16"
+        android:text="你派遣的将领和士兵太弱了!" />
+
+    <TextView
+        android:id="@+id/divine"
+        style="@style/color13_11"
+        android:layout_marginTop="30dip"
+        android:gravity="left"
+        android:text="注:扫荡失败不扣除行动力" />
+
+</LinearLayout>

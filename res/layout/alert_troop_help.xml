@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="center_vertical|top"
+    android:layout_marginLeft="10dip"
+    android:layout_marginRight="10dip"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/fiefInfo"
+        style="@style/w_fill_h_wrap"
+        android:orientation="horizontal" >
+
+        <FrameLayout style="@style/wrap_content" >
+
+            <include layout="@layout/fief_icon" />
+        </FrameLayout>
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dip"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/addrDesc"
+                style="@style/color7_12"
+                android:text="地址" />
+
+            <TextView
+                android:id="@+id/defence"
+                style="@style/color9_12"
+                android:layout_marginTop="5dip"
+                android:text="城防" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/troopInfo"
+        style="@style/w_fill_h_wrap"
+        android:layout_marginTop="4dip"
+        android:background="@drawable/setoff_cnt_sg"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dip"
+            android:gravity="left|top"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/myName"
+                style="@style/color7_12"
+                android:layout_gravity="left|center_vertical" />
+
+            <TextView
+                android:id="@+id/myHero"
+                style="@style/color7_12"
+                android:layout_gravity="left|center_vertical" />
+
+            <TextView
+                android:id="@+id/myArmCnt"
+                style="@style/color7_12"
+                android:layout_gravity="left|center_vertical" />
+        </LinearLayout>
+
+        <FrameLayout
+            style="@style/wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1" >
+        </FrameLayout>
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="5dip"
+            android:gravity="right|top"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/otherName"
+                style="@style/color7_12"
+                android:layout_gravity="right|center_vertical" />
+
+            <TextView
+                android:id="@+id/otherHero"
+                style="@style/color7_12"
+                android:layout_gravity="right|center_vertical" />
+
+            <TextView
+                android:id="@+id/otherArmCnt"
+                style="@style/color7_12"
+                android:layout_gravity="right|center_vertical" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/costDesc"
+        style="@style/color9_10"
+        android:layout_width="fill_parent"
+        android:layout_marginTop="4dip"
+        android:gravity="left"
+        android:visibility="gone" />
+    
+    <TextView
+        android:id="@+id/midExtDesc"
+        style="@style/color9_10"
+        android:layout_width="fill_parent"
+        android:layout_marginTop="7dip"
+        android:gravity="left"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/extDesc"
+        style="@style/color9_10"
+        android:layout_width="fill_parent"
+        android:layout_marginTop="7dip"
+        android:gravity="center_horizontal"
+        android:visibility="gone" />
+
+</LinearLayout>

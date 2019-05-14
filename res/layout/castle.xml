@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:clickable="true" >
+
+    <!-- 主城底图 -->
+
+    <include layout="@layout/castle_ui" />
+
+    <!-- 主城玩家信息 -->
+
+    <include layout="@layout/castle_user_info" />
+
+    <!-- 主城属性 -->
+
+    <FrameLayout
+        android:id="@+id/infoPopupBt"
+        style="@style/wrap_content"
+        android:layout_gravity="center_vertical|left"
+        android:layout_marginLeft="-20dip"
+        android:background="@drawable/castle_prop_bg" >
+
+        <TextView
+            style="@style/color16_12"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="4dip"
+            android:ems="1"
+            android:text="主城信息"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+    <!-- 主城中的悬浮按钮 -->
+
+    <include layout="@layout/right_info" />
+
+    <include layout="@layout/castle_prop" />
+
+    <!-- 虚弱信息 -->
+
+    <LinearLayout
+        android:id="@+id/weakLayout"
+        style="@style/wrap_content"
+        android:layout_gravity="bottom|left"
+        android:layout_marginBottom="100dip"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/weakTime"
+            style="@style/color7_10"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/msg_bg" />
+
+        <ImageView
+            style="@style/wrap_content"
+            android:background="@drawable/weak_icon" />
+    </LinearLayout>
+
+    <!-- 主菜单(自己) -->
+
+    <include layout="@layout/main_menu_own" />
+
+    <!-- 主菜单 (别人) -->
+
+    <include layout="@layout/main_menu_other" />
+
+</FrameLayout>

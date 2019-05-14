@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="320dip"
+    android:layout_height="wrap_content"
+    android:paddingBottom="50dip" >
+
+    <ImageView
+        android:id="@+id/lightEffect"
+        android:layout_width="320dip"
+        android:layout_height="320dip"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="45dip"
+        android:visibility="invisible" />
+
+    <com.vikings.sanguo.battle.anim.StarFlyAnim
+        android:id="@+id/flyStar"
+        android:layout_width="170dip"
+        android:layout_height="170dip"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="115dip" >
+    </com.vikings.sanguo.battle.anim.StarFlyAnim>
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:layout_width="235dip"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingTop="165dip" >
+
+        <LinearLayout
+            android:id="@+id/rewardLayout"
+            style="@style/w_fill_h_wrap"
+            android:minHeight="160dip"
+            android:orientation="vertical"
+            android:paddingBottom="10dip"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
+            android:paddingTop="30dip"
+            android:visibility="invisible" >
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/knifeLeft"
+        style="@style/wrap_content"
+        android:layout_gravity="left|top"
+        android:layout_marginLeft="75dip"
+        android:layout_marginTop="143dip"
+        android:background="@drawable/knife_left"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/knifeShadowLeft"
+        style="@style/wrap_content"
+        android:layout_gravity="left|top"
+        android:background="@drawable/knife_shadow"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/knifeRight"
+        style="@style/wrap_content"
+        android:layout_gravity="right|top"
+        android:layout_marginRight="75dip"
+        android:layout_marginTop="143dip"
+        android:background="@drawable/knife_right"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/knifeShadowRight"
+        style="@style/wrap_content"
+        android:layout_gravity="left|top"
+        android:background="@drawable/knife_shadow"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/subject"
+        style="@style/wrap_content"
+        android:layout_width="266dip"
+        android:layout_height="86dip"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="145dip"
+        android:visibility="invisible" />
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:id="@+id/rouletteLayout"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="140dip"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <ImageView
+            android:id="@+id/name1"
+            style="@style/wrap_content"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/name2"
+            style="@style/wrap_content"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/name3"
+            style="@style/wrap_content"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/name"
+        style="@style/wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="140dip"
+        android:visibility="invisible" />
+
+</FrameLayout>

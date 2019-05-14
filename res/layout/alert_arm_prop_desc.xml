@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="268dip"
+    android:scrollbars="none" >
+
+    <LinearLayout
+        android:id="@+id/descLayout"
+        style="@style/w_fill_h_wrap"
+        android:orientation="vertical"
+        android:paddingBottom="20dip"
+        android:paddingLeft="8dip"
+        android:paddingRight="8dip"
+        android:paddingTop="2dip" >
+    </LinearLayout>
+
+</ScrollView>

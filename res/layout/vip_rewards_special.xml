@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:layout_marginBottom="3dip"
+    android:layout_marginTop="3dip"
+    android:background="@drawable/alert_ext_bg"
+    android:orientation="vertical"
+    android:padding="10dip" >
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/color25_14"
+        android:layout_gravity="center_horizontal"
+        android:text="VIP特权" />
+
+    <ImageView style="@style/separate_line4" />
+
+    <TextView
+        android:id="@+id/specialDesc"
+        style="@style/color6_12"
+        android:layout_marginTop="2dip"
+        android:gravity="left" />
+
+</LinearLayout>

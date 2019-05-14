@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:clickable="true"
+    android:orientation="vertical" >
+
+    <TextView
+        style="@style/color6_19"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dip"
+        android:text="恭喜您，下单成功!" />
+
+    <ImageView
+        style="@style/separate_line5"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dip" />
+
+    <TextView
+        android:id="@+id/content"
+        style="@style/color8_15"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dip"
+        android:gravity="center"
+        android:maxWidth="180dip" />
+
+    <TextView
+        style="@style/color11_13"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="15dip"
+        android:layout_marginTop="20dip"
+        android:maxWidth="150dip"
+        android:text="个别区域由于网络繁忙, 可能存在延迟" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/recharge"
+        style="@style/btn_common"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dip"
+        android:text="继续充值" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/back"
+        style="@style/btn_common"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dip"
+        android:text="关        闭" />
+
+</LinearLayout>

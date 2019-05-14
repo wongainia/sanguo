@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- LinearLayout -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/notifyNotice"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <ImageView
+        android:id="@+id/noticIconBtn"
+        android:layout_width="42.6dip"
+        android:layout_height="33.3dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginTop="3dip"
+        android:background="@drawable/info_up"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/cnt"
+        style="@style/white_13_text"
+        android:layout_gravity="right|top"
+        android:background="@drawable/chat_cnt_green"
+        android:visibility="gone" />
+
+</FrameLayout>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/wrap_content"
+    android:background="@drawable/alert_common_bg"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/color6_14"
+        android:layout_marginTop="20dip" />
+
+    <FrameLayout
+        android:id="@+id/armInfo"
+        style="@style/fief_msg_line"
+        android:layout_marginTop="10dip" >
+
+        <TextView
+            android:id="@+id/armType"
+            style="@style/color3_12"
+            android:layout_gravity="left|center_vertical"
+            android:drawableLeft="@drawable/arm"
+            android:text="崛起兵力:" />
+
+        <TextView
+            android:id="@+id/armCount"
+            style="@style/color3_12"
+            android:layout_gravity="right|center_vertical" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/foodInfo"
+        style="@style/fief_msg_line" >
+
+        <TextView
+            style="@style/color3_12"
+            android:layout_gravity="left|center_vertical"
+            android:drawableLeft="@drawable/fief_food"
+            android:text="消耗粮草:" />
+
+        <TextView
+            android:id="@+id/foodCount"
+            style="@style/color3_12"
+            android:layout_gravity="right|center_vertical" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/locktimeInfo"
+        style="@style/fief_msg_line" >
+
+        <TextView
+            style="@style/color3_12"
+            android:layout_gravity="left|center_vertical"
+            android:drawableLeft="@drawable/time"
+            android:text="围城时间:" />
+
+        <TextView
+            android:id="@+id/lockTime"
+            style="@style/color3_12"
+            android:layout_gravity="right|center_vertical" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/rmbInfo"
+        style="@style/fief_msg_line" >
+
+        <TextView
+            style="@style/color3_12"
+            android:layout_gravity="left|center_vertical"
+            android:drawableLeft="@drawable/rmb"
+            android:text="消耗元宝:" />
+
+        <TextView
+            android:id="@+id/rmbCnt"
+            style="@style/color3_12"
+            android:layout_gravity="right|center_vertical" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/staminaInfo"
+        style="@style/fief_msg_line" >
+
+        <TextView
+            style="@style/color3_12"
+            android:layout_gravity="left|center_vertical"
+            android:drawableLeft="@drawable/hero_limit"
+            android:text="消耗体力:" />
+
+        <TextView
+            android:id="@+id/staminaCnt"
+            style="@style/color3_12"
+            android:layout_gravity="right|center_vertical" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/itemInfo"
+        style="@style/fief_msg_line"
+        android:visibility="gone" >
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/itemimg"
+                style="@style/wrap_content"
+                android:layout_gravity="center_vertical" />
+
+            <TextView
+                android:id="@+id/itemDesc"
+                style="@style/color3_12"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="-3dip"
+                android:gravity="center_vertical" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/itemCount"
+            style="@style/color3_12"
+            android:layout_gravity="right|center_vertical" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/desc"
+        style="@style/color3_12"
+        android:layout_width="220dip"
+        android:layout_marginTop="10dip" />
+
+</LinearLayout>

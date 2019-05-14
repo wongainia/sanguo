@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical" >
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/addBlackBtn"
+        style="@style/btn_common"
+        android:layout_marginBottom="5dip"
+        android:text="添加为仇人" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/deleteBlackBtn"
+        style="@style/btn_common"
+        android:layout_marginBottom="5dip"
+        android:text="删除仇人" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/addFriendBtn"
+        style="@style/btn_common"
+        android:layout_marginBottom="5dip"
+        android:text="添加为好友" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/deleteFriendBtn"
+        style="@style/btn_common"
+        android:layout_marginBottom="5dip"
+        android:text="删除好友" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/sendMsgBtn"
+        style="@style/btn_common"
+        android:layout_marginBottom="5dip"
+        android:text="发送信件" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/closeBtn"
+        style="@style/btn_common"
+        android:layout_marginBottom="5dip"
+        android:text="关  闭" />
+
+</LinearLayout>

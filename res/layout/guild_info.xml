@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent"
+    android:background="@drawable/common_list_bg"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <include
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        layout="@layout/guild_detail_top" />
+
+    <ScrollView
+        android:layout_width="290dip"
+        android:layout_height="wrap_content"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/descLayout"
+                style="@style/w_fill_h_wrap"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/color16_13"
+                    android:layout_width="fill_parent"
+                    android:layout_marginTop="5dip"
+                    android:background="@drawable/gradient_bg"
+                    android:text="家族宗旨" />
+
+                <TextView
+                    android:id="@+id/desc"
+                    style="@style/color5_13"
+                    android:layout_width="fill_parent"
+                    android:layout_marginLeft="3dip"
+                    android:layout_marginRight="3dip"
+                    android:layout_marginTop="5dip"
+                    android:background="@drawable/general_detail_bg"
+                    android:gravity="left|top"
+                    android:maxLines="3"
+                    android:padding="5dip" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/announcementLayout"
+                style="@style/w_fill_h_wrap"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dip"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/color16_13"
+                    android:layout_width="fill_parent"
+                    android:background="@drawable/gradient_bg"
+                    android:text="家族公告" />
+
+                <TextView
+                    android:id="@+id/announcement"
+                    style="@style/color5_13"
+                    android:layout_width="fill_parent"
+                    android:layout_marginTop="5dip"
+                    android:background="@drawable/general_detail_bg"
+                    android:gravity="top|left"
+                    android:maxLines="4"
+                    android:padding="5dip" />
+            </LinearLayout>
+
+            <FrameLayout
+                style="@style/w_fill_h_wrap"
+                android:layout_marginTop="5dip" >
+
+                <LinearLayout
+                    android:id="@+id/manageLayout"
+                    style="@style/w_fill_h_wrap"
+                    android:orientation="vertical"
+                    android:paddingTop="5dip" >
+
+                    <FrameLayout style="@style/wrap_content" >
+
+                        <com.vikings.sanguo.ui.PressedZoomButton
+                            android:id="@+id/joinListLayout"
+                            style="@style/btn_common"
+                            android:layout_width="290dip"
+                            android:text="管理申请"
+                            android:textColor="@color/color6" />
+
+                        <TextView
+                            android:id="@+id/state"
+                            style="@style/color6_12"
+                            android:layout_gravity="right|top"
+                            android:background="@drawable/msg_count_bg"
+                            android:paddingLeft="10dip"
+                            android:paddingRight="10dip"
+                            android:visibility="gone" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        style="@style/wrap_content"
+                        android:layout_marginTop="5dip" >
+
+                        <com.vikings.sanguo.ui.PressedZoomButton
+                            android:id="@+id/chatLayout"
+                            style="@style/btn_common"
+                            android:layout_width="290dip"
+                            android:text="家族群聊"
+                            android:textColor="@color/color6" />
+
+                        <TextView
+                            android:id="@+id/state1"
+                            style="@style/color6_12"
+                            android:layout_gravity="right|top"
+                            android:background="@drawable/msg_count_bg"
+                            android:paddingLeft="10dip"
+                            android:paddingRight="10dip"
+                            android:visibility="gone" />
+                    </FrameLayout>
+
+                    <com.vikings.sanguo.ui.PressedZoomButton
+                        android:id="@+id/memberLayout"
+                        style="@style/btn_common"
+                        android:layout_width="290dip"
+                        android:layout_marginTop="5dip"
+                        android:text="成员列表"
+                        android:textColor="@color/color6" />
+
+                    <com.vikings.sanguo.ui.PressedZoomButton
+                        android:id="@+id/applyLayout"
+                        style="@style/btn_common"
+                        android:layout_width="290dip"
+                        android:layout_marginTop="5dip"
+                        android:text="申请加入"
+                        android:textColor="@color/color6" />
+
+                    <com.vikings.sanguo.ui.PressedZoomButton
+                        android:id="@+id/logLayout"
+                        style="@style/btn_common"
+                        android:layout_width="290dip"
+                        android:layout_marginTop="5dip"
+                        android:text="家族日志"
+                        android:textColor="@color/color6" />
+
+                    <com.vikings.sanguo.ui.PressedZoomButton
+                        android:id="@+id/editInfoLayout"
+                        style="@style/btn_common"
+                        android:layout_width="290dip"
+                        android:layout_marginTop="5dip"
+                        android:text="修改资料"
+                        android:textColor="@color/color6" />
+
+                    <com.vikings.sanguo.ui.PressedZoomButton
+                        android:id="@+id/connectLeaderLayout"
+                        style="@style/btn_common"
+                        android:layout_width="290dip"
+                        android:layout_marginTop="5dip"
+                        android:text="联系族长"
+                        android:textColor="@color/color6" />
+
+                    <com.vikings.sanguo.ui.PressedZoomButton
+                        android:id="@+id/quitLayout"
+                        style="@style/btn_common"
+                        android:layout_width="290dip"
+                        android:layout_marginTop="5dip"
+                        android:text="退出家族"
+                        android:textColor="@color/color6" />
+
+                    <com.vikings.sanguo.ui.PressedZoomButton
+                        android:id="@+id/upgradeLayout"
+                        style="@style/btn_common"
+                        android:layout_width="290dip"
+                        android:layout_marginTop="5dip"
+                        android:text="升级家族"
+                        android:textColor="@color/color6" />
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

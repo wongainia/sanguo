@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="306dip" >
+
+    <AbsoluteLayout
+        android:id="@+id/heroLayout"
+        style="@style/wrap_content"
+        android:layout_gravity="bottom|left" >
+
+        <ImageView
+            android:id="@+id/hdImg"
+            style="@style/wrap_content" />
+    </AbsoluteLayout>
+
+</FrameLayout>

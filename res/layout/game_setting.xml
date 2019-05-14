@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent" >
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:clickable="true"
+        android:orientation="vertical"
+        android:paddingBottom="40dip" >
+
+        <FrameLayout
+            style="@style/item_bg"
+            android:layout_marginLeft="15dip"
+            android:layout_marginRight="15dip"
+            android:layout_marginTop="15dip" >
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dip"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/color22_16"
+                    android:text="背景音乐"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/color9_12"
+                    android:layout_marginTop="3dip"
+                    android:text="是否开启背景音乐" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/musicOpen"
+                style="@style/wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="25dip"
+                android:background="@drawable/checked_bg" >
+
+                <ImageView
+                    android:id="@+id/set"
+                    style="@style/wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/checked_top" />
+            </FrameLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            style="@style/item_bg"
+            android:layout_marginLeft="15dip"
+            android:layout_marginRight="15dip"
+            android:layout_marginTop="15dip" >
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dip"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/color22_16"
+                    android:text="游戏音效"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/color9_12"
+                    android:layout_marginTop="3dip"
+                    android:text="是否开启游戏音效" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/soundOpen"
+                style="@style/wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="25dip"
+                android:background="@drawable/checked_bg" >
+
+                <ImageView
+                    android:id="@+id/set"
+                    style="@style/wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/checked_top" />
+            </FrameLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            style="@style/item_bg"
+            android:layout_marginLeft="15dip"
+            android:layout_marginRight="15dip"
+            android:layout_marginTop="15dip"
+            android:visibility="gone" >
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dip"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/color22_16"
+                    android:text="玩家头像"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/color9_12"
+                    android:layout_marginTop="3dip"
+                    android:text="是否显示玩家上传的头像" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/iconOpen"
+                style="@style/wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="25dip"
+                android:background="@drawable/checked_bg" >
+
+                <ImageView
+                    android:id="@+id/set"
+                    style="@style/wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/checked_top" />
+            </FrameLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            style="@style/item_bg"
+            android:layout_marginLeft="15dip"
+            android:layout_marginRight="15dip"
+            android:layout_marginTop="15dip" >
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dip"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/color22_16"
+                    android:text="真实地图"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/color9_12"
+                    android:layout_marginTop="3dip"
+                    android:text="是否显示真实地图" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/mapOpen"
+                style="@style/wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="25dip"
+                android:background="@drawable/checked_bg" >
+
+                <ImageView
+                    android:id="@+id/set"
+                    style="@style/wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/checked_top" />
+            </FrameLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            style="@style/item_bg"
+            android:layout_marginLeft="15dip"
+            android:layout_marginRight="15dip"
+            android:layout_marginTop="15dip" >
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dip"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    style="@style/wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/color22_16"
+                        android:text="离线通知"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/begin"
+                        style="@style/k7_color1_12"
+                        android:layout_width="50dip"
+                        android:layout_marginLeft="10dip"
+                        android:background="@drawable/common_input1"
+                        android:gravity="center" />
+
+                    <TextView
+                        style="@style/color22_15"
+                        android:layout_marginLeft="2dip"
+                        android:text="到" />
+
+                    <TextView
+                        android:id="@+id/end"
+                        style="@style/k7_color1_12"
+                        android:layout_width="50dip"
+                        android:layout_marginLeft="2dip"
+                        android:background="@drawable/common_input1"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/color9_12"
+                    android:layout_marginTop="3dip"
+                    android:text="是否开启离线通知功能" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/notifyOpen"
+                style="@style/wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="25dip"
+                android:background="@drawable/checked_bg" >
+
+                <ImageView
+                    android:id="@+id/set"
+                    style="@style/wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/checked_top" />
+            </FrameLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/clearImg"
+            style="@style/item_bg"
+            android:layout_marginLeft="15dip"
+            android:layout_marginRight="15dip"
+            android:layout_marginTop="15dip" >
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dip"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/color22_16"
+                    android:text="清除缓存图片"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/color9_12"
+                    android:layout_marginTop="3dip"
+                    android:text="删除无用的临时图片,释放存储空间" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/clearCfg"
+            style="@style/item_bg"
+            android:layout_marginLeft="15dip"
+            android:layout_marginRight="15dip"
+            android:layout_marginTop="15dip" >
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dip"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/color22_16"
+                    android:text="修复数据文件"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/color9_12"
+                    android:layout_marginTop="3dip"
+                    android:text="更新游戏配置文件,修复游戏错误" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/reload"
+            style="@style/item_bg"
+            android:layout_marginLeft="15dip"
+            android:layout_marginRight="15dip"
+            android:layout_marginTop="15dip" >
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dip"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/color22_16"
+                    android:text="重新下载游戏"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/color9_12"
+                    android:layout_marginTop="3dip"
+                    android:text="重新下载并安装最新客户端" />
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+</ScrollView>

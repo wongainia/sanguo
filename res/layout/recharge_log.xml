@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="80dip"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginLeft="5dip"
+    android:layout_marginRight="5dip"
+    android:layout_marginTop="5dip"
+    android:background="@drawable/common_bg_tm2"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:paddingBottom="5dip"
+    android:paddingLeft="10dip"
+    android:paddingRight="10dip"
+    android:paddingTop="5dip" >
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <!-- 索引号 -->
+
+        <TextView
+            android:id="@+id/index"
+            style="@style/color7_13"
+            android:textStyle="bold" />
+
+        <TextView
+            style="@style/color7_13"
+            android:layout_marginLeft="5dip"
+            android:textStyle="bold" />
+
+        <!-- 充值金额 -->
+
+        <TextView
+            android:id="@+id/rmb"
+            style="@style/color7_13"
+            android:layout_marginLeft="2dip"
+            android:textStyle="bold" />
+
+        <TextView
+            style="@style/wrap_content"
+            android:layout_weight="1" />
+
+        <!-- 充值日期 -->
+
+        <TextView
+            android:id="@+id/time"
+            style="@style/color7_12"
+            android:layout_marginRight="5dip"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- 充值账户 -->
+
+    <TextView
+        android:id="@+id/account"
+        style="@style/color9_12"
+        android:layout_marginLeft="5dip"
+        android:layout_marginTop="2dip" />
+
+    <!-- 充值方式和购入元宝 -->
+
+    <TextView
+        android:id="@+id/channel"
+        style="@style/color9_12"
+        android:layout_marginBottom="2dip"
+        android:layout_marginLeft="5dip"
+        android:layout_marginTop="2dip" />
+
+</LinearLayout>

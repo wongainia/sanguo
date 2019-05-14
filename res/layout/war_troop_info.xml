@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/troopDesc"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clickable="false"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dip"
+        android:layout_marginTop="4dip"
+        android:background="@drawable/gradient_bg"
+        android:orientation="vertical" >
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical" >
+
+            <TextView
+                android:id="@+id/masterName"
+                style="@style/color16_12"
+                android:layout_gravity="left|center_vertical"
+                android:layout_marginLeft="5dip"
+                android:gravity="center_vertical"
+                android:text="我自己" />
+
+            <TextView
+                android:id="@+id/troopType"
+                style="@style/color15_10"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="5dip"
+                android:gravity="center_vertical"
+                android:text="主战部队" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <!-- 主将 -->
+
+    <LinearLayout
+        android:id="@+id/heroLayout"
+        style="@style/w_fill_h_wrap"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/common_bg_tm2"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <FrameLayout
+                android:id="@+id/iconLayout"
+                style="@style/wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="3dip"
+                android:layout_marginLeft="3dip"
+                android:layout_marginTop="3dip" >
+
+                <include layout="@layout/hero_icon" />
+            </FrameLayout>
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dip"
+                android:orientation="vertical" >
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/heroTypeName"
+                        style="@style/color24_11"
+                        android:shadowColor="@color/black"
+                        android:shadowRadius="1.0" />
+
+                    <TextView
+                        android:id="@+id/heroLv"
+                        style="@style/color7_10"
+                        android:layout_gravity="right|bottom"
+                        android:layout_marginRight="20dip" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/heroName"
+                    style="@style/color11_13"
+                    android:shadowColor="@color/black"
+                    android:shadowRadius="1.0" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 副将1 -->
+
+    <LinearLayout
+        android:id="@+id/heroLayout1"
+        style="@style/w_fill_h_wrap"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/common_bg_tm2"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <FrameLayout
+                android:id="@+id/iconLayout1"
+                style="@style/wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="3dip"
+                android:layout_marginLeft="3dip"
+                android:layout_marginTop="3dip" >
+
+                <include layout="@layout/hero_icon" />
+            </FrameLayout>
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dip"
+                android:orientation="vertical" >
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/heroTypeName"
+                        style="@style/color24_11"
+                        android:shadowColor="@color/black"
+                        android:shadowRadius="1.0" />
+
+                    <TextView
+                        android:id="@+id/heroLv"
+                        style="@style/color7_10"
+                        android:layout_gravity="right|bottom"
+                        android:layout_marginRight="20dip" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/heroName"
+                    style="@style/color11_13"
+                    android:shadowColor="@color/black"
+                    android:shadowRadius="1.0" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 副将2 -->
+
+    <LinearLayout
+        android:id="@+id/heroLayout2"
+        style="@style/w_fill_h_wrap"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/common_bg_tm2"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <FrameLayout
+                android:id="@+id/iconLayout1"
+                style="@style/wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="3dip"
+                android:layout_marginLeft="3dip"
+                android:layout_marginTop="3dip" >
+
+                <include layout="@layout/hero_icon" />
+            </FrameLayout>
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dip"
+                android:orientation="vertical" >
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/heroTypeName"
+                        style="@style/color24_11"
+                        android:shadowColor="@color/black"
+                        android:shadowRadius="1.0" />
+
+                    <TextView
+                        android:id="@+id/heroLv"
+                        style="@style/color7_10"
+                        android:layout_gravity="right|bottom"
+                        android:layout_marginRight="20dip" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/heroName"
+                    style="@style/color11_13"
+                    android:shadowColor="@color/black"
+                    android:shadowRadius="1.0" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 副将3 -->
+
+    <LinearLayout
+        android:id="@+id/heroLayout3"
+        style="@style/w_fill_h_wrap"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/common_bg_tm2"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <FrameLayout
+                android:id="@+id/iconLayout"
+                style="@style/wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="3dip"
+                android:layout_marginLeft="3dip"
+                android:layout_marginTop="3dip" >
+
+                <include layout="@layout/hero_icon" />
+            </FrameLayout>
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dip"
+                android:orientation="vertical" >
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/heroTypeName"
+                        style="@style/color24_11"
+                        android:shadowColor="@color/black"
+                        android:shadowRadius="1.0" />
+
+                    <TextView
+                        android:id="@+id/heroLv"
+                        style="@style/color7_10"
+                        android:layout_gravity="right|bottom"
+                        android:layout_marginRight="20dip" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/heroName"
+                    style="@style/color11_13"
+                    android:shadowColor="@color/black"
+                    android:shadowRadius="1.0" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

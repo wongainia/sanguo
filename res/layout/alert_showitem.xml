@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:background="@drawable/alert_common_bg"
+    android:orientation="vertical" >
+    
+    <LinearLayout
+        style="@style/wrap_content"
+        android:layout_gravity="center_horizontal"
+         android:paddingTop="20dip" 
+        android:orientation="vertical" 
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/color6_14"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dip" />
+		<ScrollView
+        	android:layout_width="200dip"
+        	android:layout_height="wrap_content"
+        	android:layout_gravity="center_horizontal"
+        	android:scrollbars="none" 
+        	android:layout_marginTop="3dip"
+        	>  
+        <LinearLayout
+            android:id="@+id/items"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">                    
+        </LinearLayout>
+       </ScrollView>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/touch"
+        style="@style/color15_10"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginTop="10dip"
+        android:layout_marginBottom="15dip"
+        android:text="点击任意位置继续" />
+       
+</LinearLayout>

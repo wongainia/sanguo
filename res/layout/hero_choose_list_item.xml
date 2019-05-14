@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/item_bg"
+    android:orientation="horizontal"
+    android:paddingBottom="5dip"
+    android:paddingLeft="10dip"
+    android:paddingRight="10dip"
+    android:paddingTop="5dip" >
+
+    <FrameLayout
+        style="@style/wrap_content"
+        android:layout_gravity="center_vertical" >
+
+        <include
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            layout="@layout/hero_icon" />
+    </FrameLayout>
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="5dip"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="110dip"
+                android:layout_height="wrap_content"
+                android:background="@drawable/hero_name_board"
+                android:orientation="horizontal"
+                android:paddingLeft="6dip"
+                android:paddingRight="6dip" >
+
+                <TextView
+                    android:id="@+id/qualityName"
+                    style="@style/color11_12"
+                    android:layout_marginRight="5dip"
+                    android:shadowColor="@color/black"
+                    android:shadowRadius="1.0" />
+
+                <TextView
+                    android:id="@+id/heroName"
+                    style="@style/color11_14"
+                    android:shadowColor="@color/black"
+                    android:shadowRadius="1.0" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/heroLevel"
+                style="@style/color25_14"
+                android:layout_width="40dip"
+                android:layout_marginLeft="25dip"
+                android:background="@drawable/hero_name_board"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/ability"
+                style="@style/color9_12"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/staminaTitle"
+                style="@style/color9_12"
+                android:text="体力："
+                android:textStyle="bold" />
+
+            <FrameLayout style="@style/wrap_content" >
+
+                <com.vikings.sanguo.ui.ProgressBar
+                    android:id="@+id/progressBar"
+                    style="@style/wrap_content"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:background="@drawable/progress_bg_stamina"
+                    android:src="@drawable/progress_green_stamina_81" />
+
+                <TextView
+                    android:id="@+id/progressDesc"
+                    style="@style/color13_9"
+                    android:layout_gravity="center" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/armProps"
+                style="@style/color9_12"
+                android:layout_gravity="center_vertical"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/state"
+                style="@style/color16_10"
+                android:layout_width="50dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="3dip"
+                android:background="@drawable/fief_scroll_hero_cnt_bg"
+                android:text="点击卸下"
+                android:textStyle="bold"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

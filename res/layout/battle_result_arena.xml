@@ -1,0 +1,55 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/arenaLayout"
+    style="@style/fill_parent"
+    android:orientation="vertical"
+    android:padding="20dip" >
+
+    <LinearLayout
+        android:id="@+id/arenaLoss"
+        style="@style/wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/opDesc"
+            style="@style/color11_12"
+            android:text="真遗憾，挑战失败！"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/rank"
+            style="@style/color6_11"
+            android:layout_marginTop="3dip" />
+
+        <TextView
+            android:id="@+id/exploit"
+            style="@style/color6_11"
+            android:layout_marginTop="3dip" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/arenaWin"
+        style="@style/wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/opDesc"
+            style="@style/color19_12"
+            android:text="恭喜你，挑战成功！"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/rank"
+            style="@style/color6_11"
+            android:layout_marginTop="3dip"
+            android:gravity="left" />
+
+        <TextView
+            android:id="@+id/exploit"
+            style="@style/color6_11"
+            android:layout_marginTop="3dip"
+            android:gravity="left" />
+    </LinearLayout>
+
+</LinearLayout>

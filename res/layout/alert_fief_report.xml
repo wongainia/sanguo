@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:layout_width="260dip"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="105dip" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="75dip"
+            android:orientation="vertical"
+            android:padding="10dip" >
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/k7_color1_15"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="报告领主大人" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dip"
+                android:orientation="vertical"
+                android:padding="5dip" >
+
+                <LinearLayout
+                    android:id="@+id/hasFief"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone" >
+
+                    <TextView
+                        android:id="@+id/fiefCountInBattle"
+                        style="@style/color8_12" />
+
+                    <TextView
+                        android:id="@+id/fiefCountLost"
+                        style="@style/color8_12" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/hasNoFief"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone" >
+
+                    <TextView
+                        style="@style/text_15_red"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dip"
+                        android:text="你的领地已全部被攻占，你已经不再是领主" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dip"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/okBt"
+                    style="@style/k7_color1_12"
+                    android:text="查看详情" />
+
+                <Button
+                    android:id="@+id/cancelBt"
+                    style="@style/k7_color1_12"
+                    android:layout_marginLeft="10dip"
+                    android:text="我知道了" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

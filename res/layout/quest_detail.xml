@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/campaign_detail_bg"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_marginTop="20dip"
+        android:orientation="vertical"
+        android:paddingLeft="2dip"
+        android:paddingRight="2dip" >
+
+        <LinearLayout
+            android:id="@+id/descLayout"
+            style="@style/w_fill_h_wrap"
+            android:layout_marginTop="5dip"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="5dip" >
+
+                <TextView
+                    style="@style/k7_color5_13"
+                    android:text="任务介绍"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/desc"
+                style="@style/color27_11"
+                android:layout_marginLeft="5dip"
+                android:layout_marginTop="3dip"
+                android:gravity="left" />
+        </LinearLayout>
+
+        <ImageView style="@style/separate_line1" android:layout_width="fill_parent" />
+
+        <LinearLayout
+            android:id="@+id/targetLayout"
+            style="@style/w_fill_h_wrap"
+            android:layout_marginTop="3dip"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="5dip" >
+
+                <TextView
+                    style="@style/k7_color5_13"
+                    android:text="完成条件"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/targetView"
+                style="@style/w_fill_h_wrap"
+                android:layout_marginLeft="0dip"
+                android:layout_marginTop="3dip"
+                android:orientation="vertical" >
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView style="@style/separate_line1"  android:layout_width="fill_parent" />
+
+        <LinearLayout
+            android:id="@+id/rewardLayout"
+            style="@style/w_fill_h_wrap"
+            android:layout_marginTop="3dip"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="5dip" >
+
+                <TextView
+                    style="@style/k7_color5_13"
+                    android:text="完成奖励"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/rewardView"
+                style="@style/w_fill_h_wrap"
+                android:layout_marginLeft="5dip"
+                android:layout_marginTop="3dip"
+                android:orientation="vertical" >
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

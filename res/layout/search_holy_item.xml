@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:background="@drawable/alert_scroll_bg"
+    android:gravity="center_vertical"
+    android:orientation="horizontal" >
+
+    <FrameLayout
+        style="@style/center_v"
+        android:layout_marginBottom="5dip"
+        android:layout_marginLeft="5dip"
+        android:layout_marginTop="5dip" >
+
+        <include layout="@layout/fief_icon" />
+    </FrameLayout>
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@id/country"
+            style="@style/color7_12" />
+
+        <TextView
+            android:id="@+id/troop"
+            style="@style/color4_11"
+            android:layout_marginTop="3dip" />
+
+        <TextView
+            android:id="@+id/state"
+            style="@style/color4_11"
+            android:layout_marginTop="3dip" />
+    </LinearLayout>
+
+</LinearLayout>

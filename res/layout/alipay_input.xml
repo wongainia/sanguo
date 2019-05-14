@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent" >
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="80dip" >
+
+        <include
+            android:id="@+id/msg1Layout"
+            layout="@layout/gradient_msg" />
+
+        <LinearLayout
+            android:id="@+id/amountLayout"
+            style="@style/w_fill_h_wrap"
+            android:orientation="vertical"
+            android:paddingBottom="2dip"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip" >
+        </LinearLayout>
+
+        <!-- 充值 -->
+
+        <include
+            android:id="@+id/msg2Layout"
+            layout="@layout/gradient_msg" />
+
+        <LinearLayout
+            android:id="@+id/inputLayout"
+            style="@style/wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="2dip"
+            android:paddingTop="2dip" >
+
+            <EditText
+                android:id="@+id/input"
+                style="@style/color6_14"
+                android:layout_width="280dip"
+                android:layout_height="25dip"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/common_input1"
+                android:gravity="left|center_vertical"
+                android:hint="手动输入充值金额(RMB，元)"
+                android:imeOptions="actionDone"
+                android:inputType="phone"
+                android:numeric="integer"
+                android:paddingLeft="10dip" />
+        </LinearLayout>
+
+        <!-- 充值说明 -->
+
+        <include
+            android:id="@+id/msg3Layout"
+            layout="@layout/gradient_msg" />
+
+        <LinearLayout
+            android:id="@+id/rechargeDescLayout"
+            style="@style/w_fill_h_wrap"
+            android:layout_marginBottom="10dip"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:gravity="center_horizontal"
+            android:paddingBottom="20dip" >
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

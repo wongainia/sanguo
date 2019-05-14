@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:layout_gravity="center"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="2dip" >
+
+    <!-- 医馆介绍 -->
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="268dip"
+        android:scrollbars="none" >
+
+        <LinearLayout
+        android:id="@+id/descLayout"
+        style="@style/fill_parent"
+        android:orientation="vertical"
+        android:paddingLeft="3dip"
+        android:paddingRight="3dip" >
+
+        <TextView
+            style="@style/wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/desc"
+            style="@style/color7_14"
+            android:gravity="left"
+            android:textStyle="bold" 
+            />
+
+        <TextView
+            style="@style/wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+    </ScrollView>
+    
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/closeBt"
+        style="@style/btn_common"
+        android:layout_marginTop="10dip"
+        android:text="关  闭" />
+
+</LinearLayout>

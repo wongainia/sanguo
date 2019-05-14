@@ -1,0 +1,1890 @@
+package pb_client;
+option cc_generic_services = false;
+//option optimize_for = LITE_RUNTIME;
+//option optimize_for = CODE_SIZE;
+
+////db.proto///
+// 日志信息
+import "common.proto";
+///////////////////////////////////////////
+// 协议
+///////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////////////////////////////////////
+// 账号相关协议
+///////////////////////////////////////////////////////////////////////////////////////
+//注册
+message MsgRegisterReq {
+	optional string sim = 10;
+	optional uint32 programid = 20;
+	optional uint32 channel = 30;
+	optional uint32 province = 40;
+	//optional uint32 city = 50;
+	optional string extend = 100;
+}
+
+message MsgRegisterRsp {
+	optional uint32 userid = 10;
+	optional string psw = 20;
+}
+
+//渠道激活
+message MsgChannelActivateReq {
+	optional string sim = 10;
+	optional uint32 programid = 20;
+	optional uint32 channel = 30;
+	optional string extend = 40;
+}
+
+message MsgChannelActivateRsp {
+}
+
+// 通过合作方id找回账号
+message MsgAccountQueryByPartnerReq {
+	optional bytes key = 10;
+	optional uint32	channel = 20;
+	optional string id = 30;
+	
+}
+
+message MsgAccountQueryByPartnerRsp {
+	optional uint32	userid = 10;
+	optional string psw = 20;
+}
+
+// 绑定账号的合作方信息
+message MsgAccountBindPartnerInfoReq {
+	optional string partner_id = 10;
+	optional uint32 partner_channel = 20;
+	optional string	renren_school = 30;
+}
+
+message MsgAccountBindPartnerInfoRsp {
+}
+
+
+message PartnerUserIdInfo {
+	optional uint32 userid = 10;
+	optional string partner_id = 20;
+}
+// 查询合作方id对应游戏id
+message MsgUserQueryByPartnerReq {
+	optional uint32	channel = 10;
+	repeated string id = 20;
+}
+message MsgUserQueryByPartnerRsp {
+	repeated PartnerUserIdInfo infos = 10;
+}
+// 通过userid查找合作方id
+message MsgPartnerInfoQueryByUseridReq {
+	optional bytes key = 10;
+	optional string psw = 20;
+
+}
+message MsgPartnerInfoQueryByUseridRsp {
+	optional string partner_id = 10;
+	optional uint32 partner_channel = 20;
+}
+
+// 账号找回
+message MsgReqAccountQuery {
+	optional string sim = 10;  		// sim卡号
+	optional bytes key = 20;		// aes key
+	//optional bool check_charge = 100;	// 是否检查充值记录（true:如果账号充值过，不能找回，false：不检查）**临时添加，以后可能去掉
+}
+
+message MsgRspAccountQuery {
+	optional uint32 userid = 10;  		// userid
+	optional string psw = 20;		// psw
+}
+
+// 同步协议
+message MsgReqUserDataSyn2 {
+	optional uint32 syn_flag = 10;	// 0 - 同步完整数据  1 - 同步变化数据
+	optional uint32 data_type = 20;	// 数据类型标志(如:DATA_TYPE_ROLEINFO | DATA_TYPE_BAG, DATA_TYPE_ALL等)
+}
+
+message MsgRspUserDataSyn2 {
+	optional pb_common.RichUserInfo user_info = 10;
+	//repeated pb_common.ExSiteInfo site_infos = 20;
+}
+
+// 领地同步
+message MsgReqFiefDataSyn {
+	repeated pb_common.FiefDataSynInfo infos = 10;
+}
+
+message MsgRspFiefDataSyn {
+	repeated pb_common.RichFiefInfo infos = 10;
+	optional pb_common.LordFiefInfos lord_fief_infos = 20;
+}
+
+//登陆
+message MsgLoginReq{
+	optional string psw = 10;	// 客户端登录密码
+	optional bytes aes_key = 20;	// 服务器解密密匙
+	optional uint64 reqid = 30;	// 初始reqid	
+}
+
+message MsgLoginRsp{
+	optional pb_common.AccountInfo	info = 10;	// 账号信息
+	optional bytes aes_key = 20;			// 客户端解密密匙
+	optional uint64 sessionid = 30;			// 会话id
+}
+
+//请求进入游戏
+message MsgGameEnterReq{
+	optional uint32 client_type = 10;	// 客户端类型
+	optional uint32 client_ver = 20;	// 客户端版本
+}
+
+message MsgGameEnterRsp{
+	optional uint32 time = 10;			// 服务器当前时间
+	//optional uint32 wish_count = 20;		// 许愿当天剩余次数
+	optional uint32 mp_free_count = 30;		// 老虎机当天剩余免费次数
+	optional uint32 mp_reset_time = 40;		// 老虎机重置时间
+	optional uint32 world_level = 60;		// 当前世界等级
+	optional uint32 world_level_process = 61;	// 当前世界等级进度
+	optional uint32 world_level_process_total = 62; // 当前世界等级进度总量
+	optional pb_common.ReturnInfo ri = 50;	
+}
+
+// 心跳
+message MsgReqHeartbeat {
+  repeated uint32 chat_ids = 10; // 聊天id
+  optional uint32 country = 20;
+}
+
+message MsgRspHeartbeat {
+	optional uint32 user_ver = 10;	        // 服务器端富用户信息版本
+	optional uint32 notify_ver = 20;       // 服务器公告版本
+	optional uint64 max_id_real_log = 30;  // 服务器当前log信息的最大id，根据此id判断是否有新的信息
+	optional uint64 max_id_message = 40;   // 服务器当前message信息的最大id，根据此id判断是否有新的信息
+	optional uint32 current_time = 50;		   // 服务器当前时间
+	repeated pb_common.ChatTimeInfo chat_time_infos = 60; // 聊天时间戳信息
+	optional uint64 max_id_wanted_player = 70; // 追杀令最大id
+
+}
+
+// 账号绑定，获取验证码
+message MsgReqAccountBinding {
+	optional pb_common.BindingType binding_type = 10;	// 1: 手机 2：email 3: 身份证
+	optional string value = 20;		// 手机号码 OR email OR 身份证
+}
+
+message MsgRspAccountBinding {
+}
+
+// 账号绑定
+message MsgReqAccountBinding2 {
+	optional pb_common.BindingType binding_type = 10;	// 1: 手机 2：email 3: 身份证
+	optional string value = 20;		// 手机号码 OR email OR 身份证
+	optional uint32 code = 30;     // 验证码
+	optional uint32 inviter = 40;	// 邀请者（可选，只生效一次）
+}
+
+message MsgRspAccountBinding2 {
+	optional uint32 inviter = 10; //邀请者
+	optional pb_common.ReturnInfo ri = 20;
+}
+
+message MsgReqCanRecharge {
+	optional uint32 target = 10;
+}
+
+message MsgRspCanRecharge {
+	optional uint32 can_recharge = 10; // 1:可以充值 2：不可以充值
+}
+
+// 帐号找回1
+message MsgReqAccountRestore {
+	optional uint32 flag = 10;		// 1:手机 2：email
+	optional string value = 20;		// 手机号码 OR email
+//	optional string sim = 30;        // sim卡号
+	optional bytes key = 40;	    // aes_key
+}
+
+message MsgRspAccountRestore {
+	//optional uint32 userid = 10; //用户id
+	optional uint32 remain_count = 20; //当天剩余找回次数
+}
+
+// 帐号找回2
+message MsgReqAccountRestore2 {
+	optional uint32 flag = 10;		// 1:手机 2：email
+	optional string value = 20;		// 手机号码 OR email
+	optional uint32 code = 30;		// 验证码
+	optional bytes key = 40;	    // aes_key
+}
+
+message MsgRspAccountRestore2 {
+	repeated pb_common.AccountPswInfo infos = 30;
+}
+
+// 帐号找回3
+message MsgReqAccountRestore3 {
+	optional uint32 userid = 10;		// 用户id
+	optional string psw = 20; //密码
+	optional string sim = 30;        // sim卡号
+	optional bytes key = 40;	    // aes_key
+}
+
+message MsgRspAccountRestore3 {
+}
+
+//登出
+message MsgReqLogout {
+}
+
+message MsgRspLogout {
+}
+
+// 用户回复体力
+message MsgReqUserStaminaReset {
+	optional uint32 currency = 10;
+}
+
+message MsgRspUserStaminaReset {
+	optional pb_common.ReturnInfo ri = 10;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////
+// 查询相关协议
+///////////////////////////////////////////////////////////////////////////////////////
+//查询其他人的富用户信息
+message MsgQueryRichOtherUserInfoReq{
+	optional uint32 target = 10;
+	optional uint64 flag = 20;//(同数据同步flag说明)
+}
+
+message MsgQueryRichOtherUserInfoRsp{
+	optional pb_common.OtherUserInfo ui = 10;
+	optional pb_common.OtherLordInfo	li = 20;
+	//repeated pb_common.FarmInfo fis = 20;
+	//repeated pb_common.SiteInfo sis = 30;
+	optional pb_common.ManorInfo mi = 40;
+	optional pb_common.UserTroopEffectInfo troop_effect_info = 50; //DATA_TYPE_ARM_PROP
+	//optional pb_common.WishInfo wi = 50;
+}
+
+// 查询用户摘要信息
+message MsgReqBriefUserInfoQuery {
+	repeated uint32 userids = 10;//每次最多查询50人
+}
+
+message MsgRspBriefUserInfoQuery {
+	repeated pb_common.BriefUserInfo infos = 10;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////
+///城堡相关
+///////////////////////////////////////////////////////////////////////////////////
+
+//查询玩家城堡
+message MsgPlayerManorQueryReq {
+	repeated uint32 userids = 10;	
+}
+
+message MsgPlayerManorQueryRsp {
+	repeated pb_common.ManorInfo mis = 10;	
+}
+
+//更改城堡信息
+message MsgPlayerManorUpdateReq {
+	optional string name = 10;	//城堡名
+	//optional uint64 buildingid = 20;//主城堡建筑
+}
+
+message MsgPlayerManorUpdateRsp {
+	optional pb_common.ManorInfo mi = 10;
+}
+
+//城堡人口恢复
+message MsgReqPlayerManorPopRecover {	
+}
+
+message MsgRspPlayerManorPopRecover {
+	optional pb_common.ReturnInfo ri = 10;
+	optional pb_common.ManorInfo manor_info = 20;
+}
+
+
+//建筑相关
+//购买
+message MsgReqManorBuildingBuy {
+	optional uint32 type = 10;	// 1:正常购买 2：元宝
+	optional uint32 itemid = 20;
+}
+
+message MsgRspManorBuildingBuy {
+	optional pb_common.ReturnInfo ri = 10;
+	optional pb_common.ManorInfo mi = 20;
+}
+
+//收获
+message MsgReqManorReceive {
+	optional uint32 buildingid = 10; //对应要收获的buildingid
+	//optional bool receive_fief = 20;//是否收获资源点上产出
+}
+
+message MsgRspManorReceive {
+	optional pb_common.ReturnInfo ri = 10;
+	optional pb_common.ManorInfo mi = 20;
+}
+
+//全收
+message MsgReqManorReceiveAll {
+	//optional uint32 buildingid = 10; //对应要收获的buildingid
+	optional bool receive_fief = 20[default = false];//是否收获资源点上产出
+}
+
+message MsgRspManorReceiveAll {
+	optional pb_common.ReturnInfo ri = 10;
+	optional pb_common.ManorInfo mi = 20;
+	repeated pb_common.LordFiefInfo lfis = 40;
+	repeated uint32 last_attrids = 30;	//没有收完的资源id
+}
+
+//主城虚弱状态解除
+message MsgReqManorWeakRemove {
+}
+
+message MsgRspManorWeakRemove {
+	optional pb_common.ReturnInfo ri = 10;
+	optional pb_common.ManorInfo mi = 20;
+}
+
+//玩家兵力消耗更新
+message MsgReqUserTroopCostUpdate {
+}
+
+message MsgRspUserTroopCostUpdate {
+	optional pb_common.ReturnInfo ri = 10;
+}
+
+//购买
+message MsgReqFiefBuildingBuy {
+	optional uint32 type = 10;	// 1:正常购买 2：元宝
+	optional uint32 itemid = 20;
+	optional uint64 fiefid = 30;
+}
+
+message MsgRspFiefBuildingBuy {
+	optional pb_common.ReturnInfo ri = 10;
+	optional pb_common.LordFiefInfo lord_fief_info = 20;
+	//optional pb_common.BuildingInfo	bi = 30;		
+}
+
+//收获
+message MsgReqFiefReceive {
+	optional uint64 fiefid = 10; //对应要收获的fiefid
+}
+
+message MsgRspFiefReceive {
+	optional pb_common.ReturnInfo ri = 10;
+	optional pb_common.ManorInfo mi = 20;
+	optional pb_common.LordFiefInfo fi = 30;
+}
+
+
+//建筑产出元宝重置
+message MsgReqBuildingReset {
+	optional uint32 buildingid = 10;
+	optional uint64 fiefid = 20;	//如果是资源点，需要
+}
+
+message MsgRspBuildingReset {
+	optional pb_common.ReturnInfo ri = 10;
+	optional pb_common.BuildingInfo bi = 20;
+}
+
+///////////////////////////////////////////////////////////////////////////////////
+///好友，黑名单相关
+///////////////////////////////////////////////////////////////////////////////////
+
+// 增、删
+message MsgBlacklistAddReq {
+	optional uint32 targetid = 10;			// 目标id	
+}
+
+message MsgBlacklistAddRsp {	
+}
+
+message MsgBlacklistDelReq {
+	optional uint32 targetid = 10;			// 目标id
+}
+
+message MsgBlacklistDelRsp {
+}
+
+message MsgCheckIfInTargetBlackListReq{
+	optional uint32 targetid = 10;			// 目标id
+}
+message MsgCheckIfInTargetBlackListRsp{
+	optional uint32 exist = 10;	//(0 : 不在 1：在对象黑名单)
+}
+
+//批量加好友
+message MsgReqFriendAdd {
+	repeated uint32 userids = 10;	//目标玩家（每次最多10个）
+}
+
+message MsgRspFriendAdd {
+	repeated uint32 failed_userids = 10;	//添加失败的玩家id
+}
+
+// 用户推荐
+message MsgReqRecommendUser {
+}
+
+message MsgRspRecommendUser {
+	repeated uint32 userids = 10;
+}
+
+//删除好友
+message MsgReqFriendDel {
+	repeated uint32 targetids = 10;			// 目标id
+}
+
+message MsgRspFriendDel {
+}
+
+///////////////////////////////////////////////////////////////////////////////////////
+// 用户静态数据协议
+///////////////////////////////////////////////////////////////////////////////////////
+// 查询静态数据
+message MsgReqStaticUserDataQuery {
+    optional pb_common.StaticUserDataType data_type = 10;  // 静态数据类型
+    optional uint64 id = 20;         // 取比这个id小的数据。如果为0，则从最新数据开始取
+    optional uint32 count = 30;		  // 返回的数量
+}
+
+message MsgRspStaticUserDataQuery {
+    optional pb_common.StaticUserDataType data_type = 10;
+    optional uint32 total = 20;                        // 此字段在返回harvest信息时，返回harvest信息的总数
+    //repeated pb_common.FootInfo foot_infos = 30;
+    repeated pb_common.LogInfo log_infos = 40;         // 根据data_type来区分，可以是个人动态、农场日志、房屋日志、实时通知日志、赠送日志
+    repeated pb_common.MessageInfo message_infos = 50;
+    //repeated pb_common.HarvestInfo harvest_infos = 60;
+    repeated pb_common.TrayNotifyInfo tray_infos = 70;
+    repeated pb_common.UserNotifyInfo notify_infos = 80;
+    //optional pb_common.FarmLogStatInfo farm_log_stat_infos = 90;
+    repeated pb_common.BriefBattleLogInfo brief_battle_logs = 100;
+    repeated pb_common.TroopLogInfo troop_logs = 110;
+    repeated pb_common.ArenaLogInfo arena_logs = 120;
+    //repeated pb_common.RobotLogInfo robot_log_infos = 120;
+}
+
+// 查询其他玩家的静态数据信息
+message MsgReqPlayerStaticUserDataQuery {
+    optional uint32 targetid = 10;                         // 目标玩家
+    optional pb_common.StaticUserDataType data_type = 20;  // 静态数据类型，只能是足迹、收获
+    optional uint64 id = 30;        // 取比这个id小的数据。如果为0，则从最新数据开始取
+    optional uint32 count = 40;		  // 返回的数量
+}
+
+message MsgRspPlayerStaticUserDataQuery {
+    optional pb_common.StaticUserDataType data_type = 10;
+    optional uint32 total = 20;                        // 此字段在返回harvest信息时，返回harvest信息的总数
+    //repeated pb_common.FootInfo foot_infos = 30;
+    //repeated pb_common.HarvestInfo harvest_infos = 40;
+    repeated pb_common.LogInfo log_infos = 50; // 赠送日志
+}
+
+//// 通过日志id查询赠送日志
+//message MsgReqPresentLogQuery {
+//	optional uint32 target = 10; // 要查询的目标用户userid
+//    repeated uint64 ids = 20;   // 需要查询的日志的id
+//}
+//
+//message MsgRspPresentLogQuery {
+//    repeated pb_common.LogInfo log_infos = 10;
+//}
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////
+// 水果机
+///////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////
+// 排行榜相关
+///////////////////////////////////////////////////////////////////////////////////////
+
+// 排行信息查询
+message MsgReqUserStatData {
+    repeated uint32 userids = 1;
+}
+
+message MsgRspUserStatData {
+    repeated pb_common.UserStatData datas = 1;
+}
+
+message MsgReqMachinePlayStatData {
+}
+
+message MsgRspMachinePlayStatData {
+    repeated pb_common.MachinePlayStatInfo machine_play_stat_infos = 10;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////
+// 物品相关
+///////////////////////////////////////////////////////////////////////////////////////
+// 物品购买
+message MsgReqItemBuy {
+	optional uint32 itemid = 10; 	// 对应的物品id
+	optional uint32 amount = 20; 	// 对应的数量
+	optional uint32 currency = 30;	// 如果是元宝，客户端上报认为的元宝数，不传或为0则不校验
+}
+
+message MsgRspItemBuy {
+	optional pb_common.ReturnInfo ri = 10;
+}
+
+// 物品使用
+message MsgReqItemUse {
+	optional uint32 targetid = 10;  // 目标玩家
+	optional uint64 bagid = 20;	// id
+	optional uint32 itemid = 30; 	// 对应包裹的物品id
+	optional uint32 scheme = 40;	// 开启方案号
+	optional uint32 count = 50[default = 1];	// 数量
+}
+
+message MsgRspItemUse {
+	optional pb_common.ReturnInfo ri = 10;
+	//repeated pb_common.BuildingInfo bis = 20;   
+	optional pb_common.ManorInfo mi = 30;
+	repeated pb_common.HeroInfo his = 40;	   // 将领信息
+}
+
+//物品出售
+message MsgReqItemSell {
+	optional uint64 bagid = 10; 	// 对应的包裹id
+	optional uint32 amount = 20; 	// 对应的数量
+}
+
+message MsgRspItemSell {
+	optional pb_common.ReturnInfo ri = 10;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////
+// 其他
+///////////////////////////////////////////////////////////////////////////////////////
+// 玩家搜索
+message MsgReqUserSearch {
+	optional uint32 start = 10;
+	optional uint32 count = 20;
+  repeated pb_common.ConditionNum condition_nums = 30;
+  repeated pb_common.ConditionStr condition_strs = 40;
+}
+
+message MsgRspUserSearch {
+  repeated pb_common.BriefUserInfo infos = 10;
+}
+
+// 定位  
+message MsgReqGeographyInfoQuery {
+	repeated uint64 pos = 10; // 需要查询的tileids
+}
+
+message MsgRspGeographyInfoQuery {
+	repeated pb_common.GeographyInfo infos = 10;
+}
+
+// 任务完成
+message MsgReqQuestFinish {
+	optional uint32 questid = 10;	// id
+}
+
+message MsgRspQuestFinish {
+	optional pb_common.ReturnInfo ri = 10;
+	//repeated pb_common.BuildingInfo bis = 20;   // 如果开出建筑了则会返回bis和mi，其他情况不返回
+	//optional pb_common.ManorInfo mi = 30;
+}
+
+// 幸运水果机
+message MsgReqMachinePlay {
+	optional pb_common.MachinePlayType type = 10; // 水果机类型
+}
+
+message MsgRspMachinePlay {
+	repeated uint32 wheels = 10; // 转轮数字，跟配置文件上的一样
+	optional pb_common.ReturnInfo ri = 20;
+	//  repeated pb_common.BuildingInfo bis = 30;//如果产生建筑了则会返回bis和mi，其他情况不返回
+	//optional pb_common.ManorInfo mi = 40;
+	optional uint32 is_on_list = 50;        // 是否上榜，1：上榜，0：不上榜
+	optional uint32 free_reset_time = 60; // 免费次数重置时间。如果剩余的免费次数不为0，则此字段没有值
+	optional uint32 free_times = 70;      // 剩余的免费次数。如果次数为0，则设置免费次数重置时间
+	optional uint32 remain_times = 80;    // 当天剩余次数
+}
+
+//////////////////////////////////////////////////
+//土地
+///////////////////////
+//Brief领地信息查询-byid
+message MsgReqBriefFiefInfoQuery {
+  	repeated uint64 fiefids = 10;	//Fiefid 每次最大支持25个
+}
+
+message MsgRspBriefFiefInfoQuery{
+  	repeated pb_common.BriefFiefInfo infos = 10;	//
+	repeated pb_common.ManorInfo manor_infos = 20;
+	repeated pb_common.UserAttrScoreInfo	attr_infos = 30;
+}
+
+//查询肥羊列表
+message MsgReqHotUserAttrScoreInfoQuery {
+	optional uint32 country = 10;	//查询者国籍
+	optional uint32 start = 20;
+}
+
+message MsgRspHotUserAttrScoreInfoQuery{
+	optional uint32 total = 30;	//总个数
+  	repeated pb_common.BriefFiefInfo infos = 10;	//最大10个
+	repeated pb_common.HotUserScoreInfo hot_infos = 20; //最大10个
+}
+
+//领地rich信息查询-by self
+message MsgReqSelfFiefInfoQuery {  
+  optional uint64 fiefid = 10;	//Fiefid
+}
+
+message MsgRspSelfFiefInfoQuery {
+  optional pb_common.RichFiefInfo info = 10;	//
+}
+
+//领地other信息查询-by other
+message MsgReqOtherFiefInfoQuery { 
+  optional uint64 fiefid = 10;	//Fiefid
+}
+
+message MsgRspOtherFiefInfoQuery {
+  optional pb_common.OtherFiefInfo info = 10;	//
+}
+
+//领主领地id查询
+message MsgReqLordFiefIdQuery {  
+  optional uint32 target = 10;	//
+}
+
+message MsgRspLordFiefIdQuery {
+  repeated uint64 fiefids = 10 [packed=true];	//
+}
+
+
+//合并到otherrichuser
+//other领主信息查询
+//message MsgReqOtherLordInfoQuery {
+//  optional uint32 target = 10;	//
+//}
+
+//message MsgRspOtherLordInfoQuery {
+//  optional pb_common.OtherLordInfo info = 10;	//
+//}
+
+//庄园招兵
+message MsgReqManorDraft {
+  optional uint32 buildingid = 10;	//对应建筑id
+  optional uint32 propid = 20;	//兵种id
+  optional uint32 type = 30;	//征兵方式：1：普通征兵 2：元宝征兵
+  optional uint32 count = 40;	//征兵数量
+}
+
+message MsgRspManorDraft {
+  optional pb_common.ReturnInfo ri = 10;	//
+  optional pb_common.ManorInfo mi = 20;	//
+  //optional pb_common.BuildingInfo bi = 30;//
+  //optional pb_common.FiefInfo fief_info = 40;	//如果领主征兵，可能直接放到领地上
+}
+
+//资源点调兵
+message MsgReqFiefMoveTroop {
+	optional uint64 src = 10;	//源fiefid
+	optional uint32 type = 30;	//方式（1：正常调兵 2：元宝调兵？）
+	optional pb_common.TroopInfo troop_info = 100;	//部队信息 
+	repeated pb_common.HeroIdInfo hero_infos = 110;	//将领
+}
+
+message MsgRspFiefMoveTroop {
+	optional pb_common.ReturnInfo ri = 10;
+	optional pb_common.FiefInfo fief_info = 20;	//
+	optional pb_common.LordFiefInfo lord_fief_info = 30;
+	optional pb_common.ManorInfo manor_info= 40;	//
+	optional pb_common.FiefInfo dst_fief_info = 50;//
+}
+
+//主城调兵
+message MsgReqManorMoveTroop {
+	optional uint64 dst = 20;	//目标fiefid (只能为主城)
+	optional uint32 type = 30;	//方式（1：正常调兵 2：元宝调兵？）
+	optional pb_common.TroopInfo troop_info = 100;	//部队信息 
+	repeated pb_common.HeroIdInfo hero_infos = 110;	//将领
+}
+
+message MsgRspManorMoveTroop {
+	optional pb_common.ReturnInfo ri = 10;
+	optional pb_common.FiefInfo fief_info = 20;	//
+	optional pb_common.LordFiefInfo lord_fief_info = 30;
+	optional pb_common.ManorInfo manor_info= 40;	//
+	optional pb_common.FiefInfo src_fief_info = 50;
+}
+
+//战争相关
+//起兵
+message MsgReqBattleRiseTroop {
+	optional uint64 dst_fiefid = 20;	//战争目的领地
+	optional uint32 type = 30;		//方式 1：正常 2：元宝远征？
+	optional uint32 target = 40;		//对方userid
+	optional uint32 battle_type = 50;	// 见common中的BattleAttackType
+	optional pb_common.TroopInfo info = 100;//部队信息
+	repeated pb_common.HeroIdInfo hero_infos = 110;	//将领信息
+	optional uint32 cost = 120;		//出征消耗
+}
+
+message MsgRspBattleRiseTroop {
+	optional pb_common.BriefFiefInfo fief_info = 10;	//战争目的领地摘要信息
+	optional pb_common.ManorInfo manor_info = 20;
+	optional pb_common.ReturnInfo ri = 30;
+	optional pb_common.BriefBattleInfo battle_info = 40;	//战场摘要信息
+	repeated pb_common.HeroInfo hero_infos = 50;
+}
+
+// 增援
+message MsgReqBattleReinfor{
+	optional uint32 target = 10;		//
+	optional uint64 dst_fiefid = 20;	//目的领地
+	optional uint32 holy_cost = 30;		//恶魔之门消耗
+	optional uint32 type = 40;		//方式 1：正常 2：元宝远征？
+	optional uint32 target_type = 60;	//1:增援自己 2：增援家族 3：增援同国
+	optional pb_common.TroopInfo info = 100;//部队信息
+	repeated pb_common.HeroIdInfo hero_infos = 110;	//将领
+}
+
+message MsgRspBattleReinfor{
+	optional pb_common.ReturnInfo ri = 10;
+	optional pb_common.ManorInfo mi = 20;	//源
+	repeated pb_common.HeroInfo hero_infos = 40;
+	optional pb_common.BriefFiefInfo fief_info = 50;	//战争目的领地摘要信息
+	optional pb_common.BriefBattleInfo battle_info = 60;	//战场摘要信息	
+}
+
+//圣城打怪
+message MsgReqFiefFightNpc {
+	optional uint64 fiefid = 20;		//圣城所在领地id
+	optional uint32 cost = 30;			//恶魔之门开启消耗
+}
+
+message MsgRspFiefFightNpc {
+	optional uint64 battleid = 50;		//战场id
+	optional pb_common.ReturnInfo ri = 10;
+	repeated pb_common.HeroInfo hero_infos = 20;	//如果有守城将领，返回对应信息
+	optional pb_common.LordFiefInfo lord_fief_info = 30;	//
+	optional pb_common.FiefInfo fief_info = 40;		//
+}
+
+// 购买兵种-兵力确认
+message MsgReqConfirmBuyBattleUnit { 
+  optional uint64 battleid = 10;	//战场id
+}
+
+message MsgRspConfirmBuyBattleUnit { 
+  optional uint32 poker_unit = 10;	//翻牌用总兵力	
+}
+
+message MsgReqBuyBattleUnit { 
+  optional uint64 battleid = 10;//战场id
+  optional uint32 index = 20;	// 第几张牌
+}
+
+message MsgRspBuyBattleUnit { 
+  optional pb_common.ReturnInfo ri = 10;	
+  optional pb_common.MoveTroopInfo move_troop_info = 20;	//获得的兵力
+  optional uint32 poker_result = 30;		   		// 翻牌奖励结果(对应服务器奖励)
+}
+
+// 援军购买兵种
+message MsgReqReinforceBuyUnit { 
+  optional uint64 battleid = 10;// 战场id
+  optional uint32 type = 20;		// 那种类型的牌
+  optional uint32 cost = 30;		// 消耗
+}
+
+message MsgRspReinforceBuyUnit { 
+  optional pb_common.ReturnInfo ri = 10;	
+  optional pb_common.MoveTroopInfo move_troop_info = 20;	//获得的兵力
+	optional pb_common.KeyValue times = 30;	// 用户购买神兵次数
+}
+
+// 占卜
+message MsgReqBattleDivine{
+	optional uint64 fiefid = 10;	//战争所在地
+	//optional uint64 battleid = 20;
+	optional uint32 type = 30;	//占卜类型(1 普通 进攻方占卜也填普通 2 出城应战 3 强攻)
+}
+
+message MsgRspBattleDivine{
+	optional uint32 divine_result = 10;	//占卜结果（具体值定义待定）
+	optional pb_common.ReturnInfo ri = 20;
+}
+
+
+// 普通战争-开战
+message MsgReqCommonAttack{
+	optional uint32 type = 10;	//方式 1：攻城 2：突围 3：强攻
+	optional uint32 target = 20;	//战斗目标用户id
+	optional uint64 fiefid = 30;	//战争所在地
+}
+
+message MsgRspCommonAttack{
+	optional pb_common.BattleLogInfo battle_log_info = 10;		//战斗日志 **可能替换为二进制
+	optional pb_common.ReturnInfo ri = 20;
+	optional pb_common.LordFiefInfo lord_fief_info = 30;	//
+	optional pb_common.FiefInfo fief_info = 40;		//
+}
+
+// 抢夺-开打
+message MsgReqPlunderAttack{
+	optional uint32 type = 10;	//方式 1：攻城 2：突围 3：强攻
+	optional uint32 target = 20;	//战斗目标用户id
+	optional uint64 fiefid = 30;	//战争所在地
+}
+
+message MsgRspPlunderAttack{
+	optional pb_common.BattleLogInfo battle_log_info = 10;		//战斗日志 **可能替换为二进制
+	optional pb_common.ReturnInfo ri = 20;
+	optional pb_common.FiefInfo dst_fief_info = 40;			//目的地fiefinfo
+}
+
+// 副本开打
+message MsgReqDungeonAttack {
+	optional uint32 actid = 10;	// actid
+	optional uint32 campaignid = 20;	// campaignid
+	repeated pb_common.HeroIdInfo hero_infos = 30;	// 英雄
+	optional int32 help = 40;	// 使用系统英雄
+}
+
+message MsgRspDungeonAttack {
+	optional pb_common.BattleLogInfo battle_log_info = 10;		//战斗日志 **可能替换为二进制
+	optional pb_common.ReturnInfo ri = 20;
+	optional pb_common.CampaignInfo campaign_info = 30;
+	repeated pb_common.HeroInfo hero_infos = 40;
+}
+
+// 单挑和屠城
+message MsgReqDuelAttack{
+	optional uint32 type = 10;		//方式 1：攻城 2：突围
+	optional uint32 target = 20;	//战斗目标用户id
+	optional uint64 fiefid = 30;	//战争所在地
+}
+
+message MsgRspDuelAttack{
+	optional pb_common.BattleLogInfo battle_log_info = 10;
+	optional pb_common.ReturnInfo ri = 20;
+	optional pb_common.LordFiefInfo lord_fief_info = 30;
+	optional pb_common.FiefInfo fief_info = 40;
+}
+
+// brief战争信息查询
+message MsgReqBriefBattleInfoQuery {
+	repeated uint64	battle_ids = 10 [packed=true];		//
+}
+
+message MsgRspBriefBattleInfoQuery{
+	repeated pb_common.BriefBattleInfo infos = 10;		
+}
+
+// 我的战役日志
+message MsgReqBattleLogInfoQuery{	
+	optional uint64 id = 10;
+}
+
+message MsgRspBattleLogInfoQuery{	
+	optional pb_common.BattleLogInfo info = 10; //*可能换二进制
+}
+
+// 放弃资源点
+message MsgReqFiefAbandon{
+	optional uint64 fiefid = 10;	//注：暂不支持战争中的领地放弃
+}
+
+message MsgRspFiefAbandon{
+	optional pb_common.ReturnInfo ri = 10;
+}
+
+// rich战争信息查询
+message MsgReqRichBattleInfoQuery {
+	optional uint64	battle_id = 10;		//
+	optional bool need_hero = 20;		// true:返回将领信息
+}
+
+message MsgRspRichBattleInfoQuery{
+	optional pb_common.RichBattleInfo info = 10;	
+	repeated pb_common.OtherHeroInfo hero_infos = 20;//战场中的将领信息	
+}
+
+//查询领地历史战斗日志
+message MsgReqBriefBattleLogQueryByFiefId {
+	optional uint64 fiefid = 10;
+	optional uint32 start = 20;
+	optional uint32 count = 30;	//单次最大10个
+}
+
+message MsgRspBriefBattleLogQueryByFiefId {
+	repeated pb_common.BriefBattleLogInfo infos = 10;
+}
+
+// 查询其他人参与的战斗(临时协议)
+message MsgReqOtherBattleIdQuery {
+	optional uint32 userid = 10;
+}
+
+message MsgRspOtherBattleIdQuery {
+	repeated uint64 battleids = 10 [packed=true];	
+}
+
+// 查询他人参与的战斗id信息
+message MsgReqUserBattleInfoQuery {
+	repeated uint32 userids = 10; // 10个最多
+	optional uint32 flag = 20; //对应battleid的flag, A&B只要为真就返回，0表示全取
+}
+
+message MsgRspUserBattleInfoQuery {
+	repeated pb_common.OtherUserBattleIdInfo infos = 10;	
+}
+
+// 请求最新战报
+message MsgReqBattleHotInfo {
+}
+
+message MsgRspBattleHotInfo {
+  repeated pb_common.BattleHotInfo infos = 10;
+}
+
+/////////////////////////////////////////////////////////
+//家族相关协议
+/////////////////////////////////////////////////////////
+//创建家族
+message MsgReqGuildBuild {
+	optional string name = 10;	//长度和玩家昵称一样
+	optional uint32 type = 20;	//创建方式 1：正常消耗 2：元宝
+}
+
+message MsgRspGuildBuild {
+	optional pb_common.ReturnInfo ri = 10;	//
+	optional uint32	guildid = 20;
+}
+
+//创建家族
+message MsgReqGuildLevelUp {
+	optional uint32	guildid = 10;	
+}
+
+message MsgRspGuildLevelUp {
+	optional pb_common.ReturnInfo ri = 10;	//
+	optional pb_common.GuildInfo gi = 20;
+}
+
+//更新家族信息
+message MsgReqGuildInfoUpdate {
+	optional uint32 guildid = 10;
+	optional string desc = 20;	// 宗旨
+	optional uint32 image = 30;     // 徽章
+	optional string announcement = 40;	// 公告
+	optional bool auto_join = 50;
+}
+
+message MsgRspGuildInfoUpdate {
+	optional pb_common.ReturnInfo ri = 10;	//
+	optional pb_common.GuildInfo gi = 20;	//家族信息
+}
+
+//暂不开放
+//查找家族
+//message MsgReqGuildSearch {
+//	optional uint32 start = 10;
+//	optional uint32 count = 20;
+//	repeated pb_common.GuildSearchCond conds = 30;
+//}
+
+//message MsgRspGuildSearch {
+//	repeated uint32 guildid = 10;	//超过10个只返回10个
+//}
+
+//查询rich家族信息
+message MsgReqRichGuildInfoQuery {
+	optional uint32 guildid = 10;
+}
+
+message MsgRspRichGuildInfoQuery {
+	optional pb_common.RichGuildInfo info = 20;	//rich家族信息
+}
+
+//查询otherrich家族信息
+message MsgReqOtherRichGuildInfoQuery {
+	optional uint32 guildid = 10;		//
+}
+
+message MsgRspOtherRichGuildInfoQuery {
+	optional pb_common.OtherRichGuildInfo info = 10;	//otherrich家族信息
+}
+
+//查询brief家族信息
+message MsgReqBriefGuildInfoQuery {
+	repeated uint32 ids = 10;		//单次最多10个
+}
+
+message MsgRspBriefGuildInfoQuery {
+	repeated pb_common.BriefGuildInfo infos = 10;	//brief家族信息
+}
+
+//申请加入家族
+message MsgReqGuildJoinAsk {
+	optional uint32 guildid = 10;
+	optional string message = 20;		//留言
+}
+
+message MsgRspGuildJoinAsk {
+	optional pb_common.ReturnInfo ri = 10;	//
+	optional bool auto_join = 20[default = false];//是否自动加入了家族
+}
+
+//批准加入家族
+message MsgReqGuildJoinApprove {
+	optional uint32 guildid = 10;
+	optional uint32 target = 20;	//申请者id
+	optional uint32 answer = 30;	// 1: 同意 2：拒绝
+}
+
+message MsgRspGuildJoinApprove {
+	optional pb_common.ReturnInfo ri = 10;	//
+}
+
+//家族-邀请
+message MsgReqGuildInviteAsk {
+	optional uint32 guildid = 10;
+	optional uint32 target = 20;	//目标	
+	optional string message = 30;
+}
+
+message MsgRspGuildInviteAsk {
+	optional pb_common.ReturnInfo ri = 10;	
+}
+
+//家族-响应邀请
+message MsgReqGuildInviteApprove {
+	optional uint32 guildid = 10;	//家族id	
+	optional uint32 answer = 20;	// 1: 同意 2：拒绝	
+}
+
+message MsgRspGuildInviteApprove {
+}
+
+//家族-邀请删除
+message MsgReqGuildInviteRemove {
+	optional uint32 guildid = 10;	//家族id	
+	optional uint32 target = 20;	
+}
+
+message MsgRspGuildInviteRemove {
+}
+
+//家族成员退出
+message MsgReqGuildMemberQuit {
+	optional uint32 guildid = 10;
+}
+
+message MsgRspGuildMemberQuit {
+}
+
+//开除组员
+message MsgReqGuildMemberRemove {
+	optional uint32 guildid = 10;
+	optional uint32 target = 20;
+}
+
+message MsgRspGuildMemberRemove {
+}
+
+//家族-禅让组长
+message MsgReqGuildLeaderAssign {
+	optional uint32 guildid = 10;
+	optional uint32 target = 20;
+	//optional uint32 code = 30;	//验证码(暂时不需要)
+}
+
+message MsgRspGuildLeaderAssign {
+	
+}
+
+// 获取RichGuildInfo的版本号
+message MsgReqRichGuildVersionQuery {
+  	optional uint32 guildid = 10;
+}
+
+message MsgRspRichGuildVersionQuery {
+  	optional uint32 version = 10;
+	//optional pb_common.BattleIdInfo attack_battleid = 20;	
+	//optional pb_common.BattleIdInfo defend_battleid = 30;
+}
+
+// 成员职位任命
+message MsgReqGuildPositionAssign {
+	optional uint32 guildid = 10;
+	optional uint32 target = 20;
+	optional uint32 position = 30;	
+}
+
+message MsgRspGuildPositionAssign {
+}
+
+// 放置家族祭坛
+//message MsgReqGuildBuyAltar {
+//	optional uint32 cost = 10;
+//}
+
+//message MsgRspGuildBuyAltar {
+//	optional pb_common.ReturnInfo ri = 10;
+//	optional pb_common.FiefInfo fi = 20;
+//	optional pb_common.LordFiefInfo li = 30;
+//}
+
+// 家族购买建筑
+//message MsgReqGuildBuildingBuy {
+//	optional uint32 guildid = 10;
+//	optional uint32 itemid = 20;
+//	optional uint32 type = 30; // 1-资源购买 2-元宝补充
+//}
+
+//message MsgRspGuildBuildingBuy {
+//	optional pb_common.GuildInfo guild_info = 10;
+//	optional pb_common.GuildReturnInfo gri = 20;
+//}
+
+////家族捐赠
+//message MsgReqGuildDonate {
+//	optional uint32 guildid = 10;
+//	optional pb_common.RoleAttrInfo infos = 20;
+//}
+
+//message MsgRspGuildDonate {
+//	optional pb_common.GuildInfo guild_info = 10;
+//	optional pb_common.GuildReturnInfo gri = 20;
+//	optional pb_common.ReturnInfo ri = 30;
+//}
+
+//启动家族神像
+//message MsgReqGuildStatueStart {
+//	optional uint32 guildid = 10;
+//	optional uint32 itemid = 20;	//目标建筑
+//}
+
+//message MsgRspGuildStatueStart {
+//	optional pb_common.ReturnInfo ri = 10;
+//	optional pb_common.ManorInfo mi = 20;//可能需要返回其他的
+//}
+
+/////////////////////////////////////////
+//领地收藏夹 - 加入
+message MsgReqFavoriteFiefAdd {
+	optional uint64 fiefid = 10;
+}
+
+message MsgRspFavoriteFiefAdd {
+}
+
+//领地收藏夹 - 删除
+message MsgReqFavoriteFiefDel {
+	optional uint64 fiefid = 10;
+}
+
+message MsgRspFavoriteFiefDel {
+}
+
+//领地收藏夹-查询
+message MsgReqFavoriteFiefQuery {
+}
+
+message MsgRspFavoriteFiefQuery {
+	repeated uint64 fiefids = 10;
+}
+
+// 家族静态数据查询
+message MsgReqStaticGuildDataQuery {
+    	optional pb_common.StaticGuildDataType data_type = 10;  // 静态数据类型
+    	optional uint32 guildid = 20;                           // 家族id
+    	optional uint64 id = 30;                                // 取比这个id小的数据。如果为0，则从最新数据开始取
+    	optional uint32 count = 40;		                          // 返回的数量
+}
+
+message MsgRspStaticGuildDataQuery {
+  	optional pb_common.StaticGuildDataType data_type = 10;
+  	repeated pb_common.GuildLogInfo guild_log_infos = 20;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+//将领系统
+///////////////////////////////////////////////////////////////////////////////
+
+//刷新可招募将领
+message MsgReqHeroRefresh {
+	//optional uint64 buildingid = 10;	//酒馆对应buildingid
+	optional uint32 refresh_type = 10;		//刷新方式 1:盲选 2：商店
+}
+
+message MsgRspHeroRefresh {
+	optional pb_common.HeroShopInfo shop_info = 10;	//
+	optional pb_common.ReturnInfo ri = 20;
+	optional pb_common.HeroInfo hero_info = 30;
+}
+
+
+//购买将领
+message MsgReqHeroBuy {
+	optional uint32 id = 20;	//商店对应编号	
+}
+
+message MsgRspHeroBuy {
+	optional pb_common.ReturnInfo ri = 10;	
+	optional pb_common.HeroInfo info = 20;
+}
+
+//兑换将领
+message MsgReqHeroExchange {
+	optional uint32 id = 20;	//对应编号	
+}
+
+message MsgRspHeroExchange {
+	optional pb_common.ReturnInfo ri = 10;	
+	optional pb_common.HeroInfo info = 20;
+}
+
+
+//解雇将领
+message MsgReqHeroAbandon {
+	optional uint64 hero = 10;	
+}
+
+message MsgRspHeroAbandon {
+	optional pb_common.ReturnInfo info = 10;
+}
+
+//查询其他玩家的将领信息
+message MsgReqOtherUserHeroInfoQuery {
+	optional uint32 target = 10;	//对应将领所属userid
+	repeated uint64 ids = 20;	//将领id（如果不传，默认全查）
+}
+
+message MsgRspOtherUserHeroInfoQuery {
+	repeated pb_common.OtherHeroInfo infos = 10;
+}
+
+//将领强化
+message MsgReqHeroEnhance {
+	optional uint64 hero = 10;	//对应id
+	optional uint32 type = 20;	//强化类型 1功勋强化 2元宝强化 3道具强化 4一键元宝强化
+}
+
+message MsgRspHeroEnhance {
+	optional pb_common.ReturnInfo ri = 10;	
+	optional pb_common.HeroInfo info = 20;
+}
+
+
+//将领-技能学习
+message MsgReqHeroSkillStudy {
+	optional uint64 hero = 10;	//将领id
+	optional uint32 slotid = 20; 	//技能槽id
+	optional uint32 skillid = 30;
+}
+
+message MsgRspHeroSkillStudy {
+	optional uint32 study_result = 10;	//学习结果 1：成功 2：失败
+	optional pb_common.ReturnInfo ri = 20;
+}
+
+//将领-技能放弃
+message MsgReqHeroSkillAbandon {
+	optional uint64 hero = 10;	//将领id
+	optional uint32 slotid = 20; //技能槽id
+}
+
+message MsgRspHeroSkillAbandon {	
+}
+
+//将领 - 恢复体力
+message MsgReqHeroStaminaRecovery {
+	optional uint64 hero = 10;
+	optional uint32 currency = 20;
+}
+
+message MsgRspHeroStaminaRecovery {
+	optional pb_common.HeroInfo info = 10;
+	optional pb_common.ReturnInfo return_info = 20;
+}
+
+//将领 - 进化
+message MsgReqHeroEvolve {
+	optional uint64 hero = 10;
+	optional uint32 type = 20;// 1:金币 2:元宝
+}
+
+message MsgRspHeroEvolve {
+	optional pb_common.ReturnInfo ri = 10;
+	optional pb_common.HeroInfo hero_info = 20;
+
+}
+
+//将领 - 吞噬
+message MsgReqHeroDevour {
+	optional uint64 hero = 10;
+	repeated uint64 bagids = 20;	//被使用的包裹id
+	optional uint32 type = 30;//1:物品 2：元宝
+}
+
+message MsgRspHeroDevour {
+	optional pb_common.ReturnInfo ri = 10;
+	optional pb_common.HeroInfo hero_info = 20;
+}
+
+//将领 - 宠幸
+message MsgReqHeroFavour {
+	optional uint64 hero = 10;
+	optional uint32 slotid = 20;	
+}
+
+message MsgRspHeroFavour {
+	optional pb_common.ReturnInfo ri = 10;
+	optional pb_common.HeroInfo hero_info = 20;
+}
+
+//装备 - 购买
+message MsgReqEquipmentBuy {
+	optional uint32 scheme = 10;//
+}
+
+message MsgRspEquipmentBuy {
+	optional pb_common.ReturnInfo ri = 10;
+	optional pb_common.EquipmentInfo equipment_info = 20;
+}
+
+//装备 - 使用
+message MsgReqEquipmentReplace {
+	optional uint64 id = 10;
+	optional uint64 src_hero = 20; //原使用者id
+	optional uint64 target_hero = 30; //
+}
+
+message MsgRspEquipmentReplace {
+	optional pb_common.HeroInfo target_hero_info = 10;
+	optional pb_common.HeroInfo src_hero_info = 20;	//如果存在原使用者
+	optional pb_common.EquipmentInfo replaced_equipment_info = 30; //如果目标原来位置有装备
+}
+
+//装备 - 卸下
+message MsgReqEquipmentDisarm {
+	optional uint64 id = 10;
+	optional uint64 target_hero = 30; //
+}
+
+message MsgRspEquipmentDisarm {
+	optional pb_common.HeroInfo hero_info = 10;
+	optional pb_common.EquipmentInfo replaced_equipment_info = 20; 
+}
+
+//装备 - 卖出
+message MsgReqEquipmentSell {
+	optional uint64 id = 10;
+}
+
+message MsgRspEquipmentSell {
+	optional pb_common.ReturnInfo ri = 10;
+}
+
+//装备 - 镶嵌宝石
+message MsgReqEquipmentItemInsert{
+	optional uint64 id = 10;	//装备id
+	optional uint64 hero = 20; 	//如果装备使用，对应武将
+	optional uint32 itemid = 30;	//宝石id
+}
+
+message MsgRspEquipmentItemInsert {
+	optional pb_common.ReturnInfo ri = 10;
+	optional pb_common.HeroInfo hero_info = 20;	//如果装备被使用
+	optional pb_common.EquipmentInfo equipment_info = 30; //如果装备未使用
+}
+
+//装备 - 卸下宝石
+message MsgReqEquipmentItemRemove{
+	optional uint64 id = 10;	//装备id
+	optional uint64 hero = 20; 	//如果装备使用，对应武将
+}
+
+message MsgRspEquipmentItemRemove {
+	optional pb_common.ReturnInfo ri = 10;
+	optional pb_common.HeroInfo hero_info = 20;	//如果装备被使用
+	optional pb_common.EquipmentInfo equipment_info = 30; //如果装备未使用
+}
+
+//装备 - 锻造
+message MsgReqEquipmentForge{
+	optional uint64 id = 10;	//装备id
+	optional uint64 hero = 20; 	//如果装备使用，对应武将
+	optional uint32 effect_type = 30;	//目标效果
+	optional bool use_currency = 40 [default = false];	//是否用元宝填补差价
+}
+
+message MsgRspEquipmentForge {
+	optional pb_common.ReturnInfo ri = 10;
+	optional pb_common.HeroInfo hero_info = 20;	//如果装备被使用
+	optional pb_common.EquipmentInfo equipment_info = 30; //如果装备未使用
+}
+
+//装备 - 升级
+message MsgReqEquipmentLevelup{
+	optional uint64 id = 10;	//装备id
+	optional uint64 hero = 20; 	//如果装备使用，对应武将
+	optional uint32 type = 30;	//1:道具升级 2：元宝补足道具 3：一键99级
+}
+
+message MsgRspEquipmentLevelup {
+	optional pb_common.ReturnInfo ri = 10;
+	optional pb_common.HeroInfo hero_info = 20;	//如果装备被使用
+	optional pb_common.EquipmentInfo equipment_info = 30; //如果装备未使用
+}
+
+//装备 - 宝石升级
+message MsgReqEquipmentInsertItemLevelup{
+	optional uint64 id = 10;	//装备id
+	optional uint64 hero = 20; 	//如果装备使用，对应武将
+}
+
+message MsgRspEquipmentInsertItemLevelup {
+	optional pb_common.ReturnInfo ri = 10;
+	optional pb_common.HeroInfo hero_info = 20;	//如果装备被使用
+	optional pb_common.EquipmentInfo equipment_info = 30; //如果装备未使用
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//领地-选择守城将领
+message MsgReqFiefHeroSelect {
+	optional uint64 fiefid = 10;
+	repeated pb_common.HeroIdInfo hero_infos = 20; // role 为0，去除守城
+}
+
+message MsgRspFiefHeroSelect {
+	
+}
+
+
+//查询其他领主的兵力详情
+message MsgReqOtherLordTroopInfoQuery {
+	optional uint32 target = 10;
+}
+
+message MsgRspOtherLordTroopInfoQuery {
+	optional pb_common.TroopInfo info = 10;
+}
+
+
+// 新手教程结束
+message MsgReqTrainingComplete {
+	optional uint32	channel = 10;	//渠道号
+	optional uint64 training = 20;	
+}
+
+message MsgRspTrainingComplete {
+	optional pb_common.ReturnInfo info = 10;
+}
+
+// 寻找空闲的城堡位置
+message MsgReqManorRecommendEmptySpace {
+	optional uint64 pos = 10;	//玩家当前所在位置
+}
+
+message MsgRspManorRecommendEmptySpace {
+	optional uint64 pos = 10;	//空闲的位置
+}
+
+
+///////////////////////////////////////////////////////////////////////////////
+// 新协议
+///////////////////////////////////////////////////////////////////////////////
+// 寻找空闲的领地
+message MsgReqFiefRecommendEmptySpace {
+	optional uint64 pos = 10;	//玩家当前所在位置
+	optional uint32 province = 20;	//如果pos为0，此字段有效
+	optional uint32 city = 30;	//如果pos为0，此字段有效
+}
+
+message MsgRspFiefRecommendEmptySpace {
+	optional uint64 zoneid = 10;	//空闲的zone
+}
+
+// 放下城堡
+message MsgReqManorLayDown {
+	optional uint64 zoneid = 10;	//空闲的zone
+}
+
+message MsgRspManorLayDown {
+	optional pb_common.ReturnInfo ri = 10;  // 
+	optional pb_common.ManorInfo mi = 20;  // 
+	optional pb_common.LordFiefInfo lfi = 30;
+	optional pb_common.FiefInfo fi = 40;
+}
+
+// 随机移动城堡
+message MsgReqManorRandomMove {
+}
+
+message MsgRspManorRandomMove {
+	optional pb_common.ReturnInfo ri = 10;  // 
+	optional pb_common.ManorInfo mi = 20;  // 
+	optional pb_common.LordFiefInfo lfi = 30;
+	optional pb_common.FiefInfo fi = 40;
+}
+/////////////////////////////////////////////////////////////
+// 副本 
+/////////////////////////////////////////////////////////////
+// 副本重置
+message MsgReqDungeonReset {
+	optional uint32 actid = 10;	// actid
+	optional uint32 campaignid = 20;	// campaignid
+	optional uint32 type = 30;	// （1：正常消耗 2：元宝消耗）
+}
+
+message MsgRspDungeonReset {
+	optional pb_common.ReturnInfo ri = 10;
+	optional pb_common.CampaignInfo info = 20;
+}
+
+// 副本占卜
+message MsgReqDungeonDivine {
+	optional uint32 actid = 10;	// actid
+	optional uint32 campaignid = 20;	// campaignid
+	optional uint32 mode = 30;	// 难度  
+	optional uint64 hero = 40;	// 英雄ID
+	optional pb_common.TroopInfo troop = 50; // 用户提供的部队
+}
+
+message MsgRspDungeonDivine {
+	optional uint32 divine_result = 10;	//占卜结果
+	optional pb_common.ReturnInfo ri = 20;
+}
+
+// 副本通关奖励
+message MsgReqDungeonReward {
+	optional uint32 actid = 10;
+}
+
+message MsgRspDungeonReward {
+	optional pb_common.ReturnInfo ri = 10;
+}
+
+// 副本扫荡
+message MsgReqDungeonClear {
+	optional uint32 actid = 10;
+	repeated pb_common.HeroIdInfo hero_infos = 20;
+}
+
+message MsgRspDungeonClear {
+	optional pb_common.ReturnInfo ri = 10;
+	optional pb_common.ActInfo act_info = 20;
+	repeated pb_common.HeroInfo hero_infos = 30;
+	optional pb_common.BattleLogInfo log = 40;
+}
+
+// 副本重置
+message MsgReqDungeonActReset {
+	optional uint32 actid = 10;	// actid
+	repeated uint32 campaignids = 20;
+	optional uint32 type = 30;	// （1：正常消耗 2：元宝消耗）
+}
+
+message MsgRspDungeonActReset {
+	optional pb_common.ReturnInfo ri = 10;
+	repeated pb_common.CampaignInfo infos = 20;
+}
+
+
+message MsgReqMessagePost {
+	optional uint32 type = 10;	// 1: 私聊 2：家族 3：国家 4：世界
+	optional uint32 target = 20;	// 根据type选择目标
+	optional string context = 30;
+}
+
+message MsgRspMessagePost {
+	optional pb_common.ReturnInfo ri = 10;
+}
+
+// 士兵强化
+message MsgReqArmEnhance {
+	optional uint32 armid = 10;	//兵种id
+	optional uint32 effectid = 20;	//属性id
+	optional uint32 type = 30;	// 1.资源强化 2.元宝强化
+}
+
+message MsgRspArmEnhance {
+	optional pb_common.ReturnInfo ri = 10;
+	optional pb_common.ArmPropInfo arm_info = 20;	//兵种科技信息
+}
+
+//玩家签到
+message MsgReqUserCheckIn {
+}
+
+message MsgRspUserCheckIn {
+	optional pb_common.ReturnInfo ri = 10;	
+}
+
+//
+message MsgReqPlayerUpdate {
+	optional uint32 image = 20;	      // 个人头像
+	optional string nick = 30;        // 昵称
+	optional uint32 sex = 40;			    // 性别(1 : 女 2 : 男)
+	optional uint32 birthday = 50;		// 生日
+	optional uint32 province = 60;		//省份（只有当前为0时才允许修改，其他时候忽略）
+	optional string desc	= 140;	// 个人描述	
+}
+
+message MsgRspPlayerUpdate {
+	optional pb_common.ReturnInfo ri = 10;
+}
+
+//个人追杀令
+message MsgReqPlayerWanted {
+	optional uint32 target = 10;
+}
+
+message MsgRspPlayerWanted {
+	optional pb_common.ReturnInfo ri = 10;
+}
+
+// 查询追杀令信息
+message MsgReqPlayerWantedInfoQuery {
+  optional uint32 country = 10;
+  optional uint64 id = 20;        // 取比这个id小的数据。如果为0，则从最新数据开始取
+  optional uint32 count = 30;		  // 返回的数量，最大10条
+}
+
+message MsgRspPlayerWantedInfoQuery {
+  repeated pb_common.PlayerWantedInfo infos = 10;
+}
+
+message MsgReqGuildSearch {
+	optional uint32 start = 10;
+	optional uint32 count = 20;
+	repeated pb_common.GuildSearchCond conds = 30;
+}
+
+message MsgRspGuildSearch {
+  repeated pb_common.GuildSearchInfo infos = 10;
+}
+
+// 富矿列表查询
+message MsgReqAdvancedSiteQuery {
+	optional uint32 propid = 10;
+	optional uint32 start = 20;
+	optional uint32 count = 30;	//单次最大50个
+}
+
+message MsgRspAdvancedSiteQuery {
+	repeated uint64 fiefids = 10;
+}
+
+// 荣耀排行
+message MsgReqHonorRankInfo {
+  optional pb_common.HonorRankType type = 10;
+  optional uint32 start = 20;
+  optional uint32 count = 30;
+  optional uint32 guildid = 40; // 请求家族之光榜时带上
+}
+
+message MsgRspHonorRankInfo {
+  repeated pb_common.HonorRankInfo infos = 10;
+  optional pb_common.HonorRankInfo self_info = 20; // 自己的排名信息
+  optional uint32 self_pos = 30;                   // 自己的名次
+  optional uint32 total = 40;
+}
+
+// 武将排行
+message MsgReqHeroRankInfo {
+  optional uint32 start = 10;
+  optional uint32 count = 20;
+}
+
+message MsgRspHeroRankInfo {
+  repeated pb_common.HeroRankInfo infos = 10;
+  optional uint32 total = 20;
+}
+
+
+// 玩家排行
+message MsgReqUserRankInfo {
+  optional pb_common.UserRankType type = 10;
+  optional uint32 start = 20;
+  optional uint32 count = 30;
+}
+
+message MsgRspUserRankInfo {
+  repeated pb_common.UserRankInfo infos = 10;
+  optional uint32 self_pos = 20;   // 自己的名次
+  optional uint32 total = 30;
+}
+
+// 排行榜领奖
+message MsgReqRankReward {
+	optional uint32 type = 10;	// 榜单1.个人荣耀 2.家族荣耀 3.个人武将  
+}
+
+message MsgRspRankReward {
+	optional pb_common.ReturnInfo ri = 10;
+}
+
+/////////////////////////////////////////////////////////////
+// 巅峰战场
+/////////////////////////////////////////////////////////////
+// 挑战
+message MsgReqArenaAttack {
+	optional uint32 target = 10;			// 目标
+	optional uint32 target_pos = 20;	// 目标排位
+	optional uint32 self_pos = 30;		// 自己排位
+}
+
+message MsgRspArenaAttack {
+	optional pb_common.LordInfo li = 10;	// 目标排位
+	optional pb_common.ReturnInfo ri = 20;
+	optional pb_common.ArenaLogInfo info = 30;
+}
+
+// 保存部队配置
+message MsgReqArenaConf {
+	repeated pb_common.HeroIdInfo heros = 10; // 英雄配置
+	optional pb_common.TroopInfo troop = 20;  // 部队配置
+}
+
+message MsgRspArenaConf {
+	optional pb_common.LordInfo li = 10;
+}
+
+// 巅峰战场领取奖励 
+message MsgReqArenaReward{	
+}
+
+// 巅峰战场领取奖励 
+message MsgRspArenaReward{	
+	optional pb_common.ReturnInfo ri = 10;
+	optional pb_common.LordInfo li = 20;
+}
+
+// 查询巅峰战场信息
+message MsgReqArenaQuery {
+	//optional uint32 self_pos = 10;
+	optional bool top_pos = 20;//是否需要top10的数据
+}
+
+message MsgRspArenaQuery {
+	repeated pb_common.ArenaUserRankInfo attackable_infos = 10;//可选择挑战的玩家对象
+	repeated pb_common.ArenaUserRankInfo other_infos = 20;	//其他玩家对象的信息
+}
+
+//墓地复活
+message MsgReqManorRevive {
+	optional uint32 target = 10;	//1：普通士兵 2：boss
+	optional uint32 buildingid = 20;
+	repeated uint32 armids = 30;	//目标兵种
+	optional uint32 boss_armid = 40;
+	optional uint32 boss_count = 50;
+}
+
+message MsgRspManorRevive {
+	optional pb_common.ReturnInfo ri = 10;	
+	optional pb_common.ManorInfo mi = 20;	
+	optional pb_common.LordInfo li = 30;	
+}
+
+//墓地复活-弃疗
+message MsgReqManorReviveClean {
+
+}
+
+message MsgRspManorReviveClean {
+	optional pb_common.LordInfo li = 30;	
+}
+
+
+/////////////////////////////////////////////////////////////
+// 血战
+/////////////////////////////////////////////////////////////
+// 血战开战
+message MsgReqBloodAttack {
+	optional uint32 num = 10;
+}
+
+message MsgRspBloodAttack {
+	optional pb_common.LordInfo li = 10;
+	optional pb_common.ReturnInfo ri = 20;
+	optional pb_common.BattleLogInfo log = 30;
+}
+
+// 保存部队配置
+message MsgReqBloodConf {
+	repeated pb_common.HeroIdInfo hero_infos = 10; // 英雄配置
+	optional pb_common.TroopInfo troop = 20;  // 部队配置
+}
+
+message MsgRspBloodConf {
+	optional pb_common.LordInfo li = 10;
+}
+
+// 血战翻牌 
+message MsgReqBloodPoker{
+	optional uint32 pos = 10;
+}
+
+message MsgRspBloodPoker{	
+	optional pb_common.KeyValue info = 10;
+}
+
+// 血战领取奖励 
+message MsgReqBloodReward{
+}
+
+message MsgRspBloodReward{	
+	optional pb_common.ReturnInfo ri = 10;
+	optional pb_common.LordInfo li = 20;
+}
+
+// 血战排行榜查询
+message MsgReqBloodRankQuery {
+	optional uint32 start = 10;
+	optional uint32 count = 20;
+	optional bool  self = 30;
+}
+
+message MsgRspBloodRankQuery {
+	repeated pb_common.BloodRankInfo infos = 10;
+}
+
+// 血战排行榜领奖
+message MsgReqBloodRankReward {
+}
+
+message MsgRspBloodRankReward{	
+	optional pb_common.ReturnInfo ri = 10;
+}
+
+//充值相关
+message MsgReqChargeMonthReward {
+}
+
+message MsgRspChargeMonthReward{	
+	optional pb_common.ReturnInfo ri = 10;
+	optional pb_common.RoleChargeInfo charge_info = 20; 
+}

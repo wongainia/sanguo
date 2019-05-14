@@ -1,0 +1,92 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/awardLayout"
+    style="@style/fill_parent"
+    android:paddingTop="10dip" >
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:orientation="vertical" >
+
+        <ScrollView
+            android:id="@+id/thingFrame"
+            style="@style/w_fill_h_wrap"
+            android:layout_weight="1" >
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:layout_gravity="top|center_horizontal"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/bonusFrame"
+                    style="@style/w_fill_h_wrap"
+                    android:layout_gravity="top|center_horizontal"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/setoff_troop_top"
+                        android:layout_width="fill_parent"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="2dip"
+                        android:text="战利品"
+                        android:textColor="@color/k7_color1"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:id="@+id/bonusList"
+                        style="@style/fill_parent"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:paddingBottom="10dip"
+                        android:paddingLeft="10dip"
+                        android:paddingRight="10dip" >
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/plunderFrame"
+                    style="@style/w_fill_h_wrap"
+                    android:layout_gravity="top|center_horizontal"
+                    android:orientation="vertical"
+                    android:visibility="visible" >
+
+                    <TextView
+                        style="@style/setoff_troop_top"
+                        android:layout_width="fill_parent"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="2dip"
+                        android:text="资源损失"
+                        android:textColor="@color/k7_color1"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:id="@+id/plunderList"
+                        style="@style/fill_parent"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:paddingBottom="10dip"
+                        android:paddingLeft="10dip"
+                        android:paddingRight="10dip" >
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/otherBonus"
+            style="@style/k7_color1_13"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="2dip"
+            android:layout_marginTop="2dip"
+            android:background="@drawable/button3"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/other"
+        style="@style/color4_17"
+        android:layout_gravity="center"
+        android:text="无法查看他人战斗的战利品"
+        android:visibility="gone" />
+
+</FrameLayout>

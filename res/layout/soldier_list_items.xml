@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/item_bg"
+    android:orientation="horizontal"
+    android:paddingBottom="5dip"
+    android:paddingLeft="10dip"
+    android:paddingRight="10dip"
+    android:paddingTop="5dip"  >
+    
+    <!-- 士兵头像 -->
+    <include layout="@layout/skill_icon" />
+
+
+    <!-- 士兵信息 -->
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="5dip"
+        android:orientation="vertical" 
+        android:background="@color/blue">
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:orientation="horizontal" >
+
+            <!-- 兵种 -->
+            <TextView
+                android:id="@+id/soldier_Name"
+                style="@style/color11_16"
+                 />
+
+            <TextView
+                style="@style/wrap_content"
+                android:layout_weight="1" />
+
+            <!-- 数量 -->
+            <TextView
+                android:id="@+id/soldier_Count"
+                style="@style/color9_14"
+                android:layout_marginLeft="5dip" />
+        </LinearLayout>
+
+        
+        <!-- 兵种特性 -->
+        <TextView
+            android:id="@+id/soldier_Trait"
+            style="@style/color1_14"
+            android:gravity="left"
+            android:layout_marginTop="2dip" />
+
+    </LinearLayout>
+    
+</LinearLayout>

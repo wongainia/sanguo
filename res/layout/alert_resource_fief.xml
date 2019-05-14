@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="4dip"
+    android:paddingLeft="10dip"
+    android:paddingRight="10dip"
+    android:paddingTop="4dip" >
+
+    <ScrollView
+        style="@style/fill_parent"
+        android:layout_gravity="center_horizontal"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            style="@style/fill_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <include layout="@layout/alert_fief_head" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="3dip" />
+
+            <!-- 产出 -->
+
+            <include layout="@layout/fief_product" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="5dip" />
+
+            <!-- 按钮 -->
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/battleBtn"
+                style="@style/btn_common"
+                android:text="查看战场"
+                android:visibility="gone" />
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/assistAttackBtn"
+                style="@style/btn_common"
+                android:layout_marginTop="4dip"
+                android:text="协助进攻"
+                android:visibility="gone" />
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/assistDefendBtn"
+                style="@style/btn_common"
+                android:layout_marginTop="4dip"
+                android:text="协助防守"
+                android:visibility="gone" />
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/buildBtn"
+                style="@style/btn_common"
+                android:layout_marginTop="4dip"
+                android:text="建造建筑"
+                android:visibility="gone" />
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/receiveBtn"
+                style="@style/btn_common"
+                android:layout_marginTop="4dip"
+                android:text="收获资源"
+                android:visibility="gone" />
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/updateBuildBtn"
+                style="@style/btn_common"
+                android:layout_marginTop="4dip"
+                android:text="升级建筑"
+                android:visibility="gone" />
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/transferBtn"
+                style="@style/btn_common"
+                android:layout_marginTop="4dip"
+                android:text="调动部队"
+                android:visibility="gone" />
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/expeditionBtn"
+                style="@style/btn_common"
+                android:layout_marginTop="4dip"
+                android:text="出兵征战"
+                android:visibility="gone" />
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/detailBtn"
+                style="@style/btn_common"
+                android:layout_marginTop="4dip"
+                android:text="领地详情"
+                android:visibility="gone" />
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/favoriteBtn"
+                style="@style/btn_common"
+                android:layout_marginTop="4dip"
+                android:text="添加收藏"
+                android:visibility="gone" />
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/closeBtn"
+                style="@style/btn_common"
+                android:layout_marginTop="4dip"
+                android:text="关闭"
+                android:visibility="gone" />
+
+            <TextView
+                style="@style/wrap_content"
+                android:layout_width="4dip" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent" >
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:clickable="true"
+        android:orientation="vertical"
+        android:paddingLeft="8dip"
+        android:paddingRight="8dip"
+        android:paddingTop="6dip"
+        
+        android:paddingBottom="40dip" >
+
+        <FrameLayout style="@style/custom_dialog_item_bg" >
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dip"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/color18_15"
+                    android:text="自动接受" />
+
+                <TextView
+                    style="@style/color9_13"
+                    android:layout_marginTop="3dip"
+                    android:text="是否自动接受玩家加入申请" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/joinOpen"
+                style="@style/wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="10dip"
+                android:background="@drawable/checked_bg" >
+
+                <ImageView
+                    android:id="@+id/set"
+                    style="@style/wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/checked_top" />
+            </FrameLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+</ScrollView>

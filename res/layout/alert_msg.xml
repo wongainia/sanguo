@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/wrap_content"
+    android:background="@drawable/alert_common_bg"
+    android:padding="6dip" >
+
+    <LinearLayout
+        android:id="@+id/customContent"
+        style="@style/fill_parent"
+        android:orientation="vertical"
+        android:visibility="gone" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/msgContent"
+        style="@style/wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dip"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/color7_15"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="5dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/msg"
+            style="@style/color13_12"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="4dip"
+            android:maxWidth="220dip" />
+
+        <TextView
+            android:id="@+id/msgExtend"
+            style="@style/color13_10"
+            android:layout_gravity="center_horizontal"
+            android:maxWidth="220dip" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/touchDesc"
+        style="@style/color14_10"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="4dip"
+        android:text="点击任意位置关闭" />
+
+</FrameLayout>

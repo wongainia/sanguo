@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:background="@drawable/alert_scroll_bg_selector"
+    android:gravity="center_vertical"
+    android:orientation="horizontal" >
+
+    <FrameLayout
+        style="@style/center_v"
+        android:layout_marginBottom="5dip"
+        android:layout_marginLeft="5dip"
+        android:layout_marginTop="5dip" >
+
+        <include layout="@layout/fief_icon" />
+    </FrameLayout>
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/name"
+                style="@style/color7_12" />
+
+            <TextView
+                android:id="@id/country"
+                style="@style/color7_12"
+                android:layout_marginLeft="5dip"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/lord"
+            style="@style/color4_11"
+            android:layout_marginTop="3dip" />
+
+        <TextView
+            android:id="@+id/troop"
+            style="@style/color4_11"
+            android:layout_marginTop="3dip" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/deleteBtn"
+        style="@style/wrap_content"
+        android:layout_gravity="right|top"
+        android:layout_marginRight="2dip"
+        android:layout_marginTop="2dip"
+        android:background="@drawable/delete_friend_sg"
+        android:visibility="gone" />
+
+</LinearLayout>

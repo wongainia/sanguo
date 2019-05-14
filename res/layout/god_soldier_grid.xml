@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/items"
+    android:layout_width="87dip"
+    android:layout_height="121dip">
+
+    <TextView
+        android:id="@+id/name"
+        style="@style/k7_color6_13"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="5dip" />
+
+    <ImageView
+        android:id="@+id/icon"
+        style="@style/wrap_content"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:id="@+id/price"
+        style="@style/k7_color1_13"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="5dip"/>
+
+</FrameLayout>

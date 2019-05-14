@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/wrap_content" >
+
+    <ImageView
+        style="@style/wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/has_troop_bg_arm" />
+
+    <ImageView
+        style="@style/wrap_content"
+        android:layout_gravity="center"
+         />
+
+</FrameLayout>

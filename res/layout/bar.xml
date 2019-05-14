@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/bg"
+        style="@style/w_fill_h_wrap"/>
+
+    <LinearLayout
+        style="@style/fill_parent"
+        android:orientation="vertical" >
+
+        <!-- 上部分 -->
+
+        <FrameLayout style="@style/w_fill_h_wrap" >
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/midLeft"
+                    style="@style/wrap_content"/>
+
+                <ImageView
+                    android:id="@+id/midRight"
+                    style="@style/wrap_content" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/top"
+                style="@style/w_fill_h_wrap"
+                android:layout_gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/color7_24"
+                android:layout_gravity="top|center_horizontal"
+                android:layout_marginTop="10dip"
+                android:text="红楼" />
+        </FrameLayout>
+
+        <!-- 中部分 -->
+
+       <FrameLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_weight="1" 
+            android:id="@+id/btn_select_layout"
+            android:layout_marginTop="-7dip" >
+
+            <ImageView
+                android:id="@+id/heroRefreshBottom"
+                style="@style/fill_parent" />
+
+            <FrameLayout
+                android:id="@+id/propertyLayout"
+                style="@style/w_fill_h_wrap">
+
+                <ImageView
+                    android:id="@+id/heroRefreshMid"
+                    style="@style/w_fill_h_wrap"/>
+            </FrameLayout>
+
+                <LinearLayout
+                    style="@style/w_fill_h_wrap"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"  >
+
+                    <TextView
+                        style="@style/wrap_content"
+                        android:layout_weight="1" />
+
+                    <com.vikings.sanguo.ui.PressedZoomButton
+                        android:id="@+id/singleBtn"
+                        style="@style/btn_common"
+                        android:text="盲  选" />
+
+                    <TextView
+                        style="@style/wrap_content"
+                        android:layout_weight="1" />
+
+                    <com.vikings.sanguo.ui.PressedZoomButton
+                        android:id="@+id/groupBtn"
+                        style="@style/btn_common"
+                        android:layout_marginTop="10dip"
+                        android:text="翻  牌" />
+
+                    <TextView
+                        style="@style/wrap_content"
+                        android:layout_weight="1" />
+
+                    <com.vikings.sanguo.ui.PressedZoomButton
+                        android:id="@+id/exchangeBtn"
+                        style="@style/btn_common"
+                        android:layout_marginTop="10dip"
+                        android:text="兑  换" />
+
+                    <TextView
+                        style="@style/wrap_content"
+                        android:layout_weight="1" />
+                </LinearLayout>
+                <!-- 
+            </FrameLayout>
+             -->
+        </FrameLayout>
+    </LinearLayout>
+
+</FrameLayout>

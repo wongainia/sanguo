@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="65dip"
+    android:layout_gravity="center_vertical"
+    android:background="#181818"
+    android:orientation="horizontal" >
+
+    <FrameLayout
+        android:layout_width="65dip"
+        android:layout_height="65dip"
+        android:background="#1c3740" >
+
+        <ImageView
+            android:id="@+id/notify_icon"
+            android:layout_width="45dip"
+            android:layout_height="45dip"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="70dip"
+        android:orientation="vertical" >
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical" >
+
+            <TextView
+                android:id="@+id/notify_title"
+                style="@style/color13_18" />
+
+            <TextView
+                android:id="@+id/notify_tick"
+                style="@style/color13_12"
+                android:layout_gravity="right"
+                android:layout_marginRight="8dip"
+                android:textColor="#a6a6a6" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/notify_prompt"
+            style="@style/color13_18"
+            android:textColor="#a6a6a6"
+            android:textSize="18dip" />
+    </LinearLayout>
+
+</FrameLayout>

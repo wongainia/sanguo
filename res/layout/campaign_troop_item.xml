@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/setoff_item_bg" >
+
+    <FrameLayout
+        style="@style/wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="10dip" >
+
+        <include layout="@layout/arm_icon" />
+    </FrameLayout>
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="5dip"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/name"
+                style="@style/color18_12" />
+
+            <TextView
+                android:id="@+id/count"
+                style="@style/color18_12" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/desc"
+            style="@style/color9_12"
+            android:gravity="left" />
+    </LinearLayout>
+
+</LinearLayout>

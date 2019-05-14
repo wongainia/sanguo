@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="3dip" >
+
+    <LinearLayout
+        android:id="@+id/itemsLayout"
+        style="@style/wrap_content"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/closeBt"
+        style="@style/btn_common"
+        android:layout_marginTop="5dip"
+        android:text="关  闭" />
+
+</LinearLayout>

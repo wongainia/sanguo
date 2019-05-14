@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/task_bg"
+    android:gravity="center_vertical"
+    android:paddingLeft="20dip"
+    android:paddingRight="10dip" >
+
+    <include layout="@layout/quest_icon" />
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:layout_marginLeft="3dip"
+        android:layout_marginRight="3dip"
+        android:layout_weight="1"
+        android:gravity="left"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/name"
+            style="@style/color16_14"
+            android:gravity="left" />
+
+        <TextView
+            android:id="@+id/desc"
+            style="@style/color13_12"
+            android:layout_marginTop="2dip"
+            android:gravity="left"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/condition"
+            style="@style/color13_12"
+            android:layout_marginTop="2dip"
+            android:gravity="left"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/finishBtn"
+        style="@style/btn_5"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="5dip"
+        android:text="兑换"
+        android:textColor="@color/color6"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

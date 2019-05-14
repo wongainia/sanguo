@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.vikings.sanguo.ui.AbnormalFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent"
+    android:clickable="true" >
+
+    <ImageView
+        android:id="@+id/bg"
+        style="@style/fill_parent" />
+
+    <ImageView
+        android:id="@+id/downAmyWall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|bottom"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/upAmyWall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|top"
+        android:visibility="invisible" />
+
+    <!-- 我方 -->
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:orientation="vertical" >
+
+        <!-- 兵力条 -->
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center_horizontal"
+            android:orientation="horizontal" >
+
+            <!-- 将领 -->
+
+            <RelativeLayout
+                android:id="@+id/up_officers_layout"
+                android:layout_width="126dip"
+                android:layout_height="105dip" >
+
+                <include layout="@layout/attak_officers_layout" />
+            </RelativeLayout>
+            <!-- 我方兵力 -->
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="top|center_horizontal"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/upScroll_layout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:gravity="top" >
+
+                    <HorizontalScrollView
+                        android:id="@+id/upScroll"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dip"
+                        android:paddingLeft="8dip"
+                        android:paddingRight="3dip"
+                        android:scrollbars="none" >
+
+                        <LinearLayout
+                            android:id="@+id/upAmy"
+                            android:layout_width="fill_parent"
+                            android:layout_height="50dip"
+                            android:orientation="horizontal"
+                            android:paddingLeft="5dip"
+                            android:paddingRight="5dip" >
+                        </LinearLayout>
+                    </HorizontalScrollView>
+                </LinearLayout>
+                <!-- 背景 -->
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/upScroll_layout"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="-12dip"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="20dip"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="18dip"
+                        android:layout_marginRight="18dip"
+                        android:background="@drawable/btl_attack_bg" />
+
+                    <LinearLayout
+                        android:layout_width="23dip"
+                        android:layout_height="23dip"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dip"
+                        android:background="@drawable/btl_bg"
+                        android:gravity="center"
+                        android:orientation="vertical" >
+
+                        <ImageView
+                            android:id="@+id/atkAttr"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp" />
+                    </LinearLayout>
+
+                    <!-- 我方昵称 -->
+
+                    <TextView
+                        android:id="@+id/upName"
+                        style="@style/k7_color6_19"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="44dip" />
+                    <!-- 攻防方 -->
+
+                </FrameLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/arm_info_layout"
+            style="@style/wrap_content"
+            android:layout_marginLeft="25dip"
+            android:layout_marginTop="5dip"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/upAmyHPInfo"
+                style="@style/wrap_content"
+                android:background="@drawable/hp_bg"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingBottom="4dip"
+                android:paddingTop="4dip"
+                android:visibility="invisible" >
+
+                <LinearLayout
+                    style="@style/wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/upAmyName"
+                        style="@style/wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLength="4"
+                        android:textColor="@color/k7_color22"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/upAmyCnt"
+                        style="@style/wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLength="8"
+                        android:textColor="@color/k7_color22"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <com.vikings.sanguo.ui.ProgressBar
+                    android:id="@+id/upAmyHP"
+                    style="@style/wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="2dip"
+                    android:layout_marginRight="2dip"
+                    android:background="@drawable/arm_hp_bg"
+                    android:src="@drawable/arm_hp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/upPerSkill"
+                style="@style/wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginLeft="5dip"
+                android:layout_marginTop="1dip"
+                android:orientation="horizontal" >
+
+                <ImageView style="@style/battle_field_skill_bg" />
+
+                <ImageView style="@style/battle_field_skill_bg" />
+
+                <ImageView style="@style/battle_field_skill_bg" />
+
+                <ImageView style="@style/battle_field_skill_bg" />
+
+                <ImageView style="@style/battle_field_skill_bg" />
+
+                <ImageView style="@style/battle_field_skill_bg" />
+
+                <ImageView style="@style/battle_field_skill_bg" />
+
+                <ImageView style="@style/battle_field_skill_bg" />
+
+                <ImageView style="@style/battle_field_skill_bg" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 攻防方 -->
+
+
+    <!-- 回合 -->
+
+    <FrameLayout
+        android:id="@+id/midRound"
+        style="@style/wrap_content"
+        android:background="@drawable/btl_round"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/roundNum"
+            style="@style/wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="120dip" />
+    </FrameLayout>
+
+    <!-- 跳过 -->
+
+    <LinearLayout
+        android:id="@+id/skip"
+        style="@style/wrap_content"
+        android:layout_gravity="right|top"
+        android:layout_marginTop="120dip"
+        android:background="@drawable/btl_num_bg"
+        android:orientation="horizontal" >
+
+        <TextView
+            style="@style/white_15_bold"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="5dip"
+            android:background="@drawable/skip" />
+    </LinearLayout>
+
+    <!-- 右侧军队 " -->
+
+    <FrameLayout
+        android:id="@+id/upAmyFrame"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="invisible" >
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/downAmyFrame"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="invisible" >
+    </FrameLayout>
+
+    <!-- 特效只用1个imageview -->
+
+    <ImageView
+        android:id="@+id/special_effects"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/Eff"
+        style="@style/wrap_content"
+        android:gravity="center"
+        android:minWidth="60dip"
+        android:visibility="invisible" />
+
+    <FrameLayout
+        android:id="@+id/down_info_layout"
+        style="@style/wrap_content"
+        android:layout_gravity="right|bottom"
+        android:layout_marginBottom="108dip"
+        android:layout_marginRight="20dip"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/downPerSkill"
+                style="@style/wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dip"
+                android:orientation="horizontal" >
+
+                <ImageView style="@style/battle_field_skill_bg" />
+
+                <ImageView style="@style/battle_field_skill_bg" />
+
+                <ImageView style="@style/battle_field_skill_bg" />
+
+                <ImageView style="@style/battle_field_skill_bg" />
+
+                <ImageView style="@style/battle_field_skill_bg" />
+
+                <ImageView style="@style/battle_field_skill_bg" />
+
+                <ImageView style="@style/battle_field_skill_bg" />
+
+                <ImageView style="@style/battle_field_skill_bg" />
+
+                <ImageView style="@style/battle_field_skill_bg" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/downAmyHPInfo"
+                style="@style/wrap_content"
+                android:layout_gravity="bottom"
+                android:background="@drawable/hp_bg"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip"
+                android:visibility="invisible" >
+
+                <LinearLayout
+                    style="@style/wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/downAmyName"
+                        style="@style/wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLength="4"
+                        android:textColor="@color/k7_color22"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/downAmyCnt"
+                        style="@style/wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLength="8"
+                        android:textColor="@color/k7_color22"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <com.vikings.sanguo.ui.ProgressBar
+                    android:id="@+id/downAmyHP"
+                    style="@style/wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="2dip"
+                    android:layout_marginRight="2dip"
+                    android:background="@drawable/arm_hp_bg"
+                    android:src="@drawable/arm_hp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 敌方兵力 -->
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical" >
+
+        <!-- 兵力条 -->
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginBottom="1dip"
+            android:layout_marginLeft="0dip"
+            android:layout_marginRight="0dip"
+            android:orientation="horizontal" >
+
+            <!-- 我方兵力 -->
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="bottom|center_vertical"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <!-- 背景 -->
+
+                <LinearLayout
+                    android:id="@+id/downScroll_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="bottom" >
+
+                    <HorizontalScrollView
+                        android:id="@+id/downScroll"
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dip"
+                        android:layout_gravity="bottom|left"
+                        android:paddingLeft="3dip"
+                        android:paddingRight="10dip"
+                        android:scrollbars="none" >
+
+                        <LinearLayout
+                            android:id="@+id/downAmy"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginBottom="2dip"
+                            android:layout_marginRight="0dip"
+                            android:orientation="horizontal" >
+                        </LinearLayout>
+                    </HorizontalScrollView>
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/downScroll_layout"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="-8dip"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="20dip"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="18dip"
+                        android:layout_marginRight="18dip"
+                        android:background="@drawable/btl_attack_bg" />
+
+                    <LinearLayout
+                        android:layout_width="23dip"
+                        android:layout_height="23dip"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dip"
+                        android:background="@drawable/btl_bg"
+                        android:gravity="center"
+                        android:orientation="vertical" >
+
+                        <ImageView
+                            android:id="@+id/defAttr"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp" />
+                    </LinearLayout>
+
+                    <!-- 我方昵称 -->
+
+                    <TextView
+                        android:id="@+id/downName"
+                        style="@style/k7_color6_19"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="44dip" />
+
+                    <!-- 攻方永久技能 -->
+                    <!-- 攻防方 -->
+
+                </FrameLayout>
+            </RelativeLayout>
+
+            <!-- 将领 -->
+
+            <RelativeLayout
+                android:id="@+id/down_officers_layout"
+                android:layout_width="126dip"
+                android:layout_height="105dip"
+                android:layout_gravity="right" >
+
+                <include layout="@layout/def_officers_layout" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <include layout="@layout/arm_skill_layout" />
+
+    <ImageView
+        android:id="@+id/screenSkillFrame"
+        style="@style/fill_parent"
+        android:layout_gravity="center"
+        android:background="#a0000000"
+        android:visibility="gone" />
+
+    <!-- defend -->
+
+    <ImageView
+        android:id="@+id/screenSkillBg"
+        style="@style/wrap_content"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/short_light0"
+        style="@style/wrap_content"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/long_light0"
+        style="@style/wrap_content"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/short_light0_below"
+        style="@style/wrap_content"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/short_light1"
+        style="@style/wrap_content"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/long_light1"
+        style="@style/wrap_content"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/short_light1_below"
+        style="@style/wrap_content"
+        android:visibility="gone" />
+
+    <com.vikings.sanguo.ui.ScaleImageView
+        android:id="@+id/screenHeroIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:visibility="gone" />
+
+    <com.vikings.sanguo.ui.ScaleImageView
+        android:id="@+id/screenHeroIcon1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:visibility="gone" />
+
+    <com.vikings.sanguo.ui.ScaleImageView
+        android:id="@+id/screenHeroIcon2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/screenSkillImg"
+        style="@style/wrap_content"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/screenSkillName"
+        style="@style/wrap_content"
+        android:visibility="gone" />
+
+</com.vikings.sanguo.ui.AbnormalFrameLayout>

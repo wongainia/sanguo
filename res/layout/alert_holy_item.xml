@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/itemLine"
+    style="@style/w_fill_h_wrap"
+    android:layout_marginTop="10dip"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingBottom="2dip"
+    android:paddingLeft="3dip"
+    android:paddingRight="3dip" >
+
+    <LinearLayout
+        android:id="@+id/armLayout"
+        style="@style/w_fill_h_wrap"
+        android:background="@drawable/soldiers_detail_bg"
+        android:orientation="horizontal"
+        android:padding="5dip"
+        android:visibility="gone" >
+
+        <include layout="@layout/arm_icon" />
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="2dip"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:orientation="horizontal"
+                android:paddingRight="10dip" >
+
+                <TextView
+                    android:id="@+id/itemName"
+                    style="@style/color7_13"
+                    android:layout_weight="1"
+                    android:gravity="left" />
+
+                <TextView
+                    android:id="@+id/count"
+                    style="@style/color7_11"
+                    android:gravity="right" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/itemDesc"
+                style="@style/color5_12"
+                android:gravity="left" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/heroLayout"
+        style="@style/w_fill_h_wrap"
+        android:background="@drawable/general_detail_bg"
+        android:orientation="horizontal"
+        android:padding="5dip" >
+
+        <include layout="@layout/hero_icon" />
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="2dip"
+            android:orientation="vertical" >
+
+            <FrameLayout
+                style="@style/w_fill_h_wrap"
+                android:orientation="horizontal"
+                android:paddingRight="1dip" >
+
+                <TextView
+                    android:id="@+id/heroInfo"
+                    style="@style/color7_13"
+                    android:shadowColor="@color/black"
+                    android:shadowRadius="1.0" />
+
+                <TextView
+                    android:id="@+id/herotype"
+                    style="@style/color7_12"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginRight="10dip"
+                    android:text="fjk" />
+            </FrameLayout>
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:layout_marginTop="3dip"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/color5_12"
+                    android:text="擅长兵种:" />
+
+                <TextView
+                    android:id="@+id/armProps"
+                    style="@style/color5_12" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:layout_marginTop="3dip"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/color5_12"
+                    android:text="将领技能:" />
+
+                <LinearLayout
+                    android:id="@+id/skillLayout"
+                    style="@style/wrap_content"
+                    android:orientation="horizontal" >
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

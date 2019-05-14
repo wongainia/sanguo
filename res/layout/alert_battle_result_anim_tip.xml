@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.vikings.sanguo.ui.AbnormalFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent" >
+
+    <ImageView
+        android:id="@+id/screen_frame"
+        style="@style/fill_parent"
+        android:layout_gravity="center"
+        android:background="#a0000000"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/battle_over_bg"
+        android:layout_width="163dip"
+        android:layout_height="214dip"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="130dip"
+        android:visibility="invisible" />
+    
+    <ImageView
+        android:id="@+id/light_effect"
+        android:layout_width="320dip"
+        android:layout_height="320dip"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="80dip"
+        android:visibility="invisible" />
+
+    <com.vikings.sanguo.battle.anim.StarFlyAnim
+        android:id="@+id/fly_star"
+        android:layout_width="170dip"
+        android:layout_height="170dip"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="159dip" >
+    </com.vikings.sanguo.battle.anim.StarFlyAnim>
+
+    <ImageView
+        android:id="@+id/knife_left"
+        style="@style/wrap_content"
+        android:layout_gravity="left|top"
+        android:layout_marginLeft="75dip"
+        android:layout_marginTop="193dip"
+        android:background="@drawable/knife_left"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/knife_shadow_left"
+        style="@style/wrap_content"
+        android:layout_gravity="left|top"
+        android:background="@drawable/knife_shadow"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/knife_right"
+        style="@style/wrap_content"
+        android:layout_gravity="right|top"
+        android:layout_marginRight="75dip"
+        android:layout_marginTop="193dip"
+        android:background="@drawable/knife_right"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/knife_shadow_right"
+        style="@style/wrap_content"
+        android:layout_gravity="left|top"
+        android:background="@drawable/knife_shadow"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/subject"
+        style="@style/wrap_content"
+        android:layout_width="266dip"
+        android:layout_height="96dip"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="195dip"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/name"
+        style="@style/wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="195dip"       
+        android:visibility="invisible"
+        />
+
+</com.vikings.sanguo.ui.AbnormalFrameLayout>

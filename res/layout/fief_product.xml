@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/productLayout"
+    style="@style/w_fill_h_wrap"
+    android:background="@drawable/setoff_cnt_sg"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingBottom="2dip" >
+
+    <TextView
+        android:id="@+id/name"
+        style="@style/color8_13" />
+
+    <ImageView style="@style/separate_line1" />
+
+    <TextView
+        android:id="@+id/product"
+        style="@style/color19_11"
+        android:layout_marginTop="1dip" />
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="1dip"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <FrameLayout
+            android:id="@+id/progressLayout"
+            style="@style/wrap_content" >
+
+            <com.vikings.sanguo.ui.ProgressBar
+                android:id="@+id/progressBar"
+                style="@style/wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:background="@drawable/progress_bg_200"
+                android:src="@drawable/progress_blue_200" />
+
+            <TextView
+                android:id="@+id/progressDesc"
+                style="@style/wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:shadowColor="#FF000000"
+                android:shadowRadius="2"
+                android:textColor="@color/color16"
+                android:textSize="9sp" />
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/speedUpBtn"
+            style="@style/color6_9"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dip"
+            android:background="@drawable/sunken_btn_small"
+            android:paddingLeft="2dip"
+            android:paddingRight="2dip"
+            android:text="加速"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/speedUpDesc"
+        style="@style/color5_10"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="5dip" />
+
+</LinearLayout>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent"
+    android:scrollbars="none" >
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:orientation="vertical"
+        android:padding="10dip" >
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/common_bg_tm1"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dip" >
+
+            <include layout="@layout/equipment" />
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:layout_marginLeft="2dip"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    style="@style/w_fill_h_wrap"
+                    android:orientation="horizontal" >
+
+                    <LinearLayout
+                        style="@style/wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:orientation="vertical" >
+
+                        <LinearLayout
+                            style="@style/wrap_content"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:id="@+id/name"
+                                style="@style/color11_14" />
+
+                            <TextView
+                                android:id="@+id/quality"
+                                style="@style/color11_12" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/properties"
+                            style="@style/color7_12"
+                            android:layout_gravity="center_vertical" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/rating"
+                        style="@style/wrap_content" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/equipDesc"
+                    style="@style/color7_12"
+                    android:gravity="left" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/equipmentEffectLayout"
+            style="@style/w_fill_h_wrap"
+            android:layout_marginTop="10dip"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/color13_12"
+                android:text="【装备特效】" />
+
+            <TextView
+                android:id="@+id/effect"
+                style="@style/color13_12"
+                android:gravity="left" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/stoneEffectLayout"
+            style="@style/w_fill_h_wrap"
+            android:layout_marginTop="10dip"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/color18_12"
+                android:text="【宝石效果】" />
+
+            <TextView
+                android:id="@+id/effect"
+                style="@style/color18_12"
+                android:gravity="left" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/suit_desc_layout"
+            style="@style/w_fill_h_wrap"
+            android:layout_marginTop="10dip"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/suit_title"
+                style="@style/color18_12"
+                android:text="【套装效果】" />
+
+            <TextView
+                android:id="@+id/suit_effect"
+                style="@style/color18_12"
+                android:gravity="left" >
+            </TextView>
+        </LinearLayout>
+
+        <com.vikings.sanguo.ui.PressedZoomButton
+            android:id="@+id/upgradeEquipBtn"
+            style="@style/btn_common"
+            android:layout_marginTop="10dip"
+            android:text="升级装备" />
+
+        <com.vikings.sanguo.ui.PressedZoomButton
+            android:id="@+id/forgeBtn"
+            style="@style/btn_common"
+            android:layout_marginTop="10dip"
+            android:text="强化特效" />
+
+        <com.vikings.sanguo.ui.PressedZoomButton
+            android:id="@+id/replaceBtn"
+            style="@style/btn_common"
+            android:layout_marginTop="10dip"
+            android:text="更换装备" />
+
+        <com.vikings.sanguo.ui.PressedZoomButton
+            android:id="@+id/insertStoneBtn"
+            style="@style/btn_common"
+            android:layout_marginTop="10dip"
+            android:text="镶嵌宝石" />
+
+        <com.vikings.sanguo.ui.PressedZoomButton
+            android:id="@+id/upgradeStoneBtn"
+            style="@style/btn_common"
+            android:layout_marginTop="10dip"
+            android:text="升级宝石" />
+
+        <com.vikings.sanguo.ui.PressedZoomButton
+            android:id="@+id/removeStoneBtn"
+            style="@style/btn_common"
+            android:layout_marginTop="10dip"
+            android:text="拆卸宝石" />
+    </LinearLayout>
+
+</ScrollView>

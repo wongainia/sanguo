@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/item_bg"
+    android:layout_height="wrap_content"
+    android:background="@drawable/common_item_bg"
+    android:gravity="center_vertical"
+    android:minHeight="85dip"
+    android:orientation="horizontal"
+    android:paddingLeft="10dip"
+    android:paddingRight="10dip" >
+
+    <include layout="@layout/user_icon" />
+
+    <ImageView
+        android:id="@+id/otherIcon"
+        style="@style/wrap_content"
+        android:layout_gravity="center_vertical"
+        android:visibility="gone" />
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingLeft="5dip" >
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingRight="5dip" >
+
+            <TextView
+                android:id="@+id/name"
+                style="@style/color22_15" />
+
+            <TextView
+                style="@style/wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/state"
+                style="@style/color6_11"
+                android:paddingLeft="10dip"
+                android:paddingRight="10dip"
+                android:background="@drawable/msg_count_bg" />
+
+            <TextView
+                android:id="@+id/time"
+                style="@style/color22_11"
+                android:layout_marginLeft="3dip" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/msg"
+            style="@style/color9_13"
+            android:layout_marginTop="2dip"
+            android:ellipsize="end"
+            android:singleLine="true" />
+    </LinearLayout>
+
+</LinearLayout>

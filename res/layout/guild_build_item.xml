@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/item_bg"
+    android:background="@drawable/common_item_bg"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingBottom="10dip"
+    android:paddingLeft="10dip"
+    android:paddingTop="10dip" >
+
+    <include layout="@layout/guild_icon" />
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingLeft="5dip" >
+
+        <TextView
+            android:id="@+id/name"
+            style="@style/color22_15" />
+
+        <TextView
+            android:id="@+id/leader"
+            style="@style/color9_13"
+            android:layout_marginTop="2dip" />
+
+        <TextView
+            android:id="@+id/time"
+            style="@style/color9_13"
+            android:layout_marginTop="2dip" />
+    </LinearLayout>
+
+</LinearLayout>

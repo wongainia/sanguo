@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:background="@drawable/favor_city_bg"
+    android:orientation="horizontal" >
+
+    <FrameLayout
+        style="@style/center_v"
+        android:layout_marginLeft="10dip" >
+
+        <include layout="@layout/user_icon" />
+    </FrameLayout>
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="5dip"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingRight="5dip" >
+
+        <LinearLayout
+            android:id="@+id/wantedMeLayout"
+            style="@style/w_fill_h_wrap"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/desc"
+                style="@style/k7_color1_13" />
+
+            <TextView
+                style="@style/k7_color8_11"
+                android:text="点击查看详情" />
+
+            <TextView
+                android:id="@+id/time"
+                style="@style/k7_color8_13" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/wantedOtherLayout"
+            style="@style/w_fill_h_wrap"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/name"
+                    style="@style/k7_color1_13" />
+
+                <TextView
+                    style="@style/wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/level"
+                    style="@style/k7_color1_11" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/country"
+                style="@style/k7_color1_13" />
+
+            <TextView
+                android:id="@+id/time"
+                style="@style/k7_color7_11" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

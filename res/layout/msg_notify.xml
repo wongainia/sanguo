@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/msgNotify"
+    style="@style/w_fill_h_wrap"
+    android:layout_gravity="left|top"
+    android:layout_marginRight="60dip"
+    android:layout_marginTop="150dp"
+    android:orientation="vertical" >
+
+</LinearLayout>

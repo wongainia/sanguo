@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/common_bg_tm2"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:paddingBottom="3dip"
+    android:paddingTop="3dip" >
+
+    <FrameLayout
+        android:layout_width="130dip"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/atk"
+            style="@style/arena_info_top_left"
+            android:text="攻方:" />
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="5dip"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/country"
+                style="@style/color8_10" />
+
+            <TextView
+                android:id="@+id/atkName"
+                style="@style/color9_10" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_marginTop="2dip" >
+
+        <TextView
+            style="@style/arena_info_top_left"
+            android:text="排名:" />
+
+        <TextView
+            android:id="@+id/No"
+            style="@style/arena_info_top_right" />
+    </FrameLayout>
+
+    <FrameLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_marginTop="2dip" >
+
+        <TextView
+            style="@style/arena_info_top_left"
+            android:text="家族:" />
+
+        <TextView
+            android:id="@+id/family"
+            style="@style/arena_info_top_right" />
+    </FrameLayout>
+
+</LinearLayout>

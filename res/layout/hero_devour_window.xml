@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:orientation="vertical" >
+
+    <!-- 满级还差经验 -->
+
+    <include
+        android:id="@+id/needExpLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dip"
+        layout="@layout/gradient_msg" />
+
+    <!-- 头像部分 -->
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:layout_width="290dip"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/common_bg_tm2"
+        android:orientation="vertical"
+        android:padding="5dip" >
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:gravity="center"
+                android:minWidth="62dip"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/talent"
+                    style="@style/color1_12" />
+
+                <TextView
+                    android:id="@+id/name"
+                    style="@style/color1_12"
+                    android:layout_marginLeft="2dip" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/level"
+                style="@style/color6_12" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:orientation="horizontal" >
+
+            <include layout="@layout/hero_icon" />
+
+            <LinearLayout
+                android:id="@+id/armPropLayout"
+                style="@style/wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="3dip"
+                android:gravity="center"
+                android:orientation="vertical" >
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="3dip"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/color19_12"
+                android:text="将领经验"
+                android:textStyle="bold" />
+
+            <FrameLayout
+                android:id="@+id/heroExpLayout"
+                style="@style/wrap_content"
+                android:layout_marginLeft="3dip" >
+
+                <com.vikings.sanguo.ui.ProgressBar
+                    android:id="@+id/progressBar"
+                    style="@style/wrap_content"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:background="@drawable/progress_bg_200"
+                    android:src="@drawable/progress_green_long" />
+
+                <TextView
+                    android:id="@+id/progressDesc"
+                    style="@style/color13_12"
+                    android:layout_gravity="center" />
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 可以获得经验 -->
+
+    <include
+        android:id="@+id/gainExpLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dip"
+        layout="@layout/gradient_msg" />
+
+    <ScrollView
+        style="@style/w_fill_h_wrap"
+        android:layout_marginTop="5dip"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:orientation="vertical"
+            android:paddingLeft="10dip"
+            android:paddingRight="12dip" >
+
+            <!-- 第一排 -->
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:layout_marginTop="5dip"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/wrap_content"
+                    android:layout_weight="1" />
+
+                <FrameLayout
+                    android:id="@+id/devouredHeroView0"
+                    style="@style/wrap_content" >
+
+                    <ImageView
+                        style="@style/wrap_content"
+                        android:background="@drawable/devour_bg" />
+
+                    <ImageView
+                        android:id="@+id/itemIcon"
+                        style="@style/wrap_content"
+                        android:layout_gravity="center" />
+                </FrameLayout>
+
+                <TextView
+                    style="@style/wrap_content"
+                    android:layout_weight="2" />
+
+                <FrameLayout
+                    android:id="@+id/devouredHeroView1"
+                    style="@style/wrap_content" >
+
+                    <ImageView
+                        style="@style/wrap_content"
+                        android:background="@drawable/devour_bg" />
+
+                    <ImageView
+                        android:id="@+id/itemIcon"
+                        style="@style/wrap_content"
+                        android:layout_gravity="center" />
+                </FrameLayout>
+
+                <TextView
+                    style="@style/wrap_content"
+                    android:layout_weight="2" />
+
+                <FrameLayout
+                    android:id="@+id/devouredHeroView2"
+                    style="@style/wrap_content" >
+
+                    <ImageView
+                        style="@style/wrap_content"
+                        android:background="@drawable/devour_bg" />
+
+                    <ImageView
+                        android:id="@+id/itemIcon"
+                        style="@style/wrap_content"
+                        android:layout_gravity="center" />
+                </FrameLayout>
+
+                <TextView
+                    style="@style/wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <!-- 第2排 -->
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:layout_marginTop="10dip"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/wrap_content"
+                    android:layout_weight="1" />
+
+                <FrameLayout
+                    android:id="@+id/devouredHeroView3"
+                    style="@style/wrap_content" >
+
+                    <ImageView
+                        style="@style/wrap_content"
+                        android:background="@drawable/devour_bg" />
+
+                    <ImageView
+                        android:id="@+id/itemIcon"
+                        style="@style/wrap_content"
+                        android:layout_gravity="center" />
+                </FrameLayout>
+
+                <TextView
+                    style="@style/wrap_content"
+                    android:layout_weight="2" />
+
+                <FrameLayout
+                    android:id="@+id/devouredHeroView4"
+                    style="@style/wrap_content" >
+
+                    <ImageView
+                        style="@style/wrap_content"
+                        android:background="@drawable/devour_bg" />
+
+                    <ImageView
+                        android:id="@+id/itemIcon"
+                        style="@style/wrap_content"
+                        android:layout_gravity="center" />
+                </FrameLayout>
+
+                <TextView
+                    style="@style/wrap_content"
+                    android:layout_weight="2" />
+
+                <FrameLayout
+                    android:id="@+id/devouredHeroView5"
+                    style="@style/wrap_content" >
+
+                    <ImageView
+                        style="@style/wrap_content"
+                        android:background="@drawable/devour_bg" />
+
+                    <ImageView
+                        android:id="@+id/itemIcon"
+                        style="@style/wrap_content"
+                        android:layout_gravity="center" />
+                </FrameLayout>
+
+                <TextView
+                    style="@style/wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/notice"
+                style="@style/color19_12"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dip"
+                android:visibility="gone" />
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/upgradeBtn"
+                style="@style/btn_common"
+                android:layout_marginTop="20dip"
+                android:text="升级" />
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/oneKeyBtn"
+                style="@style/btn_common"
+                android:layout_marginTop="10dip"
+                android:text="一键升级" />
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/evolveBtn"
+                style="@style/btn_common"
+                android:layout_marginTop="10dip"
+                android:text="去进化"
+                android:visibility="gone" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:layout_gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="5dip"
+    android:paddingLeft="10dip"
+    android:paddingRight="10dip"
+    android:paddingTop="3dip" >
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <include layout="@layout/equipment" />
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingLeft="5dip" >
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    style="@style/wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/type"
+                        style="@style/color7_13" />
+
+                    <TextView
+                        android:id="@+id/prop"
+                        style="@style/color7_13"
+                        android:layout_marginTop="3dip" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/rating"
+                    style="@style/wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:layout_marginTop="3dip"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/discountName"
+                    style="@style/color7_13"
+                    android:text="售价："
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/oldPrice"
+                    style="@style/color7_13"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dip"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/price"
+                    style="@style/color7_13" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_marginTop="5dip"
+        android:background="@drawable/common_bg_tm5"
+        android:orientation="vertical"
+        android:padding="3dip" >
+
+        <LinearLayout
+            android:id="@+id/equipmentEffectLayout"
+            style="@style/w_fill_h_wrap"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/color13_12"
+                android:text="【装备特效】" />
+
+            <TextView
+                android:id="@+id/effect"
+                style="@style/color13_12"
+                android:gravity="left" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/stoneEffectLayout"
+            style="@style/w_fill_h_wrap"
+            android:layout_marginTop="3dip"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/color16_12"
+                android:text="【宝石效果】" />
+
+            <TextView
+                android:id="@+id/effect"
+                style="@style/color16_12"
+                android:gravity="left" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/suitEffectLayout"
+            style="@style/w_fill_h_wrap"
+            android:layout_marginTop="3dip"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/color16_12"
+                android:text="【套装效果】" />
+
+            <TextView
+                android:id="@+id/effect"
+                style="@style/color16_12"
+                android:gravity="left" >
+            </TextView>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/equipmentDesc"
+        style="@style/color5_10"
+        android:layout_width="fill_parent"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="5dip"
+        android:gravity="left" />
+
+    <!-- 限购数量提示 -->
+
+    <LinearLayout
+        android:id="@+id/limitLayout"
+        style="@style/wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dip"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/limitProp"
+            style="@style/color19_10"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/countDown"
+            style="@style/color19_10"
+            android:paddingLeft="5dip"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</LinearLayout>

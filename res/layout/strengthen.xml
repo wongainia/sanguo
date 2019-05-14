@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent" >
+
+    <LinearLayout style="@style/fill_v" >
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    style="@style/wrap_content"
+                    android:gravity="center"
+                    android:minWidth="62dip"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/talentName"
+                        style="@style/color1_12" />
+
+                    <TextView
+                        android:id="@+id/name"
+                        style="@style/color1_12"
+                        android:layout_marginLeft="2dip" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/level"
+                    style="@style/color6_12" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <include layout="@layout/hero_icon" />
+                <!-- 统率 -->
+
+                <LinearLayout
+                    android:id="@+id/armPropLayout"
+                    style="@style/wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical" >
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 加成效果 -->
+
+            <LinearLayout
+                android:id="@+id/effectLayout"
+                style="@style/wrap_content"
+                android:layout_marginTop="2dip"
+                android:background="@drawable/common_bg_tm2"
+                android:orientation="vertical"
+                android:padding="10dip" >
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            style="@style/color16_12"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dip"
+            android:layout_marginTop="10dip"
+            android:text="强化武将可以为士兵提升更多攻防加成" />
+
+        <!-- 强化按钮 -->
+
+        <LinearLayout
+            android:id="@+id/btnsLayout"
+            style="@style/w_fill_h_wrap"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/exploitBtn"
+                style="@style/btn_common"
+                android:layout_marginTop="10dip"
+                android:textSize="16sp" />
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/toolBtn"
+                style="@style/btn_common"
+                android:layout_marginTop="10dip"
+                android:textSize="16sp" />
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/currencyBtn"
+                style="@style/btn_common"
+                android:layout_marginTop="10dip"
+                android:textSize="16sp" />
+
+            <FrameLayout
+                style="@style/wrap_content"
+                android:layout_marginTop="10dip" >
+
+                <com.vikings.sanguo.ui.PressedZoomButton
+                    android:id="@+id/oneKeyBtn"
+                    style="@style/btn_common"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    style="@style/wrap_content"
+                    android:background="@drawable/txt_tj" />
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

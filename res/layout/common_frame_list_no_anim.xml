@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/listView"
+    style="@style/common_list_no_anim"
+    android:layout_width="274dip"
+    android:layout_height="wrap_content"
+    android:layout_weight="1">
+
+</ListView>

@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent"
+    android:gravity="center_horizontal"
+    android:paddingLeft="5dip"
+    android:paddingRight="5dip" >
+
+    <ScrollView
+        style="@style/w_fill_h_wrap"
+        android:layout_weight="1"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <!-- 步骤1 -->
+
+            <LinearLayout
+                android:id="@+id/step1Group"
+                style="@style/w_fill_h_wrap"
+                android:background="@drawable/setoff_cnt_sg"
+                android:orientation="vertical"
+                android:paddingTop="10dip" >
+
+                <!-- 为新手任务做的 -->
+
+                <LinearLayout
+                    style="@style/wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        style="@style/wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/potpourri_bg" />
+
+                    <TextView
+                        android:id="@+id/step1Num"
+                        style="@style/color7_13"
+                        android:layout_marginLeft="3dip"
+                        android:layout_marginRight="3dip"
+                        android:layout_weight="1"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/poto_right1"
+                        style="@style/wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/potpourri_bg" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/emailFrame"
+                    style="@style/w_fill_h_wrap"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/step1Text"
+                        style="@style/color5_12"
+                        android:layout_marginTop="5dip" />
+
+                    <EditText
+                        android:id="@+id/step1Edit"
+                        style="@style/custom_dialog_edit"
+                        android:layout_width="200dip"
+                        android:layout_marginTop="5dip"
+                        android:textColor="@color/color6" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/step1Btn"
+                    style="@style/btn_3"
+                    android:layout_marginTop="5dip"
+                    android:textSize="14sp"
+                    android:text="@string/get_code"
+                    android:textColor="@color/color3" />
+
+                <Button
+                    android:id="@+id/bindBtn1"
+                    style="@style/btn_3"
+                    android:layout_marginTop="5dip"
+                    android:textSize="14sp"
+                    android:text="确认绑定"
+                    android:textColor="@color/color3" />
+
+                <TextView
+                    style="@style/wrap_content"
+                    android:layout_height="10dip" />
+            </LinearLayout>
+            
+            
+            <TextView 
+                android:id="@+id/fillview"
+                style="@style/wrap_content"
+                android:layout_height="120dip"
+                android:visibility="gone"
+                />
+            
+            
+            
+            <!-- 步骤2 -->
+
+            
+            <LinearLayout
+                android:id="@+id/step2Group"
+                style="@style/w_fill_h_wrap"
+                android:layout_marginTop="8dip"
+                android:background="@drawable/setoff_cnt_sg"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingBottom="10dip"
+                android:paddingTop="5dip" >
+
+                <LinearLayout
+                    style="@style/wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        style="@style/wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/potpourri_bg" />
+
+                    <TextView
+                        android:id="@+id/step2Num"
+                        style="@style/color7_13"
+                        android:layout_marginLeft="3dip"
+                        android:layout_marginRight="3dip"
+                        android:layout_weight="1"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/poto_right2"
+                        style="@style/wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/potpourri_bg" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/step2Text"
+                    style="@style/color5_12"
+                    android:layout_marginTop="5dip" />
+
+                <EditText
+                    android:id="@+id/step2Edit"
+                    style="@style/custom_dialog_edit"
+                    android:layout_width="200dip"
+                    android:layout_marginTop="5dip"
+                    android:textColor="@color/color6" />
+
+                <Button
+                    android:id="@+id/step2Btn"
+                    style="@style/btn_3"
+                    android:layout_marginTop="5dip"
+                    android:textSize="14sp"
+                    android:text="@string/get_code"
+                    android:textColor="@color/color3" />
+
+                <Button
+                    android:id="@+id/bindBtn2"
+                    style="@style/btn_3"
+                    android:textSize="14sp"
+                    android:text="确认绑定"
+                    android:layout_marginTop="5dip"
+                    android:textColor="@color/color3" />
+            </LinearLayout>
+            <!-- 步骤3 -->
+
+            <LinearLayout
+                android:id="@+id/step3Group"
+                style="@style/w_fill_h_wrap"
+                android:layout_marginTop="8dip"
+                android:background="@drawable/setoff_cnt_sg"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingBottom="10dip"
+                android:paddingTop="5dip" >
+
+                <LinearLayout
+                    style="@style/wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        style="@style/wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/potpourri_bg" />
+
+                    <TextView
+                        android:id="@+id/step3Num"
+                        style="@style/color7_13"
+                        android:layout_marginLeft="3dip"
+                        android:layout_marginRight="3dip"
+                        android:layout_weight="1"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/poto_right3"
+                        style="@style/wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/potpourri_bg" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/step3Text"
+                    style="@style/color5_12"
+                    android:layout_marginTop="5dip" />
+
+                <EditText
+                    android:id="@+id/step3Edit"
+                    style="@style/custom_dialog_edit"
+                    android:layout_width="200dip"
+                    android:layout_marginTop="5dip"
+                    android:textColor="@color/color6" />
+
+                <Button
+                    android:id="@+id/step3Btn"
+                    style="@style/btn_3"
+                    android:layout_marginTop="5dip"
+                    android:text="@string/get_code"
+                    android:textSize="14sp"
+                    android:textColor="@color/color3" />
+
+                <Button
+                    android:id="@+id/bindBtn3"
+                    style="@style/btn_3"
+                    android:layout_marginTop="5dip"
+                    android:textSize="14sp"
+                    android:text="确认绑定"
+                    android:textColor="@color/color3" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/suffix_frame"
+        android:layout_width="200dip"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/common_bg_tm2"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/choose_mail"
+            style="@style/color5_14"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="2dip"
+            android:text="请选择您的邮箱类型" />
+
+        <TextView
+            style="@style/wrap_content"
+            android:layout_height="4dip" />
+
+        <com.vikings.sanguo.ui.FixListView
+            android:id="@+id/listView"
+            style="@style/list_2"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            style="@style/wrap_content"
+            android:layout_height="3dip" />
+    </LinearLayout>
+
+</FrameLayout>

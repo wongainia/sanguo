@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/scroll_book_bg"
+    android:layout_gravity="top|center_horizontal"
+    android:gravity="center_vertical"
+    android:orientation="horizontal" >
+
+    <FrameLayout
+        style="@style/wrap_content"
+        android:layout_marginLeft="8dip" >
+
+        <include layout="@layout/fief_icon" />
+    </FrameLayout>
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="8dip"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/fiefName"
+            style="@style/color9_14" />
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_marginTop="3dip"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/lord"
+                style="@style/color1_12" />
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:minWidth="185dip"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/armCount"
+                    style="@style/color1_12" />
+
+                <TextView
+                    style="@style/color1_12"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/cityDefense"
+                    style="@style/color1_12" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/mainHero"
+                style="@style/color1_12" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

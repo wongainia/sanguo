@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:orientation="horizontal" >
+
+    <include
+        android:layout_gravity="center_vertical"
+        layout="@layout/arm_icon" />
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="2dip"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/itemName"
+            style="@style/color7_12" />
+
+        <TextView
+            android:id="@+id/itemCount"
+            style="@style/color9_12" />
+    </LinearLayout>
+
+</LinearLayout>

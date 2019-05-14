@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView"
+    style="@style/w_fill_h_wrap"
+    android:layout_height="320dip"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/layout"
+        style="@style/w_fill_h_wrap"
+        android:orientation="vertical"
+        android:paddingLeft="5dip"
+        android:paddingRight="5dip"
+        android:paddingTop="3dip" >
+
+        <LinearLayout
+            android:id="@+id/webLayout"
+            style="@style/w_fill_h_wrap"
+            android:layout_height="240dip"
+            android:background="@drawable/alert_ext_bg"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/eventLayout"
+            style="@style/w_fill_h_wrap"
+            android:orientation="vertical" >
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

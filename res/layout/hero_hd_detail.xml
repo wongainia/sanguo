@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 将领详情 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:orientation="vertical" >
+
+    <ScrollView style="@style/w_fill_h_wrap" >
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:orientation="vertical" >
+
+            <FrameLayout
+                android:id="@+id/general_bg"
+                style="@style/w_fill_h_wrap">
+
+                <!-- 高清大图 -->
+
+                <include layout="@layout/hero_hd_image" />
+
+                <FrameLayout
+                    style="@style/wrap_content"
+                    android:layout_gravity="center" >
+
+                    <!-- 图片加载滚动条 -->
+
+                    <FrameLayout
+                        android:id="@+id/progress_layout"
+                        style="@style/wrap_content"
+                        android:layout_gravity="center" >
+
+                        <ProgressBar
+                            style="?android:attr/progressBarStyleLarge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center" />
+
+                        <TextView
+                            android:id="@+id/loding_hd"
+                            style="@style/color13_12"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="图片加载中" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:id="@+id/open_vip_layout"
+                        style="@style/wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone" >
+
+                        <TextView
+                            style="@style/color16_10"
+                            android:layout_gravity="center_horizontal"
+                            android:text="百张美女武将套图，张张有撸点，挑逗无极限" />
+
+                        <TextView
+                            style="@style/color15_10"
+                            android:layout_gravity="center_horizontal"
+                            android:text="达到VIP1后可以浏览美女武将高清大图" />
+
+                        <com.vikings.sanguo.ui.PressedZoomButton
+                            android:id="@+id/open_vip"
+                            style="@style/color16_24"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="20dip"
+                            android:background="@drawable/button_common"
+                            android:gravity="center"
+                            android:text="开通VIP"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </FrameLayout>
+
+                <!-- 最强标签 -->
+
+                <TextView
+                    android:id="@+id/most_stronger"
+                    style="@style/color4_16"
+                    android:layout_gravity="bottom|left"
+                    android:layout_marginBottom="15dip"
+                    android:layout_marginLeft="15dip"
+                    android:background="@drawable/most_stronger_hero"
+                    android:gravity="center"
+                    android:lineSpacingMultiplier="1.4"
+                    android:text="当\n世\n最\n强"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/hero_evaluate"
+                    style="@style/wrap_content"
+                    android:layout_gravity="bottom|right"
+                    android:layout_marginBottom="15dip"
+                    android:layout_marginRight="15dip" />
+            </FrameLayout>
+
+            <!-- 技能属性 -->
+
+            <LinearLayout
+                style="@style/w_fill_h_wrap"
+                android:orientation="vertical"
+                android:paddingLeft="10dip"
+                android:paddingRight="10dip" >
+
+                <TextView
+                    android:id="@+id/hero_spec"
+                    style="@style/color2_10"
+                    android:layout_marginTop="15dip"
+                    android:gravity="left"
+                    android:text="达到VIP1后可以浏览美女武将高清大图" />
+
+                <!-- 来源 -->
+
+                <FrameLayout
+                    android:id="@+id/hero_source_layout"
+                    style="@style/wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dip" >
+
+                    <ImageView
+                        style="@style/wrap_content"
+                        android:layout_gravity="top|right"
+                        android:layout_marginRight="16.5dip"
+                        android:layout_marginTop="11dip"
+                        android:background="@drawable/info_bg_top" />
+
+                    <ImageView
+                        style="@style/wrap_content"
+                        android:background="@drawable/info_bg" />
+
+                    <TextView
+                        style="@style/color15_16"
+                        android:layout_gravity="top|left"
+                        android:layout_marginLeft="15dip"
+                        android:layout_marginTop="6dip"
+                        android:text="来  源" />
+
+                    <TextView
+                        style="@style/color8_8"
+                        android:layout_gravity="top|right"
+                        android:layout_marginRight="32dip"
+                        android:layout_marginTop="10dip"
+                        android:text="武将的来源途径" />
+
+                    <TextView
+                        android:id="@+id/hero_source_spec"
+                        style="@style/color17_10"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="15dip" />
+                </FrameLayout>
+
+                <!-- 天赋 -->
+
+                <FrameLayout
+                    android:id="@+id/hero_talent_layout"
+                    style="@style/wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dip" >
+
+                    <ImageView
+                        style="@style/wrap_content"
+                        android:layout_gravity="top|right"
+                        android:layout_marginRight="16.5dip"
+                        android:layout_marginTop="11dip"
+                        android:background="@drawable/info_bg_top" />
+
+                    <ImageView
+                        style="@style/wrap_content"
+                        android:background="@drawable/info_bg" />
+
+                    <TextView
+                        style="@style/color15_16"
+                        android:layout_gravity="top|left"
+                        android:layout_marginLeft="15dip"
+                        android:layout_marginTop="6dip"
+                        android:text="天  赋" />
+
+                    <TextView
+                        style="@style/color8_8"
+                        android:layout_gravity="top|right"
+                        android:layout_marginRight="32dip"
+                        android:layout_marginTop="10dip"
+                        android:text="武将的终极攻防特性" />
+
+                    <FrameLayout
+                        android:layout_width="290dip"
+                        android:layout_height="58dip"
+                        android:layout_gravity="bottom|left"
+                        android:layout_marginBottom="5dip"
+                        android:layout_marginLeft="7dip"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/attack"
+                            style="@style/color17_10"
+                            android:layout_gravity="left|center_vertical"
+                            android:layout_marginLeft="20dip"
+                            android:text="武力：" />
+
+                        <TextView
+                            android:id="@+id/defend"
+                            style="@style/color17_10"
+                            android:layout_gravity="right|center_vertical"
+                            android:layout_marginRight="40dip"
+                            android:text="防护：" />
+                    </FrameLayout>
+                </FrameLayout>
+
+                <!-- 统率 -->
+
+                <FrameLayout
+                    android:id="@+id/armPropLayout"
+                    style="@style/wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dip" >
+
+                    <ImageView
+                        style="@style/wrap_content"
+                        android:layout_gravity="top|right"
+                        android:layout_marginRight="16.5dip"
+                        android:layout_marginTop="11dip"
+                        android:background="@drawable/info_bg_top" />
+
+                    <ImageView
+                        style="@style/wrap_content"
+                        android:background="@drawable/info_bg" />
+
+                    <TextView
+                        style="@style/color15_16"
+                        android:layout_gravity="top|left"
+                        android:layout_marginLeft="15dip"
+                        android:layout_marginTop="6dip"
+                        android:text="统  率" />
+
+                    <TextView
+                        android:id="@+id/armPropsDesc"
+                        style="@style/color8_8"
+                        android:layout_gravity="top|right"
+                        android:layout_marginRight="32dip"
+                        android:layout_marginTop="10dip"
+                        android:text="传奇6星后的特性" />
+
+                    <LinearLayout
+                        android:id="@+id/armPropContent"
+                        android:layout_width="290dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|left"
+                        android:layout_marginBottom="7dip"
+                        android:layout_marginLeft="7dip"
+                        android:layout_marginTop="25dip"
+                        android:gravity="center"
+                        android:minHeight="58dip"
+                        android:orientation="vertical"
+                        android:paddingRight="17dip" >
+                    </LinearLayout>
+                </FrameLayout>
+
+                <!-- 技能 -->
+
+                <FrameLayout
+                    android:id="@+id/skillLayout"
+                    style="@style/wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dip" >
+
+                    <ImageView
+                        style="@style/wrap_content"
+                        android:layout_gravity="top|right"
+                        android:layout_marginRight="16.5dip"
+                        android:layout_marginTop="11dip"
+                        android:background="@drawable/info_bg_top" />
+
+                    <ImageView
+                        style="@style/wrap_content"
+                        android:background="@drawable/info_bg" />
+
+                    <TextView
+                        style="@style/color15_16"
+                        android:layout_gravity="top|left"
+                        android:layout_marginLeft="11dip"
+                        android:layout_marginTop="6dip"
+                        android:text="技能" />
+
+                    <LinearLayout
+                        android:id="@+id/skillContent"
+                        android:layout_width="291dip"
+                        android:layout_height="58dip"
+                        android:layout_gravity="bottom|left"
+                        android:layout_marginBottom="5dip"
+                        android:layout_marginLeft="7dip"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+                    </LinearLayout>
+                </FrameLayout>
+
+                <!-- 合体技能 -->
+
+                <FrameLayout
+                    android:id="@+id/skillCombinationLayout"
+                    style="@style/wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dip" >
+
+                    <ImageView
+                        style="@style/wrap_content"
+                        android:layout_gravity="top|right"
+                        android:layout_marginRight="16.5dip"
+                        android:layout_marginTop="11dip"
+                        android:background="@drawable/info_bg_top" />
+
+                    <ImageView
+                        style="@style/wrap_content"
+                        android:background="@drawable/info_bg" />
+
+                    <TextView
+                        style="@style/color15_16"
+                        android:layout_gravity="top|left"
+                        android:layout_marginLeft="11dip"
+                        android:layout_marginTop="6dip"
+                        android:text="组合技" />
+
+                    <LinearLayout
+                        android:id="@+id/skillCombinationContent"
+                        android:layout_width="291dip"
+                        android:layout_height="58dip"
+                        android:layout_gravity="bottom|left"
+                        android:layout_marginBottom="5dip"
+                        android:layout_marginLeft="7dip"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+                    </LinearLayout>
+                </FrameLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

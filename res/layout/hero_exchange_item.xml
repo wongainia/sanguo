@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/item_bg"
+    android:orientation="horizontal"
+    android:paddingLeft="10dip"
+    android:paddingRight="10dip" >
+
+    <include layout="@layout/hero_icon" />
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingLeft="5dip"
+        android:paddingRight="10dip" >
+
+        <FrameLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_weight="1"
+            android:background="@drawable/common_bg_btm1"
+            android:orientation="horizontal"
+            android:paddingLeft="2dip"
+            android:paddingRight="2dip" >
+
+            <TextView
+                android:id="@+id/name"
+                style="@style/color1_14"
+                android:layout_gravity="left|center_vertical" />
+
+            <ImageView
+                android:id="@+id/rating"
+                style="@style/wrap_content"
+                android:layout_gravity="right|center_vertical" />
+        </FrameLayout>
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/color1_12"
+                android:text="魂魄数量：" />
+
+            <TextView
+                android:id="@+id/count"
+                style="@style/color1_13" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/limit"
+            style="@style/color1_12" />
+    </LinearLayout>
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/exchangeBtn"
+        style="@style/btn_1"
+        android:layout_gravity="center"
+        android:text="兑换" />
+
+</LinearLayout>

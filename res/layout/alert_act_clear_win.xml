@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent"
+    android:layout_gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="5dip" >
+
+    <ScrollView
+        style="@style/fill_parent"
+        android:background="@drawable/setoff_cnt_sg" >
+
+        <LinearLayout
+            style="@style/fill_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/rewardFrame"
+                style="@style/w_fill_h_wrap"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    style="@style/wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="3dip"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        style="@style/wrap_content"
+                        android:background="@drawable/pattern_line" />
+
+                    <TextView
+                        style="@style/color6_14"
+                        android:layout_marginLeft="5dip"
+                        android:text="战利品"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/pattenMirror"
+                        style="@style/wrap_content"
+                        android:layout_marginLeft="5dip"
+                        android:background="@drawable/pattern_line" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/reward"
+                    style="@style/w_fill_h_wrap"
+                    android:layout_marginTop="5dip"
+                    android:orientation="vertical"
+                    android:paddingLeft="6dip"
+                    android:paddingRight="6dip" >
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lossFrame"
+                style="@style/w_fill_h_wrap"
+                android:layout_marginTop="5dip"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/lossDesc"
+                    style="@style/color6_14"
+                    android:layout_marginLeft="5dip"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/loss"
+                    style="@style/w_fill_h_wrap"
+                    android:layout_marginTop="5dip"
+                    android:orientation="vertical" >
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

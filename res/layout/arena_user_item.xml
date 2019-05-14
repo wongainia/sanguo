@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    style="@style/item_bg"
+    android:orientation="horizontal"
+    android:paddingLeft="10dip"
+    android:paddingRight="10dip" >
+
+    <FrameLayout
+        style="@style/wrap_content"
+        android:layout_gravity="left|center_vertical" >
+
+        <include layout="@layout/user_icon" />
+    </FrameLayout>
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="5dip"
+        android:gravity="center_vertical"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/name"
+                style="@style/color22_14"
+                android:gravity="left"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/gap"
+                style="@style/wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/exploit"
+                style="@style/color21_10" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:id="@+id/heroLayout"
+                style="@style/wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical" >
+
+                <FrameLayout
+                    android:id="@+id/hero1"
+                    style="@style/wrap_content" >
+
+                    <include layout="@layout/hero_icon" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/hero2"
+                    style="@style/wrap_content" >
+
+                    <include layout="@layout/hero_icon" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/hero3"
+                    style="@style/wrap_content" >
+
+                    <include layout="@layout/hero_icon" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/descLayout"
+                style="@style/wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                <TextView
+                    android:id="@+id/desc1"
+                    style="@style/color1_13"
+                    android:gravity="left" />
+
+                <TextView
+                    android:id="@+id/desc2"
+                    style="@style/color11_11"
+                    android:gravity="left" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/attack"
+                style="@style/wrap_content"
+                android:background="@drawable/stamp_ktz" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="250dip"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <include layout="@layout/campaign_icon" />
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dip"
+            android:orientation="vertical" >
+
+            <FrameLayout style="@style/w_fill_h_wrap" >
+
+                <TextView
+                    android:id="@+id/name"
+                    style="@style/k7_color1_13"
+                    android:layout_gravity="left" />
+
+                <TextView
+                    android:id="@+id/recruit"
+                    style="@style/k7_color1_10"
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_marginRight="5dip"
+                    android:background="@drawable/button3"
+                    android:text="手机快速招募" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/desc"
+                style="@style/k7_color2_13"
+                android:gravity="left" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/k7_color10_13"
+        android:layout_marginBottom="2dip"
+        android:layout_marginLeft="5dip"
+        android:layout_marginTop="2dip"
+        android:gravity="left" />
+
+    <TextView
+        android:id="@+id/recharge"
+        style="@style/k7_color1_13"
+        android:layout_marginBottom="2dip"
+        android:layout_marginLeft="5dip"
+        android:layout_marginTop="2dip"
+        android:gravity="left" />
+
+    <TextView
+        android:id="@+id/bonus"
+        style="@style/k7_color2_13"
+        android:layout_width="250dip"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/btl_num_bg"
+        android:gravity="left"
+        android:padding="5dip" />
+
+</LinearLayout>

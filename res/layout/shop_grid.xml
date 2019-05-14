@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 商店格子 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/revive_grid"
+    style="@style/wrap_content"
+    android:layout_margin="1dip"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/revivedGroup"
+        style="@style/wrap_content"
+        android:layout_gravity="top|center_horizontal" >
+
+        <ImageView
+            style="@style/wrap_content"
+            android:background="@drawable/shop_grid_bg" />
+
+        <ImageView
+            android:id="@+id/itemIcon"
+            style="@style/wrap_content"
+            android:layout_gravity="center" />
+
+        <FrameLayout
+            style="@style/wrap_content"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_marginTop="2dip" >
+
+            <ImageView
+                android:id="@+id/itemName_bg"
+                style="@style/wrap_content"
+                android:layout_gravity="center_horizontal|top"
+                android:background="@drawable/shop_grid_redtop" />
+
+            <TextView
+                android:id="@+id/itemName"
+                style="@style/color7_10"
+                android:layout_gravity="center_horizontal|top"
+                android:layout_marginTop="3dip"
+                android:text="名字"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+        <FrameLayout
+            style="@style/wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="2.5dip" >
+
+            <ImageView
+                android:id="@+id/itemName_bg"
+                style="@style/wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginLeft="0.5dip"
+                android:background="@drawable/revived_grid_down" />
+
+            <TextView
+                android:id="@+id/itemPrice"
+                style="@style/color16_10"
+                android:layout_gravity="center"
+                android:layout_marginTop="0.5dip"
+                android:gravity="center_vertical" />
+        </FrameLayout>
+
+        <!-- 打折 -->
+
+        <FrameLayout
+            style="@style/wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginBottom="20dip"
+            android:layout_marginRight="6dip" >
+
+            <ImageView
+                android:id="@+id/discountBg1"
+                style="@style/wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/sell_discount_bg" />
+
+            <ImageView
+                android:id="@+id/discountBg2"
+                style="@style/wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:layout_marginRight="4dip"
+                android:layout_marginTop="2dip"
+                android:background="@drawable/sell_discount_text" />
+        </FrameLayout>
+
+        <!-- 限购 -->
+
+        <FrameLayout
+            style="@style/wrap_content"
+            android:layout_gravity="center_vertical|left"
+            android:layout_marginLeft="6dip"
+            android:layout_marginTop="17dip"
+            android:visibility="gone" >
+
+            <ImageView
+                android:id="@+id/maxcountBg1"
+                style="@style/wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/max_buy_bg" />
+
+            <ImageView
+                android:id="@+id/maxcountBg2"
+                style="@style/wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="0.5dip"
+                android:layout_marginTop="0.5dip"
+                android:background="@drawable/max_buy_text" />
+        </FrameLayout>
+    </FrameLayout>
+
+</LinearLayout>

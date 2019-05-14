@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingBottom="1dip"
+    android:paddingTop="1dip" >
+
+    <ImageView
+        android:id="@+id/smallIcon"
+        style="@style/wrap_content" />
+
+    <TextView
+        android:id="@+id/name"
+        style="@style/color8_10"
+        android:layout_marginLeft="1dip" />
+
+    <FrameLayout
+        style="@style/wrap_content"
+        android:layout_gravity="center_vertical" >
+
+        <com.vikings.sanguo.ui.ProgressBar
+            android:id="@+id/progressBar"
+            style="@style/wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:background="@drawable/progress_bg_200"
+            android:src="@drawable/progress_blue_200" />
+
+        <TextView
+            android:id="@+id/progressDesc"
+            style="@style/color13_10"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/addDesc"
+        style="@style/color19_9"
+        android:visibility="gone" />
+
+</LinearLayout>

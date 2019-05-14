@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:orientation="vertical"
+    android:paddingLeft="10dip"
+    android:paddingRight="10dip" >
+
+    <LinearLayout
+        android:id="@+id/ll_focus"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dip"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="horizontal" />
+
+    <TextView
+        android:id="@+id/desc"
+        style="@style/k7_color6_13"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="8dip" />
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_marginTop="10dip"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/k7_color6_15"
+                android:text="数量:" />
+
+            <EditText
+                android:id="@+id/amount"
+                style="@style/custom_dialog_edit"
+                android:layout_width="140dip"
+                android:gravity="left"
+                android:numeric="integer"
+                android:singleLine="true" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="3dip"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/k7_color6_15"
+                android:text="价格:" />
+
+            <TextView
+                android:id="@+id/cost"
+                style="@style/k7_color6_15"
+                android:layout_width="135dip"
+                android:layout_marginLeft="3dip"
+                android:drawableLeft="@drawable/rmb"
+                android:gravity="left" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

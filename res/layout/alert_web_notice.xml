@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="10dip"
+    android:paddingLeft="10dip"
+    android:paddingRight="10dip"
+    android:paddingTop="3dip" >
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/k7_color1_15"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dip"
+        android:text="官方公告"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/body"
+        android:layout_width="260dip"
+        android:layout_height="300dip"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/confirmBtn"
+        style="@style/btn_common"
+        android:layout_marginTop="5dip"
+        android:text="确定" />
+
+</LinearLayout>

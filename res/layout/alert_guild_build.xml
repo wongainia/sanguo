@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <TextView
+        style="@style/color7_15"
+        android:layout_marginTop="30dip"
+        android:text="为你的家族取一个响亮的名字吧!" />
+
+    <EditText
+        android:id="@+id/name"
+        style="@style/custom_dialog_edit"
+        android:layout_width="120dip"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dip"
+        android:gravity="left"
+        android:hint="最多输入六个字"
+        android:maxLength="12"
+        android:singleLine="true"
+        android:textColorHint="@color/color5" />
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_gravity="center"
+        android:layout_marginBottom="30dip"
+        android:layout_marginTop="15dip"
+        android:layout_marginLeft="3dip"
+        android:layout_marginRight="3dip"
+        android:background="@drawable/common_bg_tm5"
+        android:orientation="vertical" >
+
+        <TextView
+            style="@style/color7_15"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dip"
+            android:text="创建花费" />
+
+        <LinearLayout
+            android:id="@+id/materialLayout"
+            style="@style/w_fill_h_wrap"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dip"
+            android:layout_marginTop="5dip"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip" >
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent"
+    android:orientation="vertical"
+    android:paddingBottom="10dip" >
+
+    <FrameLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_weight="1" >
+
+        <TextView
+            android:id="@+id/loading"
+            style="@style/color1_16"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_marginTop="5dip"
+            android:text="正在加载说明..."
+            android:visibility="gone" />
+
+        <ScrollView
+            android:id="@+id/scroll"
+            style="@style/fill_parent"
+            android:layout_gravity="center_horizontal|top"
+            android:fadingEdge="none"
+            android:scrollbars="none" >
+
+            <LinearLayout
+                android:id="@+id/body"
+                style="@style/wrap_content"
+                android:layout_gravity="center_horizontal" >
+            </LinearLayout>
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/rewardVipDesc"
+            style="@style/color6_13"
+            android:layout_gravity="right|top"
+            android:layout_marginRight="5dip"
+            android:layout_marginTop="25dip"
+            android:background="@drawable/txt_bg6"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/smVipDesc"
+            style="@style/color8_13"
+            android:layout_gravity="right|top"
+            android:layout_marginRight="5dip"
+            android:layout_marginTop="10dip"
+            android:background="@drawable/txt_bg6"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="3dip"
+            android:orientation="horizontal" >
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/smBtn"
+                style="@style/btn_common_short"
+                android:text="短信充值" />
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/rewardBtn"
+                style="@style/btn_common_short"
+                android:layout_marginLeft="10dip"
+                android:text="有奖充值" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="3dip"
+            android:orientation="horizontal" >
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/doubleBtn"
+                style="@style/btn_common_short"
+                android:text="双倍优惠" />
+
+            <com.vikings.sanguo.ui.PressedZoomButton
+                android:id="@+id/monthBtn"
+                style="@style/btn_common_short"
+                android:layout_marginLeft="5dip"
+                android:text="包月优惠" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

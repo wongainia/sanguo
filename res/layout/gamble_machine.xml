@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent" >
+
+    <!-- 铜雀台专用控件 -->
+
+    <ImageView
+        android:id="@+id/bamble_type"
+        style="@style/w_fill_h_wrap"
+        android:layout_gravity="top" />
+
+    <!-- 三国水果机 -->
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:orientation="vertical" >
+
+        <!-- 水果机转盘 -->
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_marginLeft="115dip"
+            android:layout_marginTop="148dip"
+            android:orientation="horizontal" >
+
+            <FrameLayout style="@style/wrap_content" >
+
+                <com.vikings.sanguo.ui.wheel.WheelView
+                    android:id="@+id/line1"
+                    style="@style/gamble_style"
+                    android:layout_gravity="center" />
+            </FrameLayout>
+
+            <FrameLayout
+                style="@style/wrap_content"
+                android:layout_marginLeft="8dip" >
+
+                <com.vikings.sanguo.ui.wheel.WheelView
+                    android:id="@+id/line2"
+                    style="@style/gamble_style"
+                    android:layout_gravity="center" />
+            </FrameLayout>
+
+            <FrameLayout
+                style="@style/wrap_content"
+                android:layout_marginLeft="8dip" >
+
+                <com.vikings.sanguo.ui.wheel.WheelView
+                    android:id="@+id/line3"
+                    style="@style/gamble_style"
+                    android:layout_gravity="center" />
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/animLayout"
+        style="@style/wrap_content"
+        android:layout_marginLeft="138dip"
+        android:layout_marginTop="50dip"
+        android:visibility="invisible" >
+
+        <ImageView
+            android:id="@+id/anim"
+            android:layout_width="120dip"
+            android:layout_height="120dip"
+            android:layout_gravity="center"
+            android:background="@drawable/win_light" />
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/rate"
+                style="@style/wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/gamble36" />
+
+            <ImageView
+                style="@style/wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/gamble_rate" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:layout_marginLeft="180dip"
+        android:layout_marginTop="202dip"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <TextView
+            style="@style/color8_8"
+            android:text="玩一次" />
+
+        <TextView
+            android:id="@+id/price"
+            style="@style/color8_8"
+            android:layout_marginTop="-5dip"
+            android:text="123" />
+    </LinearLayout>
+
+    <RelativeLayout
+        style="@style/wrap_content"
+        android:layout_marginLeft="144dip"
+        android:layout_marginTop="235dip"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <com.vikings.sanguo.ui.PressedZoomButton
+            android:id="@+id/go"
+            style="@style/wrap_content"
+            android:background="@drawable/gamble_go" />
+
+        <TextView
+            style="@style/color8_8"
+            android:layout_centerInParent="true"
+            android:background="@drawable/and_her_player" />
+    </RelativeLayout>
+
+    <!-- 奖励 -->
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="5dip"
+        android:layout_marginTop="285dip"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dip"
+            android:layout_marginLeft="0dip"
+            android:layout_marginRight="9dip"
+            android:background="@drawable/translucent_title_bg"
+            android:gravity="center"
+            android:text="奖励记录"
+            android:textColor="@color/color16" />
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="150dip" >
+
+            <LinearLayout
+                android:id="@+id/award"
+                style="@style/w_fill_h_wrap"
+                android:orientation="vertical" >
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</RelativeLayout>

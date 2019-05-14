@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:orientation="vertical"
+    android:minHeight="120dip"
+    android:paddingBottom="0dip"
+    android:paddingLeft="5dip"
+    android:paddingRight="5dip" >
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:gravity="left"
+        android:orientation="horizontal" >
+
+        <include layout="@layout/item_icon" />
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_marginLeft="3dip"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/type"
+                style="@style/color7_14" />
+
+            <TextView
+                android:id="@+id/count"
+                style="@style/color7_14"
+                android:layout_marginTop="2dip" />
+
+            <TextView
+                android:id="@+id/price"
+                style="@style/color7_14"
+                android:layout_marginTop="2dip" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/desc"
+        style="@style/color5_12"
+        android:layout_marginLeft="3dip"
+        android:layout_marginRight="3dip"
+        android:layout_marginTop="10dip"
+        android:gravity="left" />
+
+    <TextView
+        style="@style/wrap_content"
+        android:layout_weight="1" />
+    <!-- 按钮 -->
+	 
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/openBtn"
+        style="@style/btn_common"
+        android:layout_marginTop="10dip"
+        android:text="打   开 " />
+
+
+    
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/overBtn"
+        style="@style/btn_common"
+        android:layout_marginTop="10dip"
+        android:text="一键打开" />
+    
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/sellBtn"
+        style="@style/btn_common"
+        android:layout_marginTop="10dip"
+        android:text="出   售" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/closeBtn"
+        style="@style/btn_common"
+        android:layout_marginTop="10dip"
+        android:text="关   闭" />
+</LinearLayout>

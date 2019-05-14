@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/itemLine"
+    style="@style/wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center_vertical"
+    android:orientation="horizontal" >
+
+    <FrameLayout
+        style="@style/center_v"
+        android:background="@drawable/result_item_bg" >
+
+        <ImageView
+            android:id="@+id/itemIcon"
+            style="@style/wrap_content"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/itemName"
+        style="@style/k7_color6_13"
+        android:layout_marginLeft="5dip"/>
+
+    <TextView
+        android:id="@+id/itemCount"
+        style="@style/k7_color6_13"
+        android:layout_marginLeft="5dip" />
+
+</LinearLayout>

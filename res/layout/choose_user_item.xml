@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:layout_marginTop="4dip"
+    android:background="@drawable/bg_user"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingLeft="10dip"
+    android:paddingRight="10dip" >
+
+    <TextView
+        android:id="@+id/userName"
+        style="@style/color13_14" />
+
+    <TextView
+        style="@style/wrap_content"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/userLevel"
+        style="@style/color13_12"
+        android:layout_width="60dip" />
+
+</LinearLayout>

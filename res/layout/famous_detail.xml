@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/detailLayout"
+    style="@style/w_fill_h_wrap"
+    android:background="@drawable/setoff_cnt_sg"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingBottom="2dip"
+    android:paddingLeft="5dip"
+    android:paddingRight="5dip" >
+
+    <TextView
+        android:id="@+id/reinforceDesc"
+        style="@style/color19_11"
+        android:layout_marginBottom="3dip"
+        android:layout_marginTop="3dip"
+        android:gravity="left" />
+
+</LinearLayout>

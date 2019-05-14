@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/custom_dialog_item_bg" >
+
+    <FrameLayout
+        style="@style/wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="10dip" >
+
+        <include layout="@layout/fief_icon" />
+
+        <ImageView
+            android:id="@+id/battleTypeIcon"
+            style="@style/wrap_content"
+            android:layout_gravity="top|left"
+            android:layout_marginLeft="8dip"
+            android:layout_marginTop="6dip" />
+    </FrameLayout>
+
+    <LinearLayout
+        style="@style/center_v"
+        android:layout_width="fill_parent"
+        android:orientation="vertical"
+        android:paddingLeft="5dip"
+        android:paddingRight="10dip" >
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/attackName"
+                style="@style/k7_color1_11" />
+
+            <ImageView
+                style="@style/wrap_content"
+                android:layout_marginLeft="2dip"
+                android:background="@drawable/attack_icon" />
+
+            <TextView
+                android:id="@+id/defendName"
+                style="@style/k7_color1_11"
+                android:layout_marginLeft="2dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/addr"
+                style="@style/k7_color6_11" />
+
+            <TextView
+                android:id="@+id/position"
+                style="@style/k7_color6_11"
+                android:layout_marginLeft="2dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/troop"
+                style="@style/k7_color6_11" />
+
+            <TextView
+                style="@style/wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/state"
+                style="@style/k7_color1_11" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

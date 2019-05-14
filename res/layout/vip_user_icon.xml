@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="65.3dip"
+    android:layout_height="70dip"
+    android:orientation="vertical"
+    android:paddingTop="1dip" >
+
+    <LinearLayout
+        android:id="@+id/userIconLayout"
+        style="@style/wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:orientation="vertical" >
+
+        <include layout="@layout/user_icon" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/vipLayout"
+        style="@style/wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/vip_bg"
+        android:minWidth="40dip" >
+
+        <TextView
+            android:id="@+id/vipLevel"
+            style="@style/wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:gravity="center_horizontal|bottom" />
+    </FrameLayout>
+
+</FrameLayout>

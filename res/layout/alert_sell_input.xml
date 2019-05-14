@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:orientation="vertical"
+    android:padding="10dip" >
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:background="@drawable/common_bg_tm5"
+        android:orientation="vertical"
+        android:paddingBottom="8dip"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip" >
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_marginLeft="10dip"
+            android:layout_marginTop="5dip"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/color8_12"
+                android:text="单个售价："
+                android:textStyle="bold" />
+
+            <ImageView
+                style="@style/wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/money" />
+
+            <TextView
+                android:id="@+id/price"
+                style="@style/color8_12"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <!-- 数量 -->
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_marginLeft="10dip"
+            android:layout_marginTop="5dip"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/amount_text"
+                style="@style/color8_12"
+                android:text="出售数量："
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/amount"
+                style="@style/color3_12"
+                android:layout_width="fill_parent"
+                android:layout_marginRight="20dip"
+                android:maxLength="7"
+                android:background="@drawable/common_input1"
+                android:gravity="center_horizontal"
+                android:numeric="integer"
+                android:singleLine="true" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_marginLeft="10dip"
+            android:layout_marginTop="5dip"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/color8_12"
+                android:text="出售总价："
+                android:textStyle="bold" />
+
+            <ImageView
+                style="@style/wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/money" />
+
+            <TextView
+                android:id="@+id/total"
+                style="@style/color8_12"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView 
+        style="@style/w_fill_h_wrap"
+        android:layout_height="20dip"
+        />
+    
+    <TextView
+        android:id="@+id/desc"
+        style="@style/color24_12"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginTop="3dip"
+         />
+    
+    
+    <!-- 按钮 -->
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/okBtn"
+        style="@style/btn_common"
+        android:layout_marginTop="5dip"
+        android:text="出  售" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/closeBtn"
+        style="@style/btn_common"
+        android:layout_marginTop="10dip"
+        android:text="取  消" />
+
+</LinearLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:orientation="vertical"
+    android:paddingBottom="10dip"
+    android:paddingLeft="10dip"
+    android:paddingRight="10dip" >
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:background="@drawable/common_bg_tm5"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="5dip"
+        android:paddingTop="5dip" >
+
+        <TextView
+            android:id="@+id/desc1"
+            style="@style/color11_12"
+            android:text="进化材料不足，还缺少以下物品" />
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_marginTop="5dip"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <include layout="@layout/item_icon" />
+
+            <TextView
+                android:id="@+id/itemName"
+                style="@style/color4_12"
+                android:layout_marginLeft="5dip" />
+
+            <TextView
+                android:id="@+id/count"
+                style="@style/color4_12" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/desc2"
+        style="@style/color5_12"
+        android:layout_marginTop="5dip"
+        android:gravity="left" />
+
+</LinearLayout>

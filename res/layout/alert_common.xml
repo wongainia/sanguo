@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/alert_common_bg"
+    android:orientation="vertical"
+    android:padding="10dip" >
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/k7_color4_15"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="6dip"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/titleGap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="2" />
+
+    <TextView
+        android:id="@+id/body"
+        style="@style/k7_color1_13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:maxWidth="220dip" />
+
+    <TextView
+        android:id="@+id/bodyGap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="4" />
+
+    <TextView
+        android:id="@+id/extension"
+        style="@style/k7_color5_11"
+        android:layout_gravity="center_horizontal"
+        android:maxWidth="220dip" />
+
+    <TextView
+        android:id="@+id/extensionGap"
+        style="@style/wrap_content"
+        android:layout_weight="8" />
+
+    <TextView
+        android:id="@+id/notice"
+        style="@style/k7_color1_10"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="2dip" />
+
+</LinearLayout>

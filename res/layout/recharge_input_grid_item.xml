@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="140dip"
+    android:layout_height="30dip"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingLeft="15dip" >
+
+    <LinearLayout
+        android:id="@+id/clickLayout"
+        style="@style/wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <FrameLayout
+            style="@style/wrap_content"
+            android:layout_marginLeft="1dip"
+            android:background="@drawable/unchecked" >
+
+            <ImageView
+                android:id="@+id/checked"
+                style="@style/wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/checked"
+                android:visibility="invisible" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/amountDesc"
+            style="@style/color7_14"
+            android:layout_marginLeft="2dip"
+            android:text="10元充值"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>

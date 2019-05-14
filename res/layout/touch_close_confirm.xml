@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/content"
+        style="@style/color6_13"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dip"
+        android:maxWidth="200dip" />
+
+</LinearLayout>

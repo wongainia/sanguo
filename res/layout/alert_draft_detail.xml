@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:layout_gravity="center"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_marginLeft="2dip"
+        android:layout_marginRight="2dip"
+        android:orientation="horizontal" >
+
+        <!-- 士兵头像 -->
+
+        <include layout="@layout/arm_icon" />
+
+        <!-- 士兵信息 -->
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_marginLeft="4dip"
+            android:orientation="vertical" >
+
+            <!-- 士兵名字 -->
+
+            <TextView
+                android:id="@+id/armname"
+                style="@style/color7_14"
+                android:text="精灵盾卫"
+                android:textStyle="bold" />
+
+            <!-- 士兵描述 -->
+
+            <TextView
+                android:id="@+id/propdesc"
+                style="@style/color8_11"
+                android:gravity="left" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 还能招募的士兵提示 -->
+
+    <TextView
+        android:id="@+id/desc"
+        style="@style/color10_11"
+        android:layout_marginTop="10dip"
+        android:text="用元宝招募士兵，目前你还能招募10000名小兵" />
+
+    <!-- 招募数量及其消耗 -->
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="10dip"
+        android:background="@drawable/common_bg_tm5"
+        android:orientation="vertical"
+        android:padding="10dip" >
+
+        <!-- 数量 -->
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_marginLeft="10dip"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/color8_12"
+                android:text="数量："
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/amount"
+                style="@style/color3_12"
+                android:layout_width="fill_parent"
+                android:layout_marginRight="20dip"
+                android:background="@drawable/common_input1"
+                android:gravity="center_horizontal"
+                android:numeric="integer"
+                android:singleLine="true" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_marginLeft="10dip"
+            android:layout_marginTop="10dip"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/color8_12"
+                android:text="价格："
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/cost"
+                style="@style/color8_12"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 按钮 -->
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/okBtn"
+        style="@style/btn_common"
+        android:layout_marginTop="30dip"
+        android:text="确  定" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/closeBtn"
+        style="@style/btn_common"
+        android:layout_marginTop="10dip"
+        android:text="取  消" />
+
+</LinearLayout>

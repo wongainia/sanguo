@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent" >
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="80dip" >
+
+        <include
+            android:id="@+id/msg1Layout"
+            layout="@layout/gradient_msg" />
+
+        <com.vikings.sanguo.widget.GridViewNotscroll
+            android:id="@+id/gridView"
+            style="@style/wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dip"
+            android:layout_marginTop="10dip"
+            android:cacheColorHint="#00000000"
+            android:fadingEdge="none"
+            android:listSelector="#00000000"
+            android:numColumns="2"
+            android:scrollbars="none"
+            android:verticalSpacing="15dip" />
+
+        <LinearLayout
+            android:id="@+id/cardNoLayout"
+            style="@style/w_fill_h_wrap"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <include
+                android:id="@+id/msg2Layout"
+                layout="@layout/gradient_msg" />
+
+            <EditText
+                android:id="@+id/cardNum"
+                style="@style/recharge_edit_text"
+                android:layout_margin="5dip"
+                android:hint="点击输入充值卡序列号"
+                android:maxLength="19" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pwdLayout"
+            style="@style/w_fill_h_wrap"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <include
+                android:id="@+id/msg3Layout"
+                layout="@layout/gradient_msg" />
+
+            <EditText
+                android:id="@+id/pwdNum"
+                style="@style/recharge_edit_text"
+                android:layout_margin="5dip"
+                android:hint="点击输入充值卡密码"
+                android:maxLength="21" />
+        </LinearLayout>
+
+        <!-- 充值说明 -->
+
+        <include
+            android:id="@+id/msg4Layout"
+            layout="@layout/gradient_msg" />
+
+        <LinearLayout
+            android:id="@+id/rechargeDescLayout"
+            style="@style/w_fill_h_wrap"
+            android:layout_marginBottom="10dip"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:gravity="center_horizontal"
+            android:paddingBottom="45dip" >
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

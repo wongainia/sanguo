@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/item_bg"
+    android:orientation="horizontal"
+    android:paddingBottom="5dip"
+    android:paddingLeft="10dip"
+    android:paddingRight="10dip"
+    android:paddingTop="5dip" >
+
+    <include layout="@layout/hero_icon" />
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="5dip"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/qualityName"
+                style="@style/color11_14" />
+
+            <TextView
+                android:id="@+id/heroName"
+                style="@style/color11_14"
+                android:layout_marginLeft="5dip" />
+
+            <TextView
+                style="@style/wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/heroLevel"
+                style="@style/color9_14"
+                android:layout_marginLeft="5dip" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/armProps"
+            style="@style/color1_12"
+            android:layout_marginTop="2dip" />
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_marginTop="2dip"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/color1_12"
+                android:text="将领经验：" />
+
+            <FrameLayout style="@style/wrap_content" >
+
+                <com.vikings.sanguo.ui.ProgressBar
+                    android:id="@+id/progressBar"
+                    style="@style/wrap_content"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:background="@drawable/progress_bg_200"
+                    android:src="@drawable/progress_blue_200" />
+
+                <TextView
+                    android:id="@+id/progressDesc"
+                    style="@style/color14_12"
+                    android:layout_gravity="center" />
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

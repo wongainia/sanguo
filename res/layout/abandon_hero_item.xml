@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/item_bg"
+    android:orientation="horizontal"
+    android:paddingLeft="10dip"
+    android:paddingRight="10dip" >
+
+    <include layout="@layout/hero_icon" />
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="5dip"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="110dip"
+                android:layout_height="wrap_content"
+                android:background="@drawable/hero_name_board"
+                android:orientation="horizontal"
+                android:paddingLeft="6dip"
+                android:paddingRight="6dip" >
+
+                <TextView
+                    android:id="@+id/qualityName"
+                    style="@style/color11_12"
+                    android:layout_marginRight="5dip"
+                    android:shadowColor="@color/black"
+                    android:shadowRadius="1.0" />
+
+                <TextView
+                    android:id="@+id/heroName"
+                    style="@style/color11_14"
+                    android:shadowColor="@color/black"
+                    android:shadowRadius="1.0" />
+            </LinearLayout>
+            <TextView
+                style="@style/wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/heroLevel"
+                style="@style/color11_13"
+                android:layout_marginLeft="5dip"
+                android:visibility="gone" />
+
+            <FrameLayout
+                android:id="@+id/chooseLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/hero_tick_box" >
+
+                <ImageView
+                    android:id="@+id/heroTick"
+                    style="@style/wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/hero_tick"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:visibility="gone" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/heroLayout"
+            style="@style/w_fill_h_wrap"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/heroAttack"
+                style="@style/color9_12"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="攻击力: 9999"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/heroDefent"
+                style="@style/color9_12"
+                android:layout_marginRight="3dip"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="防御力: 9999"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/addressTitle"
+                style="@style/color9_12"
+                android:text="驻扎位置:"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/address"
+                style="@style/color9_12"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

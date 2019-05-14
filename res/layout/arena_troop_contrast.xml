@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fill_parent"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/topDescLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="2dip"
+        layout="@layout/gradient_msg" />
+
+    <LinearLayout
+        style="@style/fill_parent"
+        android:layout_marginTop="2dip"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="250dip"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="2dip"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <include
+                android:id="@+id/atkTop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                layout="@layout/arena_contrast_top" />
+
+            <FrameLayout
+                android:id="@+id/atkTitle"
+                style="@style/w_fill_h_wrap"
+                android:layout_marginLeft="2dip"
+                android:layout_marginRight="2dip"
+                android:layout_marginTop="2dip"
+                android:background="@drawable/gradient_bg" >
+
+                <TextView
+                    android:id="@+id/masterName"
+                    style="@style/color16_12"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginLeft="5dip" />
+
+                <TextView
+                    android:id="@+id/troopType"
+                    style="@style/color16_12"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginRight="5dip" />
+            </FrameLayout>
+
+            <ListView
+                android:id="@+id/atkList"
+                style="@style/common_list_no_anim"
+                android:layout_marginTop="2dip"
+                android:paddingBottom="30dip" >
+            </ListView>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/seperator"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:background="@drawable/war_info_separator" />
+
+        <LinearLayout
+            android:layout_width="250dip"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="0dip"
+            android:layout_marginRight="0dip"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <include
+                android:id="@+id/defTop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                layout="@layout/arena_contrast_top" />
+
+            <FrameLayout
+                android:id="@+id/defTitle"
+                style="@style/w_fill_h_wrap"
+                android:layout_marginLeft="2dip"
+                android:layout_marginRight="2dip"
+                android:layout_marginTop="2dip"
+                android:background="@drawable/gradient_bg" >
+
+                <TextView
+                    android:id="@+id/masterName"
+                    style="@style/color16_12"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginLeft="5dip" />
+
+                <TextView
+                    android:id="@+id/troopType"
+                    style="@style/color16_12"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginRight="5dip" />
+            </FrameLayout>
+
+            <ListView
+                android:id="@+id/defList"
+                style="@style/common_list_no_anim"
+                android:layout_marginTop="2dip"
+                android:paddingBottom="30dip" >
+            </ListView>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="293dip"
+    android:layout_height="184dip" >
+
+    <ImageView
+        android:id="@+id/vipImg"
+        style="@style/wrap_content"
+        android:layout_gravity="center" />
+
+    <ImageView
+        style="@style/wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/vip_item_frame" />
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_gravity="top"
+        android:gravity="center_vertical"
+        android:paddingTop="4dip" >
+
+        <TextView
+            style="@style/wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/needRecharge"
+            style="@style/color13_10"
+            android:layout_width="170dip"
+            android:layout_height="15dip"
+            android:layout_marginRight="5dip"
+            android:background="@drawable/fief_scroll_hero_cnt_bg" />
+
+        <FrameLayout
+            android:layout_width="78dip"
+            android:layout_height="26dip"
+            android:layout_marginRight="4dip"
+            android:paddingTop="2dip" >
+
+            <TextView
+                android:id="@+id/vipLevel"
+                style="@style/wrap_content"
+                android:layout_gravity="center"
+                android:padding="1dip" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="6dip"
+        android:orientation="vertical" >
+
+        <FrameLayout
+            android:id="@+id/privilegeDescLayout"
+            style="@style/wrap_content"
+            android:background="@drawable/fief_scroll_hero_cnt_bg" >
+
+            <TextView
+                android:id="@+id/privilegeDesc"
+                style="@style/color13_9"
+                android:layout_height="wrap_content"
+                android:gravity="left|center_vertical"
+                android:padding="4dip"
+                android:width="255dip" />
+
+            <TextView
+                style="@style/color13_9"
+                android:layout_gravity="right|bottom"
+                android:layout_marginBottom="1dip"
+                android:layout_marginRight="2dip"
+                android:drawableRight="@drawable/vip_detail_btn"
+                android:text="查看详情" />
+        </FrameLayout>
+
+        <com.vikings.sanguo.ui.PressedZoomButton
+            android:id="@+id/btn"
+            style="@style/color13_14"
+            android:layout_width="160dip"
+            android:layout_height="29dip"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="3dip"
+            android:background="@drawable/btn_red"
+            android:text="领  奖" />
+    </LinearLayout>
+
+</FrameLayout>

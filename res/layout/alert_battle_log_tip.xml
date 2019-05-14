@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:layout_marginLeft="5dip"
+    android:layout_marginRight="5dip"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical" >
+
+        <!-- 结果 -->
+
+        <LinearLayout
+            android:layout_width="200dip"
+            android:layout_height="95dip"
+            android:layout_gravity="center"
+            android:background="@drawable/win_light" >
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/atkResult"
+            style="@style/wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginLeft="10dip"
+            android:layout_marginTop="2dip" />
+
+        <ImageView
+            style="@style/wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/btl_vs_sg" />
+        <!-- 结果 -->
+
+        <ImageView
+            android:id="@+id/defResult"
+            style="@style/wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="10dip"
+            android:layout_marginTop="2dip" />
+    </FrameLayout>
+
+    <!-- 将领头像，战斗结果 -->
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="-10dip" >
+
+        <LinearLayout
+            android:id="@+id/atkLayout"
+            style="@style/wrap_content"
+            android:layout_gravity="left"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:layout_marginLeft="2dip"
+                android:layout_marginTop="2dip"
+                android:orientation="vertical" >
+
+                <FrameLayout
+                    android:layout_width="70dip"
+                    android:layout_height="70dip" >
+
+                    <ImageView
+                        style="@style/fill_parent"
+                        android:layout_gravity="center"
+                        android:layout_margin="6dip"
+                        android:background="@drawable/item_bottom_bg" />
+
+                    <ImageView
+                        android:id="@+id/atkIcon"
+                        style="@style/fill_parent"
+                        android:layout_gravity="center" />
+
+                    <ImageView
+                        style="@style/fill_parent"
+                        android:layout_gravity="center"
+                        android:background="@drawable/icon_bg_sg" />
+                </FrameLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/address"
+            style="@style/color18_15"
+            android:layout_gravity="center"
+            android:paddingLeft="3dip"
+            android:paddingRight="3dip" />
+
+        <LinearLayout
+            android:id="@+id/defLayout"
+            style="@style/wrap_content"
+            android:layout_gravity="right"
+            android:orientation="horizontal" >
+
+            <!-- 结果 -->
+
+            <LinearLayout
+                style="@style/wrap_content"
+                android:layout_marginRight="2dip"
+                android:layout_marginTop="2dip"
+                android:orientation="vertical" >
+
+                <FrameLayout
+                    android:layout_width="70dip"
+                    android:layout_height="70dip" >
+
+                    <ImageView
+                        style="@style/fill_parent"
+                        android:layout_gravity="center"
+                        android:layout_margin="6dip"
+                        android:background="@drawable/item_bottom_bg" />
+
+                    <ImageView
+                        android:id="@+id/defIcon"
+                        style="@style/fill_parent"
+                        android:layout_gravity="center" />
+
+                    <ImageView
+                        style="@style/fill_parent"
+                        android:layout_gravity="center"
+                        android:background="@drawable/icon_bg_sg" />
+                </FrameLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_marginTop="5dip" >
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_gravity="left"
+            android:background="@drawable/setoff_cnt_sg"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/atkName"
+                style="@style/color7_13"
+                android:layout_width="115dip"
+                android:layout_height="20dip"
+                android:background="@drawable/common_bg_btm1"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="5dip" />
+
+            <LinearLayout
+                android:layout_width="100dip"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:layout_marginTop="2dip" >
+
+                <TextView
+                    style="@style/color8_11"
+                    android:text="主将: " />
+
+                <TextView
+                    android:id="@+id/atkHero"
+                    style="@style/color8_11" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/atkUnit"
+                style="@style/color8_11"
+                android:layout_width="100dip"
+                android:layout_marginLeft="5dip"
+                android:layout_marginTop="2dip"
+                android:gravity="left" />
+
+            <TextView
+                android:id="@+id/atkCountry"
+                style="@style/color8_11"
+                android:layout_width="100dip"
+                android:layout_marginLeft="5dip"
+                android:layout_marginTop="2dip"
+                android:gravity="left" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/wrap_content"
+            android:layout_gravity="right"
+            android:background="@drawable/setoff_cnt_sg"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/defName"
+                style="@style/color7_13"
+                android:layout_width="115dip"
+                android:layout_height="20dip"
+                android:background="@drawable/common_bg_btm1"
+                android:gravity="right|center_vertical"
+                android:paddingRight="5dip" />
+
+            <LinearLayout
+                android:layout_width="100dip"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:layout_marginTop="2dip" >
+
+                <TextView
+                    style="@style/color8_11"
+                    android:text="主将: " />
+
+                <TextView
+                    android:id="@+id/defHero"
+                    style="@style/color16_11" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/defUnit"
+                style="@style/color8_11"
+                android:layout_width="100dip"
+                android:layout_marginLeft="5dip"
+                android:layout_marginTop="2dip"
+                android:gravity="left" />
+
+            <TextView
+                android:id="@+id/defCountry"
+                style="@style/color8_11"
+                android:layout_width="100dip"
+                android:layout_marginLeft="5dip"
+                android:layout_marginTop="2dip"
+                android:gravity="left" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <TextView
+        style="@style/k7_color7_13"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dip"
+        android:text="点击玩家名字可查看玩家详情" />
+
+</LinearLayout>

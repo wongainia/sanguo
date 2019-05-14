@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center_horizontal"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:background="@drawable/user_info_content_bg" 
+        android:layout_marginTop="10dip"
+        android:layout_marginBottom="10dip">
+
+        <ImageView
+            style="@style/wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dip"
+            android:background="@drawable/money" />
+
+        <TextView
+            android:id="@+id/rmb"
+            style="@style/k7_color2_11"
+            android:layout_gravity="center"
+            android:layout_marginLeft="2dip" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/wrap_content"
+        android:layout_marginLeft="5dip"
+        android:background="@drawable/user_info_content_bg" 
+        android:layout_marginTop="10dip"
+        android:layout_marginBottom="10dip">
+
+        <ImageView
+            style="@style/wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dip"
+            android:background="@drawable/revive" />
+
+        <TextView
+            android:id="@+id/lost"
+            style="@style/k7_color2_11"
+            android:layout_gravity="center"
+            android:layout_marginLeft="2dip" />
+    </LinearLayout>
+
+</LinearLayout>

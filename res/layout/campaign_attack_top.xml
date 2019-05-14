@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:background="@drawable/user_info_banner"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingBottom="18dip"
+    android:paddingLeft="22dip"
+    android:paddingRight="30dip"
+    android:paddingTop="18dip" >
+
+    <include
+        android:id="@+id/campaignIcon"
+        layout="@layout/campaign_icon" />
+
+    <LinearLayout
+        style="@style/w_fill_h_wrap"
+        android:layout_marginLeft="10dip"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/campaignName"
+                style="@style/color18_14"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/wrap_content"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/difficultIcon"
+                style="@style/wrap_content"
+                android:layout_marginRight="3dip"
+                android:background="@drawable/diff_normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/w_fill_h_wrap"
+            android:layout_marginTop="2dip"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/heroName"
+                style="@style/color9_12"
+                android:layout_weight="1"
+                android:gravity="left" />
+
+            <TextView
+                android:id="@+id/armCount"
+                style="@style/color9_12"
+                android:layout_weight="1"
+                android:gravity="left" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

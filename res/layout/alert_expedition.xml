@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="10dip"
+    android:paddingTop="10dip" >
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/plunderBtn"
+        style="@style/btn_common"
+        android:layout_marginTop="3dip"
+        android:text="掠夺"
+        android:visibility="gone" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/occupyBtn"
+        style="@style/btn_common"
+        android:layout_marginTop="3dip"
+        android:text="占领"
+        android:visibility="gone" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/duelBtn"
+        style="@style/btn_common"
+        android:layout_marginTop="3dip"
+        android:text="单挑"
+        android:visibility="gone" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/massacreBtn"
+        style="@style/btn_common"
+        android:layout_marginTop="3dip"
+        android:text="屠城"
+        android:visibility="gone" />
+
+    <com.vikings.sanguo.ui.PressedZoomButton
+        android:id="@+id/closeBtn"
+        style="@style/btn_common"
+        android:layout_marginTop="3dip"
+        android:text="关闭" />
+
+</LinearLayout>

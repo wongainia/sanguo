@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_fill_h_wrap"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingLeft="3dip"
+    android:paddingRight="3dip"
+    android:paddingTop="10dip" >
+
+    <TextView
+        style="@style/color7_14"
+        android:text="请输入你的仇人ID" />
+
+    <EditText
+        android:id="@+id/userID"
+        style="@style/custom_dialog_edit"
+        android:layout_width="210dip"
+        android:layout_marginTop="3dip"
+        android:inputType="numberSigned"
+        android:singleLine="true" />
+
+</LinearLayout>
